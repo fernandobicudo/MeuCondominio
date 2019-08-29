@@ -1,0 +1,599 @@
+﻿
+/*estilos para o site cliente*/
+
+html {
+    background-color: grey;
+    font-family: Segoe UI, Verdana, Arial;
+}
+
+
+body {
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    padding-top: 1px;
+    margin-top: 0;
+}
+
+
+h1 {
+    background: #01579B;
+    color: white;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+label {
+    color: #333;
+    font-weight: bolder;
+    display: block;
+    float: left;
+    padding-left: 1%;
+    margin: 4px;
+}
+
+.campoTexto {
+    height: 1.5em;
+    width: 60%;
+    display: block;
+    position: static;
+    margin: 4px;
+}
+
+
+.alerta {
+    font-size: 8px;
+    color: red;
+    font-weight: bolder;
+    position: static;
+}
+
+
+.login, .recuperacao {
+    height: 40%;
+    width: 26%;
+    margin-left: 37%;
+    margin-top: 10%;
+}
+
+    .login .link_p {
+        font-size: 8px;
+        text-decoration: none;
+        padding-bottom: 10px;
+    }
+
+    .login .alerta .recuperacao {
+        font-weight: bolder;
+        font-size: 1.1em;
+        color: red;
+        margin-left: 3.0em;
+    }
+
+.lista .p_label {
+    font-size: 8px;
+    float: left;
+}
+
+
+.lista {
+    height: 100%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+    .lista table {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-bottom: 20px;
+        border-style: solid;
+    }
+
+tr {
+    font-size: smaller;
+}
+
+.lista .header {
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+.lista .linha {
+    font-size: 12px;
+}
+
+
+
+.p_label {
+    font-size: 8px;
+    float: right;
+    display: inline-block;
+}
+
+
+#lbBusca {
+    font-size: 12px;
+    display: block;
+    float: right;
+    display: inline-block;
+}
+
+#txtCodigo, #cbEstados {
+    width: 4em;
+}
+
+.login .campoTexto {
+    width: 60%;
+    margin-left: 20%;
+}
+
+.recuperacao .campoTexto {
+    width: 60%;
+    margin-left: 20%;
+}
+
+.cadastro {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+    padding-bottom: 1%;
+}
+
+    .cadastro .campoTexto {
+        margin-left: 10%;
+        border-radius: 0.3em;
+        width: 20em;
+    }
+
+    .cadastro .alerta_g {
+        font-weight: bolder;
+        font-size: 1.0em;
+        color: red;
+        float: left;
+        margin-left: 20em;
+    }
+
+    .cadastro .alerta_p {
+        font-weight: bolder;
+        font-size: 0.5em;
+        color: red;
+        float: left;
+        display: inline-block;
+    }
+
+    .cadastro .campoTexto_p {
+        float: right;
+        display: inline-block;
+        width: 1.8em;
+        height: 13px;
+        margin-left: 5px;
+    }
+
+.comboBox {
+    height: 1.9em;
+}
+
+#cbEstado {
+    width: 5%;
+}
+
+.radioButton {
+    margin-left: 6%;
+}
+
+
+.botaoDefault {
+    font-size: 20px;
+    font-weight: bolder;
+    width: 30%;
+    height: 40px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: #01579B;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.botaoPequeno {
+    font-size: 12px;
+    font-weight: bolder;
+    width: 10%;
+    height: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: #01579B;
+    color: white;
+    border-radius: 5px;
+}
+
+#btBusca {
+    float: right;
+    margin-left: 5px;
+}
+
+.botaoHover:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.centro {
+    width: 100%;
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+/*MENU*/
+
+.menu {
+    background: grey;
+    text-align: center; /* or change the value to left to align left*/
+    font-weight: bolder;
+    border-radius: 10px;
+    margin-bottom: -10px;
+    padding-bottom: 0px;
+    margin-top: 10px;
+}
+
+
+.dropDownMenu, .dropDownMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .dropDownMenu li {
+        padding: 10px 6em;
+        position: relative;
+    }
+
+    .dropDownMenu a {
+        color: #FFF;
+        padding: 0px;
+        display: block;
+        text-decoration: none;
+    }
+
+        .dropDownMenu a:hover {
+            background: #000;
+        }
+
+    /* Nivel 1  */
+    .dropDownMenu > li {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: -4px;
+    }
+
+        /* Nivel 2 */
+        .dropDownMenu > li > ul {
+            width: auto;
+            display: none;
+            background: grey;
+            position: absolute;
+            top: 100%;
+            left: 10px;
+            z-index: 9999999;
+        }
+
+            .dropDownMenu > li > ul > li {
+                width: 90%;
+                text-align: left;
+                padding-left: 5%;
+            }
+
+        .dropDownMenu > li:hover > ul {
+            display: block;
+        }
+
+
+
+@media screen and (max-width: 320px) {
+
+    body {
+        background-color: #01579B;
+        border-radius: 10px;
+        padding-left: 0.5%;
+        padding-right: 0.5%;
+        padding-top: 1px;
+        margin-top: 0;
+    }
+
+
+    h1 {
+        background: #01579B;
+        color: white;
+        padding: 1%;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+
+    label {
+        color: #333;
+        font-weight: bolder;
+        text-align: left;
+        display: inline-block;
+        float: left;
+        padding-left: 1%;
+    }
+
+    .campoTexto {
+        height: 1.5em;
+        width: 60%;
+        display: block;
+    }
+
+
+    .alerta {
+        font-size: 8px;
+        color: red;
+        font-weight: bolder;
+        float: left;
+        display: inline-block;
+    }
+
+
+    .login, .recuperacao {
+        height: 40%;
+        width: 25%;
+        margin-left: 40%;
+        margin-top: 10%;
+    }
+
+        .login .link_p {
+            font-size: 8px;
+            text-decoration: none;
+            padding-bottom: 10px;
+        }
+
+        .login .alerta .recuperacao {
+            font-weight: bolder;
+            font-size: 1.1em;
+            color: red;
+            margin-left: 3.0em;
+        }
+
+
+
+    .lista .p_label {
+        font-size: 8px;
+        float: left;
+    }
+
+
+    .lista {
+        height: 100%;
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 3%;
+    }
+
+        .lista table {
+            width: 100%;
+            margin-left: 0%;
+            margin-right: 0%;
+            margin-bottom: 20px;
+            border-style: solid;
+        }
+
+    tr {
+        font-size: smaller;
+    }
+
+    .lista .header {
+        font-weight: bolder;
+        font-size: 12px;
+    }
+
+    .lista .linha {
+        font-size: 12px;
+    }
+
+
+
+    .p_label {
+        font-size: 8px;
+        float: right;
+        display: inline-block;
+    }
+
+
+    #lbBusca {
+        font-size: 12px;
+        display: block;
+        float: right;
+        display: inline-block;
+    }
+
+    #txtCodigo, #cbEstados {
+        width: 4em;
+    }
+
+    .login .campoTexto {
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    .recuperacao .campoTexto {
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    .cadastro {
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 3%;
+        padding-bottom: 1%;
+    }
+
+        .cadastro .campoTexto {
+            margin-left: 10%;
+            border-radius: 0.3em;
+            width: 20em;
+        }
+
+        .cadastro .alerta_g {
+            font-weight: bolder;
+            font-size: 1.0em;
+            color: red;
+            float: left;
+            margin-left: 20em;
+        }
+
+        .cadastro .alerta_p {
+            font-weight: bolder;
+            font-size: 0.5em;
+            color: red;
+            float: left;
+            display: inline-block;
+        }
+
+        .cadastro .campoTexto_p {
+            float: right;
+            display: inline-block;
+            width: 1.8em;
+            height: 13px;
+            margin-left: 5px;
+        }
+
+    .comboBox {
+        height: 1.9em;
+    }
+
+    #cbEstado {
+        width: 5%;
+    }
+
+    .radioButton {
+        margin-left: 6%;
+    }
+
+
+    .botaoDefault {
+        font-size: 20px;
+        font-weight: bolder;
+        width: 30%;
+        height: 40px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        background-color: #01579B;
+        color: white;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .botaoPequeno {
+        font-size: 12px;
+        font-weight: bolder;
+        width: 10%;
+        height: 20px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        background-color: #01579B;
+        color: white;
+        border-radius: 5px;
+    }
+
+    #btBusca {
+        float: right;
+        margin-left: 5px;
+    }
+
+    .botaoHover:hover {
+        transform: translate(1px, 1px);
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    .centro {
+        width: 100%;
+        text-align: center;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    /*MENU*/
+
+    .menu {
+        background: grey;
+        text-align: center; /* or change the value to left to align left*/
+        font-weight: bolder;
+        border-radius: 10px;
+        margin-bottom: -10px;
+        padding-bottom: 0px;
+        margin-top: 10px;
+    }
+
+    .dropDownMenu a {
+        color: #FFF;
+    }
+
+    .dropDownMenu, .dropDownMenu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 40px;
+    }
+
+        .dropDownMenu li {
+            padding: 10px 6em;
+            position: relative;
+        }
+
+        .dropDownMenu a {
+            padding: 0px;
+            display: block;
+            text-decoration: none;
+        }
+
+            .dropDownMenu a:hover {
+                background: #000;
+            }
+
+
+        /* Nivel 1  */
+        .dropDownMenu > li {
+            display: inline-block;
+            vertical-align: top;
+            margin-left: -4px;
+        }
+
+            .dropDownMenu > li:first-child {
+                margin-left: 0;
+            }
+
+            .dropDownMenu > li > a {
+            }
+
+                .dropDownMenu > li > a:hover {
+                }
+
+            /* Nivel 2 */
+            .dropDownMenu > li > ul {
+                width: auto;
+                display: none;
+                background: grey;
+                position: absolute;
+                top: 100%;
+                left: 10px;
+                z-index: 9999999;
+            }
+
+                .dropDownMenu > li > ul > li {
+                    align-content: flex-start;
+                    width: 90%;
+                    text-align: left;
+                    padding-left: 5%;
+                    align-items: inherit;
+                }
+
+            .dropDownMenu > li:hover > ul {
+                display: block;
+            }
+
+        .dropDownMenu ul li a {
+        }
+
+            .dropDownMenu ul li a:hover {
+            }
+}

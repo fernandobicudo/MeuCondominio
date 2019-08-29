@@ -1,4 +1,5 @@
 ﻿using System;
+using MeuCondominio2.Services;
 
 namespace MeuCondominio2
 {
@@ -25,7 +26,7 @@ namespace MeuCondominio2
 
         public void SetSenha(string value)
         {
-            senha = value;
+            senha = Criptografia.Encriptar(value);
         }
 
         public string GetEmail()

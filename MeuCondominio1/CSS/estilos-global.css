@@ -33,13 +33,14 @@ label {
     margin: 4px;
 }
 
-.campoTexto {
+.campoTexto .campoTextoDatePicker {
     height: 1.5em;
     width: 60%;
     display: block;
     position: static;
     margin: 4px;
 }
+
 
 
 .alerta {
@@ -124,12 +125,12 @@ tr {
     width: 4em;
 }
 
-.login .campoTexto {
+.login .campoTexto .campoTextoDatePicker {
     width: 60%;
     margin-left: 20%;
 }
 
-.recuperacao .campoTexto {
+.recuperacao .campoTexto .campoTextoDatePicker {
     width: 60%;
     margin-left: 20%;
 }
@@ -141,7 +142,7 @@ tr {
     padding-bottom: 1%;
 }
 
-    .cadastro .campoTexto {
+    .cadastro .campoTexto .campoTextoDatePicker {
         margin-left: 10%;
         border-radius: 0.3em;
         width: 20em;
@@ -163,7 +164,7 @@ tr {
         display: inline-block;
     }
 
-    .cadastro .campoTexto_p {
+    .cadastro .campoTexto_p .campoTextoDatePicker_p {
         float: right;
         display: inline-block;
         width: 1.8em;
@@ -319,7 +320,7 @@ tr {
         padding-left: 1%;
     }
 
-    .campoTexto {
+    .campoTexto .campoTextoDatePicker {
         height: 1.5em;
         width: 60%;
         display: block;
@@ -411,12 +412,12 @@ tr {
         width: 4em;
     }
 
-    .login .campoTexto {
+    .login .campoTexto .campoTextoDatePicker {
         width: 60%;
         margin-left: 20%;
     }
 
-    .recuperacao .campoTexto {
+    .recuperacao .campoTexto .campoTextoDatePicker {
         width: 60%;
         margin-left: 20%;
     }
@@ -428,7 +429,7 @@ tr {
         padding-bottom: 1%;
     }
 
-        .cadastro .campoTexto {
+        .cadastro .campoTexto .campoTextoDatePicker {
             margin-left: 10%;
             border-radius: 0.3em;
             width: 20em;
@@ -450,7 +451,7 @@ tr {
             display: inline-block;
         }
 
-        .cadastro .campoTexto_p {
+        .cadastro .campoTexto_p .campoTextoDatePicker_p {
             float: right;
             display: inline-block;
             width: 1.8em;

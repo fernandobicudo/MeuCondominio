@@ -81,22 +81,22 @@ namespace MeuCondominio2.Model
         {
             dataSorteio = value;
         }
-        public void cadastrarSorteio()
+        public void CadastrarSorteio()
         {
 
         }
 
-        public void sortearVagas()
+        public void SortearVagas()
         {
 
         }
 
-        public void associarVagasAUnidades()
+        public void AssociarVagasAUnidades()
         {
 
         }
 
-        public void publicarResultadoSorteio()
+        public void PublicarResultadoSorteio()
         {
 
         }

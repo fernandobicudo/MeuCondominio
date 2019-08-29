@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="./css/estilos-global.css">
+    <link rel="stylesheet" href="./css/estilos-global.css" />
 </head>
 <body class="recuperacao">
     <form id="form1" runat="server">
@@ -24,10 +24,10 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txEmail" CssClass="alerta" ErrorMessage="Informe um e-mail válido."></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" CssClass="alerta" ErrorMessage="E-mail inválido." ControlToValidate="txEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     <div class="centro">
-                        <br/>
+                        <br />
                         <asp:Button ID="btEnviar" runat="server" Text="Enviar" CssClass="botaoDefault botaoHover" OnClick="btReenviarSenha" />
-                        <asp:Button ID="btVoltar" runat="server"  Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="btVoltar_Click" />
-                        <br/>
+                        <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="btVoltar_Click" />
+                        <br />
                         <asp:Label ID="lbResultado" runat="server" Text=""></asp:Label>
                     </div>
                 </ContentTemplate>

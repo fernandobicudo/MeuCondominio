@@ -38,4 +38,6 @@ namespace MeuCondominio2
             email = value;
         }
     }
+    //TODO: criar métodos do Login se necessário
+    //TODO:   verificar se os atributos aqui devem fazer referência direta aos atributos da classe Usuario
 }

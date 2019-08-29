@@ -88,17 +88,25 @@ namespace MeuCondominio2.Model
 
         public void SortearVagas()
         {
-
+            /*Pegar número total de vagas, número total de unidades ocupadas, 
+             *número de vagas por unidade, se são sequenciais.
+             * Sortear as vagas por unidade conforme o número de vagas para cada
+             * unidade. 
+             * Se a vaga sorteada é sequencial de outra, ambas as vagas automaticamente serão associadas à unidade
+             * PELO PERÍODO PREVISTO NO SORTEIO OU ATÉ A EXECUÇÃO DO SORTEIO SEGUINTE.
+             * Daí é necessário retirar a vaga sequencial do sorteio para as unidades restantes.
+             * Unidades desocupadas ficam por último no sorteio. */
         }
 
         public void AssociarVagasAUnidades()
         {
-
+            /*TODO: será necessário persistir a associação em banco de dados, por Condominio e por Sorteio.
+            O último sorteio é o que conta. */ 
         }
 
         public void PublicarResultadoSorteio()
         {
-
+            //TODO: este método provavelmente pertence à View, e não ao model. É método de exibição. 
         }
 
 

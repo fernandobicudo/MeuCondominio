@@ -4,13 +4,13 @@ using System.Text;
 
 namespace MeuCondominio2.Model
 {
-    class Unidade
+    public class Unidade
     {
-        int idUnidade;
-        int qtdVagas;
-        string identificacao;
-        bool statusInadimplencia; //TODO: ajustar tipo do atributo no diagrama de classes
-        bool statusOcupacao;
+        private int idUnidade;
+        private int qtdVagas;
+        private string identificacao;
+        private bool statusInadimplencia; //TODO: ajustar tipo do atributo no diagrama de classes
+        private bool statusOcupacao;
 
         public Unidade()
         {

@@ -5,8 +5,8 @@ namespace MeuCondominio2
 {
     public class Login
     {
-        string email;
-        string senha;
+        private string email;
+        private string senha;
 
         public Login()
         {

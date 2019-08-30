@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MeuCondominio2.Model;
 
 namespace MeuCondominio2.Model
 {
-    class SorteioVagas
+    public class SorteioVagas
     {
-        string tipoSorteio;
-        DateTime dataSorteio;
-        DateTime dataValidadeSorteioInicio;
-        DateTime dataValidadeSorteioFim; //TODO: criar atributo no diagrama de classes
-        bool associacaoVagasSequenciais; //TODO: atualizar nome da classe no diagrama de classes
+        private string tipoSorteio;
+        private DateTime dataSorteio;
+        private DateTime dataValidadeSorteioInicio;
+        private DateTime dataValidadeSorteioFim; //TODO: criar atributo no diagrama de classes
+        private bool associacaoVagasSequenciais; //TODO: atualizar nome da classe no diagrama de classes
 
 
         public SorteioVagas()
@@ -86,8 +87,17 @@ namespace MeuCondominio2.Model
 
         }
 
-        public void SortearVagas()
+        public void SortearVagas(Condominio condominio, )
         {
+            
+            Unidade unidade = new Unidade();
+            VagaGaragem vagaGaragem = new VagaGaragem();
+
+
+            int cod_condominio;
+            int num_total_vagas;
+            int num_total_unidades;
+
             /*Pegar número total de vagas, número total de unidades ocupadas, 
              *número de vagas por unidade, se são sequenciais.
              * Sortear as vagas por unidade conforme o número de vagas para cada

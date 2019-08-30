@@ -4,12 +4,12 @@ using System.Text;
 
 namespace MeuCondominio2.Model
 {
-    class Condominio
+    public class Condominio
     {
-        int idCondominio;
-        string CNPJ;
-        string nomeCondominio;
-        int QuantidadeVagasPorUnidade;
+        private int idCondominio;
+        private string CNPJ;
+        private string nomeCondominio;
+        private int QuantidadeVagasPorUnidade;
 
 
         public Condominio()

@@ -4,11 +4,11 @@ using System.Text;
 
 namespace MeuCondominio2.Model
 {
-    class VagaGaragem
+    public class VagaGaragem
     {
-        int idVaga;
-        int numeracao; //TODO: ajustar tipo do atributo nos diagramas de classe
-        bool vagaSequencial;
+        private int idVaga;
+        private int numeracao; //TODO: ajustar tipo do atributo nos diagramas de classe
+        private bool vagaSequencial;
 
         public VagaGaragem()
         {

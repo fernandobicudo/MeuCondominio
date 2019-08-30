@@ -4,21 +4,21 @@ using System.Text;
 
 namespace MeuCondominio2.Model
 {
-    class Usuario
+    public class Usuario
     {
-        int idUsuario;
-        string nome;
-        string email;
-        string telefone;
-        string senha;
-        string endereco;
-        string numeroEndereco;
-        string complementoEndereco;
-        string bairro;
-        string cidade;
-        string UF;
-        string CEP;
-        int tipoUsuario;
+        private int idUsuario;
+        private string nome;
+        private string email;
+        private string telefone;
+        private string senha;
+        private string endereco;
+        private string numeroEndereco;
+        private string complementoEndereco;
+        private string bairro;
+        private string cidade;
+        private string UF;
+        private string CEP;
+        private int tipoUsuario;
 
         public Usuario()
         {

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace MeuCondominio2.Model
 {
-    class Condomino : Usuario
+    public class Condomino : Usuario
     {
-        string CPFCondomino;
+        private string CPFCondomino;
 
         public Condomino()
         {

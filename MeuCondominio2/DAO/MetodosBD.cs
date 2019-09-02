@@ -25,7 +25,7 @@ namespace MeuCondominio2.DAO
                 }
         */
 
-        public static DataTable ExecutaSelectSQLite(string sql)
+        public static DataTable ExecutaSelect(string sql)
         {
             SQLiteConnection conexao = ConexaoBD.GetConexaoSQLite();
             try
@@ -55,7 +55,7 @@ namespace MeuCondominio2.DAO
                     }
                 }*/
 
-        public static void ExecutaSQLite(string sql)
+        public static void ExecutaSQL(string sql)
         {
             SQLiteConnection conexao = ConexaoBD.GetConexaoSQLite();
             try

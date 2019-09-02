@@ -7,17 +7,15 @@ namespace MeuCondominio2.DAO
 {
     class DAOLogin
     {
-        public static DataTable PesquisarLogin(string email)
+        public static DataTable SelecionarLogin(string email)
         {
             DataTable dt = new DataTable();
-
             string sql = "select * from usuario where email = '" + email + "';";
-
-            dt = MetodosBD.ExecutaSelectSQLite(sql);
-
+            dt = MetodosBD.ExecutaSelect(sql);
             return dt;
-
         }
+
+
 
         public static Login CriarObjetoLogin(DataTable dt)
         {

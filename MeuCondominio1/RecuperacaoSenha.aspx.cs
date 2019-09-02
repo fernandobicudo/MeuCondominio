@@ -97,7 +97,7 @@ namespace MeuCondominio1
             string senha;
 
 
-            dt = BuscaLogin.buscaLogin(txEmail.Text);
+            dt = BuscaLogin.PesquisarLogin(txEmail.Text);
 
             if (dt.Rows.Count != 0)
                 senha = (string)dt.Rows[0]["senha"];

@@ -9,7 +9,7 @@ namespace MeuCondominio2.Model
         private int idCondominio;
         private string CNPJ;
         private string nomeCondominio;
-        private int QuantidadeVagasPorUnidade;
+        private int QuantidadeVagasPorUnidade; //TODO: revisar se o atributo de Quantidade de Vagas por  Unidade permanece ou não no Condominio.
 
 
         public Condominio()

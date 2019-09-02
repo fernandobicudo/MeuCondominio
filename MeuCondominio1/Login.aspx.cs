@@ -36,7 +36,7 @@ namespace MeuCondominio1
             email = txEmail.Text;
             senha = txSenha.Text;
 
-            dt = BuscaLogin.buscaLogin(email);
+            dt = BuscaLogin.PesquisarLogin(email);
 
             validaLogin(dt);
 
@@ -54,7 +54,7 @@ namespace MeuCondominio1
                 Session["nomeUser"] = dt.Rows[0]["nome"];
                 Session["emailUser"] = dt.Rows[0]["email"];
 
-                Response.Redirect("Login.aspx");
+                Response.Redirect("CadastroSorteioVagas.aspx");
 
             }
             else

@@ -8,9 +8,9 @@ namespace MeuCondominio2.Services
 {
     public class BuscaLogin
     {
-        public static DataTable buscaLogin(string email)
+        public static DataTable PesquisarLogin(string email)
         {
-            return DAOLogin.PesquisarLogin(email);
+            return DAOLogin.SelecionarLogin(email);
         }
     }
 }

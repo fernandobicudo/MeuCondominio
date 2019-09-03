@@ -41,6 +41,7 @@
             <!--<asp:Label ID="lbQtdeMaxPorSequencia" runat="server" Text="Qtd. máx. por sequência" ></asp:Label><br/>
             <asp:DropDownList ID="ddQtdeMaxPorSequencia" runat="server"></asp:DropDownList><br/>-->
             <asp:Button ID="btCadastrar" runat="server" Text="Cadastrar" CssClass="botaoDefault" OnClick="CadastrarSorteioDeVagas" />
+            <asp:Button ID="btSortearTeste" runat="server" Text="Testar Sorteio" OnClick="SortearVagas"  />
         </div>
     </form>
 </body>

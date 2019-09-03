@@ -18,6 +18,11 @@ namespace MeuCondominio2.Services.VagaGaragem
             return DAOVagaGaragem.SelecionarVagaGaragem(id);
         }
 
+        public static DataTable PesquisarVagasGaragemPorCondominio(int id)
+        {
+            return DAOVagaGaragem.SelecionarVagasGaragemPorCondominio(id);
+        }
+
 
     }
 }

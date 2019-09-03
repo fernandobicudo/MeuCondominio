@@ -29,7 +29,7 @@ namespace MeuCondominio1
             GravaSorteioVagas.gravaSorteioVagas(sorteioVagas);
         }
 
-        private void CriaObjetoSorteioVagas(int idCondominio)
+        private SorteioVagas CriaObjetoSorteioVagas(int idCondominio)
         {
 
             DateTime dataSorteio, dataValidadeInicio, dataValidadeFim;
@@ -61,6 +61,8 @@ namespace MeuCondominio1
             qtdVagasPorUnidade = Convert.ToInt32(ddVagasPorUnidade.SelectedItem.Value);
 
             sorteioVagas.SetQtdeVagasPorUnidade(qtdVagasPorUnidade);
+
+            return sorteioVagas;
         }
 
         private string ConverterDateTimeSQLite(string data)
@@ -73,6 +75,11 @@ namespace MeuCondominio1
             dataString = dataConvertida.ToString("yyyy-mm-dd");
 
             return dataString;
+        }
+
+        protected void SortearVagas(object sender, EventArgs e)
+        {
+            sorteioVagas.SortearVagas(CriaObjetoSorteioVagas(1)); //TODO: usando id 1 de COndominio. Tornar dinâmico, pegando variavel de sessão.
         }
     }
 }

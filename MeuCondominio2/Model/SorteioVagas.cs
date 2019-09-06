@@ -159,7 +159,7 @@ namespace MeuCondominio2.Model
         }
 
 
-        public List<ResultadoSorteio> SortearVagas2(SorteioVagas sorteioVagas)
+        public List<ResultadoSorteio> SortearVagas(SorteioVagas sorteioVagas)
         {
             ResultadoSorteio resultadoPorUnidade; 
             List<ResultadoSorteio> resultadoSorteio = new List<ResultadoSorteio>();
@@ -188,7 +188,7 @@ namespace MeuCondominio2.Model
 
         }
 
-        public List<ResultadoSorteio> SortearVagas(SorteioVagas sorteioVagas)
+        /*public List<ResultadoSorteio> SortearVagas(SorteioVagas sorteioVagas)
         {
             ResultadoSorteio resultadoPorUnidade;
             List<ResultadoSorteio> ListaResultadoSorteio = new List<ResultadoSorteio>();
@@ -225,15 +225,15 @@ namespace MeuCondominio2.Model
 
             return ListaResultadoSorteio;
 
-            /*Pegar número total de vagas, número total de unidades ocupadas, 
+            *//*Pegar número total de vagas, número total de unidades ocupadas, 
              *número de vagas por unidade, se são sequenciais.
              * Sortear as vagas por unidade conforme o número de vagas para cada
              * unidade. 
              * Se a vaga sorteada é sequencial de outra, ambas as vagas automaticamente serão associadas à unidade
              * PELO PERÍODO PREVISTO NO SORTEIO OU ATÉ A EXECUÇÃO DO SORTEIO SEGUINTE.
              * Daí é necessário retirar a vaga sequencial do sorteio para as unidades restantes.
-             * Unidades desocupadas ficam por último no sorteio. */
-        }
+             * Unidades desocupadas ficam por último no sorteio. *//*
+        }*/
 
         private List<int> CriaListaDeIDsDeUnidadesDoSorteio(SorteioVagas sorteioVagas)
         {
@@ -245,6 +245,8 @@ namespace MeuCondominio2.Model
                 listaIDsDasUnidades.Add(Convert.ToInt32(linha["id"]));
             }
             return listaIDsDasUnidades;
+            //TODO: MASTER - depois de gerar a lista de inteiros, gerar a lista efetiva de IDs das unidades, relacionando a posição 
+            //sorteada no vetor com o ID de fato.
         }
 
         private void SelecionaUnidadesdoCondominio(SorteioVagas sorteioVagas)

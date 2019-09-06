@@ -54,6 +54,34 @@ namespace MeuCondominio2.Model
             this.tipoUsuario = tipoUsuario;
         }
 
+        public Usuario(
+            string nome,
+            string email,
+            string telefone,
+            string senha,
+            string endereco,
+            string numeroEndereco,
+            string complementoEndereco,
+            string bairro,
+            string cidade,
+            string uF,
+            string cEP,
+            int tipoUsuario)
+        {
+            this.nome = nome;
+            this.email = email;
+            this.telefone = telefone;
+            this.senha = senha;
+            this.endereco = endereco;
+            this.numeroEndereco = numeroEndereco;
+            this.complementoEndereco = complementoEndereco;
+            this.bairro = bairro;
+            this.cidade = cidade;
+            UF = uF;
+            CEP = cEP;
+            this.tipoUsuario = tipoUsuario;
+        }
+
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Email { get => email; set => email = value; }

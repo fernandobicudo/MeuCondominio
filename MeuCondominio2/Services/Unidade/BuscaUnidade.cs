@@ -18,5 +18,10 @@ namespace MeuCondominio2.Services.Unidade
         {
             return DAOUnidade.SelecionarUnidadePorCondominio(idCondominio);
         }
+
+        public static int ContarUnidadesPorCondominio(int idCondominio)
+        {
+            return DAOUnidade.ContarUnidadesPorCondominio(idCondominio);
+        }
     }
 }

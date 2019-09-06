@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using MeuCondominio2.Model;
 using MeuCondominio2.Services;
 using MeuCondominio2.Services.SorteioVagas;
+using System.Runtime.InteropServices;
 
 namespace MeuCondominio1
 {
@@ -17,7 +18,7 @@ namespace MeuCondominio1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void CadastrarSorteioDeVagas(object sender, EventArgs e)
@@ -65,7 +66,7 @@ namespace MeuCondominio1
             return sorteioVagas;
         }
 
-        private string ConverterDateTimeSQLite(string data)
+        private string ConverterDateTimeSQLite(string data) //TODO: verificar em qual framework deve ficar o método de conversão de data para o SQLite
         {
             DateTime dataConvertida;
             string dataString;

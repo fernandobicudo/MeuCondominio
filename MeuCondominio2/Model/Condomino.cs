@@ -17,7 +17,15 @@ namespace MeuCondominio2.Model
             CPFCondomino = cPFCondomino;
         }
 
-        public string CPFCondomino1 { get => CPFCondomino; set => CPFCondomino = value; }
+        public string GetCPFCondomino1()
+        {
+            return CPFCondomino;
+        }
+
+        public void SetCPFCondomino1(string value)
+        {
+            CPFCondomino = value;
+        }
     }
     //TODO: criar métodos da classe Condomino
 }

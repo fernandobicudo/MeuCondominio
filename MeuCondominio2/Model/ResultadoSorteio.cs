@@ -6,37 +6,73 @@ namespace MeuCondominio2.Model
 {
     public class ResultadoSorteio
     {
-        private int LinhaArrayUnidade;
-        private int NumeracaoVagaDeGaragem;
+        private int idResultadoSorteio;
+        private int idUnidade;
+        private int idVagaDeGaragem;
+        private int idSorteioVaga;
 
+        
         public ResultadoSorteio()
         {
         }
 
-        public ResultadoSorteio(int LinhaArrayUnidade, int numeracaoVagaDeGaragem)
+        public ResultadoSorteio(int idResultadoSorteio,
+            int idUnidade,
+            int idVagaDeGaragem,
+            int idSorteioVaga)
         {
-            this.LinhaArrayUnidade = LinhaArrayUnidade;
-            this.NumeracaoVagaDeGaragem = numeracaoVagaDeGaragem;
+            this.idVagaDeGaragem = idVagaDeGaragem;
+            this.idSorteioVaga = idSorteioVaga;
+            this.idResultadoSorteio = idResultadoSorteio;
+            this.idUnidade = idUnidade;
         }
 
-        public int GetLinhaaArrayUnidade()
+        public ResultadoSorteio(int idUnidade, int idVagaDeGaragem, int idSorteioVaga)
         {
-            return LinhaArrayUnidade;
+            this.idUnidade = idUnidade;
+            this.idVagaDeGaragem = idVagaDeGaragem;
+            this.idSorteioVaga = idSorteioVaga;
         }
 
-        public void SetLinhaArrayUnidade(int value)
+        public int GetIdUnidade()
         {
-            LinhaArrayUnidade = value;
+            return idUnidade;
+        }
+
+        public void SetIdUnidade(int value)
+        {
+            idUnidade = value;
         }   
 
-        public int GetNumeracaoVagaDeGaragem()
+        public int GetIdVagaDeGaragem()
         {
-            return NumeracaoVagaDeGaragem;
+            return idVagaDeGaragem;
         }
 
-        public void SetNumeracaoVagaDeGaragem(int value)
+        public void SetIdVagaDeGaragem(int value)
         {
-            NumeracaoVagaDeGaragem = value;
+            idVagaDeGaragem = value;
         }
+
+        public int GetIdResultadoSorteio()
+        {
+            return idResultadoSorteio;
+        }
+
+        public void SetIdResultadoSorteio(int value)
+        {
+            idResultadoSorteio = value;
+        }
+
+        public int GetIdSorteioVaga()
+        {
+            return idSorteioVaga;
+        }
+
+        public void SetIdSorteioVaga(int value)
+        {
+            idSorteioVaga = value;
+        }
+
     }
 }

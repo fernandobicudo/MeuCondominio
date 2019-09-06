@@ -22,7 +22,5 @@ namespace MeuCondominio2.Services.VagaGaragem
         {
             return DAOVagaGaragem.SelecionarVagasGaragemPorCondominio(id);
         }
-
-
     }
 }

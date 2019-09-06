@@ -27,6 +27,19 @@ namespace MeuCondominio2.DAO
             return dt;
         }
 
+        internal static int ContarUnidadesPorCondominio(int idCondominio)
+        {
+            DataTable dt;
+            int contagem;
+
+            string SQL;
+            SQL = String.Format(@"SELECT COUNT(*) FROM `Unidade` WHERE `idCondominio` = {0};", idCondominio);
+            dt =  MetodosBD.ExecutaSelect(SQL);
+            contagem = Convert.ToInt32(dt.Rows[0]["count(*)"].ToString());
+            return contagem;
+        }
+
+        
         public static DataTable SelecionarUnidadePorCondominio(int idCondominio)
         {
             DataTable dt;

@@ -10,6 +10,7 @@ namespace MeuCondominio2.Model
 {
     public class SorteioVagas
     {
+        private int idSorteioVagas;
         private string tipoSorteio;
         private DateTime dataSorteio;
         private DateTime dataValidadeSorteioInicio;
@@ -20,6 +21,16 @@ namespace MeuCondominio2.Model
 
         private DataTable UnidadesDoCondominio;
         private DataTable VagasDeGaragemDoCondominio;
+
+        public int GetIdSorteioVagas()
+        {
+            return idSorteioVagas;
+        }
+
+        public void SetIdSorteioVagas(int value)
+        {
+            idSorteioVagas = value;
+        }
 
 
         #region Construtores
@@ -44,6 +55,26 @@ namespace MeuCondominio2.Model
             this.idCondominio = idCondominio;
             this.qtdeVagasPorUnidade = qtdeVagasPorUnidade;
         }
+
+        public SorteioVagas(int idSorteioVagas,
+            string tipoSorteio,
+            DateTime dataSorteio,
+            DateTime dataValidadeSorteioInicio,
+            DateTime dataValidadeSorteioFim,
+            bool associacaoVagasSequenciais,
+            int idCondominio,
+            int qtdeVagasPorUnidade)
+        {
+            this.idSorteioVagas = idSorteioVagas;
+            this.tipoSorteio = tipoSorteio;
+            this.SetDataSorteio(dataSorteio);
+            this.dataValidadeSorteioInicio = dataValidadeSorteioInicio;
+            this.dataValidadeSorteioFim = dataValidadeSorteioFim;
+            this.associacaoVagasSequenciais = associacaoVagasSequenciais;
+            this.idCondominio = idCondominio;
+            this.qtdeVagasPorUnidade = qtdeVagasPorUnidade;
+        }
+
 
         #endregion
 
@@ -128,6 +159,35 @@ namespace MeuCondominio2.Model
         }
 
 
+        public List<ResultadoSorteio> SortearVagas2(SorteioVagas sorteioVagas)
+        {
+            ResultadoSorteio resultadoPorUnidade; 
+            List<ResultadoSorteio> resultadoSorteio = new List<ResultadoSorteio>();
+            List<int> listaUnidades = CriaListaDeIDsDeUnidadesDoSorteio(sorteioVagas);
+            List<int> listaVagas = CriarListaDeIDsDeVagasDeGaragem(sorteioVagas);
+            List<int> listaUnidadesAleatorias = CriarListaAleatoriaDeInteiros(listaUnidades);
+            int qtdVagasPorUnidade = sorteioVagas.GetQtdeVagasPorUnidade();
+            int qtdVagas = listaVagas.Count;
+            int vagaSorteada = 0;
+            int idSorteioVagas = sorteioVagas.GetIdSorteioVagas();
+                            
+
+            foreach (int linha in listaUnidadesAleatorias)
+            {
+                for (int i = 0; i < qtdVagasPorUnidade; i++)
+                {
+                    resultadoPorUnidade = new ResultadoSorteio();
+                    resultadoPorUnidade.SetIdUnidade(linha);
+                    resultadoPorUnidade.SetIdSorteioVaga(idSorteioVagas);
+                    resultadoPorUnidade.SetIdVagaDeGaragem(listaVagas[vagaSorteada]);
+                    vagaSorteada++;
+                    resultadoSorteio.Add(resultadoPorUnidade);
+                }
+            }
+            return resultadoSorteio;
+
+        }
+
         public List<ResultadoSorteio> SortearVagas(SorteioVagas sorteioVagas)
         {
             ResultadoSorteio resultadoPorUnidade;
@@ -139,10 +199,10 @@ namespace MeuCondominio2.Model
 
 
             List<int> listaUnidades = new List<int>();
-            listaUnidades = CriaListaDeUnidadesDoSorteio(sorteioVagas);
+            listaUnidades = CriaListaDeIDsDeUnidadesDoSorteio(sorteioVagas);
 
             List<int> listaVagas = new List<int>();
-            listaVagas = CriaListaDeVagasDoSorteio(sorteioVagas);
+            listaVagas = CriarListaDeIDsDeVagasDeGaragem(sorteioVagas);
 
             List<int> listaAleatoriaDeUnidades = new List<int>();
 
@@ -154,19 +214,14 @@ namespace MeuCondominio2.Model
                 for (int i = 0; i < qtdVagasPorUnidade; i++)
                 {
                     resultadoPorUnidade = new ResultadoSorteio();
-                    resultadoPorUnidade.SetLinhaArrayUnidade(listaUnidades[linha]);
-                    resultadoPorUnidade.SetNumeracaoVagaDeGaragem(listaVagas[contador]);
+                    resultadoPorUnidade.SetIdUnidade(listaUnidades[linha]);
+                    resultadoPorUnidade.SetIdVagaDeGaragem(listaVagas[contador]);
+                    resultadoPorUnidade.SetIdSorteioVaga(sorteioVagas.GetIdSorteioVagas());
                     ListaResultadoSorteio.Add(resultadoPorUnidade);
                 }
                 contador++;
             }
 
-            foreach (ResultadoSorteio linha in ListaResultadoSorteio)
-            {
-                Console.WriteLine(linha.GetLinhaaArrayUnidade() + " - " + linha.GetNumeracaoVagaDeGaragem());
-
-            }
-            Console.ReadLine();
 
             return ListaResultadoSorteio;
 
@@ -180,16 +235,16 @@ namespace MeuCondominio2.Model
              * Unidades desocupadas ficam por último no sorteio. */
         }
 
-        private List<int> CriaListaDeUnidadesDoSorteio(SorteioVagas sorteioVagas)
+        private List<int> CriaListaDeIDsDeUnidadesDoSorteio(SorteioVagas sorteioVagas)
         {
-            List<int> listaUnidades = new List<int>();
+            List<int> listaIDsDasUnidades = new List<int>();
             SelecionaUnidadesdoCondominio(sorteioVagas);
 
             foreach (DataRow linha in UnidadesDoCondominio.Rows)
             {
-                listaUnidades.Add(Convert.ToInt32(linha["id"]));
+                listaIDsDasUnidades.Add(Convert.ToInt32(linha["id"]));
             }
-            return listaUnidades;
+            return listaIDsDasUnidades;
         }
 
         private void SelecionaUnidadesdoCondominio(SorteioVagas sorteioVagas)
@@ -211,26 +266,19 @@ namespace MeuCondominio2.Model
 
                 } while (listaAleatoriaDeInteiros.Contains(item));
                 listaAleatoriaDeInteiros.Add(item);
+                //TODO: dar mais agilidade ao algoritmo do sorteio, desconsiderando os números já sorteados. 
             }
-
-            Console.OpenStandardOutput();
-            //TODO: teste de saída em console: comentar quando estiver testado
-            foreach (int linha in listaAleatoriaDeInteiros)
-            {
-                Console.WriteLine(linha);
-            }
-            Console.ReadLine();
             return listaAleatoriaDeInteiros;
         }
 
-        private List<int> CriaListaDeVagasDoSorteio(SorteioVagas sorteioVagas)
+        private List<int> CriarListaDeIDsDeVagasDeGaragem(SorteioVagas sorteioVagas)
         {
             List<int> listaVagas = new List<int>();
             SelecionaVagasDoCondominio(sorteioVagas);
 
             foreach (DataRow linha in VagasDeGaragemDoCondominio.Rows)
             {
-                listaVagas.Add(Convert.ToInt32(linha["numeracao"]));
+                listaVagas.Add(Convert.ToInt32(linha["id"]));
             }
             return listaVagas;
         }

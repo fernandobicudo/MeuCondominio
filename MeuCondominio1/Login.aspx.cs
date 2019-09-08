@@ -53,9 +53,21 @@ namespace MeuCondominio1
                 Session["codigoUser"] = dt.Rows[0]["id_usuario"];
                 Session["nomeUser"] = dt.Rows[0]["nome"];
                 Session["emailUser"] = dt.Rows[0]["email"];
+                Session["tipoUser"] = dt.Rows[0]["tipo_usuario"];
 
-                Response.Redirect("CadastroSorteioVagas.aspx");
+                int tipoUsuario = Convert.ToInt32(dt.Rows[0]["tipo_usuario"]);
 
+                switch (tipoUsuario) {
+                    case 1:
+                        Response.Redirect("MenuInicialCondomino.aspx");
+                        break;
+                    case 2: 
+                        Response.Redirect("CadastroSorteioVagas.aspx"); //TODO: linkar para menu do administrador.
+                        break;
+                    default:
+                        Response.Redirect("MenuInicialCondomino.aspx"); //TODO: como tratar o default do switch case?
+                        break;
+                }
             }
             else
                 Response.Redirect("Login.aspx?&status=invalido&p_email=invalido");

@@ -17,7 +17,8 @@ namespace MeuCondominio2.DAO
                 "`associarVagasSequenciais`, `idCondominio`, `qtdeVagasPorUnidade`) " +
                 "VALUES ('{0}', '{1}', '{2}', '{3}', {4}, {5}, {6});", 
                 sorteioVagas.GetTipoSorteio(), sorteioVagas.GetDataSorteio(), sorteioVagas.GetDataValidadeSorteioInicio(),
-                sorteioVagas.GetDataValidadeSorteioFim(), sorteioVagas.GetAssociacaoVagasSequenciais(), sorteioVagas.GetIdCondominio(), sorteioVagas.GetQtdeVagasPorUnidade());
+                sorteioVagas.GetDataValidadeSorteioFim(), sorteioVagas.GetAssociacaoVagasSequenciais(), sorteioVagas.GetIdCondominio(),
+                sorteioVagas.GetQtdeVagasPorUnidade());
 
             MetodosBD.ExecutaSQL(SQL);
 

@@ -8,7 +8,7 @@ namespace MeuCondominio2.Services.SorteioVagas
 {
     public class GravaSorteioVagas
     {
-        public static void gravaSorteioVagas(Model.SorteioVagas sorteioVagas)
+        public static void GravarSorteioVagas(Model.SorteioVagas sorteioVagas)
         {
             DAOSorteioVagas.InserirSorteioVagas(sorteioVagas);
         }

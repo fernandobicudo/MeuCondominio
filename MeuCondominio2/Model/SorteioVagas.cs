@@ -5,6 +5,7 @@ using System.Text;
 using MeuCondominio2.Model;
 using MeuCondominio2.Services.Unidade;
 using MeuCondominio2.Services.VagaGaragem;
+using MeuCondominio2.Services.ResultadoDoSorteio;
 
 namespace MeuCondominio2.Model
 {
@@ -21,17 +22,6 @@ namespace MeuCondominio2.Model
 
         private DataTable UnidadesDoCondominio;
         private DataTable VagasDeGaragemDoCondominio;
-
-        public int GetIdSorteioVagas()
-        {
-            return idSorteioVagas;
-        }
-
-        public void SetIdSorteioVagas(int value)
-        {
-            idSorteioVagas = value;
-        }
-
 
         #region Construtores
         public SorteioVagas()
@@ -79,6 +69,18 @@ namespace MeuCondominio2.Model
         #endregion
 
         #region Getters e Setters
+
+        public int GetIdSorteioVagas()
+        {
+            return idSorteioVagas;
+        }
+
+/*        public void SetIdSorteioVagas(int value)
+        {
+            idSorteioVagas = value;
+        }*/
+
+
         public string GetTipoSorteio()
         {
             return tipoSorteio;
@@ -155,14 +157,15 @@ namespace MeuCondominio2.Model
 
         public void CadastrarSorteio()
         {
-
+            //TODO: já há um método na view. Verificar como passar para cá.
         }
 
 
-        public List<ResultadoSorteio> SortearVagas(SorteioVagas sorteioVagas)
+        public void SortearVagas(SorteioVagas sorteioVagas)
         {
-            ResultadoSorteio resultadoPorUnidade; 
-            List<ResultadoSorteio> resultadoSorteio = new List<ResultadoSorteio>();
+            ResultadoSorteioPorUnidade resultadoPorUnidade;
+            List<ResultadoSorteioPorUnidade> listaResultadoSorteio = new List<ResultadoSorteioPorUnidade>();
+            ResultadoDoSorteio resultadoDoSorteio = new ResultadoDoSorteio();
             List<int> listaUnidades = CriaListaDeIDsDeUnidadesDoSorteio(sorteioVagas);
             List<int> listaVagas = CriarListaDeIDsDeVagasDeGaragem(sorteioVagas);
             List<int> listaUnidadesAleatorias = CriarListaAleatoriaDeInteiros(listaUnidades);
@@ -170,62 +173,32 @@ namespace MeuCondominio2.Model
             int qtdVagas = listaVagas.Count;
             int vagaSorteada = 0;
             int idSorteioVagas = sorteioVagas.GetIdSorteioVagas();
-                            
 
             foreach (int linha in listaUnidadesAleatorias)
             {
                 for (int i = 0; i < qtdVagasPorUnidade; i++)
                 {
-                    resultadoPorUnidade = new ResultadoSorteio();
+                    resultadoPorUnidade = new ResultadoSorteioPorUnidade();
                     resultadoPorUnidade.SetIdUnidade(linha);
                     resultadoPorUnidade.SetIdSorteioVaga(idSorteioVagas);
                     resultadoPorUnidade.SetIdVagaDeGaragem(listaVagas[vagaSorteada]);
                     vagaSorteada++;
-                    resultadoSorteio.Add(resultadoPorUnidade);
+                    listaResultadoSorteio.Add(resultadoPorUnidade);
                 }
             }
-            return resultadoSorteio;
 
+            //resultadoDoSorteio.SetResultadoSorteio(listaResultadoSorteio);
+
+            GravaResultadoSorteio(listaResultadoSorteio);
         }
 
-        /*public List<ResultadoSorteio> SortearVagas(SorteioVagas sorteioVagas)
+        
+        private void GravaResultadoSorteio(List<ResultadoSorteioPorUnidade> resultado)
         {
-            ResultadoSorteio resultadoPorUnidade;
-            List<ResultadoSorteio> ListaResultadoSorteio = new List<ResultadoSorteio>();
+            GravaResultadoDoSorteio.GravarResultadoDoSorteio(resultado);
+        }
 
-            //            int qtdUnidadesDoCondominio, linhaUnidadeSorteada, vagaSorteada;
-            int qtdVagasPorUnidade = sorteioVagas.GetQtdeVagasPorUnidade();
-            int contador = 0;
-
-
-            List<int> listaUnidades = new List<int>();
-            listaUnidades = CriaListaDeIDsDeUnidadesDoSorteio(sorteioVagas);
-
-            List<int> listaVagas = new List<int>();
-            listaVagas = CriarListaDeIDsDeVagasDeGaragem(sorteioVagas);
-
-            List<int> listaAleatoriaDeUnidades = new List<int>();
-
-            listaAleatoriaDeUnidades = CriarListaAleatoriaDeInteiros(listaUnidades);
-
-            foreach (int linha in listaAleatoriaDeUnidades)
-            {
-
-                for (int i = 0; i < qtdVagasPorUnidade; i++)
-                {
-                    resultadoPorUnidade = new ResultadoSorteio();
-                    resultadoPorUnidade.SetIdUnidade(listaUnidades[linha]);
-                    resultadoPorUnidade.SetIdVagaDeGaragem(listaVagas[contador]);
-                    resultadoPorUnidade.SetIdSorteioVaga(sorteioVagas.GetIdSorteioVagas());
-                    ListaResultadoSorteio.Add(resultadoPorUnidade);
-                }
-                contador++;
-            }
-
-
-            return ListaResultadoSorteio;
-
-            *//*Pegar número total de vagas, número total de unidades ocupadas, 
+        /*TODO: Pegar número total de vagas, número total de unidades ocupadas, 
              *número de vagas por unidade, se são sequenciais.
              * Sortear as vagas por unidade conforme o número de vagas para cada
              * unidade. 
@@ -300,9 +273,6 @@ namespace MeuCondominio2.Model
         {
             //TODO: este método provavelmente pertence à View, e não ao model. É método de exibição. 
         }
-
-
-
     }
     //TODO: criar métodos da classe SorteioVagas
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MeuCondominio2.Model
 {
-    public class ResultadoSorteio
+    public class ResultadoSorteioPorUnidade
     {
         private int idResultadoSorteio;
         private int idUnidade;
@@ -12,11 +12,11 @@ namespace MeuCondominio2.Model
         private int idSorteioVaga;
 
         
-        public ResultadoSorteio()
+        public ResultadoSorteioPorUnidade()
         {
         }
 
-        public ResultadoSorteio(int idResultadoSorteio,
+        public ResultadoSorteioPorUnidade(int idResultadoSorteio,
             int idUnidade,
             int idVagaDeGaragem,
             int idSorteioVaga)
@@ -27,7 +27,7 @@ namespace MeuCondominio2.Model
             this.idUnidade = idUnidade;
         }
 
-        public ResultadoSorteio(int idUnidade, int idVagaDeGaragem, int idSorteioVaga)
+        public ResultadoSorteioPorUnidade(int idUnidade, int idVagaDeGaragem, int idSorteioVaga)
         {
             this.idUnidade = idUnidade;
             this.idVagaDeGaragem = idVagaDeGaragem;

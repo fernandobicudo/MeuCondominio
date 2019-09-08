@@ -13,25 +13,25 @@ namespace MeuCondominio1
 {
     public partial class cadastro_sorteio_vagas : System.Web.UI.Page
     {
-
         SorteioVagas sorteioVagas = new SorteioVagas();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void CadastrarSorteioDeVagas(object sender, EventArgs e)
         {
-            CriaObjetoSorteioVagas(2);
+            sorteioVagas = CriaObjetoSorteioVagas(2);
             /*            TODO: passar o idCondominio corretamente para o método  CriaObjetoSorteioVagas(1).
                         pensar se por session ou outro método.
             */
-            GravaSorteioVagas.gravaSorteioVagas(sorteioVagas);
+            GravaSorteioVagas.GravarSorteioVagas(sorteioVagas);
         }
 
         private SorteioVagas CriaObjetoSorteioVagas(int idCondominio)
         {
+            SorteioVagas sorteio = new SorteioVagas();
 
             DateTime dataSorteio, dataValidadeInicio, dataValidadeFim;
 
@@ -40,30 +40,30 @@ namespace MeuCondominio1
             dataValidadeFim = DateTime.ParseExact(txDataValidadeFim.Text, "MM/dd/yyyy", null);
 
             if (rbSeHaVagasSequenciaisSim.Checked == true)
-                sorteioVagas.SetAssociacaoVagasSequenciais(true);
+                sorteio.SetAssociacaoVagasSequenciais(true);
             else if (rbSeHaVagasSequenciaisSim.Checked == false)
-                sorteioVagas.SetAssociacaoVagasSequenciais(false);
+                sorteio.SetAssociacaoVagasSequenciais(false);
 
-            sorteioVagas.SetDataSorteio(dataSorteio);
+            sorteio.SetDataSorteio(dataSorteio);
 
-            sorteioVagas.SetDataValidadeSorteioInicio(dataValidadeInicio);
+            sorteio.SetDataValidadeSorteioInicio(dataValidadeInicio);
 
-            sorteioVagas.SetDataValidadeSorteioFim(dataValidadeFim);
+            sorteio.SetDataValidadeSorteioFim(dataValidadeFim);
 
             if (rbFiladeSorteio.Checked == true)
-                sorteioVagas.SetTipoSorteio("Fila");
+                sorteio.SetTipoSorteio("Fila");
             else if (rbSorteioPorUnidade.Checked == true)
-                sorteioVagas.SetTipoSorteio("Sorteio por unidade");
+                sorteio.SetTipoSorteio("Sorteio por unidade");
 
-            sorteioVagas.SetIdCondominio(idCondominio);
+            sorteio.SetIdCondominio(idCondominio);
 
             int qtdVagasPorUnidade;
 
             qtdVagasPorUnidade = Convert.ToInt32(ddVagasPorUnidade.SelectedItem.Value);
 
-            sorteioVagas.SetQtdeVagasPorUnidade(qtdVagasPorUnidade);
+            sorteio.SetQtdeVagasPorUnidade(qtdVagasPorUnidade);
 
-            return sorteioVagas;
+            return sorteio;
         }
 
         private string ConverterDateTimeSQLite(string data) //TODO: verificar em qual framework deve ficar o método de conversão de data para o SQLite

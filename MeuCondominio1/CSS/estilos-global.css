@@ -33,7 +33,7 @@ label {
     margin: 4px;
 }
 
-.campoTexto .campoTextoDatePicker {
+.campoTexto {
     height: 1.5em;
     width: 60%;
     display: block;
@@ -41,6 +41,13 @@ label {
     margin: 4px;
 }
 
+.campoTextoDatePicker {
+    height: 1.5em;
+    width: 60%;
+    display: block;
+    position: static;
+    margin: 4px;
+}
 
 
 .alerta {
@@ -125,10 +132,16 @@ tr {
     width: 4em;
 }
 
-.login .campoTexto .campoTextoDatePicker {
+.login .campoTexto {
     width: 60%;
     margin-left: 20%;
 }
+
+.campoTextoDatePicker {
+    width: 60%;
+    margin-left: 20%;
+}
+
 
 .recuperacao .campoTexto .campoTextoDatePicker {
     width: 60%;
@@ -224,6 +237,19 @@ tr {
     text-align: center;
     margin-top: 1%;
     margin-bottom: 1%;
+}
+
+
+/*ITENS DO MENU*/
+.item {
+    width: 50%;
+    background-color: grey;
+    float: left;
+}
+
+
+.main {
+width: 100%;
 }
 
 /*MENU*/

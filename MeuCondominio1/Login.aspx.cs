@@ -59,7 +59,8 @@ namespace MeuCondominio1
 
                 switch (tipoUsuario) {
                     case 1:
-                        Response.Redirect("MenuInicialCondomino.aspx");
+                        /*Response.Redirect("MenuInicialCondomino.aspx");*/
+                        Response.Redirect("VagaCondomino.aspx");
                         break;
                     case 2: 
                         Response.Redirect("CadastroSorteioVagas.aspx"); //TODO: linkar para menu do administrador.

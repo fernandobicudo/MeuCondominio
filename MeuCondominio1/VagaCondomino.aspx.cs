@@ -11,7 +11,15 @@ namespace MeuCondominio1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ExibirVagasDoCondomino();
+        }
 
+        private void ExibirVagasDoCondomino()
+        {
+            Label1.Text =  Session["codigoUser"].ToString();
+            Label2.Text =  Session["nomeUser"].ToString();
+            Label3.Text =  Session["emailUser"].ToString();
+            Label4.Text = Session["tipoUser"].ToString();
         }
     }
 }

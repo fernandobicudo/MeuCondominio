@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using MeuCondominio2.Services;
+using MeuCondominio2.Services.Sindico;
+using MeuCondominio2.Services.Condominio;
 using System.Data;
 
 namespace MeuCondominio1
@@ -39,7 +41,6 @@ namespace MeuCondominio1
             dt = BuscaLogin.PesquisarLogin(email);
 
             validaLogin(dt);
-
         }
 
         protected void validaLogin(DataTable dt)
@@ -56,13 +57,16 @@ namespace MeuCondominio1
                 Session["tipoUser"] = dt.Rows[0]["tipo_usuario"];
 
                 int tipoUsuario = Convert.ToInt32(dt.Rows[0]["tipo_usuario"]);
+                int codigoUsuario = Convert.ToInt32(Session["codigoUser"]);
 
                 switch (tipoUsuario) {
                     case 1:
-                        /*Response.Redirect("MenuInicialCondomino.aspx");*/
-                        Response.Redirect("VagaCondomino.aspx");
+                        PreencherVariaveisDeSessaoCondomino(codigoUsuario);
+                        /*                        Response.Redirect("VagaCondomino.aspx"); //TODO: após testado, trocar para MenuInicialCondomino acima.*/
+                        Response.Redirect("MenuInicialCondomino.aspx");
                         break;
-                    case 2: 
+                    case 2:
+                        PreencheVariaveisDeSessaoSindico(codigoUsuario);
                         Response.Redirect("CadastroSorteioVagas.aspx"); //TODO: linkar para menu do administrador.
                         break;
                     default:
@@ -73,6 +77,20 @@ namespace MeuCondominio1
             else
                 Response.Redirect("Login.aspx?&status=invalido&p_email=invalido");
         }
-    }
 
+        private void PreencheVariaveisDeSessaoSindico(int idSindico)
+        {
+            DataTable dt;
+            dt = BuscaSindico.PesquisarSindico(idSindico);
+            Session["codigoCondominio"] = dt.Rows[0]["idCondominio"];
+        }
+
+        private void PreencherVariaveisDeSessaoCondomino(int idCondomino)
+        {
+            DataTable dt;
+            dt = BuscaCondominio.PesquisarCondominioPorIddoCondomino(idCondomino);
+
+            Session["codigoCondominio"] = dt.Rows[0]["idCondominio"];
+        }
+    }
 }

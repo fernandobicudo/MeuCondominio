@@ -16,7 +16,6 @@ namespace MeuCondominio2.DAO
         }
 
 
-
         public static Login CriarObjetoLogin(DataTable dt)
         {
             //TODO: incluir este método na classe Login, se necessário

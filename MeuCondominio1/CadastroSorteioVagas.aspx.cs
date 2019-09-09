@@ -80,7 +80,8 @@ namespace MeuCondominio1
 
         protected void SortearVagas(object sender, EventArgs e)
         {
-            sorteioVagas.SortearVagas(CriaObjetoSorteioVagas(1)); //TODO: usando id 1 de COndominio. Tornar dinâmico, pegando variavel de sessão.
+            sorteioVagas.SortearVagas(CriaObjetoSorteioVagas(1));
+            //TODO: usando id 1 de COndominio. Tornar dinâmico, pegando variavel de sessão.
         }
     }
 }

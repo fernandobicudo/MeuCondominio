@@ -16,6 +16,7 @@
             <asp:Label ID="Label2" runat="server" Text=""></asp:Label><br />
             <asp:Label ID="Label3" runat="server" Text=""></asp:Label><br />
             <asp:Label ID="Label4" runat="server" Text=""></asp:Label><br />
+            <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
         </div>
         <div id="headerPainelVaga">
             <asp:Panel ID="pnHeaderVaga" runat="server"></asp:Panel>

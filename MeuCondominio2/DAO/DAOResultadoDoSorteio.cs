@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using MeuCondominio2.Model;
 
@@ -22,8 +23,20 @@ namespace MeuCondominio2.DAO
                 MetodosBD.ExecutaSQL(SQL);
 
             }
+        }
 
+        internal static DataTable PesquisarVagasDoResultadoPorIddoCondominoEIddoCondominio(int idCondomino, int idCondominio)
+        {
+            string SQL;
+            SQL = String.Format(@"SELECT vg.numeracao FROM `ResultadoSorteio` rs " +
+                                "JOIN `SorteioVagas` sv ON sv.id = rs.idSorteioVaga " +
+                                "JOIN `Unidade` un ON un.id = rs.idUnidade " +
+                                "JOIN `VagaGaragem` vg ON vg.id = rs.idVagaGaragem " +
+                                "WHERE sv.idCondominio = {0} " +
+                                "AND un.idCondomino = {1} " +
+                                "AND sv.id = (select MAX(id) from `SorteioVagas`);", idCondominio, idCondomino);
 
+            return MetodosBD.ExecutaSelect(SQL);
         }
     }
 }

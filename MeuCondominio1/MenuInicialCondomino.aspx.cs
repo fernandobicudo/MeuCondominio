@@ -16,7 +16,7 @@ namespace MeuCondominio1
 
         protected void IrParaPaginaVagas(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("CadastroSorteioVagas.aspx"); //TODO: linkar para página correta do Condômino.
+            Response.Redirect("VagaCondomino.aspx"); 
         }
     }
 }

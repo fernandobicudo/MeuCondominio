@@ -239,6 +239,13 @@ tr {
     margin-bottom: 1%;
 }
 
+/*teste com elementos dinâmicos*/
+
+.teste{
+    font-size: 40px;
+    float: left;
+    width: 50%;
+}
 
 /*ITENS DO MENU*/
 .item {

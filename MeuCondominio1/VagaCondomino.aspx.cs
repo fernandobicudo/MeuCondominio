@@ -30,16 +30,28 @@ namespace MeuCondominio1
             /*Label dataSorteio = new Label();
             dataSorteio.Text = dt.Rows[0]["dataSorteio"].ToString();
             pnHeaderVaga.Controls.Add(dataSorteio);
-*/            
+*/
+            
 
             foreach (DataRow linha in dt.Rows) 
             {
-                
-                Label numVaga = new Label();
-                numVaga.Attributes.Add("class", "teste");
-                numVaga.Text = linha["numeracao"].ToString();
-                pnNumeroVaga.Controls.Add(numVaga);
 
+                
+
+                Label titulo = new Label
+                {
+                    Text = "Vaga",
+                    CssClass = "tituloVaga"
+                };
+
+                Label numVaga = new Label
+                {
+                    CssClass = "numVaga",
+                    Text = linha["numeracao"].ToString()
+                };
+
+                pnTituloNumeroVaga.Controls.Add(titulo);
+                pnNumeroVaga.Controls.Add(numVaga);
             }
 
   /*          Label dataValidade = new Label();
@@ -48,13 +60,11 @@ namespace MeuCondominio1
 
             /*            teste para exibir variáveis de sessão:
             */
-            Label1.Text = Session["codigoUser"].ToString();
+/*            Label1.Text = Session["codigoUser"].ToString();
             Label2.Text = Session["nomeUser"].ToString();
             Label3.Text = Session["emailUser"].ToString();
             Label4.Text = Session["tipoUser"].ToString();
-            Label5.Text = Session["codigoCondominio"].ToString();
+            Label5.Text = Session["codigoCondominio"].ToString();*/
         }
-
-
     }
 }

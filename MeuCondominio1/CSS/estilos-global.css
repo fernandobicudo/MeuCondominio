@@ -241,10 +241,41 @@ tr {
 
 /*teste com elementos dinâmicos*/
 
-.teste{
-    font-size: 40px;
+.tituloVaga .numVaga {
+    position: center;
+
+}
+
+.tituloVaga {
+    font-size: 3em;
+    width: 10%;
     float: left;
-    width: 50%;
+    border: solid;
+    margin: 0.1em;
+    margin-left: 26%;
+    margin-bottom: 0.8em;
+    padding-left: 0.1em;
+    position: center;
+    text-align: center;
+}
+
+.numVaga {
+    font-size: 4em;
+    float: initial;
+    border: solid;
+    font-weight: bold;
+    padding: 0.5em;
+    position: center;
+    margin: 0.1em;
+    margin-left: 26%;
+    text-align: center;
+   
+
+}
+
+h2 {
+    margin-left: 40%;
+    font-size: 3em;
 }
 
 /*ITENS DO MENU*/

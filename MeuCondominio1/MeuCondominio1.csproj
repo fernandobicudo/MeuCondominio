@@ -145,6 +145,7 @@
     <Content Include="Images\Configuracoes_G.png" />
     <Content Include="Login.aspx" />
     <Content Include="MenuInicialCondomino.aspx" />
+    <Content Include="MenuInicialSindico.aspx" />
     <Content Include="RecuperacaoSenha.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -208,6 +209,13 @@
     </Compile>
     <Compile Include="MenuInicialCondomino.aspx.designer.cs">
       <DependentUpon>MenuInicialCondomino.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuInicialSindico.aspx.cs">
+      <DependentUpon>MenuInicialSindico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuInicialSindico.aspx.designer.cs">
+      <DependentUpon>MenuInicialSindico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecuperacaoSenha.aspx.cs">

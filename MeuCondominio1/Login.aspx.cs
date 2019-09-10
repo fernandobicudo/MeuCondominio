@@ -67,7 +67,7 @@ namespace MeuCondominio1
                         break;
                     case 2:
                         PreencheVariaveisDeSessaoSindico(codigoUsuario);
-                        Response.Redirect("CadastroSorteioVagas.aspx"); //TODO: linkar para menu do administrador.
+                        Response.Redirect("MenuInicialSindico.aspx"); //TODO: linkar para menu do administrador.
                         break;
                     default:
                         Response.Redirect("MenuInicialCondomino.aspx"); //TODO: como tratar o default do switch case?

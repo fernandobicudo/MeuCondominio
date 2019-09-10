@@ -7,7 +7,9 @@ using System.Web.UI.WebControls;
 using MeuCondominio2.Model;
 using MeuCondominio2.Services;
 using MeuCondominio2.Services.SorteioVagas;
+using MeuCondominio2.Services.ResultadoDoSorteio;
 using System.Runtime.InteropServices;
+using System.Data;
 
 namespace MeuCondominio1
 {
@@ -22,12 +24,16 @@ namespace MeuCondominio1
 
         protected void CadastrarSorteioDeVagas(object sender, EventArgs e)
         {
-            sorteioVagas = CriaObjetoSorteioVagas(2);
+            int idCondominio = Convert.ToInt32(Session["codigoCondominio"]);
+
+            sorteioVagas = CriaObjetoSorteioVagas(idCondominio);
             /*            TODO: passar o idCondominio corretamente para o método  CriaObjetoSorteioVagas(1).
                         pensar se por session ou outro método.
             */
             GravaSorteioVagas.GravarSorteioVagas(sorteioVagas);
         }
+
+
 
         private SorteioVagas CriaObjetoSorteioVagas(int idCondominio)
         {
@@ -35,6 +41,7 @@ namespace MeuCondominio1
 
             DateTime dataSorteio, dataValidadeInicio, dataValidadeFim;
 
+            //URGENTE: ACERTAS FORMATO DE DATAS
             dataSorteio = DateTime.ParseExact(txDataSorteio.Text, "MM/dd/yyyy", null);
             dataValidadeInicio = DateTime.ParseExact(txDataValidadeInicio.Text, "MM/dd/yyyy", null);
             dataValidadeFim = DateTime.ParseExact(txDataValidadeFim.Text, "MM/dd/yyyy", null);
@@ -66,6 +73,7 @@ namespace MeuCondominio1
             return sorteio;
         }
 
+
         private string ConverterDateTimeSQLite(string data) //TODO: verificar em qual framework deve ficar o método de conversão de data para o SQLite
         {
             DateTime dataConvertida;
@@ -80,8 +88,30 @@ namespace MeuCondominio1
 
         protected void SortearVagas(object sender, EventArgs e)
         {
-            sorteioVagas.SortearVagas(CriaObjetoSorteioVagas(1));
+            int idCondominio = Convert.ToInt32(Session["codigoCondominio"]);
+            sorteioVagas.SortearVagas(idCondominio);
             //TODO: usando id 1 de COndominio. Tornar dinâmico, pegando variavel de sessão.
         }
+       
+        private SorteioVagas CriaObjetoSorteioVagas(DataTable dt)
+        {
+            SorteioVagas sorteioVagas = new SorteioVagas(
+                Convert.ToInt32(dt.Rows[0]["id"]),
+                dt.Rows[0]["tipoSorteio"].ToString(),
+                Convert.ToDateTime(dt.Rows[0]["dataSorteio"]),
+                Convert.ToDateTime(dt.Rows[0]["dataValidadeSorteioInicio"]),
+                Convert.ToDateTime(dt.Rows[0]["dataValidadeSorteioFim"]),
+                Convert.ToBoolean(dt.Rows[0]["associarVagasSequenciais"]),
+                Convert.ToInt32(dt.Rows[0]["qtdeVagasPorUnidade"]),
+                Convert.ToInt32(dt.Rows[0]["idCondominio"]));
+
+            return sorteioVagas;
+        }
+
+        private DataTable BuscarSorteioMaisRecente(int idCondominio)
+        {
+            return BuscaSorteioVagas.BuscarIdDoResultadoDoUltimoSorteioParaOCondominio(idCondominio);
+        }
+
     }
 }

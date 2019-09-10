@@ -6,6 +6,7 @@ using MeuCondominio2.Model;
 using MeuCondominio2.Services.Unidade;
 using MeuCondominio2.Services.VagaGaragem;
 using MeuCondominio2.Services.ResultadoDoSorteio;
+using MeuCondominio2.Services.SorteioVagas;
 
 namespace MeuCondominio2.Model
 {
@@ -22,6 +23,7 @@ namespace MeuCondominio2.Model
 
         private DataTable UnidadesDoCondominio;
         private DataTable VagasDeGaragemDoCondominio;
+        
 
         #region Construtores
         public SorteioVagas()
@@ -69,6 +71,16 @@ namespace MeuCondominio2.Model
         #endregion
 
         #region Getters e Setters
+
+        public int GetIdSorteioVagas1()
+        {
+            return idSorteioVagas;
+        }
+
+        public void SetIdSorteioVagas1(int value)
+        {
+            idSorteioVagas = value;
+        }
 
         public int GetIdSorteioVagas()
         {
@@ -192,7 +204,39 @@ namespace MeuCondominio2.Model
             GravaResultadoSorteio(listaResultadoSorteio);
         }
 
-        
+        public void SortearVagas(int idCondominio)
+        {
+            ResultadoSorteioPorUnidade resultadoPorUnidade;
+            List<ResultadoSorteioPorUnidade> listaResultadoSorteio = new List<ResultadoSorteioPorUnidade>();
+            ResultadoDoSorteio resultadoDoSorteio = new ResultadoDoSorteio();
+            List<int> listaUnidades = CriaListaDeIDsDeUnidadesDoSorteio(idCondominio);
+            List<int> listaVagas = CriarListaDeIDsDeVagasDeGaragem(idCondominio);
+            List<int> listaUnidadesAleatorias = CriarListaAleatoriaDeInteiros(listaUnidades);
+            
+            int qtdVagas = listaVagas.Count;
+            int vagaSorteada = 0;
+            int idSorteioVagas = Convert.ToInt32(BuscarIddoSorteioDeVagasMaisRecenteDoCondominio(idCondominio).Rows[0]["id"]);
+
+            int qtdVagasPorUnidade = BuscaSorteioVagas.BuscarNumeroDeVagasPorUnidadeDoSorteio(idSorteioVagas);
+
+            foreach (int linha in listaUnidadesAleatorias)
+            {
+                for (int i = 0; i < qtdVagasPorUnidade; i++)
+                {
+                    resultadoPorUnidade = new ResultadoSorteioPorUnidade();
+                    resultadoPorUnidade.SetIdUnidade(linha);
+                    resultadoPorUnidade.SetIdSorteioVaga(idSorteioVagas);
+                    resultadoPorUnidade.SetIdVagaDeGaragem(listaVagas[vagaSorteada]);
+                    vagaSorteada++;
+                    listaResultadoSorteio.Add(resultadoPorUnidade);
+                }
+            }
+
+            //resultadoDoSorteio.SetResultadoSorteio(listaResultadoSorteio);
+
+            GravaResultadoSorteio(listaResultadoSorteio);
+        }
+
         private void GravaResultadoSorteio(List<ResultadoSorteioPorUnidade> resultado)
         {
             GravaResultadoDoSorteio.GravarResultadoDoSorteio(resultado);
@@ -222,9 +266,28 @@ namespace MeuCondominio2.Model
             //sorteada no vetor com o ID de fato.
         }
 
+        private List<int> CriaListaDeIDsDeUnidadesDoSorteio(int idCondominio)
+        {
+            List<int> listaIDsDasUnidades = new List<int>();
+            SelecionaUnidadesdoCondominio(idCondominio);
+
+            foreach (DataRow linha in UnidadesDoCondominio.Rows)
+            {
+                listaIDsDasUnidades.Add(Convert.ToInt32(linha["id"]));
+            }
+            return listaIDsDasUnidades;
+            //TODO: MASTER - depois de gerar a lista de inteiros, gerar a lista efetiva de IDs das unidades, relacionando a posição 
+            //sorteada no vetor com o ID de fato.
+        }
+
         private void SelecionaUnidadesdoCondominio(SorteioVagas sorteioVagas)
         {
             UnidadesDoCondominio = BuscaUnidade.PesquisarUnidadePorCondominio(sorteioVagas.GetIdCondominio());
+        }
+
+        private void SelecionaUnidadesdoCondominio(int idCondominio)
+        {
+            UnidadesDoCondominio = BuscaUnidade.PesquisarUnidadePorCondominio(idCondominio);
         }
 
         private List<int> CriarListaAleatoriaDeInteiros(List<int> lista)
@@ -258,10 +321,35 @@ namespace MeuCondominio2.Model
             return listaVagas;
         }
 
+        private List<int> CriarListaDeIDsDeVagasDeGaragem(int idCondominio)
+        {
+            List<int> listaVagas = new List<int>();
+            SelecionaVagasDoCondominio(idCondominio);
+
+            foreach (DataRow linha in VagasDeGaragemDoCondominio.Rows)
+            {
+                listaVagas.Add(Convert.ToInt32(linha["id"]));
+            }
+            return listaVagas;
+        }
+
         private void SelecionaVagasDoCondominio(SorteioVagas sorteioVagas)
         {
             VagasDeGaragemDoCondominio = BuscaVagaGaragem.PesquisarVagasGaragemPorCondominio(sorteioVagas.GetIdCondominio());
         }
+
+        private void SelecionaVagasDoCondominio(int idCondominio)
+        {
+            VagasDeGaragemDoCondominio = BuscaVagaGaragem.PesquisarVagasGaragemPorCondominio(idCondominio);
+        }
+
+        private DataTable BuscarIddoSorteioDeVagasMaisRecenteDoCondominio(int idCondominio)
+        {
+
+            return BuscaSorteioVagas.BuscarIdDoResultadoDoUltimoSorteioParaOCondominio(idCondominio);
+        }
+
+
 
         public void AssociarVagasAUnidades()
         {

@@ -25,6 +25,8 @@ namespace MeuCondominio2.DAO
             }
         }
 
+        
+
         internal static DataTable PesquisarVagasDoResultadoPorIddoCondominoEIddoCondominio(int idCondomino, int idCondominio)
         {
             string SQL;
@@ -39,4 +41,5 @@ namespace MeuCondominio2.DAO
             return MetodosBD.ExecutaSelect(SQL);
         }
     }
+
 }

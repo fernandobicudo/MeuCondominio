@@ -25,11 +25,13 @@ namespace MeuCondominio2.DAO
             return dt;
         }
 
-        public static DataTable SelecionarVagasGaragemPorCondominio(int id)
+        public static DataTable SelecionarVagasGaragemPorCondominio(int idCondominio)
         {
             DataTable dt;
             string SQL;
-            SQL = String.Format(@"SELECT * FROM `vagaGaragem` WHERE idUnidade={0};", id); //TODO: atualizar idUnidade para idCondominio quando estiver atualizado no banco.
+            SQL = String.Format(@"SELECT * FROM `vagaGaragem` vg "+
+                "JOIN `Unidade` un ON un.id = vg.idUnidade " +
+                "WHERE un.idCondominio = {0};", idCondominio); //TODO: atualizar idUnidade para idCondominio quando estiver atualizado no banco.
             dt = MetodosBD.ExecutaSelect(SQL);
             return dt;
         }

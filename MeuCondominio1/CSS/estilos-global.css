@@ -33,6 +33,11 @@ label {
     margin: 4px;
 }
 
+
+#rbFiladeSorteio #rbSorteioPorUnidade {
+    text-align: center;
+}
+
 .campoTexto {
     height: 1.5em;
     width: 60%;

@@ -76,6 +76,15 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.WebControls.Panel pnHeaderVaga;
         
         /// <summary>
+        /// pnTituloNumeroVaga control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnTituloNumeroVaga;
+        
+        /// <summary>
         /// pnNumeroVaga control.
         /// </summary>
         /// <remarks>

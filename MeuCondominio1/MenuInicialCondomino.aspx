@@ -28,7 +28,7 @@
                 </div>
                 <div class="item">
                     <asp:ImageButton ID="ibUsuarios" runat="server" Height="100px" ImageUrl="~/Images/Usuarios_G.png" Width="100px"/><br />
-                    <asp:Label ID="lbUsuario" runat="server" Text="Meus dados"></asp:Label><br /><br /> 
+                    <asp:Label ID="lbUsuario" runat="server" Text="Meus Dados"></asp:Label><br /><br /> 
                 </div>
             </div>
             <div class="footer">

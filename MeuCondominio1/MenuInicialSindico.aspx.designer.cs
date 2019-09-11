@@ -49,21 +49,39 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.WebControls.Label lbSorteioVagas;
         
         /// <summary>
-        /// ImageButton3 control.
+        /// ibUsuarios control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton3;
+        protected global::System.Web.UI.WebControls.ImageButton ibUsuarios;
         
         /// <summary>
-        /// Label3 control.
+        /// lbUsuarios control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label lbUsuarios;
+        
+        /// <summary>
+        /// ibVotacao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ibVotacao;
+        
+        /// <summary>
+        /// lbVotacao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbVotacao;
     }
 }

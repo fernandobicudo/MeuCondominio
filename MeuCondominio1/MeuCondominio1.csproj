@@ -143,6 +143,8 @@
     <Content Include="Images\barcode_G.png" />
     <Content Include="Images\Carro_G.png" />
     <Content Include="Images\Configuracoes_G.png" />
+    <Content Include="Images\hand_G.png" />
+    <Content Include="Images\Usuarios_G.png" />
     <Content Include="Login.aspx" />
     <Content Include="MenuInicialCondomino.aspx" />
     <Content Include="MenuInicialSindico.aspx" />

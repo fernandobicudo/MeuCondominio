@@ -22,7 +22,6 @@ namespace MeuCondominio1
             DataTable dt;
             int idCondomino = Convert.ToInt32(Session["codigoUser"]);
             int idCondominio = Convert.ToInt32(Session["codigoCondominio"]);
-           
 
             dt = BuscaResultadoDoSorteio.
                 BuscarVagasDoResultadoPorIddoCondominoEIddoCondominio(idCondomino, idCondominio);
@@ -31,13 +30,9 @@ namespace MeuCondominio1
             dataSorteio.Text = dt.Rows[0]["dataSorteio"].ToString();
             pnHeaderVaga.Controls.Add(dataSorteio);
 */
-            
 
             foreach (DataRow linha in dt.Rows) 
             {
-
-                
-
                 Label titulo = new Label
                 {
                     Text = "Vaga",

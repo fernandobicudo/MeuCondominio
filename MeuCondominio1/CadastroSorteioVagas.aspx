@@ -28,7 +28,6 @@
             <asp:TextBox ID="txDataValidadeFim" runat="server" CssClass="campoTextoDatePicker_p" MaxLength="6" AutoCompleteType="Disabled"></asp:TextBox><br/><br/>
             <asp:Label ID="lbTipoSorteio" runat="server" Text="Tipo de Sorteio"></asp:Label><br/>
             <asp:RadioButton ID="rbFiladeSorteio" runat="server" GroupName="tipoSorteio" Text="Fila" TextAlign="Left" /><br/><br/>
-
             <asp:RadioButton ID="rbSorteioPorUnidade" runat="server" GroupName="tipoSorteio" Text="Sorteio por unidade" TextAlign="Left" /><br/><br/>
             <asp:Label ID="lbVagasPorUnidade" runat="server" Text="Vagas por unidade" ></asp:Label><br/>
             <asp:DropDownList ID="ddVagasPorUnidade" runat="server">

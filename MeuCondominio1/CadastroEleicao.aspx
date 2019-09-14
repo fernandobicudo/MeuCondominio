@@ -20,7 +20,19 @@
             <asp:DropDownList ID="ddTipoEleicao" runat="server">
                 <asp:ListItem>Eleição para Síndico</asp:ListItem>
                 <asp:ListItem>Projetos e Serviços Prediais</asp:ListItem>
+                <asp:ListItem>Plebiscito</asp:ListItem>
             </asp:DropDownList><br />
+            <asp:Label ID="lbDescricao" runat="server" Text="Descrição"></asp:Label>
+            <asp:TextBox ID="txDescricao" runat="server"></asp:TextBox><br />
+            <asp:Label ID="lbDataInicio" runat="server" Text="Data de Abertura da votação"></asp:Label>
+            <asp:TextBox ID="txDataInicio" runat="server" CssClass="campoTextoDatePicker_p" MaxLength="6" AutoCompleteType="Disabled"></asp:TextBox><br />
+            <!--TODO: pensar em campo Hora-->
+            <asp:Label ID="lbDataFim" runat="server" Text="Data de Encerramento da Votação"></asp:Label>
+            <asp:TextBox ID="txDataFim" runat="server" CssClass="campoTextoDatePicker_p" MaxLength="6" AutoCompleteType="Disabled"></asp:TextBox><br />
+            <asp:ImageButton ID="ibAdicionarOpcaoDeVotacao" runat="server" ImageUrl="~/Images/add-circle-green-512.png" OnClick="AdicionarOpcaoDeVotacao" />
+            <asp:Panel ID="pnInclusaoOpcaoaSerVotada" runat="server"></asp:Panel>
+            <asp:Label ID="lbAdicionarOpcaoDeVotacao" runat="server" Text="Adicionar opção a ser votada"></asp:Label><br />
+            <asp:Button ID="btCadastrarEleicao" runat="server" CssClass="botaoDefault" Text="Cadastrar eleição" /><br />
         </div>
     </form>
 </body>

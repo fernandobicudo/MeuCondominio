@@ -13,5 +13,53 @@ namespace MeuCondominio1
         {
 
         }
+
+        protected void AdicionarOpcaoDeVotacao(object sender, ImageClickEventArgs e)
+        {
+            string tipoVotacao;
+
+            tipoVotacao = ddTipoEleicao.SelectedValue;
+
+            switch (tipoVotacao)
+            {
+                case "Plebiscito":
+                    IncluirCamposDeCandidatoASindico();
+                    break;
+                case "Projetos e Serviços Prediais":
+                    IncluirCamposDeServicoASerVotado();
+                    break;
+                case "Eleição para Síndico":
+                    IncluirCamposDePlebiscito();
+                    break;
+                default:
+                    AvisarParaEscolherOpcao();
+                    break;
+            }
+        }
+
+        private void AvisarParaEscolherOpcao()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void IncluirCamposDePlebiscito()
+        {
+            Label lbDescricaoPlebiscito = new Label();
+            TextBox txDescricaoPlebiscito = new TextBox();
+            pnInclusaoOpcaoaSerVotada.Controls.Add(lbDescricaoPlebiscito);
+            pnInclusaoOpcaoaSerVotada.Controls.Add(txDescricaoPlebiscito);
+/*            TODO: incluir classe Plebiscito nos tipos de classe que hoje são "Candidato" (na verdade, a classe plebiscito 
+                conteria apenas os atributos da "Candidato"????
+*/        }
+
+        private void IncluirCamposDeServicoASerVotado()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void IncluirCamposDeCandidatoASindico()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

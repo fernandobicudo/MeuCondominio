@@ -14,9 +14,9 @@
     <h1>Cadastro de Eleição</h1>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="lbNomeEleicao" runat="server" Text="Título da Eleição"></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <asp:Label ID="lbTipoEleicao" runat="server" Text="Tipo de Eleição"></asp:Label><br />
+            <asp:Label ID="lbNomeEleicao" runat="server" Text="Título da Eleição" ></asp:Label>
+            <asp:TextBox ID="txNomeEleicao" runat="server" MaxLength="30" Length="30"></asp:TextBox><br />
+            <asp:Label ID="lbTipoEleicao" runat="server" Text="Tipo de Eleição"></asp:Label>
             <asp:DropDownList ID="ddTipoEleicao" runat="server">
                 <asp:ListItem>Eleição para Síndico</asp:ListItem>
                 <asp:ListItem>Projetos e Serviços Prediais</asp:ListItem>
@@ -31,8 +31,9 @@
             <asp:TextBox ID="txDataFim" runat="server" CssClass="campoTextoDatePicker_p" MaxLength="6" AutoCompleteType="Disabled"></asp:TextBox><br />
             <asp:ImageButton ID="ibAdicionarOpcaoDeVotacao" runat="server" ImageUrl="~/Images/add-circle-green-512.png" OnClick="AdicionarOpcaoDeVotacao" />
             <asp:Panel ID="pnInclusaoOpcaoaSerVotada" runat="server"></asp:Panel>
+            <asp:GridView ID="gvOpcoesDeVotacaoAdicionadas" runat="server"></asp:GridView>
             <asp:Label ID="lbAdicionarOpcaoDeVotacao" runat="server" Text="Adicionar opção a ser votada"></asp:Label><br />
-            <asp:Button ID="btCadastrarEleicao" runat="server" CssClass="botaoDefault" Text="Cadastrar eleição" /><br />
+            <asp:Button ID="btCadastrarEleicao" runat="server" CssClass="botaoDefault" Text="Cadastrar eleição" OnClick="CadastrarEleicao" /><br />
         </div>
     </form>
 </body>

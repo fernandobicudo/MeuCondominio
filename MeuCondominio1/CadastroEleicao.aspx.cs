@@ -4,11 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using MeuCondominio2.Model;
+
 
 namespace MeuCondominio1
 {
     public partial class CadastroEleicao : System.Web.UI.Page
     {
+
+        List<OpcaoDeVotacaoPlebiscito> listaOpcoesVotacaoPlebiscito= new List<OpcaoDeVotacaoPlebiscito>();
+        OpcaoDeVotacaoPlebiscito opcaoDeVotacaoPlebiscito;
+        OpcaoVotacao opcaoVotacao;
+        TextBox txDescricaoPlebiscito;
+        Button btAdicionarOpcaoDeVotacao;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -32,38 +41,34 @@ namespace MeuCondominio1
                     IncluirCamposDePlebiscito();
                     break;
                 default:
-                    AvisarParaEscolherOpcao();
+                    AvisarParaEscolherOpcao(); //TODO: implementar validacao para AdicionarOpcaoDeVotacao somente depois de escolher um tipo de votação.
                     break;
             }
         }
 
-        private void IncluirCamposDeServicoASerVotado()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void IncluirCamposDeCandidatoASindico()
-        {
-            throw new NotImplementedException();
-        }
+       
 
         private void AvisarParaEscolherOpcao()
         {
-            throw new NotImplementedException();
+            
         }
 
         private void IncluirCamposDePlebiscito()
         {
-            Label lbDescricaoPlebiscito = new Label();
-            TextBox txDescricaoPlebiscito = new TextBox();
-            Button btAdicionarOpcaoDeVotacao = new Button();
+            int contador = 0;
+
+            Label lbDescricaoPlebiscito = new Label
             {
-                
-
+                Text = "Opção de voto " + ++contador
             };
-
-
-
+            
+            txDescricaoPlebiscito = new TextBox();
+            btAdicionarOpcaoDeVotacao = new Button {
+                Text = "Adicionar"
+                
+            };
+            btAdicionarOpcaoDeVotacao.Text = "Adicionar";
+            btAdicionarOpcaoDeVotacao.Click += new EventHandler(this.BtIncluirOpcaoIndividualDeVotacaoPlebiscito_Click);
             pnInclusaoOpcaoaSerVotada.Controls.Add(lbDescricaoPlebiscito);
             pnInclusaoOpcaoaSerVotada.Controls.Add(txDescricaoPlebiscito);
             pnInclusaoOpcaoaSerVotada.Controls.Add(btAdicionarOpcaoDeVotacao);
@@ -73,9 +78,13 @@ namespace MeuCondominio1
         }
 
 
-        private string IncluirOpcaoDeVotacaoPlebiscito()
+        private void IncluirOpcaoIndividualDeVotacaoPlebiscito()
         {
-            throw new NotImplementedException();
+            opcaoDeVotacaoPlebiscito = new OpcaoDeVotacaoPlebiscito(txDescricaoPlebiscito.Text);
+            listaOpcoesVotacaoPlebiscito.Add(opcaoDeVotacaoPlebiscito);
+            gvOpcoesDeVotacaoAdicionadas.DataSource = listaOpcoesVotacaoPlebiscito;
+            gvOpcoesDeVotacaoAdicionadas.DataBind();
+
         }
 
 
@@ -87,6 +96,25 @@ namespace MeuCondominio1
         private void IncluirCamposDeCandidatoASindico()
         {
             throw new NotImplementedException();
+        }
+
+        void BtIncluirOpcaoIndividualDeVotacaoPlebiscito_Click(object sender, EventArgs e)
+        {
+            IncluirOpcaoIndividualDeVotacaoPlebiscito();
+        }
+
+        protected void CadastrarEleicao(object sender, EventArgs e)
+        {
+            Eleicao eleicao = new Eleicao(txNomeEleicao.Text,
+                txDescricao.Text, ddTipoEleicao.SelectedValue.ToString(),
+                "Nova", Convert.ToDateTime(txDataInicio.Text),
+                Convert.ToDateTime(txDataFim.Text),
+                Convert.ToInt32(Session["codigoCondominio"]));
+
+
+
+            opcaoVotacao = new OpcaoVotacao(
+
         }
     }
 }

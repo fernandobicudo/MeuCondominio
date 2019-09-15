@@ -12,11 +12,11 @@ namespace MeuCondominio1
     public partial class CadastroEleicao : System.Web.UI.Page
     {
 
-        List<OpcaoDeVotacaoPlebiscito> listaOpcoesVotacaoPlebiscito= new List<OpcaoDeVotacaoPlebiscito>();
+        List<OpcaoDeVotacaoPlebiscito> listaOpcoesVotacaoPlebiscito = new List<OpcaoDeVotacaoPlebiscito>();
         OpcaoDeVotacaoPlebiscito opcaoDeVotacaoPlebiscito;
         OpcaoVotacao opcaoVotacao;
         TextBox txDescricaoPlebiscito;
-        Button btAdicionarOpcaoDeVotacao;
+        Button btAdicionarOpcaoDeVotacaoPlebiscito;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,13 +32,13 @@ namespace MeuCondominio1
             switch (tipoVotacao)
             {
                 case "Plebiscito":
-                    IncluirCamposDeCandidatoASindico();
+                    IncluirCamposDePlebiscito();
                     break;
                 case "Projetos e Serviços Prediais":
                     IncluirCamposDeServicoASerVotado();
                     break;
                 case "Eleição para Síndico":
-                    IncluirCamposDePlebiscito();
+                    IncluirCamposDeCandidatoASindico();
                     break;
                 default:
                     AvisarParaEscolherOpcao(); //TODO: implementar validacao para AdicionarOpcaoDeVotacao somente depois de escolher um tipo de votação.
@@ -46,11 +46,11 @@ namespace MeuCondominio1
             }
         }
 
-       
+
 
         private void AvisarParaEscolherOpcao()
         {
-            
+
         }
 
         private void IncluirCamposDePlebiscito()
@@ -61,17 +61,15 @@ namespace MeuCondominio1
             {
                 Text = "Opção de voto " + ++contador
             };
-            
+
             txDescricaoPlebiscito = new TextBox();
-            btAdicionarOpcaoDeVotacao = new Button {
-                Text = "Adicionar"
-                
-            };
-            btAdicionarOpcaoDeVotacao.Text = "Adicionar";
-            btAdicionarOpcaoDeVotacao.Click += new EventHandler(this.BtIncluirOpcaoIndividualDeVotacaoPlebiscito_Click);
+            btAdicionarOpcaoDeVotacaoPlebiscito = new Button();
+            btAdicionarOpcaoDeVotacaoPlebiscito.Text = "Adicionar";
+            btAdicionarOpcaoDeVotacaoPlebiscito.Attributes.Add("runat", "server");
+            btAdicionarOpcaoDeVotacaoPlebiscito.Click += new EventHandler(BtIncluirOpcaoIndividualDeVotacaoPlebiscito_Click);
             pnInclusaoOpcaoaSerVotada.Controls.Add(lbDescricaoPlebiscito);
             pnInclusaoOpcaoaSerVotada.Controls.Add(txDescricaoPlebiscito);
-            pnInclusaoOpcaoaSerVotada.Controls.Add(btAdicionarOpcaoDeVotacao);
+            pnInclusaoOpcaoaSerVotada.Controls.Add(btAdicionarOpcaoDeVotacaoPlebiscito);
             /*            TODO: incluir classe Plebiscito nos tipos de classe que hoje são "Candidato" (na verdade, a classe plebiscito 
                             conteria apenas os atributos da "Candidato"????
             */
@@ -98,7 +96,7 @@ namespace MeuCondominio1
             throw new NotImplementedException();
         }
 
-        void BtIncluirOpcaoIndividualDeVotacaoPlebiscito_Click(object sender, EventArgs e)
+        protected void BtIncluirOpcaoIndividualDeVotacaoPlebiscito_Click(object sender, EventArgs e)
         {
             IncluirOpcaoIndividualDeVotacaoPlebiscito();
         }
@@ -110,11 +108,6 @@ namespace MeuCondominio1
                 "Nova", Convert.ToDateTime(txDataInicio.Text),
                 Convert.ToDateTime(txDataFim.Text),
                 Convert.ToInt32(Session["codigoCondominio"]));
-
-
-
-            opcaoVotacao = new OpcaoVotacao(
-
         }
     }
 }

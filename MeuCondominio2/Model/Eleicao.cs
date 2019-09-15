@@ -10,10 +10,12 @@ namespace MeuCondominio2.Model
         private string nomeEleicao;
         private string descricaoEleicao;
         private string statusEleicao; //TODO: na documentação está como boolean...
+        private string tipoEleicao; //TODO: adicionar atributo tipoEleicao da classe Eleição à documentação
         private DateTime dataInicioEleicao;
         private DateTime dataFimEleicao;
         private int idCondominio;
 
+        
         public Eleicao()
         {
         }
@@ -21,6 +23,7 @@ namespace MeuCondominio2.Model
         public Eleicao(int idEleicao,
             string nomeEleicao,
             string descricaoEleicao,
+            string tipoEleicao,
             string statusEleicao,
             DateTime dataInicioEleicao,
             DateTime dataFimEleicao,
@@ -29,6 +32,7 @@ namespace MeuCondominio2.Model
             this.idEleicao = idEleicao;
             this.nomeEleicao = nomeEleicao;
             this.descricaoEleicao = descricaoEleicao;
+            this.tipoEleicao = tipoEleicao;
             this.statusEleicao = statusEleicao;
             this.dataInicioEleicao = dataInicioEleicao;
             this.dataFimEleicao = dataFimEleicao;
@@ -37,6 +41,7 @@ namespace MeuCondominio2.Model
 
         public Eleicao(string nomeEleicao,
             string descricaoEleicao,
+            string tipoEleicao,
             string statusEleicao,
             DateTime dataInicioEleicao,
             DateTime dataFimEleicao,
@@ -44,6 +49,7 @@ namespace MeuCondominio2.Model
         {
             this.nomeEleicao = nomeEleicao;
             this.descricaoEleicao = descricaoEleicao;
+            this.tipoEleicao = tipoEleicao;
             this.statusEleicao = statusEleicao;
             this.dataInicioEleicao = dataInicioEleicao;
             this.dataFimEleicao = dataFimEleicao;
@@ -89,6 +95,16 @@ namespace MeuCondominio2.Model
         public void SetStatusEleicao(string value)
         {
             statusEleicao = value;
+        }
+
+        public string GetTipoEleicao()
+        {
+            return tipoEleicao;
+        }
+
+        public void SetTipoEleicao(string value)
+        {
+            tipoEleicao = value;
         }
 
         public DateTime GetDataInicioEleicao()

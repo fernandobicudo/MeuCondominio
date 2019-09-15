@@ -37,6 +37,16 @@ namespace MeuCondominio1
             }
         }
 
+        private void IncluirCamposDeServicoASerVotado()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void IncluirCamposDeCandidatoASindico()
+        {
+            throw new NotImplementedException();
+        }
+
         private void AvisarParaEscolherOpcao()
         {
             throw new NotImplementedException();
@@ -46,11 +56,28 @@ namespace MeuCondominio1
         {
             Label lbDescricaoPlebiscito = new Label();
             TextBox txDescricaoPlebiscito = new TextBox();
+            Button btAdicionarOpcaoDeVotacao = new Button();
+            {
+                
+
+            };
+
+
+
             pnInclusaoOpcaoaSerVotada.Controls.Add(lbDescricaoPlebiscito);
             pnInclusaoOpcaoaSerVotada.Controls.Add(txDescricaoPlebiscito);
-/*            TODO: incluir classe Plebiscito nos tipos de classe que hoje são "Candidato" (na verdade, a classe plebiscito 
-                conteria apenas os atributos da "Candidato"????
-*/        }
+            pnInclusaoOpcaoaSerVotada.Controls.Add(btAdicionarOpcaoDeVotacao);
+            /*            TODO: incluir classe Plebiscito nos tipos de classe que hoje são "Candidato" (na verdade, a classe plebiscito 
+                            conteria apenas os atributos da "Candidato"????
+            */
+        }
+
+
+        private string IncluirOpcaoDeVotacaoPlebiscito()
+        {
+            throw new NotImplementedException();
+        }
+
 
         private void IncluirCamposDeServicoASerVotado()
         {

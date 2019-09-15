@@ -6,7 +6,7 @@ using MeuCondominio2.DAO;
 
 namespace MeuCondominio2.Services.ResultadoDoSorteio
 {
-    class GravaResultadoDoSorteio
+    public class GravaResultadoDoSorteio
     {
         internal static void GravarResultadoDoSorteio(List<ResultadoSorteioPorUnidade> resultado)
         {

@@ -6,5 +6,6 @@ namespace MeuCondominio2.Services.Eleicao
 {
     class GravaEleicao
     {
+        
     }
 }

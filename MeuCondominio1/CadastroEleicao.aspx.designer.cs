@@ -112,15 +112,6 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.WebControls.TextBox txDataFim;
         
         /// <summary>
-        /// ibAdicionarOpcaoDeVotacao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ibAdicionarOpcaoDeVotacao;
-        
-        /// <summary>
         /// pnInclusaoOpcaoaSerVotada control.
         /// </summary>
         /// <remarks>
@@ -130,13 +121,13 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.WebControls.Panel pnInclusaoOpcaoaSerVotada;
         
         /// <summary>
-        /// gvOpcoesDeVotacaoAdicionadas control.
+        /// ibAdicionarOpcaoDeVotacao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvOpcoesDeVotacaoAdicionadas;
+        protected global::System.Web.UI.WebControls.ImageButton ibAdicionarOpcaoDeVotacao;
         
         /// <summary>
         /// lbAdicionarOpcaoDeVotacao control.
@@ -146,6 +137,15 @@ namespace MeuCondominio1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbAdicionarOpcaoDeVotacao;
+        
+        /// <summary>
+        /// gvOpcoesDeVotacaoAdicionadas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvOpcoesDeVotacaoAdicionadas;
         
         /// <summary>
         /// btCadastrarEleicao control.

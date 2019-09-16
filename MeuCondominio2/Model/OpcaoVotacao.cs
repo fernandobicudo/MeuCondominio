@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MeuCondominio2.Model
 {
-    public class OpcaoVotacao //TODO: atualizar classe Candidato nos diagramas de classes de negócios.
+    public class OpcaoVotacao 
     {
         private int idOpcaoDeVotacao;
         private string nomeOpcaoDeVotacao;

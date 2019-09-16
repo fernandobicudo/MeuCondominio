@@ -16,10 +16,10 @@ namespace MeuCondominio2.Model
         private string tipoSorteio;
         private DateTime dataSorteio;
         private DateTime dataValidadeSorteioInicio;
-        private DateTime dataValidadeSorteioFim; //TODO: criar atributo no diagrama de classes SorteioVagas
-        private bool associacaoVagasSequenciais; //TODO: atualizar nome da classe no diagrama de classes
+        private DateTime dataValidadeSorteioFim; 
+        private bool associacaoVagasSequenciais; 
         private int idCondominio;
-        private int qtdeVagasPorUnidade; //TODO: criar atributo no diagrama de classes SorteioVagas
+        private int qtdeVagasPorUnidade; 
 
         private DataTable UnidadesDoCondominio;
         private DataTable VagasDeGaragemDoCondominio;

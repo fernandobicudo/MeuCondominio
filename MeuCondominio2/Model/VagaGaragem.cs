@@ -7,10 +7,10 @@ namespace MeuCondominio2.Model
     public class VagaGaragem
     {
         private int idVaga;
-        private int numeracao; //TODO: ajustar tipo do atributo nos diagramas de classe
+        private int numeracao; 
         private bool vagaSequencial;
-        //TODO: incluir idCondominio, e substituir idUnidade por idCondominio no banco.
-        //TODO: atualizar Diagrama de Classes de Negócio e Modelo Lógico
+        
+        
 
         public VagaGaragem()
         {

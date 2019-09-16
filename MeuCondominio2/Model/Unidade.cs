@@ -9,7 +9,7 @@ namespace MeuCondominio2.Model
         private int idUnidade;
         private int qtdVagas;
         private string identificacao;
-        private bool statusInadimplencia; //TODO: ajustar tipo do atributo no diagrama de classes
+        private bool statusInadimplencia; 
         private bool statusOcupacao;
 
         public Unidade()

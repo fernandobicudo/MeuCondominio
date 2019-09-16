@@ -6,7 +6,7 @@ namespace MeuCondominio2.Model
 {
     public class ResultadoSorteioPorUnidade
     {
-        private int idResultadoSorteio;
+        private int idResultadoSorteio; //TODO: esta classe entra no diagrama de classe de negócio? 
         private int idUnidade;
         private int idVagaDeGaragem;
         private int idSorteioVaga;

@@ -30,7 +30,7 @@
             <asp:Label ID="lbDataFim" runat="server" Text="Data de Encerramento da Votação"></asp:Label>
             <asp:TextBox ID="txDataFim" runat="server" CssClass="campoTextoDatePicker_p" MaxLength="6" AutoCompleteType="Disabled"></asp:TextBox><br />
             <asp:Panel ID="pnInclusaoOpcaoaSerVotada" runat="server"></asp:Panel>
-            <asp:ImageButton ID="ibAdicionarOpcaoDeVotacao" runat="server" ImageUrl="~/Images/add-circle-green-512.png" Height="20px" OnClick="AdicionarOpcaoDeVotacao" />
+            <asp:ImageButton ID="ibAdicionarOpcaoDeVotacao" runat="server" ImageUrl="~/Images/add-circle-green-512.png" Height="20px" OnClick="IrParaCadastroOpcao" />
             <asp:Label ID="lbAdicionarOpcaoDeVotacao" runat="server" Text="Adicionar opção a ser votada"></asp:Label><br />
             <asp:GridView ID="gvOpcoesDeVotacaoAdicionadas" runat="server"></asp:GridView>
             <br />

@@ -18,9 +18,18 @@ namespace MeuCondominio1
         TextBox txDescricaoPlebiscito;
         Button btAdicionarOpcaoDeVotacaoPlebiscito;
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            opcaoDeVotacaoPlebiscito = new OpcaoDeVotacaoPlebiscito(Request["descricao"]);
+
+            if (opcaoDeVotacaoPlebiscito.GetDescricaoOpcaoIndividualDeVotacaoPlebiscito() != null)
+            {
+                listaOpcoesVotacaoPlebiscito.Add(opcaoDeVotacaoPlebiscito);
+                gvOpcoesDeVotacaoAdicionadas.DataSource = listaOpcoesVotacaoPlebiscito;
+                gvOpcoesDeVotacaoAdicionadas.DataBind();
+            }
         }
 
         protected void AdicionarOpcaoDeVotacao(object sender, ImageClickEventArgs e)
@@ -45,8 +54,6 @@ namespace MeuCondominio1
                     break;
             }
         }
-
-
 
         private void AvisarParaEscolherOpcao()
         {
@@ -108,6 +115,16 @@ namespace MeuCondominio1
                 "Nova", Convert.ToDateTime(txDataInicio.Text),
                 Convert.ToDateTime(txDataFim.Text),
                 Convert.ToInt32(Session["codigoCondominio"]));
+        }
+
+        protected void ibAdicionarOpcaoDeVotacao_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
+        protected void IrParaCadastroOpcao(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("EleicaoAdicionarOpcaoParaVotacao.aspx");
         }
     }
 }

@@ -27,8 +27,8 @@
                     <asp:Label ID="lbBoleto" runat="server" Text="Boletos"></asp:Label><br /><br />
                 </div>
                 <div class="item">
-                    <asp:ImageButton ID="ibUsuarios" runat="server" Height="100px" ImageUrl="~/Images/Usuarios_G.png" Width="100px"/><br />
-                    <asp:Label ID="lbUsuario" runat="server" Text="Meus Dados"></asp:Label><br /><br /> 
+                    <asp:ImageButton ID="ibUsuarios" runat="server" Height="100px" ImageUrl="~/Images/hand_G.png" Width="100px" OnClick="IrParaPaginaEleicoes" /><br />
+                    <asp:Label ID="lbUsuario" runat="server" Text="Votações"></asp:Label><br /><br /> 
                 </div>
             </div>
             <div class="footer">

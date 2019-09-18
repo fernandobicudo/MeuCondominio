@@ -18,5 +18,10 @@ namespace MeuCondominio1
         {
             Response.Redirect("VagaCondomino.aspx"); 
         }
+
+        protected void IrParaPaginaEleicoes(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("ListaVotacaoEleicaoConsultaCondomino.aspx");
+        }
     }
 }

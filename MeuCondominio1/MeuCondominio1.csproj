@@ -184,6 +184,7 @@
     <Content Include="Site.Master" />
     <Content Include="VagaCondomino.aspx" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="ListaVotacaoEleicaoConsultaCondomino.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -271,6 +272,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaVotacaoEleicaoConsultaCondomino.aspx.cs">
+      <DependentUpon>ListaVotacaoEleicaoConsultaCondomino.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaVotacaoEleicaoConsultaCondomino.aspx.designer.cs">
+      <DependentUpon>ListaVotacaoEleicaoConsultaCondomino.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

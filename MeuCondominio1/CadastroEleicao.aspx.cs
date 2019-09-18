@@ -112,7 +112,7 @@ namespace MeuCondominio1
         {
             Eleicao eleicao = new Eleicao(txNomeEleicao.Text,
                 txDescricao.Text, ddTipoEleicao.SelectedValue.ToString(),
-                "Nova", Convert.ToDateTime(txDataInicio.Text),
+                true, Convert.ToDateTime(txDataInicio.Text),
                 Convert.ToDateTime(txDataFim.Text),
                 Convert.ToInt32(Session["codigoCondominio"]));
         }

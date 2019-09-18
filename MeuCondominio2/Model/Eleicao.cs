@@ -9,7 +9,7 @@ namespace MeuCondominio2.Model
         private int idEleicao;
         private string nomeEleicao;
         private string descricaoEleicao;
-        private string statusEleicao; //TODO: na documentação está como boolean...
+        private bool statusEleicao; //TODO: na documentação está como boolean...
         private string tipoEleicao; //TODO: adicionar atributo tipoEleicao da classe Eleição à documentação
         private DateTime dataInicioEleicao;
         private DateTime dataFimEleicao;
@@ -24,7 +24,7 @@ namespace MeuCondominio2.Model
             string nomeEleicao,
             string descricaoEleicao,
             string tipoEleicao,
-            string statusEleicao,
+            bool statusEleicao,
             DateTime dataInicioEleicao,
             DateTime dataFimEleicao,
             int idCondominio)
@@ -42,7 +42,7 @@ namespace MeuCondominio2.Model
         public Eleicao(string nomeEleicao,
             string descricaoEleicao,
             string tipoEleicao,
-            string statusEleicao,
+            bool statusEleicao,
             DateTime dataInicioEleicao,
             DateTime dataFimEleicao,
             int idCondominio)
@@ -87,12 +87,12 @@ namespace MeuCondominio2.Model
             descricaoEleicao = value;
         }
 
-        public string GetStatusEleicao()
+        public bool  GetStatusEleicao()
         {
             return statusEleicao;
         }
 
-        public void SetStatusEleicao(string value)
+        public void SetStatusEleicao(bool value)
         {
             statusEleicao = value;
         }

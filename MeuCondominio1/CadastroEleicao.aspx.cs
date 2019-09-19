@@ -14,7 +14,6 @@ namespace MeuCondominio1
 
         List<OpcaoDeVotacaoPlebiscito> listaOpcoesVotacaoPlebiscito = new List<OpcaoDeVotacaoPlebiscito>();
         OpcaoDeVotacaoPlebiscito opcaoDeVotacaoPlebiscito;
-        OpcaoVotacao opcaoVotacao;
         TextBox txDescricaoPlebiscito;
         Button btAdicionarOpcaoDeVotacaoPlebiscito;
 
@@ -27,7 +26,7 @@ namespace MeuCondominio1
             if (opcaoDeVotacaoPlebiscito.GetDescricaoOpcaoIndividualDeVotacaoPlebiscito() != null)
             {
                 listaOpcoesVotacaoPlebiscito.Add(opcaoDeVotacaoPlebiscito);
-                gvOpcoesDeVotacaoAdicionadas.DataSource = listaOpcoesVotacaoPlebiscito;
+                gvOpcoesDeVotacaoAdicionadas.DataSource = listaOpcoesVotacaoPlebiscito; //TODO: esta chamada está redundante em relação ao método
                 gvOpcoesDeVotacaoAdicionadas.DataBind();
             }
         }

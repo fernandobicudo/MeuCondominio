@@ -123,6 +123,7 @@
     <Content Include="CadastroEleicao.aspx" />
     <Content Include="CadastroSorteioVagas.aspx" />
     <Content Include="CondominoConsultaListaEleicoes.aspx" />
+    <Content Include="CondominoEleicaoInfo.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -212,6 +213,13 @@
     </Compile>
     <Compile Include="CondominoConsultaListaEleicoes.aspx.designer.cs">
       <DependentUpon>CondominoConsultaListaEleicoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CondominoEleicaoInfo.aspx.cs">
+      <DependentUpon>CondominoEleicaoInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CondominoEleicaoInfo.aspx.designer.cs">
+      <DependentUpon>CondominoEleicaoInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="EleicaoAdicionarOpcaoParaVotacao.aspx.cs">
       <DependentUpon>EleicaoAdicionarOpcaoParaVotacao.aspx</DependentUpon>

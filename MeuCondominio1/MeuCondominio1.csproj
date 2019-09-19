@@ -122,6 +122,7 @@
   <ItemGroup>
     <Content Include="CadastroEleicao.aspx" />
     <Content Include="CadastroSorteioVagas.aspx" />
+    <Content Include="CondominoConsultaListaEleicoes.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -184,7 +185,6 @@
     <Content Include="Site.Master" />
     <Content Include="VagaCondomino.aspx" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="ListaVotacaoEleicaoConsultaCondomino.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -205,6 +205,13 @@
     </Compile>
     <Compile Include="CadastroSorteioVagas.aspx.designer.cs">
       <DependentUpon>CadastroSorteioVagas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CondominoConsultaListaEleicoes.aspx.cs">
+      <DependentUpon>CondominoConsultaListaEleicoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CondominoConsultaListaEleicoes.aspx.designer.cs">
+      <DependentUpon>CondominoConsultaListaEleicoes.aspx</DependentUpon>
     </Compile>
     <Compile Include="EleicaoAdicionarOpcaoParaVotacao.aspx.cs">
       <DependentUpon>EleicaoAdicionarOpcaoParaVotacao.aspx</DependentUpon>
@@ -272,13 +279,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="ListaVotacaoEleicaoConsultaCondomino.aspx.cs">
-      <DependentUpon>ListaVotacaoEleicaoConsultaCondomino.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ListaVotacaoEleicaoConsultaCondomino.aspx.designer.cs">
-      <DependentUpon>ListaVotacaoEleicaoConsultaCondomino.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

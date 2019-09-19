@@ -6,12 +6,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using MeuCondominio2.Model;
-using MeuCondominio2.Services;
 using MeuCondominio2.Services.Eleicao;
 
 namespace MeuCondominio1
 {
-    public partial class ListaVotacaoEleicaoConsultaCondomino : System.Web.UI.Page
+    public partial class CondominoConsultaListaEleicoes : System.Web.UI.Page
     {
         Eleicao eleicao;
         List<Eleicao> listaDeEleicoesDoCondominio = new List<Eleicao>();
@@ -20,13 +19,12 @@ namespace MeuCondominio1
         {
 
         }
-
         private void ListarEleicoesNaPagina()
         {
-            foreach(Eleicao eleicao in listaDeEleicoesDoCondominio)
+            foreach (Eleicao eleicao in listaDeEleicoesDoCondominio)
             {
                 string nomeStatusEleicao;
-                
+
                 Label tituloEleicao = new Label();
                 Label lbtipoEleicao = new Label();
                 Label tipoEleicao = new Label();
@@ -38,7 +36,7 @@ namespace MeuCondominio1
                 Label dataInicioEleicao = new Label();
                 Label lbDataFimEleicao = new Label();
                 Label dataFimEleicao = new Label();
-                
+
 
                 tituloEleicao.Text = eleicao.GetNomeEleicao();
                 lbtipoEleicao.Text = "Tipo de votação: ";
@@ -75,7 +73,7 @@ namespace MeuCondominio1
             }
         }
         //TODO: pensar numa maneira de clicar numa linha de Eleição e levar à página de detalhe (votação ou consulta, dependendo do status da eleição)
-        
+
 
         private void ConstruirListaDeEleicoes()
         {
@@ -101,6 +99,5 @@ namespace MeuCondominio1
             }
         }
 
-        
     }
 }

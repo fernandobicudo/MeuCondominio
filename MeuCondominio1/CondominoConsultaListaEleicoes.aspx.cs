@@ -58,16 +58,20 @@ namespace MeuCondominio1
                 lbDataFimEleicao.Text = "Realização: ";
                 dataFimEleicao.Text = eleicao.GetDataFimEleicao().ToString();
 
-
                 pnEleicoes.Controls.Add(tituloEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
                 pnEleicoes.Controls.Add(lbtipoEleicao);
                 pnEleicoes.Controls.Add(tipoEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
                 pnEleicoes.Controls.Add(lbDescricaoEleicao);
                 pnEleicoes.Controls.Add(descricaoEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
                 pnEleicoes.Controls.Add(lbStatusEleicao);
                 pnEleicoes.Controls.Add(statusEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
                 pnEleicoes.Controls.Add(lbDataInicioEleicao);
                 pnEleicoes.Controls.Add(dataInicioEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
                 pnEleicoes.Controls.Add(lbDataFimEleicao);
                 pnEleicoes.Controls.Add(dataFimEleicao);
             }
@@ -85,7 +89,6 @@ namespace MeuCondominio1
 
             foreach (DataRow linha in dt.Rows)
             {
-
                 eleicao = new Eleicao(Convert.ToInt32(linha["idEleicao"].ToString()),
                     linha["nomeEleicao"].ToString(),
                     linha["descricaoEleicao"].ToString(),

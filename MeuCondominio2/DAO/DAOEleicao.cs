@@ -37,8 +37,8 @@ namespace MeuCondominio2.DAO
         {
             string SQL;
 
-            string dataInicioEleicao = Conversores.ConversaoDeDataParaString(eleicao.GetDataInicioEleicao());
-            string dataFimEleicao = Conversores.ConversaoDeDataParaString(eleicao.GetDataFimEleicao()); 
+            string dataInicioEleicao = Formatadores.ConversaoDeDataParaString(eleicao.GetDataInicioEleicao());
+            string dataFimEleicao = Formatadores.ConversaoDeDataParaString(eleicao.GetDataFimEleicao()); 
 
             SQL = String.Format(@"INSERT INTO `Eleicao` " +
                 "(`nomeEleicao`, `tipoEleicao`, `descricaoEleicao`, " + 

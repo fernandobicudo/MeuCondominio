@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using MeuCondominio2.Model;
 using System.Data;
+using MeuCondominio2.Services.Ferramentas;
 
 namespace MeuCondominio2.DAO
 {
@@ -12,9 +13,9 @@ namespace MeuCondominio2.DAO
         {
             string SQL;
 
-            string dataSorteio = sorteioVagas.GetDataSorteio().ToString().Replace('/', '-');
-            string dataValidadeInicio = sorteioVagas.GetDataValidadeSorteioInicio().ToString().Replace('/', '-');
-            string dataValidadeFim = sorteioVagas.GetDataValidadeSorteioFim().ToString().Replace('/', '-');
+            string dataSorteio = Formatadores.ConversaoDeDataParaString(sorteioVagas.GetDataSorteio());
+            string dataValidadeInicio = Formatadores.ConversaoDeDataParaString(sorteioVagas.GetDataValidadeSorteioInicio());
+            string dataValidadeFim = Formatadores.ConversaoDeDataParaString(sorteioVagas.GetDataValidadeSorteioFim());
 
             SQL = String.Format(@"INSERT INTO SorteioVagas " +
                 "(`tipoSorteio`, `dataSorteio`, `dataValidadeSorteioInicio`, `dataValidadeSorteioFim`, " +

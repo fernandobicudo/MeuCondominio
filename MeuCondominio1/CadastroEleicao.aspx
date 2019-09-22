@@ -10,7 +10,7 @@
     <script src="./scripts/jquery-ui.js"></script>
     <script>
         $(function () {
-            $(".campoTextoDatePicker_p").datepicker();
+            $(".campoTextoDatePicker_p").datepicker({ dateFormat: 'dd/mm/yy' });
         });
     </script>
     <title>Cadastro de Eleição</title>

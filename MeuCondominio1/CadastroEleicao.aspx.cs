@@ -40,8 +40,8 @@ namespace MeuCondominio1
         {
             DateTime dataInicio, dataFim;
 
-            dataInicio = Conversores.FormatarDataParaBancoDeDados(txDataInicio.Text);
-            dataFim = Conversores.FormatarDataParaBancoDeDados(txDataFim.Text);
+            dataInicio = Formatadores.FormatarDataParaBancoDeDados(txDataInicio.Text);
+            dataFim = Formatadores.FormatarDataParaBancoDeDados(txDataFim.Text);
 
             Eleicao eleicao = new Eleicao(txNomeEleicao.Text,
                 txDescricao.Text, ddTipoEleicao.SelectedValue.ToString(),

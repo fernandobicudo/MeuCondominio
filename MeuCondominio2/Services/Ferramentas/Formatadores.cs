@@ -4,11 +4,11 @@ using System.Text;
 
 namespace MeuCondominio2.Services.Ferramentas
 {
-    public class Conversores
+    public class Formatadores
     {
         public static String ConversaoDeDataParaString(DateTime data)
         {
-            string dataResultado = data.ToString().Replace('/', '-');
+            string dataResultado = data.ToString();
             return dataResultado;
         }
 
@@ -16,9 +16,14 @@ namespace MeuCondominio2.Services.Ferramentas
         {
             DateTime dataRetorno;
 
-            dataRetorno = DateTime.ParseExact(data, "MM/dd/yyyy", null);
+            dataRetorno = DateTime.ParseExact(data, "dd/MM/yyyy", null);
 
             return dataRetorno;
+        }
+
+        public static string FormatarDataParaExibicao(string data)
+        {
+            return data.Substring(0, 10);
         }
     }
 }

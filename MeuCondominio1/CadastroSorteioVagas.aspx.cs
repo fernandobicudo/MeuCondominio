@@ -42,10 +42,10 @@ namespace MeuCondominio1
 
             DateTime dataSorteio, dataValidadeInicio, dataValidadeFim;
 
-            //URGENTE: ACERTAS FORMATO DE DATAS
-            dataSorteio = Conversores.FormatarDataParaBancoDeDados(txDataSorteio.Text);
-            dataValidadeInicio = Conversores.FormatarDataParaBancoDeDados(txDataValidadeInicio.Text); 
-            dataValidadeFim = Conversores.FormatarDataParaBancoDeDados(txDataValidadeFim.Text); 
+            //URGENTE: ACERTAR FORMATO DE DATAS
+            dataSorteio = Formatadores.FormatarDataParaBancoDeDados(txDataSorteio.Text);
+            dataValidadeInicio = Formatadores.FormatarDataParaBancoDeDados(txDataValidadeInicio.Text); 
+            dataValidadeFim = Formatadores.FormatarDataParaBancoDeDados(txDataValidadeFim.Text); 
 
             if (rbSeHaVagasSequenciaisSim.Checked == true)
                 sorteio.SetAssociacaoVagasSequenciais(true);

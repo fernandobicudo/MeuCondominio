@@ -30,7 +30,7 @@ namespace MeuCondominio2.DAO
         internal static DataTable PesquisarVagasDoResultadoPorIddoCondominoEIddoCondominio(int idCondomino, int idCondominio)
         {
             string SQL;
-            SQL = String.Format(@"SELECT vg.numeracao FROM `ResultadoSorteio` rs " +
+            SQL = String.Format(@"SELECT * FROM `ResultadoSorteio` rs " +
                                 "JOIN `SorteioVagas` sv ON sv.id = rs.idSorteioVaga " +
                                 "JOIN `Unidade` un ON un.id = rs.idUnidade " +
                                 "JOIN `VagaGaragem` vg ON vg.id = rs.idVagaGaragem " +

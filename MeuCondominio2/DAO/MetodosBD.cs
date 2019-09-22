@@ -31,6 +31,8 @@ namespace MeuCondominio2.DAO
             try
             {
                 SQLiteDataAdapter adapter = new SQLiteDataAdapter(sql, conexao);
+                
+
                 DataTable dataTemp = new DataTable();
                 adapter.Fill(dataTemp);
                 return dataTemp;

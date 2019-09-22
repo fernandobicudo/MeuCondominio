@@ -13,6 +13,7 @@
         <div>
             <asp:Panel ID="pnEleicoes" runat="server"></asp:Panel>
         </div>
+        <asp:GridView ID="gvEleicoes" runat="server"></asp:GridView>
     </form>
 </body>
 </html>

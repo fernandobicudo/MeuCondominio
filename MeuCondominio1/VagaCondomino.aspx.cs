@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using MeuCondominio2.Services.ResultadoDoSorteio;
+using MeuCondominio2.Services.Ferramentas;
 
 
 namespace MeuCondominio1
@@ -26,10 +27,10 @@ namespace MeuCondominio1
             dt = BuscaResultadoDoSorteio.
                 BuscarVagasDoResultadoPorIddoCondominoEIddoCondominio(idCondomino, idCondominio);
 
-            /*Label dataSorteio = new Label();
-            dataSorteio.Text = dt.Rows[0]["dataSorteio"].ToString();
+            Label dataSorteio = new Label();
+            dataSorteio.Text = "Sorteio realizado em " + Formatadores.FormatarDataParaExibicao(dt.Rows[0]["dataSorteio"].ToString());
             pnHeaderVaga.Controls.Add(dataSorteio);
-*/
+
 
             foreach (DataRow linha in dt.Rows) 
             {
@@ -49,17 +50,18 @@ namespace MeuCondominio1
                 pnNumeroVaga.Controls.Add(numVaga);
             }
 
-  /*          Label dataValidade = new Label();
-            dataValidade.Text = dt.Rows[0]["dataValidadeSorteioFim"].ToString();
-*/
+            Label dataValidade = new Label();
+            dataValidade.Text = "Validade: " + Formatadores.FormatarDataParaExibicao(dt.Rows[0]["dataValidadeSorteioFim"].ToString());
+            pnValidadeVaga.Controls.Add(dataValidade);
+
 
             /*            teste para exibir variáveis de sessão:
             */
-/*            Label1.Text = Session["codigoUser"].ToString();
-            Label2.Text = Session["nomeUser"].ToString();
-            Label3.Text = Session["emailUser"].ToString();
-            Label4.Text = Session["tipoUser"].ToString();
-            Label5.Text = Session["codigoCondominio"].ToString();*/
+            /*            Label1.Text = Session["codigoUser"].ToString();
+                        Label2.Text = Session["nomeUser"].ToString();
+                        Label3.Text = Session["emailUser"].ToString();
+                        Label4.Text = Session["tipoUser"].ToString();
+                        Label5.Text = Session["codigoCondominio"].ToString();*/
         }
     }
 }

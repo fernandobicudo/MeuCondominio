@@ -12,13 +12,24 @@ namespace MeuCondominio1
 {
     public partial class CondominoConsultaListaEleicoes : System.Web.UI.Page
     {
-        Eleicao eleicao;
+
         List<Eleicao> listaDeEleicoesDoCondominio = new List<Eleicao>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                ConstruirListaDeEleicoes();
+                /*CarregarGriView();*/
+            }
+        }
+
+        private void CarregarGriView()
+        {
+            gvEleicoes.DataSource = listaDeEleicoesDoCondominio;
 
         }
+
         private void ListarEleicoesNaPagina()
         {
             foreach (Eleicao eleicao in listaDeEleicoesDoCondominio)
@@ -87,7 +98,10 @@ namespace MeuCondominio1
 
             dt = BuscaEleicao.BuscaEleicoesDoCondominio(idCondominio);
 
-            foreach (DataRow linha in dt.Rows)
+            gvEleicoes.DataSource = dt;
+            gvEleicoes.DataBind();
+
+            /*foreach (DataRow linha in dt.Rows)
             {
                 eleicao = new Eleicao(Convert.ToInt32(linha["idEleicao"].ToString()),
                     linha["nomeEleicao"].ToString(),
@@ -99,7 +113,7 @@ namespace MeuCondominio1
                     Convert.ToInt32(linha["idCondominio"].ToString()));
 
                 listaDeEleicoesDoCondominio.Add(eleicao);
-            }
+            }*/
         }
 
     }

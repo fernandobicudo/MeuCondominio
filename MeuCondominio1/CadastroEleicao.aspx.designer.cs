@@ -121,39 +121,66 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.WebControls.Panel pnInclusaoOpcaoaSerVotada;
         
         /// <summary>
-        /// ibAdicionarOpcaoDeVotacao control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ibAdicionarOpcaoDeVotacao;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// lbAdicionarOpcaoDeVotacao control.
+        /// upAdicionarOpcao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbAdicionarOpcaoDeVotacao;
+        protected global::System.Web.UI.UpdatePanel upAdicionarOpcao;
         
         /// <summary>
-        /// gvOpcoesDeVotacaoAdicionadas control.
+        /// txOpcao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvOpcoesDeVotacaoAdicionadas;
+        protected global::System.Web.UI.WebControls.TextBox txOpcao;
         
         /// <summary>
-        /// btCadastrarEleicao control.
+        /// btAdicionarOpcao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btCadastrarEleicao;
+        protected global::System.Web.UI.WebControls.Button btAdicionarOpcao;
+        
+        /// <summary>
+        /// blListaOpcoesAdicionadas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.BulletedList blListaOpcoesAdicionadas;
+        
+        /// <summary>
+        /// btremoverOpcoes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btremoverOpcoes;
+        
+        /// <summary>
+        /// btCadastrar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btCadastrar;
     }
 }

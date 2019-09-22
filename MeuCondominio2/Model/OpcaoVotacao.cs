@@ -10,24 +10,40 @@ namespace MeuCondominio2.Model
         private string nomeOpcaoDeVotacao;
         private string descricaoOpcaoDeVotacao;
         private string URLFotoDaOpcao;
+        private int idEleicao;
+
+        public int GetIdEleicao()
+        {
+            return idEleicao;
+        }
+
+        public void SetIdEleicao(int value)
+        {
+            idEleicao = value;
+        }
 
         public OpcaoVotacao()
         {
+
         }
 
-        public OpcaoVotacao(int idOpcaoDeVotacao, string nomeOpcaoDeVotacao, string descricaoOpcaoDeVotacao, string uRLFotoDaOpcao)
+        public OpcaoVotacao(int idOpcaoDeVotacao, string nomeOpcaoDeVotacao,
+            string descricaoOpcaoDeVotacao, string uRLFotoDaOpcao, int idEleicao)
         {
             this.idOpcaoDeVotacao = idOpcaoDeVotacao;
             this.nomeOpcaoDeVotacao = nomeOpcaoDeVotacao;
             this.descricaoOpcaoDeVotacao = descricaoOpcaoDeVotacao;
             URLFotoDaOpcao = uRLFotoDaOpcao;
+            this.idEleicao = idEleicao;
         }
 
-        public OpcaoVotacao(string nomeOpcaoDeVotacao, string descricaoOpcaoDeVotacao, string uRLFotoDaOpcao)
+        public OpcaoVotacao(string nomeOpcaoDeVotacao, string descricaoOpcaoDeVotacao,
+            string uRLFotoDaOpcao, int idEleicao)
         {
             this.nomeOpcaoDeVotacao = nomeOpcaoDeVotacao;
             this.descricaoOpcaoDeVotacao = descricaoOpcaoDeVotacao;
             URLFotoDaOpcao = uRLFotoDaOpcao;
+            this.idEleicao = idEleicao;
         }
 
         public int GetIdOpcaoDeVotacao()
@@ -60,12 +76,12 @@ namespace MeuCondominio2.Model
             descricaoOpcaoDeVotacao = value;
         }
 
-        public string GetURLFotoDaOpcao1()
+        public string GetURLFotoDaOpcao()
         {
             return URLFotoDaOpcao;
         }
 
-        public void SetURLFotoDaOpcao1(string value)
+        public void SetURLFotoDaOpcao(string value)
         {
             URLFotoDaOpcao = value;
         }

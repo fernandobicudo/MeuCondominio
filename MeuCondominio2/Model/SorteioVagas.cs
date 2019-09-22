@@ -242,6 +242,9 @@ namespace MeuCondominio2.Model
             GravaResultadoDoSorteio.GravarResultadoDoSorteio(resultado);
         }
 
+        /*TODO: está gravando no banco de dados, mas,
+        somente quando acionado pela segunda vez, a página do condômino exibe as vagas.*/
+
         /*TODO: Pegar número total de vagas, número total de unidades ocupadas, 
              *número de vagas por unidade, se são sequenciais.
              * Sortear as vagas por unidade conforme o número de vagas para cada

@@ -4,34 +4,22 @@ using System.Text;
 
 namespace MeuCondominio2.Model
 {
-    public class OpcaoDeVotacaoPlebiscito :OpcaoVotacao
+    public class OpcaoDeVotacaoPlebiscito 
     {
         private int idOpcaoDeVotacaoPlebiscito;
-        private int idOpcaoIndividualDeVotacaoPlebiscito;
-        private string descricaoOpcaoDeVotacaoPlebiscitoIndividual;
-
+        private string nomeOpcaoDeVotacaoPlebiscito;
+        private int idEleicao;
         
         public OpcaoDeVotacaoPlebiscito()
         {
 
         }
 
-        public OpcaoDeVotacaoPlebiscito(string descricaoOpcaoDeVotacaoPlebiscitoIndividual)
-        {
-            this.descricaoOpcaoDeVotacaoPlebiscitoIndividual = descricaoOpcaoDeVotacaoPlebiscitoIndividual;
-        }
-
-        public OpcaoDeVotacaoPlebiscito(int idOpcaoDeVotacaoPlebiscito, int idOpcaoIndividuaDeVotacaoPlebiscitol, string descricaoOpcaoDeVotacaoPlebiscitoIndividual)
+        public OpcaoDeVotacaoPlebiscito(int idOpcaoDeVotacaoPlebiscito, string nomeOpcaoDeVotacaoPlebiscito, int idEleicao)
         {
             this.idOpcaoDeVotacaoPlebiscito = idOpcaoDeVotacaoPlebiscito;
-            this.idOpcaoIndividualDeVotacaoPlebiscito = idOpcaoIndividuaDeVotacaoPlebiscitol;
-            this.descricaoOpcaoDeVotacaoPlebiscitoIndividual = descricaoOpcaoDeVotacaoPlebiscitoIndividual;
-        }
-
-        public OpcaoDeVotacaoPlebiscito(int idOpcaoIndividualDeVotacaoPlebiscito, string descricaoOpcaoDeVotacaoPlebiscitoIndividual)
-        {
-            this.idOpcaoIndividualDeVotacaoPlebiscito = idOpcaoIndividualDeVotacaoPlebiscito;
-            this.descricaoOpcaoDeVotacaoPlebiscitoIndividual = descricaoOpcaoDeVotacaoPlebiscitoIndividual;
+            this.nomeOpcaoDeVotacaoPlebiscito = nomeOpcaoDeVotacaoPlebiscito;
+            this.idEleicao = idEleicao;
         }
 
         public int GetIdOpcaoDeVotacaoPlebiscito()
@@ -44,24 +32,24 @@ namespace MeuCondominio2.Model
             idOpcaoDeVotacaoPlebiscito = value;
         }
 
-        public int GetIdOpcaoIndividualDeVotacaoPlebiscito()
+        public string GetNomeOpcaoDeVotacaoPlebiscito()
         {
-            return idOpcaoIndividualDeVotacaoPlebiscito;
+            return nomeOpcaoDeVotacaoPlebiscito;
         }
 
-        public void SetIdOpcaoIndividualDeVotacaoPlebiscito(int value)
+        public void SetNomeOpcaoDeVotacaoPlebiscito(string value)
         {
-            idOpcaoIndividualDeVotacaoPlebiscito = value;
+            nomeOpcaoDeVotacaoPlebiscito = value;
         }
 
-        public string GetDescricaoOpcaoIndividualDeVotacaoPlebiscito()
+        public int GetIdEleicao()
         {
-            return descricaoOpcaoDeVotacaoPlebiscitoIndividual;
+            return idEleicao;
         }
 
-        public void SetDescricaoOpcaoIndividualDeVotacaoPlebiscito(string value)
+        public void SetIdEleicao(int value)
         {
-            descricaoOpcaoDeVotacaoPlebiscitoIndividual = value;
+            idEleicao = value;
         }
     }
 }

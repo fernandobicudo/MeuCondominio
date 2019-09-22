@@ -8,6 +8,7 @@ using MeuCondominio2.Model;
 using MeuCondominio2.Services;
 using MeuCondominio2.Services.SorteioVagas;
 using MeuCondominio2.Services.ResultadoDoSorteio;
+using MeuCondominio2.Services.Ferramentas;
 using System.Runtime.InteropServices;
 using System.Data;
 
@@ -42,9 +43,9 @@ namespace MeuCondominio1
             DateTime dataSorteio, dataValidadeInicio, dataValidadeFim;
 
             //URGENTE: ACERTAS FORMATO DE DATAS
-            dataSorteio = DateTime.ParseExact(txDataSorteio.Text, "MM/dd/yyyy", null);
-            dataValidadeInicio = DateTime.ParseExact(txDataValidadeInicio.Text, "MM/dd/yyyy", null);
-            dataValidadeFim = DateTime.ParseExact(txDataValidadeFim.Text, "MM/dd/yyyy", null);
+            dataSorteio = Conversores.FormatarDataParaBancoDeDados(txDataSorteio.Text);
+            dataValidadeInicio = Conversores.FormatarDataParaBancoDeDados(txDataValidadeInicio.Text); 
+            dataValidadeFim = Conversores.FormatarDataParaBancoDeDados(txDataValidadeFim.Text); 
 
             if (rbSeHaVagasSequenciaisSim.Checked == true)
                 sorteio.SetAssociacaoVagasSequenciais(true);
@@ -90,7 +91,7 @@ namespace MeuCondominio1
         {
             int idCondominio = Convert.ToInt32(Session["codigoCondominio"]);
             sorteioVagas.SortearVagas(idCondominio);
-            //TODO: usando id 1 de COndominio. Tornar dinâmico, pegando variavel de sessão.
+            
         }
        
         private SorteioVagas CriaObjetoSorteioVagas(DataTable dt)

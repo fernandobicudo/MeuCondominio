@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./css/estilos-global.css" />
     <script src="./scripts/jquery-3.3.1.js"> </script>
     <script src="./scripts/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $(".campoTextoDatePicker_p").datepicker();
+        });
+    </script>
     <title>Cadastro de Eleição</title>
 </head>
 <body>
@@ -15,7 +20,7 @@
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="lbNomeEleicao" runat="server" Text="Título da Eleição"></asp:Label>
-            <asp:TextBox ID="txNomeEleicao" runat="server" MaxLength="30" Length="30"></asp:TextBox><br />
+            <asp:TextBox ID="txNomeEleicao" runat="server" MaxLength="30"></asp:TextBox><br />
             <asp:Label ID="lbTipoEleicao" runat="server" Text="Tipo de Eleição"></asp:Label>
             <asp:DropDownList ID="ddTipoEleicao" runat="server">
                 <asp:ListItem>Plebiscito</asp:ListItem>
@@ -30,11 +35,21 @@
             <asp:Label ID="lbDataFim" runat="server" Text="Data de Encerramento da Votação"></asp:Label>
             <asp:TextBox ID="txDataFim" runat="server" CssClass="campoTextoDatePicker_p" MaxLength="6" AutoCompleteType="Disabled"></asp:TextBox><br />
             <asp:Panel ID="pnInclusaoOpcaoaSerVotada" runat="server"></asp:Panel>
-            <asp:ImageButton ID="ibAdicionarOpcaoDeVotacao" runat="server" ImageUrl="~/Images/add-circle-green-512.png" Height="20px" OnClick="IrParaCadastroOpcao" />
-            <asp:Label ID="lbAdicionarOpcaoDeVotacao" runat="server" Text="Adicionar opção a ser votada"></asp:Label><br />
-            <asp:GridView ID="gvOpcoesDeVotacaoAdicionadas" runat="server"></asp:GridView>
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <asp:UpdatePanel ID="upAdicionarOpcao" runat="server">
+                <ContentTemplate>
+                    <asp:TextBox ID="txOpcao" runat="server"></asp:TextBox>
+                    <asp:Button ID="btAdicionarOpcao" runat="server" OnClick="AdicionarOpcaodeVotacao" Text="Adicionar" CssClass=" botaoPequeno" />
+                    <br />
+                    <asp:BulletedList ID="blListaOpcoesAdicionadas" runat="server">
+                    </asp:BulletedList>
+                    <asp:Button ID="btremoverOpcoes" runat="server" Text="Remover opções" CssClass="botaoPequeno botaoHover" OnClick="RemoverOpcoes_Click"/>
+                </ContentTemplate>
+            </asp:UpdatePanel>
             <br />
-            <asp:Button ID="btCadastrarEleicao" runat="server" CssClass="botaoDefault" Text="Cadastrar eleição" OnClick="CadastrarEleicao" /><br />
+            <asp:Button ID="btCadastrar" runat="server" Text="Cadastrar" CssClass="botaoDefault botaoHover" OnClick="CadastrarEleicao_Click"/>
+
         </div>
     </form>
 </body>

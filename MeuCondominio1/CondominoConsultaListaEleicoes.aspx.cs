@@ -19,9 +19,10 @@ namespace MeuCondominio1
         {
             if (!IsPostBack)
             {
-                ConstruirListaDeEleicoes();
+                
                 /*CarregarGriView();*/
             }
+            ConstruirListaDeEleicoes();
         }
 
         private void CarregarGriView()
@@ -99,6 +100,7 @@ namespace MeuCondominio1
             dt = BuscaEleicao.BuscaEleicoesDoCondominio(idCondominio);
 
             gvEleicoes.DataSource = dt;
+
             gvEleicoes.DataBind();
 
             /*foreach (DataRow linha in dt.Rows)
@@ -116,5 +118,22 @@ namespace MeuCondominio1
             }*/
         }
 
+        protected void GridView_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';";
+/*                e.Row.Attributes["onmouseout"] = "this.style.fontWeight='normal';";*/
+                e.Row.ToolTip = "Clique na linha para selecioná-la.";
+                e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.gvEleicoes, "Select$" + e.Row.RowIndex);
+            }
+        }
+
+        protected void GridView_SelectedIndex_Changed(object sender, EventArgs e)
+        {
+            string codigo = gvEleicoes.SelectedRow.Cells[0].Text;
+
+            Response.Redirect("CondominoEleicaoInfo.aspx?modo=&codigo=" + codigo);
+        }
     }
 }

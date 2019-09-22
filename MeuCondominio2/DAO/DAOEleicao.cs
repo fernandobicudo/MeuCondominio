@@ -14,6 +14,15 @@ namespace MeuCondominio2.DAO
         public static DataTable PesquisarEleicoesDoCondominio(int idCondominio)
         {
             DataTable dt;
+            string SQL = String.Format(@"SELECT * FROM `Eleicao`  " +
+                "WHERE idCondominio = {0};", idCondominio);
+            dt = MetodosBD.ExecutaSelect(SQL);
+            return dt;
+        }
+
+        public static DataTable PesquisarEleicoesDoCondominioComOpcoesdeVotacao(int idCondominio)
+        {
+            DataTable dt;
             string SQL = String.Format(@"SELECT * FROM `Eleicao` el " +
                 "JOIN `OpcaoDeVotoPlebiscito` op ON op.idEleicao = el.idEleicao " +
                 "WHERE idCondominio = {0};", idCondominio);

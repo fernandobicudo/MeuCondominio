@@ -18,11 +18,23 @@ namespace MeuCondominio2.DAO
             return dt;
         }
 
-        public static DataTable SelecionarUnidade(int id)
+        public static DataTable SelecionarUnidade(int idUnidade)
         {
             DataTable dt;
             string SQL;
-            SQL = String.Format(@"SELECT * FROM `Unidade` WHERE id={0};", id);
+            SQL = String.Format(@"SELECT * FROM `Unidade` WHERE id={0};", idUnidade);
+            dt = MetodosBD.ExecutaSelect(SQL);
+            return dt;
+        }
+
+        public static DataTable SelecionarUnidadePorCondominoDoCondominio(int idCondomino, int idCondominio)
+        {
+            DataTable dt;
+            string SQL;
+            SQL = String.Format(@"SELECT * FROM `Unidade` un " +
+                "JOIN  `Condomino` cno ON cno.idCondomino = un.idCondomino " +
+                "JOIN  `Condominio` cio ON cio.id = un.idCondominio " +
+                "WHERE cno.idCondomino={0} AND cio.id={1};", idCondomino, idCondominio);
             dt = MetodosBD.ExecutaSelect(SQL);
             return dt;
         }

@@ -14,5 +14,26 @@ namespace MeuCondominio2.Services.Eleicao
             dt = DAOEleicao.PesquisarEleicoesDoCondominio(idCondominio);
             return dt;
         }
+
+        public static DataTable BuscaEleicoesDoCondominioComOpcoesDeVotacao(int idCondominio)
+        {
+            DataTable dt;
+            dt = DAOEleicao.PesquisarOpcoesdeVotacaoDaEleicao(idCondominio);
+            return dt;
+        }
+
+        public static DataTable BuscaOpcoesVotacao(int idEleicao)
+        {
+            DataTable dt;
+            dt = DAOEleicao.PesquisarOpcoesdeVotacaoDaEleicao(idEleicao);
+            return dt;
+        }
+
+        public static DataTable BuscaOpcaoVotada(string nomeOpcaoVotada, int idEleicao)
+        {
+            DataTable dt;
+            dt = DAOEleicao.PesquisarOpcaoVotadaDaEleicao(nomeOpcaoVotada, idEleicao);
+            return dt;
+        }
     }
 }

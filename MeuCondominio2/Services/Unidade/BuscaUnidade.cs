@@ -14,6 +14,11 @@ namespace MeuCondominio2.Services.Unidade
             return DAOUnidade.SelecionarUnidade();
         }
 
+        public static DataTable PesquisarUnidadePorCondominoDoCondominio(int idCondomino, int idCondominio)
+        {
+            return DAOUnidade.SelecionarUnidadePorCondominoDoCondominio(idCondomino, idCondominio);
+        }
+
         public static DataTable PesquisarUnidadePorCondominio(int idCondominio)
         {
             return DAOUnidade.SelecionarUnidadePorCondominio(idCondominio);

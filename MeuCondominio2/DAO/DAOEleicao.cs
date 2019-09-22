@@ -13,21 +13,16 @@ namespace MeuCondominio2.DAO
     {
         public static DataTable PesquisarEleicoesDoCondominio(int idCondominio)
         {
-            DataTable dt;
             string SQL = String.Format(@"SELECT * FROM `Eleicao`  " +
                 "WHERE idCondominio = {0};", idCondominio);
-            dt = MetodosBD.ExecutaSelect(SQL);
-            return dt;
+            return MetodosBD.ExecutaSelect(SQL);
         }
 
-        public static DataTable PesquisarEleicoesDoCondominioComOpcoesdeVotacao(int idCondominio)
+        public static DataTable PesquisarOpcoesdeVotacaoDaEleicao(int idEleicao)
         {
-            DataTable dt;
-            string SQL = String.Format(@"SELECT * FROM `Eleicao` el " +
-                "JOIN `OpcaoDeVotoPlebiscito` op ON op.idEleicao = el.idEleicao " +
-                "WHERE idCondominio = {0};", idCondominio);
-            dt = MetodosBD.ExecutaSelect(SQL);
-            return dt;
+            string SQL = String.Format(@"SELECT * FROM `OpcaoDeVotoPlebiscito`" +
+                "WHERE idEleicao = {0};", idEleicao);
+            return MetodosBD.ExecutaSelect(SQL);
         }
 
         public static int PesquisarIdDaUltimaEleicaoRegistrada()
@@ -41,18 +36,26 @@ namespace MeuCondominio2.DAO
             return idEleicao;
         }
 
+        internal static DataTable PesquisarOpcaoVotadaDaEleicao(string nomeOpcaoVotada, int idEleicao)
+        {
+            string SQL = String.Format(@"SELECT * FROM `opcaoDeVotoPlebiscito` vp " +
+                "JOIN `Eleicao` el ON el.idEleicao = vp.idEleicao " +
+                "WHERE el.idEleicao = {0} " +
+                "AND vp.nomeOpcaoVotada = '{1}';", idEleicao, nomeOpcaoVotada);
+            return MetodosBD.ExecutaSelect(SQL);
+        }
 
         public static void InserirEleicao(Eleicao eleicao)
         {
             string SQL;
 
             string dataInicioEleicao = Formatadores.ConversaoDeDataParaString(eleicao.GetDataInicioEleicao());
-            string dataFimEleicao = Formatadores.ConversaoDeDataParaString(eleicao.GetDataFimEleicao()); 
+            string dataFimEleicao = Formatadores.ConversaoDeDataParaString(eleicao.GetDataFimEleicao());
 
             SQL = String.Format(@"INSERT INTO `Eleicao` " +
-                "(`nomeEleicao`, `tipoEleicao`, `descricaoEleicao`, " + 
+                "(`nomeEleicao`, `tipoEleicao`, `descricaoEleicao`, " +
                 "`statusEleicao`, `dataInicioEleicao`, `dataFimEleicao`, `idCondominio`) " +
-                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', {6});", 
+                "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', {6});",
                 eleicao.GetNomeEleicao(), eleicao.GetTipoEleicao(), eleicao.GetDescricaoEleicao(),
                 eleicao.GetStatusEleicao(), dataInicioEleicao, dataFimEleicao, eleicao.GetIdCondominio());
 

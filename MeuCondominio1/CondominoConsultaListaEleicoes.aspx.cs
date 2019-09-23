@@ -131,9 +131,18 @@ namespace MeuCondominio1
 
         protected void GridView_SelectedIndex_Changed(object sender, EventArgs e)
         {
-            string codigo = gvEleicoes.SelectedRow.Cells[0].Text;
+            string idEleicao = gvEleicoes.SelectedRow.Cells[0].Text;
+            string tituloEleicao = gvEleicoes.SelectedRow.Cells[1].Text;
 
-            Response.Redirect("CondominoEleicaoInfo.aspx?modo=&codigo=" + codigo);
+
+            bool status = Convert.ToBoolean(gvEleicoes.SelectedRow.Cells[3].Text); ;
+
+            if (status)
+                Response.Redirect(String.Format(@"CondominoEleicaoInfo.aspx?modo={0}&codigoEleicao={1}",
+                    0, idEleicao));
+            else
+                Response.Redirect(String.Format(@"CondominoResultadoDaEleicao.aspx?modo={0}&codigoEleicao={1}&tituloEleicao={2}",
+                    0, idEleicao, tituloEleicao));
         }
     }
 }

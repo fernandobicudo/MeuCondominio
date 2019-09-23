@@ -61,5 +61,6 @@ namespace MeuCondominio2.DAO
 
             MetodosBD.ExecutaSQL(SQL);
         }
+
     }
 }

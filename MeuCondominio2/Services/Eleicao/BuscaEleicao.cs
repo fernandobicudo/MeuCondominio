@@ -15,12 +15,13 @@ namespace MeuCondominio2.Services.Eleicao
             return dt;
         }
 
-        public static DataTable BuscaEleicoesDoCondominioComOpcoesDeVotacao(int idCondominio)
+/*        SELECT INCORRETO, ESTÁ BUSCANDO POR CONDOMINIO QUANDO O DAO NA VERDADE BUSCA POR ELEICAO: NÃO ESTÁ SENDO CHAMADO POR NINGUÉM
+ *        public static DataTable BuscaEleicoesDoCondominioComOpcoesDeVotacao(int idCondominio)
         {
             DataTable dt;
             dt = DAOEleicao.PesquisarOpcoesdeVotacaoDaEleicao(idCondominio);
             return dt;
-        }
+        }*/
 
         public static DataTable BuscaOpcoesVotacao(int idEleicao)
         {

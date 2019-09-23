@@ -14,7 +14,6 @@ namespace MeuCondominio1
 {
     public partial class CondominoEleicaoInfo : System.Web.UI.Page
     {
-
         List<OpcaoDeVotacaoPlebiscito> listaDeOpcoesParaVotar = new List<OpcaoDeVotacaoPlebiscito>();
         OpcaoDeVotacaoPlebiscito opcaoDeVotacaoPlebiscito;
         Eleicao eleicao;

@@ -13,6 +13,9 @@ namespace MeuCondominio1
 {
     public partial class Login : System.Web.UI.Page
     {
+        string email;
+        string senha;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request["status"] == "invalido")
@@ -32,11 +35,9 @@ namespace MeuCondominio1
         {
             DataTable dt;
 
-            string email;
-            string senha;
 
             email = txEmail.Text;
-            senha = txSenha.Text;
+            senha = Criptografia.Encriptar(txSenha.Text);
 
             dt = BuscaLogin.PesquisarLogin(email);
 
@@ -49,7 +50,7 @@ namespace MeuCondominio1
             {
                 Response.Redirect("Login.aspx?&status=invalido&p_email=invalido");
             }
-            else if (String.Equals(dt.Rows[0]["senha"], txSenha.Text))
+            else if (String.Equals(dt.Rows[0]["senha"], senha))
             {
                 Session["codigoUser"] = dt.Rows[0]["id_usuario"];
                 Session["nomeUser"] = dt.Rows[0]["nome"];

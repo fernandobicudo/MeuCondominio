@@ -19,7 +19,7 @@
                 <ContentTemplate>
                     <asp:Panel ID="pnVotacaoInfo" runat="server"></asp:Panel>
                     <br />
-                    <asp:Button ID="btVotar" runat="server" Text="Votar" OnClick="bt_Votar_Click" />
+                    <asp:Button ID="btVotar" runat="server" Text="Votar" CssClass="botaoDefault botaoHover" OnClick="bt_Votar_Click" />
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>

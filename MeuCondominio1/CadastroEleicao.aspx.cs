@@ -84,6 +84,7 @@ namespace MeuCondominio1
         }
 
 
+
         #region Codigos Velhos
 
 
@@ -194,6 +195,10 @@ namespace MeuCondominio1
 
         #endregion
 
-
+        protected void Encerrar_Eleicao_Click(object sender, EventArgs e)
+        {
+            int idEleicao = BuscaEleicao.BuscaIdDaUltimaEleicaoDoCondominio(Convert.ToInt32(Session["codigoCondominio"]));
+            AlteraEleicao.EncerrarEleicao(idEleicao);
+        }
     }
 }

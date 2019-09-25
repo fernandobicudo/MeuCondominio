@@ -141,7 +141,7 @@ namespace MeuCondominio1
 
         private void RecuperaDadosDaEleicao()
         {
-            dtEleicao = BuscaEleicao.BuscaEleicoesDoCondominio(Convert.ToInt32(Session["codigoCondominio"]));
+            dtEleicao = BuscaEleicao.BuscaEleicaoSelecionadaDoCondominio(Convert.ToInt32(Request["codigoEleicao"]));
         }
 
         private void CriarObjetoEleicao()

@@ -18,6 +18,13 @@ namespace MeuCondominio2.DAO
             return MetodosBD.ExecutaSelect(SQL);
         }
 
+        public static DataTable PesquisarEleicaoSelecionadaDoCondominio(int idEleicao)
+        {
+            string SQL = String.Format(@"SELECT * FROM `Eleicao`  " +
+                "WHERE idEleicao = {0};", idEleicao);
+            return MetodosBD.ExecutaSelect(SQL);
+        }
+
         public static DataTable PesquisarOpcoesdeVotacaoDaEleicao(int idEleicao)
         {
             string SQL = String.Format(@"SELECT * FROM `OpcaoDeVotoPlebiscito`" +
@@ -31,6 +38,18 @@ namespace MeuCondominio2.DAO
             DataTable dt;
 
             string SQL = String.Format(@"SELECT MAX(idEleicao) as idEleicao FROM `Eleicao`;");
+            dt = MetodosBD.ExecutaSelect(SQL);
+            idEleicao = Convert.ToInt32(dt.Rows[0]["idEleicao"]);
+            return idEleicao;
+        }
+
+        public static int PesquisarIdDaUltimaEleicaoRegistradaDoCondomminio(int idCondominio)
+        {
+            int idEleicao;
+            DataTable dt;
+
+            string SQL = String.Format(@"SELECT MAX(idEleicao) as idEleicao FROM `Eleicao` " +
+                "WHERE idCondominio = {0};", idCondominio);
             dt = MetodosBD.ExecutaSelect(SQL);
             idEleicao = Convert.ToInt32(dt.Rows[0]["idEleicao"]);
             return idEleicao;
@@ -62,5 +81,10 @@ namespace MeuCondominio2.DAO
             MetodosBD.ExecutaSQL(SQL);
         }
 
+        public static void EncerrarEleicao(int idEleicao)
+        {
+            string SQL = String.Format(@"UPDATE `Eleicao` SET `statusEleicao` = false WHERE idEleicao = {0}; ", idEleicao);
+            MetodosBD.ExecutaSQL(SQL);
+        }
     }
 }

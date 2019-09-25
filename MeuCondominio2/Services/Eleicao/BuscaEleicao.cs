@@ -15,13 +15,20 @@ namespace MeuCondominio2.Services.Eleicao
             return dt;
         }
 
-/*        SELECT INCORRETO, ESTÁ BUSCANDO POR CONDOMINIO QUANDO O DAO NA VERDADE BUSCA POR ELEICAO: NÃO ESTÁ SENDO CHAMADO POR NINGUÉM
- *        public static DataTable BuscaEleicoesDoCondominioComOpcoesDeVotacao(int idCondominio)
+        public static DataTable BuscaEleicaoSelecionadaDoCondominio(int idEleicao)
         {
             DataTable dt;
-            dt = DAOEleicao.PesquisarOpcoesdeVotacaoDaEleicao(idCondominio);
+            dt = DAOEleicao.PesquisarEleicaoSelecionadaDoCondominio(idEleicao);
             return dt;
-        }*/
+        }
+
+        /*        SELECT INCORRETO, ESTÁ BUSCANDO POR CONDOMINIO QUANDO O DAO NA VERDADE BUSCA POR ELEICAO: NÃO ESTÁ SENDO CHAMADO POR NINGUÉM
+         *        public static DataTable BuscaEleicoesDoCondominioComOpcoesDeVotacao(int idCondominio)
+                {
+                    DataTable dt;
+                    dt = DAOEleicao.PesquisarOpcoesdeVotacaoDaEleicao(idCondominio);
+                    return dt;
+                }*/
 
         public static DataTable BuscaOpcoesVotacao(int idEleicao)
         {
@@ -35,6 +42,13 @@ namespace MeuCondominio2.Services.Eleicao
             DataTable dt;
             dt = DAOEleicao.PesquisarOpcaoVotadaDaEleicao(nomeOpcaoVotada, idEleicao);
             return dt;
+        }
+
+        public static int BuscaIdDaUltimaEleicaoDoCondominio(int idCondominio)
+        {
+            int idEleicao;
+            idEleicao = DAOEleicao.PesquisarIdDaUltimaEleicaoRegistradaDoCondomminio(idCondominio);
+            return idEleicao;
         }
     }
 }

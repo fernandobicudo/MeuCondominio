@@ -23,6 +23,8 @@ namespace MeuCondominio2.DAO
                                         "JOIN `Eleicao` el ON el.idEleicao = vo.idEleicao " +
                                         "JOIN opcaoDeVotoPlebiscito vp ON vp.idOpcaoVotadaPlebiscito = vo.idOpcaoVotada " +
                                         "WHERE VP.idOpcaoVotadaPlebiscito = {0};", idOpcaoVotada);
+            //TODO: o select está trazendo o nome nulo da opção quando ela tem zero voto. Encontrar solução e corrigir.
+
             dt = MetodosBD.ExecutaSelect(SQL);
             return dt;
         }

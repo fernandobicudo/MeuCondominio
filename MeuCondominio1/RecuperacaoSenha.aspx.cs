@@ -80,7 +80,7 @@ namespace MeuCondominio1
                 {
                     smtp.Port = 587;
                     smtp.EnableSsl = true;
-                    smtp.Credentials = new NetworkCredential("fernandobicudo@gmail.com", "***REMOVED***");
+                    smtp.Credentials = new NetworkCredential("fernandobicudo@gmail.com", "XXXXXXXXXXXXXXXXXXXXX"); //TODO: RESOLVER A SENHA.
                     smtp.Send(email);
                     lbResultado.Text = "Email enviado com sucesso!";
 

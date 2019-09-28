@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/bfg-1.13.0.jar
+/MeuCondominio1/bfg-1.13.0.jar
+/passwords.txt

@@ -23,5 +23,10 @@ namespace MeuCondominio1
         {
             Response.Redirect("CadastroEleicao.aspx");
         }
+
+        protected void IrParaPaginaImportacaoDeCondominos(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("SindicoImportarDadosDeCondominio.aspx");
+        }
     }
 }

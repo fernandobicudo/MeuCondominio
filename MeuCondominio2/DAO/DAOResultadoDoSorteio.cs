@@ -34,7 +34,7 @@ namespace MeuCondominio2.DAO
                                 "AND un.idCondomino = {1} " +
                                 "AND sv.id = (select MAX(id) from `SorteioVagas`);", idCondominio, idCondomino);
             //TODO: select considerando que condômino terá apenas uma unidade: ajustar para que resultado seja vinculado a uma unidade específica.
-
+            //TODO: SELECT trazendo quantas vagas tiverem sido sorteadas para a unidade no mesmo sorteio. É necessário trigger para apagar os resultados anteriores para o mesmo sorteio ou exibir apenas os últimos resultados em número de vagas sorteadas. 
             return MetodosBD.ExecutaSelect(SQL);
         }
     }

@@ -22,7 +22,7 @@
                         <asp:Label ID="lbSorteioVagas" runat="server" Text="Sorteio de Vagas"></asp:Label><br/><br/>
                     </div>
                     <div class="item">
-                        <asp:ImageButton ID="ibUsuarios" Height="100px" ImageUrl="~/Images/Usuarios_G.png" Width="100px" runat="server" /><br/>
+                        <asp:ImageButton ID="ibUsuarios" Height="100px" ImageUrl="~/Images/Usuarios_G.png" Width="100px" runat="server" OnClick="IrParaPaginaImportacaoDeCondominos" /><br/>
                         <asp:Label ID="lbUsuarios" runat="server" Text="Usuários"></asp:Label><br/>
                     </div>
                     <div class="item">

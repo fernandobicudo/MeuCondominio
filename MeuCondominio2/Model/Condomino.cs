@@ -8,13 +8,16 @@ namespace MeuCondominio2.Model
     {
         private string CPFCondomino;
 
-        public Condomino()
+        public Condomino() 
         {
+
         }
+
 
         public Condomino(string cPFCondomino)
         {
             CPFCondomino = cPFCondomino;
+
         }
 
         public string GetCPFCondomino1()
@@ -27,5 +30,4 @@ namespace MeuCondominio2.Model
             CPFCondomino = value;
         }
     }
-    //TODO: criar métodos da classe Condomino
 }

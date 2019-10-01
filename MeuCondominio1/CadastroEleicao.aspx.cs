@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,8 +16,9 @@ namespace MeuCondominio1
 {
     public partial class CadastroEleicao : System.Web.UI.Page
     {
-
-
+        int ModoDeTela;
+        int idEleicao;
+        Eleicao eleicao;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +27,9 @@ namespace MeuCondominio1
             {
 
             }
-
+            idEleicao = Convert.ToInt32(Request["codigoEleicao"]);
+            ModoDeTela = Convert.ToInt32(Request["modo"]);
+            ConfigurarModosDeTela();
         }
 
         protected void AdicionarOpcaodeVotacao(object sender, EventArgs e)
@@ -47,6 +51,26 @@ namespace MeuCondominio1
                 txDescricao.Text, ddTipoEleicao.SelectedValue.ToString(),
                 true, dataInicio, dataFim,
                 Convert.ToInt32(Session["codigoCondominio"]));
+
+            return eleicao;
+
+        }
+
+        public Eleicao ConstruirObjetoEleicao(DataTable dt)
+        {
+/*            DateTime dataInicio, dataFim;
+            dataInicio = Formatadores.FormatarDataParaBancoDeDados(txDataInicio.Text);
+            dataFim = Formatadores.FormatarDataParaBancoDeDados(txDataFim.Text);
+*/
+            eleicao = new Eleicao(
+                Convert.ToInt32(dt.Rows[0]["idEleicao"]),
+                dt.Rows[0]["nomeEleicao"].ToString(),
+                dt.Rows[0]["descricaoEleicao"].ToString(),
+                dt.Rows[0]["tipoEleicao"].ToString(), 
+                Convert.ToBoolean(dt.Rows[0]["statusEleicao"]),
+                Convert.ToDateTime(dt.Rows[0]["dataInicioEleicao"]),
+                Convert.ToDateTime(dt.Rows[0]["dataFimEleicao"]),
+                Convert.ToInt32(dt.Rows[0]["idCondominio"]));
 
             return eleicao;
 
@@ -82,8 +106,6 @@ namespace MeuCondominio1
         {
             blListaOpcoesAdicionadas.Items.Clear();
         }
-
-
 
         #region Codigos Velhos
 
@@ -197,8 +219,51 @@ namespace MeuCondominio1
 
         protected void Encerrar_Eleicao_Click(object sender, EventArgs e)
         {
-            int idEleicao = BuscaEleicao.BuscaIdDaUltimaEleicaoDoCondominio(Convert.ToInt32(Session["codigoCondominio"]));
-            AlteraEleicao.EncerrarEleicao(idEleicao);
+            /*int idEleicao = BuscaEleicao.BuscaIdDaUltmaEleicaoDoCondominio(Convert.ToInt32(Session["codigoCondominio"]));*/
+            AlteraEleicao.EncerrarEleicao(eleicao.GetIdEleicao());
+        }
+
+        private void ConfigurarModosDeTela()
+        {
+            switch (ModoDeTela)
+            {
+                case 0:
+                    btCadastrar.Visible = false;
+                    btEncerraEleicao.Visible = false;
+                    btAdicionarOpcao.Visible = false;
+                    btRemoverOpcoes.Visible = false;
+                    CarregarCamposComDadosDaEleicao(ConstruirObjetoEleicao(BuscaEleicaoSelecionada(idEleicao)));
+                    break;
+                case 1:
+                    btCadastrar.Visible = false;
+                    btEncerraEleicao.Visible = true;
+                    btAdicionarOpcao.Visible = false;
+                    btRemoverOpcoes.Visible = false;
+                    CarregarCamposComDadosDaEleicao(ConstruirObjetoEleicao(BuscaEleicaoSelecionada(idEleicao)));
+                    break;
+                default:
+                    btCadastrar.Visible = true;
+                    btEncerraEleicao.Visible = false;
+                    btAdicionarOpcao.Visible = true;
+                    btRemoverOpcoes.Visible = true;
+                    break;
+            }
+        }
+
+        private void CarregarCamposComDadosDaEleicao(Eleicao eleicao)
+        {
+            txNomeEleicao.Text = eleicao.GetNomeEleicao();
+            txDescricao.Text = eleicao.GetDescricaoEleicao();
+            txDataInicio.Text = Formatadores.FormatarDataParaExibicao(eleicao.GetDataInicioEleicao().ToString());
+            txDataFim.Text = Formatadores.FormatarDataParaExibicao(eleicao.GetDataFimEleicao().ToString());
+        }
+
+        private DataTable BuscaEleicaoSelecionada(int idEleicao)
+        {
+            DataTable dt;
+            dt = BuscaEleicao.BuscaEleicaoSelecionadaDoCondominio(idEleicao);
+
+            return dt;
         }
     }
 }

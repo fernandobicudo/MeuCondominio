@@ -1,0 +1,204 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using MeuCondominio2.Model;
+using MeuCondominio2.Services.Eleicao;
+
+namespace MeuCondominio1
+{
+    public partial class ConsultaListaEleicoes : System.Web.UI.Page
+    {
+
+        List<Eleicao> listaDeEleicoesDoCondominio = new List<Eleicao>();
+        int tipoUsuario;
+        string idEleicao;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+
+                /*CarregarGriView();*/
+            }
+            tipoUsuario = Convert.ToInt32(Session["tipoUser"]);
+            ConfigurarModosDeTela();
+            ConstruirListaDeEleicoes();
+        }
+
+        private void CarregarGriView()
+        {
+            gvEleicoes.DataSource = listaDeEleicoesDoCondominio;
+
+        }
+
+        private void ListarEleicoesNaPagina()
+        {
+            foreach (Eleicao eleicao in listaDeEleicoesDoCondominio)
+            {
+                string nomeStatusEleicao;
+
+                Label tituloEleicao = new Label();
+                Label lbtipoEleicao = new Label();
+                Label tipoEleicao = new Label();
+                Label lbDescricaoEleicao = new Label();
+                Label descricaoEleicao = new Label();
+                Label lbStatusEleicao = new Label();
+                Label statusEleicao = new Label();
+                Label lbDataInicioEleicao = new Label();
+                Label dataInicioEleicao = new Label();
+                Label lbDataFimEleicao = new Label();
+                Label dataFimEleicao = new Label();
+
+
+                tituloEleicao.Text = eleicao.GetNomeEleicao();
+                lbtipoEleicao.Text = "Tipo de votação: ";
+                tipoEleicao.Text = eleicao.GetTipoEleicao();
+                lbDescricaoEleicao.Text = "Descrição: ";
+                descricaoEleicao.Text = eleicao.GetDescricaoEleicao();
+                lbStatusEleicao.Text = "Situação: ";
+
+
+                if (eleicao.GetStatusEleicao())
+                    nomeStatusEleicao = "Em andamento";
+                else
+                    nomeStatusEleicao = "Concluída";
+
+                statusEleicao.Text = nomeStatusEleicao;
+
+                lbDataInicioEleicao.Text = "Início: ";
+                dataInicioEleicao.Text = eleicao.GetDataInicioEleicao().ToString();
+                lbDataFimEleicao.Text = "Realização: ";
+                dataFimEleicao.Text = eleicao.GetDataFimEleicao().ToString();
+
+                pnEleicoes.Controls.Add(tituloEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
+                pnEleicoes.Controls.Add(lbtipoEleicao);
+                pnEleicoes.Controls.Add(tipoEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
+                pnEleicoes.Controls.Add(lbDescricaoEleicao);
+                pnEleicoes.Controls.Add(descricaoEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
+                pnEleicoes.Controls.Add(lbStatusEleicao);
+                pnEleicoes.Controls.Add(statusEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
+                pnEleicoes.Controls.Add(lbDataInicioEleicao);
+                pnEleicoes.Controls.Add(dataInicioEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
+                pnEleicoes.Controls.Add(lbDataFimEleicao);
+                pnEleicoes.Controls.Add(dataFimEleicao);
+            }
+        }
+        //TODO: pensar numa maneira de clicar numa linha de Eleição e levar à página de detalhe (votação ou consulta, dependendo do status da eleição)
+
+
+        private void ConstruirListaDeEleicoes()
+        {
+            DataTable dt;
+
+            int idCondominio = Convert.ToInt32(Session["codigoCondominio"]);
+
+            dt = BuscaEleicao.BuscaEleicoesDoCondominio(idCondominio);
+
+            gvEleicoes.DataSource = dt;
+
+            gvEleicoes.DataBind();
+
+            /*foreach (DataRow linha in dt.Rows)
+            {
+                eleicao = new Eleicao(Convert.ToInt32(linha["idEleicao"].ToString()),
+                    linha["nomeEleicao"].ToString(),
+                    linha["descricaoEleicao"].ToString(),
+                    linha["nomeTipoEleicao"].ToString(),
+                    Convert.ToBoolean(linha["statusEleicao"]),
+                    Convert.ToDateTime(linha["dataInicioEleicao"].ToString()),
+                    Convert.ToDateTime(linha["dataFimEleicao"].ToString()),
+                    Convert.ToInt32(linha["idCondominio"].ToString()));
+
+                listaDeEleicoesDoCondominio.Add(eleicao);
+            }*/
+        }
+
+        protected void GridView_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';";
+                /*                e.Row.Attributes["onmouseout"] = "this.style.fontWeight='normal';";*/
+                e.Row.ToolTip = "Clique na linha para selecioná-la.";
+                e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.gvEleicoes, "Select$" + e.Row.RowIndex);
+            }
+        }
+
+        protected void GridView_SelectedIndex_Changed(object sender, EventArgs e)
+        {
+            idEleicao = gvEleicoes.SelectedRow.Cells[0].Text;
+            string tituloEleicao = gvEleicoes.SelectedRow.Cells[1].Text;
+
+
+            bool status = Convert.ToBoolean(gvEleicoes.SelectedRow.Cells[3].Text); ;
+
+            if (status)
+            {
+                switch (tipoUsuario)
+                {
+                    case 1:
+                        Response.Redirect(String.Format(@"CondominoEleicaoInfo.aspx?modo={0}&codigoEleicao={1}",
+                        0, idEleicao));
+                        break;
+                    case 2:
+                        Response.Redirect(String.Format(@"CadastroEleicao.aspx?modo={0}&codigoEleicao={1}",
+                        1, idEleicao));
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+                switch (tipoUsuario)
+                {
+                    case 1:
+                        Response.Redirect(String.Format(@"CondominoResultadoDaEleicao.aspx?modo={0}&codigoEleicao={1}&tituloEleicao={2}",
+                        0, idEleicao, tituloEleicao));
+                        break;
+                    case 2:
+                        Response.Redirect(String.Format(@"CadastroEleicao.aspx?modo={0}&codigoEleicao={1}",
+                        0, idEleicao));
+                        break;
+                    default:
+                        break;
+                }
+        }
+
+        private void ConfigurarModosDeTela()
+        {
+            int tipoUsuario = Convert.ToInt32(Session["tipoUser"]);
+
+            switch (tipoUsuario)
+            {
+                case 1:
+                    btNovaEleicao.Visible = false;
+                    break;
+                case 2:
+                    btNovaEleicao.Visible = true;
+                    break;
+                default:
+                    btNovaEleicao.Visible = false;
+                    break;
+            }
+        }
+
+        protected void btNovaVotacao_Click(object sender, EventArgs e)
+        {
+            IrParaPaginaDeCadastro();
+        }
+
+        private void IrParaPaginaDeCadastro()
+        {
+            Response.Redirect(String.Format(@"CadastroEleicao.aspx?modo=3")); //modo 3 significa apenas não ser 0 nem 1, portanto entrará como modo default do switch case: nova eleicao 
+        }
+    }
+}

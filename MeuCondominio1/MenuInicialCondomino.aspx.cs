@@ -9,9 +9,11 @@ namespace MeuCondominio1
 {
     public partial class MenuInicialCondomino : System.Web.UI.Page
     {
+        int tipoUsuario;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            tipoUsuario = Convert.ToInt32(Session["tipoUser"]);
         }
 
         protected void IrParaPaginaVagas(object sender, ImageClickEventArgs e)
@@ -21,7 +23,9 @@ namespace MeuCondominio1
 
         protected void IrParaPaginaEleicoes(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("CondominoConsultaListaEleicoes.aspx");
+            Response.Redirect("ConsultaListaEleicoes.aspx");
         }
+
+
     }
 }

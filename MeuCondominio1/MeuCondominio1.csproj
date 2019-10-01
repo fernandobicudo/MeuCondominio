@@ -123,6 +123,7 @@
   <ItemGroup>
     <Content Include="CadastroEleicao.aspx" />
     <Content Include="CadastroSorteioVagas.aspx" />
+    <Content Include="ConsultaListaEleicoes.aspx" />
     <Content Include="CondominoConsultaListaEleicoes.aspx" />
     <Content Include="CondominoEleicaoInfo.aspx" />
     <Content Include="CondominoResultadoDaEleicao.aspx" />
@@ -209,6 +210,13 @@
     </Compile>
     <Compile Include="CadastroSorteioVagas.aspx.designer.cs">
       <DependentUpon>CadastroSorteioVagas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaListaEleicoes.aspx.cs">
+      <DependentUpon>ConsultaListaEleicoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaListaEleicoes.aspx.designer.cs">
+      <DependentUpon>ConsultaListaEleicoes.aspx</DependentUpon>
     </Compile>
     <Compile Include="CondominoConsultaListaEleicoes.aspx.cs">
       <DependentUpon>CondominoConsultaListaEleicoes.aspx</DependentUpon>

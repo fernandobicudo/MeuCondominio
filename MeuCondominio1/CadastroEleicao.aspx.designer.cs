@@ -139,6 +139,15 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.UpdatePanel upAdicionarOpcao;
         
         /// <summary>
+        /// lbOpcoesDeVotacao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbOpcoesDeVotacao;
+        
+        /// <summary>
         /// txOpcao control.
         /// </summary>
         /// <remarks>
@@ -166,13 +175,13 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.WebControls.BulletedList blListaOpcoesAdicionadas;
         
         /// <summary>
-        /// btremoverOpcoes control.
+        /// btRemoverOpcoes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btremoverOpcoes;
+        protected global::System.Web.UI.WebControls.Button btRemoverOpcoes;
         
         /// <summary>
         /// btCadastrar control.

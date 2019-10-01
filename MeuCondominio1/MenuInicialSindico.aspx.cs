@@ -21,7 +21,8 @@ namespace MeuCondominio1
 
         protected void IrParaPaginaEleicoes(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("CadastroEleicao.aspx");
+            Response.Redirect("ConsultaListaEleicoes.aspx");
+            /*Response.Redirect("CadastroEleicao.aspx");*/
         }
 
         protected void IrParaPaginaImportacaoDeCondominos(object sender, ImageClickEventArgs e)

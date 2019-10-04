@@ -12,17 +12,29 @@ namespace MeuCondominio2.Services.Condomino
     public class ImportarCondomino
     {
         DataTable dt;
-        List<Model.Condomino> listaCondominos;
+        
         List<Model.Unidade> listaUnidades;
         Model.Condominio condominio = new Model.Condominio();
 
-
-
-        public void ImportarArquivoDeCondominosDoCondominio(StreamReader reader)
+        //TODO: o método de busca e construção de objeto COndominio deveria estar em qual classe?
+        //TODO: PAREI AQUI
+        public Model.Condominio BuscarDoCondominioDaSessao(int idCondominio)
         {
-            condominio = BuscaCondominio.BuscarCondominioPorId //TODO: PAREI AQUI
+            DataTable dtCondominio;
 
-            listaCondominos = new List<Model.Condomino>();
+            dtCondominio = BuscaCondominio.BuscarCondominioPorId(idCondominio);
+            Model.Condominio condominio = new Model.Condominio(Convert.ToInt32(dtCondominio.Rows[0]["id"]),
+                dtCondominio.Rows[0]["cnpj"].ToString(),
+                dtCondominio.Rows[0]["nome"].ToString(),
+                Convert.ToInt32(dtCondominio.Rows[0]["qtdVagasporUnidade"]));
+
+            return condominio;
+        }
+
+        public List<Model.Condomino> ImportarConddominosDoArquivoDeCondominosDoCondominio(StreamReader reader)
+        {
+            
+            List < Model.Condomino > listaCondominos = new List<Model.Condomino>();
             listaUnidades = new List<Model.Unidade>();
             
 
@@ -47,10 +59,9 @@ namespace MeuCondominio2.Services.Condomino
                 condomino.SetCPFCondomino1(value[9]);
                 listaCondominos.Add(condomino);
 
-                unidade = new Model.Unidade();
-
-                unidade
             }
+            return listaCondominos;
+
         }
 
         public DataTable LerArquivoDeCondominosDoCondominio(StreamReader reader)

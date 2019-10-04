@@ -4,23 +4,36 @@ using System.Text;
 using System.IO;
 using MeuCondominio2.Model;
 using System.Data;
+using MeuCondominio2.Services.Condominio;
+
 
 namespace MeuCondominio2.Services.Condomino
 {
     public class ImportarCondomino
     {
-        public List<Model.Condomino> ImportarArquivoDeCondominosDoCondominio(StreamReader reader)
+        DataTable dt;
+        List<Model.Condomino> listaCondominos;
+        List<Model.Unidade> listaUnidades;
+        Model.Condominio condominio = new Model.Condominio();
+
+
+
+        public void ImportarArquivoDeCondominosDoCondominio(StreamReader reader)
         {
-            List<Model.Condomino> listaCondominos = new List<Model.Condomino>();
+            condominio = BuscaCondominio.BuscarCondominioPorId //TODO: PAREI AQUI
+
+            listaCondominos = new List<Model.Condomino>();
+            listaUnidades = new List<Model.Unidade>();
+            
+
 
             while (!reader.EndOfStream)
             {
                 string linha = reader.ReadLine();
                 string[] value = linha.Split(';');
 
-                Model.Condomino condomino;
-
-                condomino = new Model.Condomino();
+                Model.Condomino condomino = new Model.Condomino();
+                Model.Unidade unidade; 
 
                 condomino.SetNome(value[0]);
                 condomino.SetEmail(value[1]);
@@ -33,13 +46,16 @@ namespace MeuCondominio2.Services.Condomino
                 condomino.SetCEP(value[8]);
                 condomino.SetCPFCondomino1(value[9]);
                 listaCondominos.Add(condomino);
+
+                unidade = new Model.Unidade();
+
+                unidade
             }
-            return listaCondominos;
         }
 
-        public DataTable ImportarArquivoDeCondominosDoCondominio(StreamReader reader, int qq)
+        public DataTable LerArquivoDeCondominosDoCondominio(StreamReader reader)
         {
-            DataTable dt = new DataTable();
+            dt = new DataTable();
 
             dt.Columns.Add("nome");
             dt.Columns.Add("email");
@@ -53,7 +69,6 @@ namespace MeuCondominio2.Services.Condomino
             dt.Columns.Add("CPF");
             dt.Columns.Add("unidade");
 
-
             while (!reader.EndOfStream)
             {
                 string linha = reader.ReadLine();
@@ -64,5 +79,7 @@ namespace MeuCondominio2.Services.Condomino
             }
             return dt;
         }
+
+
     }
 }

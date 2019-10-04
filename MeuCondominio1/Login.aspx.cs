@@ -89,7 +89,7 @@ namespace MeuCondominio1
         private void PreencherVariaveisDeSessaoCondomino(int idCondomino)
         {
             DataTable dt;
-            dt = BuscaCondominio.PesquisarCondominioPorIddoCondomino(idCondomino);
+            dt = BuscaCondominio.BuscarCondominioPorIddoCondomino(idCondomino);
 
             Session["codigoCondominio"] = dt.Rows[0]["idCondominio"];
         }

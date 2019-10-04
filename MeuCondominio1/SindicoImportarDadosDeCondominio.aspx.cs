@@ -36,7 +36,7 @@ namespace MeuCondominio1
 
 
 
-            dt = importarCondomino.ImportarArquivoDeCondominosDoCondominio(reader, 0);
+            dt = importarCondomino.LerArquivoDeCondominosDoCondominio(reader, 0);
 
             gvDadosDosCondominos.DataSource = dt;
             gvDadosDosCondominos.DataBind();

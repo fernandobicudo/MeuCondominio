@@ -36,7 +36,7 @@
                     </asp:GridView><br/>
                 </ContentTemplate>
             </asp:UpdatePanel>
-            <asp:Button ID="idImportar" runat="server" Text="Importar dados" CssClass="botaoDefault botaoHover" />
+            <asp:Button ID="idImportar" runat="server" Text="Importar dados" CssClass="botaoDefault botaoHover" OnClick="btImportarDados_Click" />
         </div>
     </form>
 </body>

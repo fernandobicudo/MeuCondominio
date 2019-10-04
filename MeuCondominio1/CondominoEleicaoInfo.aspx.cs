@@ -129,14 +129,12 @@ namespace MeuCondominio1
         {
             foreach(OpcaoDeVotacaoPlebiscito item in listaDeOpcoesParaVotar)
             {
-
                 ListItem listItem = new ListItem(item.GetNomeOpcaoDeVotacaoPlebiscito());
                 radioButonsComOpcoesParaVotar.Items.Add(listItem);
-                
             }
 
             pnVotacaoInfo.Controls.Add(radioButonsComOpcoesParaVotar);
-            pnVotacaoInfo.Controls.Add(new LiteralControl("<br />"));
+            //pnVotacaoInfo.Controls.Add(new LiteralControl("<br />"));
         }
 
         private void RecuperaDadosDaEleicao()

@@ -34,7 +34,7 @@
             <!--TODO: pensar em campo Hora-->
             <asp:Label ID="lbDataFim" runat="server" Text="Data de Encerramento da Votação"></asp:Label>
             <asp:TextBox ID="txDataFim" runat="server" CssClass="campoTextoDatePicker_p" MaxLength="6" AutoCompleteType="Disabled"></asp:TextBox><br />
-            <asp:Panel ID="pnInclusaoOpcaoaSerVotada" runat="server"></asp:Panel>
+            <asp:Panel ID="pnInclusaoOpcaoaSerVotada" runat="server"></asp:Panel><br />
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
             <asp:UpdatePanel ID="upAdicionarOpcao" runat="server">

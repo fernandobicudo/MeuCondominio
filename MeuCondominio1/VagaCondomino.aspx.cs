@@ -26,33 +26,39 @@ namespace MeuCondominio1
 
             dt = BuscaResultadoDoSorteio.
                 BuscarVagasDoResultadoPorIddoCondominoEIddoCondominio(idCondomino, idCondominio);
+            Label tituloSorteio = new Label();
 
-            Label dataSorteio = new Label();
-            dataSorteio.Text = "Sorteio realizado em " + Formatadores.FormatarDataParaExibicao(dt.Rows[0]["dataSorteio"].ToString());
-            pnHeaderVaga.Controls.Add(dataSorteio);
-
-
-            foreach (DataRow linha in dt.Rows) 
+            if (dt.Rows.Count > 0)
             {
-                Label titulo = new Label
-                {
-                    Text = "Vaga",
-                    CssClass = "tituloVaga"
-                };
+                tituloSorteio.Text = "Sorteio realizado em " + Formatadores.FormatarDataParaExibicao(dt.Rows[0]["dataSorteio"].ToString());
+                
 
-                Label numVaga = new Label
+                foreach (DataRow linha in dt.Rows)
                 {
-                    CssClass = "numVaga",
-                    Text = linha["numeracao"].ToString()
-                };
+                    Label titulo = new Label
+                    {
+                        Text = "Vaga",
+                        CssClass = "tituloVaga"
+                    };
 
-                pnTituloNumeroVaga.Controls.Add(titulo);
-                pnNumeroVaga.Controls.Add(numVaga);
+                    Label numVaga = new Label
+                    {
+                        CssClass = "numVaga",
+                        Text = linha["numeracao"].ToString()
+                    };
+
+                    pnTituloNumeroVaga.Controls.Add(titulo);
+                    pnNumeroVaga.Controls.Add(numVaga);
+                }
+
+                Label dataValidade = new Label();
+                dataValidade.Text = "Validade: " + Formatadores.FormatarDataParaExibicao(dt.Rows[0]["dataValidadeSorteioFim"].ToString());
+                pnValidadeVaga.Controls.Add(dataValidade);
             }
+            else
+                tituloSorteio.Text = "Não há sorteios realizados até o momento";
 
-            Label dataValidade = new Label();
-            dataValidade.Text = "Validade: " + Formatadores.FormatarDataParaExibicao(dt.Rows[0]["dataValidadeSorteioFim"].ToString());
-            pnValidadeVaga.Controls.Add(dataValidade);
+            pnHeaderVaga.Controls.Add(tituloSorteio);
 
 
             /*            teste para exibir variáveis de sessão:

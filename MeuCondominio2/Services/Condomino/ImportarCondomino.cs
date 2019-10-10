@@ -15,9 +15,12 @@ namespace MeuCondominio2.Services.Condomino
         
         List<Model.Unidade> listaUnidades;
         Model.Condominio condominio = new Model.Condominio();
+        List<Model.Condomino> listaCondominos;
 
-        //TODO: o método de busca e construção de objeto COndominio deveria estar em qual classe?
-        //TODO: PAREI AQUI
+        //TODO: o método de busca e construção de objeto Condominio deveria estar em qual classe?
+        //TODO: CRIAR CLASSE MORADOR
+        
+
         public Model.Condominio BuscarDoCondominioDaSessao(int idCondominio)
         {
             DataTable dtCondominio;
@@ -34,7 +37,7 @@ namespace MeuCondominio2.Services.Condomino
         public List<Model.Condomino> ImportarConddominosDoArquivoDeCondominosDoCondominio(StreamReader reader)
         {
             
-            List < Model.Condomino > listaCondominos = new List<Model.Condomino>();
+            listaCondominos = new List<Model.Condomino>();
             listaUnidades = new List<Model.Unidade>();
             
 
@@ -57,6 +60,7 @@ namespace MeuCondominio2.Services.Condomino
                 condomino.SetCidade(value[7]);
                 condomino.SetCEP(value[8]);
                 condomino.SetCPFCondomino1(value[9]);
+                condomino.SetTipoUsuario(Convert.ToInt32(value[10]));
                 listaCondominos.Add(condomino);
 
             }

@@ -70,6 +70,7 @@ namespace MeuCondominio1
                         PreencheVariaveisDeSessaoSindico(codigoUsuario);
                         Response.Redirect("MenuInicialSindico.aspx"); //TODO: linkar para menu do administrador.
                         break;
+                    //TODO: criar case para morador 
                     default:
                         Response.Redirect("MenuInicialCondomino.aspx"); //TODO: como tratar o default do switch case?
                         break;

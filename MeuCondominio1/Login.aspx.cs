@@ -65,9 +65,9 @@ namespace MeuCondominio1
 */
                 switch (tipoUsuario) {
                     case 6:
-                        PreencherVariaveisDeSessaoCondominoMorador(codigoUsuario);
+                        PreencherVariaveisDeSessaoClienteCondominoMorador(codigoUsuario);
                         /*                        Response.Redirect("VagaCondomino.aspx"); //TODO: após testado, trocar para MenuInicialCondomino acima.*/
-                        Response.Redirect("MenuInicialCondomino.aspx");
+                        Response.Redirect("MenuInicialCondominoMorador.aspx");
                         break;
                     case 2:
                         PreencheVariaveisDeSessaoSindico(codigoUsuario);
@@ -75,7 +75,7 @@ namespace MeuCondominio1
                         break;
                     //TODO: criar case para morador 
                     default:
-                        Response.Redirect("MenuInicialCondomino.aspx"); //TODO: como tratar o default do switch case?
+                        Response.Redirect("MenuInicialCondominoMorador.aspx"); //TODO: como tratar o default do switch case?
                         break;
                 }
             }
@@ -90,10 +90,10 @@ namespace MeuCondominio1
             Session["codigoCondominio"] = dt.Rows[0]["idCondominio"];
         }
 
-        private void PreencherVariaveisDeSessaoCondominoMorador(int idCondomino)
+        private void PreencherVariaveisDeSessaoClienteCondominoMorador(int idCliente)
         {
             DataTable dt;
-            dt = BuscaCondominio.BuscarCondominioPorIddoCondomino(idCondomino);
+            dt = BuscaCondominio.BuscarCondominioPorIdDoCliente(idCliente);
 
             Session["codigoCondominio"] = dt.Rows[0]["idCondominio"];
         }

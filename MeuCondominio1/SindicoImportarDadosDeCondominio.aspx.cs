@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using MeuCondominio2.Services.Condomino;
+using MeuCondominio2.Services.Cliente;
 using MeuCondominio2.Model;
 using System.Data;
 
@@ -29,17 +29,17 @@ namespace MeuCondominio1
 
         private void ExibirDadosDeImportacaoDoArquivo()
         {
-            ImportarCondomino importarCondomino = new ImportarCondomino();
+            ImportarClientes importarCliente = new ImportarClientes();
             StreamReader reader = new StreamReader(@"c:\temp\" + nomeDoArquivo, System.Text.Encoding.Default);
 
-            List<Condomino> listaCondominos = new List<Condomino>();
+            List<Cliente> listaCliente = new List<Cliente>();
 
 
 
-            dt = importarCondomino.LerArquivoDeCondominosDoCondominio(reader);
+            dt = importarCliente.LerArquivoDeClientesDoCondominio(reader);
 
-            gvDadosDosCondominos.DataSource = dt;
-            gvDadosDosCondominos.DataBind();
+            gvDadosDosClientes.DataSource = dt;
+            gvDadosDosClientes.DataBind();
             
         }
 

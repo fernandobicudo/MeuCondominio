@@ -7,7 +7,7 @@ namespace MeuCondominio2.DAO
 {
     class DAOCondominio
     {
-        public static DataTable PesquisarCondominioPorIddoCondomino(int idCondomino)
+        public static DataTable PesquisarCondominioPorIdDoCliente(int idCondomino)
         {
             DataTable dt;
             string SQL;

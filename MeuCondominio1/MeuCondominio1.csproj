@@ -123,10 +123,10 @@
   <ItemGroup>
     <Content Include="CadastroEleicao.aspx" />
     <Content Include="CadastroSorteioVagas.aspx" />
+    <Content Include="ClienteConsultaListaEleicoesB.aspx" />
     <Content Include="ConsultaListaEleicoes.aspx" />
-    <Content Include="CondominoConsultaListaEleicoes.aspx" />
-    <Content Include="CondominoEleicaoInfo.aspx" />
-    <Content Include="CondominoResultadoDaEleicao.aspx" />
+    <Content Include="ClienteEleicaoInfo.aspx" />
+    <Content Include="ClienteResultadoDaEleicao.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -154,7 +154,7 @@
     <Content Include="Images\hand_G.png" />
     <Content Include="Images\Usuarios_G.png" />
     <Content Include="Login.aspx" />
-    <Content Include="MenuInicialCondomino.aspx" />
+    <Content Include="MenuInicialCondominoMorador.aspx" />
     <Content Include="MenuInicialSindico.aspx" />
     <Content Include="RecuperacaoSenha.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -188,7 +188,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="SindicoImportarDadosDeCondominio.aspx" />
     <Content Include="Site.Master" />
-    <Content Include="VagaCondomino.aspx" />
+    <Content Include="VagaCliente.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -211,6 +211,13 @@
     <Compile Include="CadastroSorteioVagas.aspx.designer.cs">
       <DependentUpon>CadastroSorteioVagas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ClienteConsultaListaEleicoesB.aspx.cs">
+      <DependentUpon>ClienteConsultaListaEleicoesB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClienteConsultaListaEleicoesB.aspx.designer.cs">
+      <DependentUpon>ClienteConsultaListaEleicoesB.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaListaEleicoes.aspx.cs">
       <DependentUpon>ConsultaListaEleicoes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -218,26 +225,19 @@
     <Compile Include="ConsultaListaEleicoes.aspx.designer.cs">
       <DependentUpon>ConsultaListaEleicoes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CondominoConsultaListaEleicoes.aspx.cs">
-      <DependentUpon>CondominoConsultaListaEleicoes.aspx</DependentUpon>
+    <Compile Include="ClienteEleicaoInfo.aspx.cs">
+      <DependentUpon>ClienteEleicaoInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CondominoConsultaListaEleicoes.aspx.designer.cs">
-      <DependentUpon>CondominoConsultaListaEleicoes.aspx</DependentUpon>
+    <Compile Include="ClienteEleicaoInfo.aspx.designer.cs">
+      <DependentUpon>ClienteEleicaoInfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CondominoEleicaoInfo.aspx.cs">
-      <DependentUpon>CondominoEleicaoInfo.aspx</DependentUpon>
+    <Compile Include="ClienteResultadoDaEleicao.aspx.cs">
+      <DependentUpon>ClienteResultadoDaEleicao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CondominoEleicaoInfo.aspx.designer.cs">
-      <DependentUpon>CondominoEleicaoInfo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CondominoResultadoDaEleicao.aspx.cs">
-      <DependentUpon>CondominoResultadoDaEleicao.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CondominoResultadoDaEleicao.aspx.designer.cs">
-      <DependentUpon>CondominoResultadoDaEleicao.aspx</DependentUpon>
+    <Compile Include="ClienteResultadoDaEleicao.aspx.designer.cs">
+      <DependentUpon>ClienteResultadoDaEleicao.aspx</DependentUpon>
     </Compile>
     <Compile Include="EleicaoAdicionarOpcaoParaVotacao.aspx.cs">
       <DependentUpon>EleicaoAdicionarOpcaoParaVotacao.aspx</DependentUpon>
@@ -256,12 +256,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MenuInicialCondomino.aspx.cs">
-      <DependentUpon>MenuInicialCondomino.aspx</DependentUpon>
+    <Compile Include="MenuInicialCondominoMorador.aspx.cs">
+      <DependentUpon>MenuInicialCondominoMorador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MenuInicialCondomino.aspx.designer.cs">
-      <DependentUpon>MenuInicialCondomino.aspx</DependentUpon>
+    <Compile Include="MenuInicialCondominoMorador.aspx.designer.cs">
+      <DependentUpon>MenuInicialCondominoMorador.aspx</DependentUpon>
     </Compile>
     <Compile Include="MenuInicialSindico.aspx.cs">
       <DependentUpon>MenuInicialSindico.aspx</DependentUpon>
@@ -299,12 +299,12 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="VagaCondomino.aspx.cs">
-      <DependentUpon>VagaCondomino.aspx</DependentUpon>
+    <Compile Include="VagaCliente.aspx.cs">
+      <DependentUpon>VagaCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VagaCondomino.aspx.designer.cs">
-      <DependentUpon>VagaCondomino.aspx</DependentUpon>
+    <Compile Include="VagaCliente.aspx.designer.cs">
+      <DependentUpon>VagaCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

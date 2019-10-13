@@ -11,21 +11,21 @@ using MeuCondominio2.Services.Ferramentas;
 
 namespace MeuCondominio1
 {
-    public partial class VagaCondomino : System.Web.UI.Page
+    public partial class VagaCliente : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ExibirVagasDoCondomino();
+            ExibirVagasDoCliente();
         }
 
-        private void ExibirVagasDoCondomino()
+        private void ExibirVagasDoCliente()
         {
             DataTable dt;
-            int idCondomino = Convert.ToInt32(Session["codigoUser"]);
+            int idCliente = Convert.ToInt32(Session["codigoUser"]);
             int idCondominio = Convert.ToInt32(Session["codigoCondominio"]);
 
             dt = BuscaResultadoDoSorteio.
-                BuscarVagasDoResultadoPorIddoCondominoEIddoCondominio(idCondomino, idCondominio);
+                BuscarVagasDoResultadoPorIdDoClienteEIddoCondominio(idCliente, idCondominio);
             Label tituloSorteio = new Label();
 
             if (dt.Rows.Count > 0)

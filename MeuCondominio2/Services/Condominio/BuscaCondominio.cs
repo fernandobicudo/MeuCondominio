@@ -8,9 +8,9 @@ namespace MeuCondominio2.Services.Condominio
 {
     public class BuscaCondominio
     {
-        public static DataTable BuscarCondominioPorIddoCondomino(int idCondomino)
+        public static DataTable BuscarCondominioPorIdDoCliente(int idCliente)
         {
-            return DAOCondominio.PesquisarCondominioPorIddoCondomino(idCondomino);
+            return DAOCondominio.PesquisarCondominioPorIdDoCliente(idCliente);
         }
 
         public static DataTable BuscarCondominioPorId(int idCondominio)

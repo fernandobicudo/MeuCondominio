@@ -10,16 +10,15 @@ using MeuCondominio2.Services.Eleicao;
 
 namespace MeuCondominio1
 {
-    public partial class CondominoConsultaListaEleicoes : System.Web.UI.Page
+    public partial class ClienteConsultaListaEleicoesB : System.Web.UI.Page
     {
-
         List<Eleicao> listaDeEleicoesDoCondominio = new List<Eleicao>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                
+
                 /*CarregarGriView();*/
             }
             ConstruirListaDeEleicoes();
@@ -123,7 +122,7 @@ namespace MeuCondominio1
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';";
-/*                e.Row.Attributes["onmouseout"] = "this.style.fontWeight='normal';";*/
+                /*                e.Row.Attributes["onmouseout"] = "this.style.fontWeight='normal';";*/
                 e.Row.ToolTip = "Clique na linha para selecioná-la.";
                 e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.gvEleicoes, "Select$" + e.Row.RowIndex);
             }
@@ -144,5 +143,6 @@ namespace MeuCondominio1
                 Response.Redirect(String.Format(@"CondominoResultadoDaEleicao.aspx?modo={0}&codigoEleicao={1}&tituloEleicao={2}",
                     0, idEleicao, tituloEleicao));
         }
+
     }
 }

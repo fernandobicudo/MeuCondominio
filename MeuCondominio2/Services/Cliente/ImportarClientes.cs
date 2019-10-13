@@ -7,15 +7,15 @@ using System.Data;
 using MeuCondominio2.Services.Condominio;
 
 
-namespace MeuCondominio2.Services.Condomino
+namespace MeuCondominio2.Services.Cliente
 {
-    public class ImportarCondomino
+    public class ImportarClientes
     {
         DataTable dt;
         
         List<Model.Unidade> listaUnidades;
         Model.Condominio condominio = new Model.Condominio();
-        List<Model.Condomino> listaCondominos;
+        List<Model.Cliente> listaClientes;
 
         //TODO: o método de busca e construção de objeto Condominio deveria estar em qual classe?
         //TODO: CRIAR CLASSE MORADOR
@@ -34,10 +34,10 @@ namespace MeuCondominio2.Services.Condomino
             return condominio;
         }
 
-        public List<Model.Condomino> ImportarConddominosDoArquivoDeCondominosDoCondominio(StreamReader reader)
+        public List<Model.Cliente> ImportarConddominosDoArquivoDeClientesDoCondominio(StreamReader reader)
         {
             
-            listaCondominos = new List<Model.Condomino>();
+            listaClientes = new List<Model.Cliente>();
             listaUnidades = new List<Model.Unidade>();
             
 
@@ -47,28 +47,28 @@ namespace MeuCondominio2.Services.Condomino
                 string linha = reader.ReadLine();
                 string[] value = linha.Split(';');
 
-                Model.Condomino condomino = new Model.Condomino();
+                Model.Cliente cliente = new Model.Cliente();
                 Model.Unidade unidade; 
 
-                condomino.SetNome(value[0]);
-                condomino.SetEmail(value[1]);
-                condomino.SetTelefone(value[2]);
-                condomino.SetEndereco(value[3]);
-                condomino.SetNumeroEndereco(value[4]);
-                condomino.SetComplementoEndereco(value[5]);
-                condomino.SetBairro(value[6]);
-                condomino.SetCidade(value[7]);
-                condomino.SetCEP(value[8]);
-                condomino.SetCPFCondomino1(value[9]);
-                condomino.SetTipoUsuario(Convert.ToInt32(value[10]));
-                listaCondominos.Add(condomino);
+                cliente.SetNome(value[0]);
+                cliente.SetEmail(value[1]);
+                cliente.SetTelefone(value[2]);
+                cliente.SetEndereco(value[3]);
+                cliente.SetNumeroEndereco(value[4]);
+                cliente.SetComplementoEndereco(value[5]);
+                cliente.SetBairro(value[6]);
+                cliente.SetCidade(value[7]);
+                cliente.SetCEP(value[8]);
+                cliente.SetCPFCliente(value[9]);
+                cliente.SetTipoUsuario(Convert.ToInt32(value[10]));
+                listaClientes.Add(cliente);
 
             }
-            return listaCondominos;
+            return listaClientes;
 
         }
 
-        public DataTable LerArquivoDeCondominosDoCondominio(StreamReader reader)
+        public DataTable LerArquivoDeClientesDoCondominio(StreamReader reader)
         {
             dt = new DataTable();
 

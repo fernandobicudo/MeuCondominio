@@ -10,7 +10,7 @@
 namespace MeuCondominio1 {
     
     
-    public partial class VagaCondomino {
+    public partial class VagaCliente {
         
         /// <summary>
         /// vagasCondomino control.

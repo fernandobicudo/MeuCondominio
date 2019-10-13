@@ -146,7 +146,7 @@ namespace MeuCondominio1
                 switch (tipoUsuario)
                 {
                     case 6:
-                        Response.Redirect(String.Format(@"CondominoEleicaoInfo.aspx?modo={0}&codigoEleicao={1}",
+                        Response.Redirect(String.Format(@"ClienteEleicaoInfo.aspx?modo={0}&codigoEleicao={1}",
                         0, idEleicao));
                         break;
                     case 2:
@@ -161,7 +161,7 @@ namespace MeuCondominio1
                 switch (tipoUsuario)
                 {
                     case 6:
-                        Response.Redirect(String.Format(@"CondominoResultadoDaEleicao.aspx?modo={0}&codigoEleicao={1}&tituloEleicao={2}",
+                        Response.Redirect(String.Format(@"ClienteResultadoDaEleicao.aspx?modo={0}&codigoEleicao={1}&tituloEleicao={2}",
                         0, idEleicao, tituloEleicao));
                         break;
                     case 2:

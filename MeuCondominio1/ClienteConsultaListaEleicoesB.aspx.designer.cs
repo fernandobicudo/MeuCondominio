@@ -10,7 +10,7 @@
 namespace MeuCondominio1 {
     
     
-    public partial class CondominoConsultaListaEleicoes {
+    public partial class ClienteConsultaListaEleicoesB {
         
         /// <summary>
         /// form1 control.

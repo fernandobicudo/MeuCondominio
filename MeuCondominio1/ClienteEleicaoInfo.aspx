@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="CondominoEleicaoInfo.aspx.cs" Inherits="MeuCondominio1.CondominoEleicaoInfo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="ClienteEleicaoInfo.aspx.cs" Inherits="MeuCondominio1.CondominoEleicaoInfo" %>
 
 <!DOCTYPE html>
 

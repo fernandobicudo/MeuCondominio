@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VagaCondomino.aspx.cs" Inherits="MeuCondominio1.VagaCondomino" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VagaCliente.aspx.cs" Inherits="MeuCondominio1.VagaCliente" %>
 
 <!DOCTYPE html>
 

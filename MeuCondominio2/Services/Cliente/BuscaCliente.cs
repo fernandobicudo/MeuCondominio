@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using MeuCondominio2.DAO;
 
-namespace MeuCondominio2.Services.Condomino
+namespace MeuCondominio2.Services.Cliente
 {
-    class BuscaCondomino
+    class BuscaCliente
     {
         
     }

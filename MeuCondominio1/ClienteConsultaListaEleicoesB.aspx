@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="CondominoConsultaListaEleicoes.aspx.cs" Inherits="MeuCondominio1.CondominoConsultaListaEleicoes" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClienteConsultaListaEleicoesB.aspx.cs" Inherits="MeuCondominio1.ClienteConsultaListaEleicoesB" %>
 
 <!DOCTYPE html>
 

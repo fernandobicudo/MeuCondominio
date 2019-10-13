@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MenuInicialCondomino.aspx.cs" Inherits="MeuCondominio1.MenuInicialCondomino" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MenuInicialCondominoMorador.aspx.cs" Inherits="MeuCondominio1.MenuInicialCondomino" %>
 
 <!DOCTYPE html>
 

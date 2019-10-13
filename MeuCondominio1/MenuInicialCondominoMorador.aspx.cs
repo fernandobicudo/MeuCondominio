@@ -18,7 +18,7 @@ namespace MeuCondominio1
 
         protected void IrParaPaginaVagas(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("VagaCondomino.aspx"); 
+            Response.Redirect("VagaCliente.aspx"); 
         }
 
         protected void IrParaPaginaEleicoes(object sender, ImageClickEventArgs e)

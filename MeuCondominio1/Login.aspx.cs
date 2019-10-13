@@ -60,9 +60,12 @@ namespace MeuCondominio1
                 int tipoUsuario = Convert.ToInt32(dt.Rows[0]["tipo_usuario"]);
                 int codigoUsuario = Convert.ToInt32(Session["codigoUser"]);
 
+/*                TIPO_USURIO
+                  1 = Condômino; 2 = Síndico; 3 = Zelador; 4 = Administradora; 5 = Morador; 6 = Condômino-morador
+*/
                 switch (tipoUsuario) {
-                    case 1:
-                        PreencherVariaveisDeSessaoCondomino(codigoUsuario);
+                    case 6:
+                        PreencherVariaveisDeSessaoCondominoMorador(codigoUsuario);
                         /*                        Response.Redirect("VagaCondomino.aspx"); //TODO: após testado, trocar para MenuInicialCondomino acima.*/
                         Response.Redirect("MenuInicialCondomino.aspx");
                         break;
@@ -87,7 +90,7 @@ namespace MeuCondominio1
             Session["codigoCondominio"] = dt.Rows[0]["idCondominio"];
         }
 
-        private void PreencherVariaveisDeSessaoCondomino(int idCondomino)
+        private void PreencherVariaveisDeSessaoCondominoMorador(int idCondomino)
         {
             DataTable dt;
             dt = BuscaCondominio.BuscarCondominioPorIddoCondomino(idCondomino);

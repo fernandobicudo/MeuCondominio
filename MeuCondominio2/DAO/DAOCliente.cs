@@ -18,7 +18,7 @@ namespace MeuCondominio2.DAO
                 senha = Criptografia.Encriptar(cliente.GetSenha());
                 string SQL;
                 SQL = String.Format(@"INSERT INTO `Usuario` (`nome`, `telefone`, `email`, `senha`, `endereco`, `numero_endereco`, " +
-                                   "`complementoEndereco`, `bairro`, `cidade`, `UF`, `CEP`, `tipo_usuario`) VALUES " +
+                                   "`complementoEndereco`, `bairro`, `cidade`, `UF`, `CEP`, `idTipoUsuario`) VALUES " +
                                    " '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', {11}",
                                    cliente.GetNome(), cliente.GetTelefone(), cliente.GetEmail(), senha, cliente.GetEndereco(),
                                    cliente.GetNumeroEndereco(), cliente.GetComplementoEndereco(), cliente.GetBairro(), cliente.GetCidade(),

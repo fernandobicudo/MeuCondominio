@@ -13,9 +13,9 @@ namespace MeuCondominio2.DAO
         {
             string SQL;
 
-            string dataSorteio = Formatadores.ConversaoDeDataParaString(sorteioVagas.GetDataSorteio());
-            string dataValidadeInicio = Formatadores.ConversaoDeDataParaString(sorteioVagas.GetDataValidadeSorteioInicio());
-            string dataValidadeFim = Formatadores.ConversaoDeDataParaString(sorteioVagas.GetDataValidadeSorteioFim());
+            string dataSorteio = Formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.GetDataSorteio());
+            string dataValidadeInicio = Formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.GetDataValidadeSorteioInicio());
+            string dataValidadeFim = Formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.GetDataValidadeSorteioFim());
 
             SQL = String.Format(@"INSERT INTO SorteioVagas " +
                 "(`tipoSorteio`, `dataSorteio`, `dataValidadeSorteioInicio`, `dataValidadeSorteioFim`, " +
@@ -33,9 +33,8 @@ namespace MeuCondominio2.DAO
             DataTable dt;
             string SQL;
             SQL = String.Format(@"SELECT sv.qtdeVagasPorUnidade FROM `SorteioVagas` sv " +
-                                "WHERE sv.id = {0} " +
-                                "AND sv.id = (select MAX(id) from `SorteioVagas`);", idSorteio);
-
+                                "WHERE sv.idSorteioVagas = {0};", idSorteio);
+            //TODO: verificar comportamento do select para pesquisar número de vagas por unidade do sorteio. Uma das cláusulas where nao é necessária.
             dt = MetodosBD.ExecutaSelect(SQL);
 
             int qtdeVagas = Convert.ToInt32(dt.Rows[0]["qtdeVagasPorUnidade"]);
@@ -46,9 +45,9 @@ namespace MeuCondominio2.DAO
         internal static DataTable PesquisarIdDoResultadoDoUltimoSorteioParaOCondominio(int idCondominio)
         {
             string SQL;
-            SQL = String.Format(@"SELECT sv.id FROM `SorteioVagas` sv " +
+            SQL = String.Format(@"SELECT sv.idSorteioVagas FROM `SorteioVagas` sv " +
                                 "WHERE sv.idCondominio = {0} " +
-                                "AND sv.id = (select MAX(id) from `SorteioVagas`);", idCondominio);
+                                "AND sv.idSorteioVagas = (select MAX(idSorteioVagas) from `SorteioVagas`);", idCondominio);
 
             return MetodosBD.ExecutaSelect(SQL);
 

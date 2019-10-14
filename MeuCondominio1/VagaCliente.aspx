@@ -22,8 +22,12 @@
             <asp:Panel ID="pnHeaderVaga" runat="server"></asp:Panel>
         </div>
         <div id="numeroVaga">
-            <asp:Panel ID="pnTituloNumeroVaga" runat="server"></asp:Panel><br/><br/>
-            <asp:Panel ID="pnNumeroVaga" runat="server"></asp:Panel><br/><br/>
+            <asp:Panel ID="pnTituloNumeroVaga" runat="server"></asp:Panel>
+            <br />
+            <br />
+            <asp:Panel ID="pnNumeroVaga" runat="server"></asp:Panel>
+            <br />
+            <br />
         </div>
         <div id="validadeVaga">
             <asp:Panel ID="pnValidadeVaga" runat="server"></asp:Panel>

@@ -30,11 +30,11 @@ namespace MeuCondominio2.DAO
             DataTable dt;
             string SQL;
             SQL = String.Format(@"SELECT * FROM `vagaGaragem` vg "+
-                "JOIN `Unidade` un ON un.id = vg.idUnidade " +
-                "WHERE un.idCondominio = {0};", idCondominio); //TODO: atualizar idUnidade para idCondominio quando estiver atualizado no banco.
+                "JOIN `Unidade` un ON un.idUnidade = vg.idUnidade " +
+                "WHERE un.idCondominio = {0} " +
+                "ORDER BY vg.idVagaGaragem;", idCondominio); //TODO: atualizar idUnidade para idCondominio quando estiver atualizado no banco.
             dt = MetodosBD.ExecutaSelect(SQL);
             return dt;
         }
-
     }
 }

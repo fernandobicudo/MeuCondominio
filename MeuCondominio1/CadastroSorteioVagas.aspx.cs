@@ -42,7 +42,6 @@ namespace MeuCondominio1
 
             DateTime dataSorteio, dataValidadeInicio, dataValidadeFim;
 
-            //URGENTE: ACERTAR FORMATO DE DATAS
             dataSorteio = Formatadores.FormatarDataParaBancoDeDados(txDataSorteio.Text);
             dataValidadeInicio = Formatadores.FormatarDataParaBancoDeDados(txDataValidadeInicio.Text); 
             dataValidadeFim = Formatadores.FormatarDataParaBancoDeDados(txDataValidadeFim.Text); 

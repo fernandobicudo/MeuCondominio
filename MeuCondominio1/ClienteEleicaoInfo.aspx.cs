@@ -210,10 +210,6 @@ namespace MeuCondominio1
             GravaVoto.GravaVotoDaEleicao(voto);
         }
 
-        private void VotaNaOpcaoSelecionada(Voto voto)
-        {
-
-        }
 
         private void BuscaDadosDaOpcaoVotada()
         {
@@ -229,7 +225,7 @@ namespace MeuCondominio1
             dtUnidade = BuscaUnidade.PesquisarUnidadePorCondominoDoCondominio(
             Convert.ToInt32((Session["codigoUser"])), Convert.ToInt32((Session["codigoCondominio"])));
             //TODO: RESOLVER O CASO EM QUE O CONDOMINO TEM N UNIDADES: terá direito a N votos, porém a tendência é que vote na mesma opção em todos os votos;
-            idUnidade = Convert.ToInt32(dtUnidade.Rows[0]["id"]);
+            idUnidade = Convert.ToInt32(dtUnidade.Rows[0]["idUnidade"]);
         }
 
         private void ConstruirObjetoVoto()

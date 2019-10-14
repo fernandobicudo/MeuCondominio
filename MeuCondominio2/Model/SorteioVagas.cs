@@ -215,7 +215,7 @@ namespace MeuCondominio2.Model
             
             int qtdVagas = listaVagas.Count;
             int vagaSorteada = 0;
-            int idSorteioVagas = Convert.ToInt32(BuscarIddoSorteioDeVagasMaisRecenteDoCondominio(idCondominio).Rows[0]["id"]);
+            int idSorteioVagas = Convert.ToInt32(BuscarIddoSorteioDeVagasMaisRecenteDoCondominio(idCondominio).Rows[0]["idSorteioVagas"]);
 
             int qtdVagasPorUnidade = BuscaSorteioVagas.BuscarNumeroDeVagasPorUnidadeDoSorteio(idSorteioVagas);
 
@@ -262,7 +262,7 @@ namespace MeuCondominio2.Model
 
             foreach (DataRow linha in UnidadesDoCondominio.Rows)
             {
-                listaIDsDasUnidades.Add(Convert.ToInt32(linha["id"]));
+                listaIDsDasUnidades.Add(Convert.ToInt32(linha["idUnidade"]));
             }
             return listaIDsDasUnidades;
             //TODO: MASTER - depois de gerar a lista de inteiros, gerar a lista efetiva de IDs das unidades, relacionando a posição 
@@ -276,7 +276,7 @@ namespace MeuCondominio2.Model
 
             foreach (DataRow linha in UnidadesDoCondominio.Rows)
             {
-                listaIDsDasUnidades.Add(Convert.ToInt32(linha["id"]));
+                listaIDsDasUnidades.Add(Convert.ToInt32(linha["idUnidade"]));
             }
             return listaIDsDasUnidades;
             //TODO: MASTER - depois de gerar a lista de inteiros, gerar a lista efetiva de IDs das unidades, relacionando a posição 
@@ -303,7 +303,7 @@ namespace MeuCondominio2.Model
             {
                 do
                 {
-                    item = itemAleatorio.Next(0, lista.Count);
+                    item = itemAleatorio.Next(1, lista.Count+1);
 
                 } while (listaAleatoriaDeInteiros.Contains(item));
                 listaAleatoriaDeInteiros.Add(item);
@@ -319,7 +319,7 @@ namespace MeuCondominio2.Model
 
             foreach (DataRow linha in VagasDeGaragemDoCondominio.Rows)
             {
-                listaVagas.Add(Convert.ToInt32(linha["id"]));
+                listaVagas.Add(Convert.ToInt32(linha["idVagaGaragem"]));
             }
             return listaVagas;
         }
@@ -331,7 +331,7 @@ namespace MeuCondominio2.Model
 
             foreach (DataRow linha in VagasDeGaragemDoCondominio.Rows)
             {
-                listaVagas.Add(Convert.ToInt32(linha["id"]));
+                listaVagas.Add(Convert.ToInt32(linha["idVagaGaragem"]));
             }
             return listaVagas;
         }

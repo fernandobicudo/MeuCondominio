@@ -29,72 +29,6 @@ namespace MeuCondominio1
             ConstruirListaDeEleicoes();
         }
 
-        private void CarregarGriView()
-        {
-            gvEleicoes.DataSource = listaDeEleicoesDoCondominio;
-
-        }
-
-        private void ListarEleicoesNaPagina()
-        {
-            foreach (Eleicao eleicao in listaDeEleicoesDoCondominio)
-            {
-                string nomeStatusEleicao;
-
-                Label tituloEleicao = new Label();
-                Label lbtipoEleicao = new Label();
-                Label tipoEleicao = new Label();
-                Label lbDescricaoEleicao = new Label();
-                Label descricaoEleicao = new Label();
-                Label lbStatusEleicao = new Label();
-                Label statusEleicao = new Label();
-                Label lbDataInicioEleicao = new Label();
-                Label dataInicioEleicao = new Label();
-                Label lbDataFimEleicao = new Label();
-                Label dataFimEleicao = new Label();
-
-
-                tituloEleicao.Text = eleicao.GetNomeEleicao();
-                lbtipoEleicao.Text = "Tipo de votação: ";
-                tipoEleicao.Text = eleicao.GetTipoEleicao();
-                lbDescricaoEleicao.Text = "Descrição: ";
-                descricaoEleicao.Text = eleicao.GetDescricaoEleicao();
-                lbStatusEleicao.Text = "Situação: ";
-
-
-                if (eleicao.GetStatusEleicao())
-                    nomeStatusEleicao = "Em andamento";
-                else
-                    nomeStatusEleicao = "Concluída";
-
-                statusEleicao.Text = nomeStatusEleicao;
-
-                lbDataInicioEleicao.Text = "Início: ";
-                dataInicioEleicao.Text = eleicao.GetDataInicioEleicao().ToString();
-                lbDataFimEleicao.Text = "Realização: ";
-                dataFimEleicao.Text = eleicao.GetDataFimEleicao().ToString();
-
-                pnEleicoes.Controls.Add(tituloEleicao);
-                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
-                pnEleicoes.Controls.Add(lbtipoEleicao);
-                pnEleicoes.Controls.Add(tipoEleicao);
-                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
-                pnEleicoes.Controls.Add(lbDescricaoEleicao);
-                pnEleicoes.Controls.Add(descricaoEleicao);
-                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
-                pnEleicoes.Controls.Add(lbStatusEleicao);
-                pnEleicoes.Controls.Add(statusEleicao);
-                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
-                pnEleicoes.Controls.Add(lbDataInicioEleicao);
-                pnEleicoes.Controls.Add(dataInicioEleicao);
-                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
-                pnEleicoes.Controls.Add(lbDataFimEleicao);
-                pnEleicoes.Controls.Add(dataFimEleicao);
-            }
-        }
-        //TODO: pensar numa maneira de clicar numa linha de Eleição e levar à página de detalhe (votação ou consulta, dependendo do status da eleição)
-
-
         private void ConstruirListaDeEleicoes()
         {
             DataTable dt;
@@ -103,9 +37,17 @@ namespace MeuCondominio1
 
             dt = BuscaEleicao.BuscaEleicoesDoCondominio(idCondominio);
 
-            gvEleicoes.DataSource = dt;
-
-            gvEleicoes.DataBind();
+            if (dt.Rows.Count > 0)
+            {
+                gvEleicoes.DataSource = dt;
+                gvEleicoes.DataBind();
+            }
+            else
+            {
+                Label lbNaoHaEleicoes = new Label();
+                lbNaoHaEleicoes.Text = "Não há votações anteriores em seu condomínio.";
+                pnEleicoes.Controls.Add(lbNaoHaEleicoes);
+            }
 
             /*foreach (DataRow linha in dt.Rows)
             {
@@ -200,5 +142,66 @@ namespace MeuCondominio1
         {
             Response.Redirect(String.Format(@"CadastroEleicao.aspx?modo=3")); //modo 3 significa apenas não ser 0 nem 1, portanto entrará como modo default do switch case: nova eleicao 
         }
+
+
+        #region CodigoAntigo
+        /*private void ListarEleicoesNaPagina()
+        {
+            foreach (Eleicao eleicao in listaDeEleicoesDoCondominio)
+            {
+                string nomeStatusEleicao;
+
+                Label tituloEleicao = new Label();
+                Label lbtipoEleicao = new Label();
+                Label tipoEleicao = new Label();
+                Label lbDescricaoEleicao = new Label();
+                Label descricaoEleicao = new Label();
+                Label lbStatusEleicao = new Label();
+                Label statusEleicao = new Label();
+                Label lbDataInicioEleicao = new Label();
+                Label dataInicioEleicao = new Label();
+                Label lbDataFimEleicao = new Label();
+                Label dataFimEleicao = new Label();
+
+
+                tituloEleicao.Text = eleicao.GetNomeEleicao();
+                lbtipoEleicao.Text = "Tipo de votação: ";
+                tipoEleicao.Text = eleicao.GetTipoEleicao();
+                lbDescricaoEleicao.Text = "Descrição: ";
+                descricaoEleicao.Text = eleicao.GetDescricaoEleicao();
+                lbStatusEleicao.Text = "Situação: ";
+
+
+                if (eleicao.GetStatusEleicao())
+                    nomeStatusEleicao = "Em andamento";
+                else
+                    nomeStatusEleicao = "Concluída";
+
+                statusEleicao.Text = nomeStatusEleicao;
+
+                lbDataInicioEleicao.Text = "Início: ";
+                dataInicioEleicao.Text = eleicao.GetDataInicioEleicao().ToString();
+                lbDataFimEleicao.Text = "Realização: ";
+                dataFimEleicao.Text = eleicao.GetDataFimEleicao().ToString();
+
+                pnEleicoes.Controls.Add(tituloEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
+                pnEleicoes.Controls.Add(lbtipoEleicao);
+                pnEleicoes.Controls.Add(tipoEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
+                pnEleicoes.Controls.Add(lbDescricaoEleicao);
+                pnEleicoes.Controls.Add(descricaoEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
+                pnEleicoes.Controls.Add(lbStatusEleicao);
+                pnEleicoes.Controls.Add(statusEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
+                pnEleicoes.Controls.Add(lbDataInicioEleicao);
+                pnEleicoes.Controls.Add(dataInicioEleicao);
+                pnEleicoes.Controls.Add(new LiteralControl("<br />"));
+                pnEleicoes.Controls.Add(lbDataFimEleicao);
+                pnEleicoes.Controls.Add(dataFimEleicao);
+            }
+        }*/
+        #endregion
     }
 }

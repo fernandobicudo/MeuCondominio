@@ -3,36 +3,18 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data.SQLite;
 using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace MeuCondominio2.DAO
 {
     public class MetodosBD
     {
-        /*        public static DataTable ExecutaSelectMySQL(string sql) 
-                {
-                    MySqlConnection conexao = ConexaoBD.GetConexao();
-                    try
-                    {
-                        MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexao);
-                        DataTable dataTemp = new DataTable();
-                        adapter.Fill(dataTemp);
-                        return dataTemp;
-                    }
-                    finally
-                    {
-                        conexao.Close();
-                    }
-                }
-        */
-
         public static DataTable ExecutaSelect(string sql)
         {
-            SQLiteConnection conexao = ConexaoBD.GetConexaoSQLite();
+            MySqlConnection conexao = ConexaoBD.GetConexao();
             try
             {
-                SQLiteDataAdapter adapter = new SQLiteDataAdapter(sql, conexao);
-                
-
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexao);
                 DataTable dataTemp = new DataTable();
                 adapter.Fill(dataTemp);
                 return dataTemp;
@@ -43,26 +25,12 @@ namespace MeuCondominio2.DAO
             }
         }
 
-        /*        public static void ExecutaSQLMySQL(string sql)
-                {
-                    MySqlConnection conexao = ConexaoBD.GetConexao();
-                    try
-                    {
-                        MySqlCommand comando = new MySqlCommand(sql, conexao);
-                        comando.ExecuteNonQuery();
-                    }
-                    finally
-                    {
-                        conexao.Close();
-                    }
-                }*/
-
         public static void ExecutaSQL(string sql)
         {
-            SQLiteConnection conexao = ConexaoBD.GetConexaoSQLite();
+            MySqlConnection conexao = ConexaoBD.GetConexao();
             try
             {
-                SQLiteCommand comando = new SQLiteCommand(sql, conexao);
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
                 comando.ExecuteNonQuery();
             }
             finally

@@ -12,7 +12,7 @@ namespace MeuCondominio2.Model
         private bool statusInadimplencia; 
         private bool statusOcupacao;
         private int idCondominio;
-        private int idCondomino;
+        private int idCliente;
 
         
 
@@ -27,7 +27,7 @@ namespace MeuCondominio2.Model
             bool statusInadimplencia,
             bool statusOcupacao,
             int idCondominio,
-            int idCondomino)
+            int idCliente)
         {
             this.idUnidade = idUnidade;
             this.qtdVagas = qtdVagas;
@@ -35,7 +35,7 @@ namespace MeuCondominio2.Model
             this.statusInadimplencia = statusInadimplencia;
             this.statusOcupacao = statusOcupacao;
             this.idCondominio = idCondominio;
-            this.idCondomino = idCondomino;
+            this.idCliente = idCliente;
         }
 
         public Unidade(int qtdVagas,
@@ -43,17 +43,15 @@ namespace MeuCondominio2.Model
             bool statusInadimplencia,
             bool statusOcupacao,
             int idCondominio,
-            int idCondomino)
+            int idCliente)
         {
             this.qtdVagas = qtdVagas;
             this.identificacao = identificacao;
             this.statusInadimplencia = statusInadimplencia;
             this.statusOcupacao = statusOcupacao;
             this.idCondominio = idCondominio;
-            this.idCondomino = idCondomino;
+            this.idCliente = idCliente;
         }
-
-        
 
         public int GetIdUnidade()
         {
@@ -115,14 +113,14 @@ namespace MeuCondominio2.Model
             idCondominio = value;
         }
 
-        public int GetIdCondomino()
+        public int GetIdCliente()
         {
-            return idCondomino;
+            return idCliente;
         }
 
-        public void SetIdCondomino(int value)
+        public void SetIdCliente(int value)
         {
-            idCondomino = value;
+            idCliente = value;
         }
     }
     //TODO: criar métodos da classe Unidade

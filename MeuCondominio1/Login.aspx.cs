@@ -52,12 +52,12 @@ namespace MeuCondominio1
             }
             else if (String.Equals(dt.Rows[0]["senha"], senha))
             {
-                Session["codigoUser"] = dt.Rows[0]["id_usuario"];
+                Session["codigoUser"] = dt.Rows[0]["idUsuario"];
                 Session["nomeUser"] = dt.Rows[0]["nome"];
                 Session["emailUser"] = dt.Rows[0]["email"];
-                Session["tipoUser"] = dt.Rows[0]["tipo_usuario"];
+                Session["tipoUser"] = dt.Rows[0]["idTipoUsuario"];
 
-                int tipoUsuario = Convert.ToInt32(dt.Rows[0]["tipo_usuario"]);
+                int tipoUsuario = Convert.ToInt32(dt.Rows[0]["idTipoUsuario"]);
                 int codigoUsuario = Convert.ToInt32(Session["codigoUser"]);
 
 /*                TIPO_USURIO
@@ -66,7 +66,6 @@ namespace MeuCondominio1
                 switch (tipoUsuario) {
                     case 6:
                         PreencherVariaveisDeSessaoClienteCondominoMorador(codigoUsuario);
-                        /*                        Response.Redirect("VagaCondomino.aspx"); //TODO: após testado, trocar para MenuInicialCondomino acima.*/
                         Response.Redirect("MenuInicialCondominoMorador.aspx");
                         break;
                     case 2:

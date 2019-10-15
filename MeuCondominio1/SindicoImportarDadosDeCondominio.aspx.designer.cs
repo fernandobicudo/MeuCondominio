@@ -85,7 +85,7 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.WebControls.Label lbAlertaStatusDosDadosImportados;
         
         /// <summary>
-        /// gvDadosDosCondominos control.
+        /// gvDadosDosClientes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

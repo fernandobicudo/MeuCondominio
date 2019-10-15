@@ -34,13 +34,10 @@ namespace MeuCondominio1
 
             List<Cliente> listaCliente = new List<Cliente>();
 
-
-
             dt = importarCliente.LerArquivoDeClientesDoCondominio(reader);
-
+            
             gvDadosDosClientes.DataSource = dt;
             gvDadosDosClientes.DataBind();
-            
         }
 
         protected void btUpload_Click(object sender, EventArgs e)
@@ -52,7 +49,6 @@ namespace MeuCondominio1
 
                 ExibirDadosDeImportacaoDoArquivo();
             }
-
         }
 
         protected void btImportarDados_Click(object sender, EventArgs e)

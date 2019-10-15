@@ -20,7 +20,7 @@
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <asp:Label ID="lbAlertaStatusDosDadosImportados" runat="server" Text=""></asp:Label><br />
-                    <asp:GridView ID="gvDadosDosCondominos" runat="server" AutoGenerateColumns="false">
+                    <asp:GridView ID="gvDadosDosClientes" runat="server" AutoGenerateColumns="false">
                         <Columns>
                             <asp:BoundField DataField="nome" HeaderText="Nome" />
                             <asp:BoundField DataField="email" HeaderText="Email" />
@@ -31,7 +31,7 @@
                             <asp:BoundField DataField="bairro" HeaderText="Bairro" />
                             <asp:BoundField DataField="cidade" HeaderText="Cidade" />
                             <asp:BoundField DataField="CEP" HeaderText="CEP" />
-                            <asp:BoundField DataField="CPF" HeaderText="CPF" />
+                            <asp:BoundField DataField="CPF" HeaderText="CPF" /> 
                         </Columns>
                     </asp:GridView><br/>
                 </ContentTemplate>

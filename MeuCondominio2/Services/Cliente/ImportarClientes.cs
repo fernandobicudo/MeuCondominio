@@ -5,6 +5,7 @@ using System.IO;
 using MeuCondominio2.Model;
 using System.Data;
 using MeuCondominio2.Services.Condominio;
+using MeuCondominio2.Model;
 
 
 namespace MeuCondominio2.Services.Cliente
@@ -12,14 +13,13 @@ namespace MeuCondominio2.Services.Cliente
     public class ImportarClientes
     {
         DataTable dt;
-        
+
         List<Model.Unidade> listaUnidades;
         Model.Condominio condominio = new Model.Condominio();
         List<Model.Cliente> listaClientes;
 
         //TODO: o método de busca e construção de objeto Condominio deveria estar em qual classe?
         //TODO: CRIAR CLASSE MORADOR
-        
 
         public Model.Condominio BuscarDoCondominioDaSessao(int idCondominio)
         {
@@ -34,13 +34,11 @@ namespace MeuCondominio2.Services.Cliente
             return condominio;
         }
 
-        public List<Model.Cliente> ImportarConddominosDoArquivoDeClientesDoCondominio(StreamReader reader)
+        public List<Model.Cliente> ImportarClientesDoArquivoDeClientesDoCondominio(StreamReader reader)
         {
-            
+
             listaClientes = new List<Model.Cliente>();
             listaUnidades = new List<Model.Unidade>();
-            
-
 
             while (!reader.EndOfStream)
             {
@@ -48,7 +46,7 @@ namespace MeuCondominio2.Services.Cliente
                 string[] value = linha.Split(';');
 
                 Model.Cliente cliente = new Model.Cliente();
-                Model.Unidade unidade; 
+                RelacaoClienteUnidade relacaoClienteUnidade = new RelacaoClienteUnidade();
 
                 cliente.SetNome(value[0]);
                 cliente.SetEmail(value[1]);
@@ -63,9 +61,11 @@ namespace MeuCondominio2.Services.Cliente
                 cliente.SetTipoUsuario(Convert.ToInt32(value[10]));
                 listaClientes.Add(cliente);
 
+                
+
+
             }
             return listaClientes;
-
         }
 
         public DataTable LerArquivoDeClientesDoCondominio(StreamReader reader)
@@ -94,7 +94,5 @@ namespace MeuCondominio2.Services.Cliente
             }
             return dt;
         }
-
-
     }
 }

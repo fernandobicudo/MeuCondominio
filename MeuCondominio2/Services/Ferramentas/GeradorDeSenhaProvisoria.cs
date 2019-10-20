@@ -6,23 +6,22 @@ namespace MeuCondominio2.Services.Ferramentas
 {
     public class GeradorDeSenhaProvisoria
     {
-        public static GeradorDeSenhaProvisoria gerador;
-
-        string senhaProvisoria = "";
-        int numero;
-        char letra;
+        
 
         public string GerarSenhaProvisoria()
         {
+            string senhaProvisoria = "";
+            int numero;
+            char letra;
             Random random = new Random();
 
             for (int i = 0; i < 3; i++)
             {
                 numero = random.Next(0, 9);
-                letra = (char)random.Next(33, 58);
-                senhaProvisoria += numero + letra;
+                letra = (char)random.Next(97, 122);
+                senhaProvisoria += numero.ToString() + letra.ToString(); 
             }
-            return senhaProvisoria;
+            return senhaProvisoria; 
         }
     }
 }

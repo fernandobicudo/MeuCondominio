@@ -285,12 +285,12 @@ namespace MeuCondominio2.Model
 
         private void SelecionaUnidadesdoCondominio(SorteioVagas sorteioVagas)
         {
-            UnidadesDoCondominio = BuscaUnidade.PesquisarUnidadePorCondominio(sorteioVagas.GetIdCondominio());
+            UnidadesDoCondominio = BuscaUnidade.BuscarUnidadePorCondominio(sorteioVagas.GetIdCondominio());
         }
 
         private void SelecionaUnidadesdoCondominio(int idCondominio)
         {
-            UnidadesDoCondominio = BuscaUnidade.PesquisarUnidadePorCondominio(idCondominio);
+            UnidadesDoCondominio = BuscaUnidade.BuscarUnidadePorCondominio(idCondominio);
         }
 
         private List<int> CriarListaAleatoriaDeInteiros(List<int> lista)

@@ -8,13 +8,32 @@ namespace MeuCondominio2.Model
     {
         private int idCliente;
         private int idUnidade;
+        private string CPF;
         private bool ehMoradorDaUnidade;
         private bool ehProprietarioDaUnidade;
 
-        public RelacaoClienteUnidade(int idCliente, int idUnidade, bool ehMoradorDaUnidade, bool ehProprietarioDaUnidade)
+        public string GetCPF1()
+        {
+            return CPF;
+        }
+
+        public void SetCPF1(string value)
+        {
+            CPF = value;
+        }
+
+        public RelacaoClienteUnidade(int idCliente, int idUnidade, string cPF, bool ehMoradorDaUnidade, bool ehProprietarioDaUnidade)
         {
             this.idCliente = idCliente;
             this.idUnidade = idUnidade;
+            CPF = cPF;
+            this.ehMoradorDaUnidade = ehMoradorDaUnidade;
+            this.ehProprietarioDaUnidade = ehProprietarioDaUnidade;
+        }
+
+        public RelacaoClienteUnidade(string cPF, bool ehMoradorDaUnidade, bool ehProprietarioDaUnidade)
+        {
+            CPF = cPF;
             this.ehMoradorDaUnidade = ehMoradorDaUnidade;
             this.ehProprietarioDaUnidade = ehProprietarioDaUnidade;
         }

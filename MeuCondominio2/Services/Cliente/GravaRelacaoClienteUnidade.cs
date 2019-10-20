@@ -9,7 +9,7 @@ namespace MeuCondominio2.Services.Cliente
 {
     public class GravaRelacaoClienteUnidade
     {
-        public void GravarRelacaoClienteUnidade(RelacaoClienteUnidade relacaoClienteUnidade)
+        public static void GravarRelacaoClienteUnidade(RelacaoClienteUnidade relacaoClienteUnidade)
         {
             DAORelacaoClienteUnidade.DAOInserirRelacaoClienteUnidade(relacaoClienteUnidade);
         }

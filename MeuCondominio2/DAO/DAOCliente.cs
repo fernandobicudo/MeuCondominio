@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using MeuCondominio2.Model;
-using MeuCondominio2.Services;
 using MeuCondominio2.Services.Ferramentas;
 
 
@@ -10,21 +10,30 @@ namespace MeuCondominio2.DAO
 {
     public class DAOCliente
     {
-        public void ImportarDadosDosClientes(List<Cliente> listaDeClientes)
+
+
+        public static void InserirClientesEmLote(List<Cliente> listaDeClientes)
         {
-            foreach(Cliente cliente in listaDeClientes)
+            foreach (Cliente cliente in listaDeClientes)
             {
-                string senha = GeradorDeSenhaProvisoria.gerador.GerarSenhaProvisoria();
-                senha = Criptografia.Encriptar(cliente.GetSenha());
-                string SQL;
-                SQL = String.Format(@"INSERT INTO `Usuario` (`nome`, `telefone`, `email`, `senha`, `endereco`, `numero_endereco`, " +
-                                   "`complementoEndereco`, `bairro`, `cidade`, `UF`, `CEP`, `idTipoUsuario`) VALUES " +
-                                   " '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', {11}",
-                                   cliente.GetNome(), cliente.GetTelefone(), cliente.GetEmail(), senha, cliente.GetEndereco(),
-                                   cliente.GetNumeroEndereco(), cliente.GetComplementoEndereco(), cliente.GetBairro(), cliente.GetCidade(),
-                                   cliente.GetUF(), cliente.GetCEP(), cliente.GetTipoUsuario());
-                MetodosBD.ExecutaSQL(SQL);
+                DAOUsuario.InserirCliente(cliente);
             }
+        }
+
+        internal static DataTable PesquisarClientePorCPF(string CPF)
+        {
+
+            Formatadores formatadores = new Formatadores();
+
+            string CPFFormatado = formatadores.FormatarCPFSemPontosNemTracos(CPF);
+            DataTable dt;
+            string SQL;
+            SQL = String.Format(@"SELECT * FROM `Usuario` us " +
+                " JOIN Cliente cl ON cl.idCliente = us.idUsuario " +
+                "WHERE cl.CPF = '{0}';", CPFFormatado);
+            dt = MetodosBD.ExecutaSelect(SQL);
+
+            return dt;
         }
     }
 }

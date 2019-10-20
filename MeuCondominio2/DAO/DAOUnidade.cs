@@ -27,14 +27,17 @@ namespace MeuCondominio2.DAO
             return dt;
         }
 
-        public static DataTable SelecionarUnidade(string nomeUnidade)
+        public static int SelecionarUnidade(string nomeUnidade)
         {
+            int idUnidade;
             DataTable dt;
             string SQL;
             SQL = String.Format(@"SELECT `idUnidade` FROM Unidade WHERE `identificacao` = '{0}'", nomeUnidade);
             dt = MetodosBD.ExecutaSelect(SQL);
-            return dt;
+            idUnidade = Convert.ToInt32(dt.Rows[0]["idUnidade"]);
+            return idUnidade;
         }
+
 
         public static DataTable SelecionarUnidadePorCondominoDoCondominio(int idCliente, int idCondominio)
         {

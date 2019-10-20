@@ -45,5 +45,15 @@ namespace MeuCondominio2.Services.Ferramentas
         {
             return Convert.ToByte(status);
         }
+
+        public string FormatarCPFSemPontosNemTracos(string CPF)
+        {
+            CPF = CPF.Trim();
+            CPF = CPF.Replace(".","");
+            CPF = CPF.Replace(" ", "");
+            CPF = CPF.Replace("-", "");
+
+            return CPF;
+        }
     }
 }

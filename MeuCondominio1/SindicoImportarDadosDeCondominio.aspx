@@ -13,9 +13,8 @@
         <div>
             <asp:Label ID="lbArquivoDeImportacao" runat="server" Text="Informe o arquivo"></asp:Label>
             <asp:FileUpload ID="fuArquivoDeImportacao" runat="server" />
-            <asp:Button ID="btUpload" runat="server" Text="Upload" CssClass="botaoDefault botaoHover" OnClick="btUpload_Click" /><br />
+            <asp:Button ID="btUpload" runat="server" Text="Upload" CssClass="botaoDefault botaoHover" OnClick="BtUpload_Click" /><br />
             <br />
-            <!--<asp:Button ID="idPreviewDosDados" runat="server" Text="Preview" CssClass="botaoPequeno botaoHover" OnClick="btPreview_Click" />-->
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
@@ -31,12 +30,16 @@
                             <asp:BoundField DataField="bairro" HeaderText="Bairro" />
                             <asp:BoundField DataField="cidade" HeaderText="Cidade" />
                             <asp:BoundField DataField="CEP" HeaderText="CEP" />
-                            <asp:BoundField DataField="CPF" HeaderText="CPF" /> 
+                            <asp:BoundField DataField="CPF" HeaderText="CPF" />
+                            <asp:BoundField DataField="Unidade" HeaderText="Unidade" />
+                            <asp:BoundField DataField="É morador" HeaderText="É morador" />
+                            <asp:BoundField DataField="É condômino" HeaderText="É condômino" />
                         </Columns>
                     </asp:GridView><br/>
+                    
                 </ContentTemplate>
             </asp:UpdatePanel>
-            <asp:Button ID="idImportar" runat="server" Text="Importar dados" CssClass="botaoDefault botaoHover" OnClick="btImportarDados_Click" />
+            <asp:Button ID="idImportar" runat="server" Text="Importar dados" CssClass="botaoDefault botaoHover" OnClick="BtImportarDados_Click" />
         </div>
     </form>
 </body>

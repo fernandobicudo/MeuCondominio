@@ -222,7 +222,7 @@ namespace MeuCondominio1
         private void BuscaUnidadeDoCondominoNoCondominio()
         {
             DataTable dtUnidade;
-            dtUnidade = BuscaUnidade.PesquisarUnidadePorCondominoDoCondominio(
+            dtUnidade = BuscaUnidade.BuscarUnidadePorCondominoDoCondominio(
             Convert.ToInt32((Session["codigoUser"])), Convert.ToInt32((Session["codigoCondominio"])));
             //TODO: RESOLVER O CASO EM QUE O CONDOMINO TEM N UNIDADES: terá direito a N votos, porém a tendência é que vote na mesma opção em todos os votos;
             idUnidade = Convert.ToInt32(dtUnidade.Rows[0]["idUnidade"]);

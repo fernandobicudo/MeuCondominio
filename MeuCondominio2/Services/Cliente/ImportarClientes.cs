@@ -128,10 +128,11 @@ namespace MeuCondominio2.Services.Cliente
             dt.Columns.Add("UF");
             dt.Columns.Add("CEP");
             dt.Columns.Add("CPF");
+            dt.Columns.Add("Tipo de usuário");
             dt.Columns.Add("Unidade");
             dt.Columns.Add("É morador");
             dt.Columns.Add("É condômino");
-            dt.Columns.Add("Tipo de usuário");
+
 
             while (!reader.EndOfStream)
             {

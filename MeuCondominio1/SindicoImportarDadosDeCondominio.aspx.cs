@@ -14,14 +14,11 @@ namespace MeuCondominio1
 {
     public partial class SindicoImportarDadosDeCondominio : System.Web.UI.Page
     {
-
-
-
         string nomeDoArquivo;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void FazerUploadDoArquivoDaPlanilha()
@@ -62,19 +59,10 @@ namespace MeuCondominio1
             return listaCliente;
         }
 
-        
-
-
-
-
-
         private void ImportarDadosDosClientesParaBancoDeDados(List<Cliente> listaCliente)
         {
             GravaCliente.ImportarClientesDeLista(listaCliente);
         }
-
-
-
 
         protected void BtUpload_Click(object sender, EventArgs e)
         {
@@ -91,17 +79,12 @@ namespace MeuCondominio1
             List<Cliente> listaClientesDoBancoDeDados = new List<Cliente>();
             Cliente ClienteDoBancoDeDados;
 
-
-
-            /*          ListaRelacaoClientesUnidades = importarClientes.ImportarRelacaoClienteUnidadeDoCondominioDadosDaPlanilha(LerDadosDaPlanilhaDeUsuarios);*/
-
             //LER DADOS DA PLANILHA
             listaClientesDaPlanilha = CriarListaDeClientesNaMemoriaAPartirDaPlanilha();
 
             //GRAVAR CLIENTES NO BANCO DE DADOS
             ImportarDadosDosClientesParaBancoDeDados(listaClientesDaPlanilha);
 
-            //RECUPERAR CLIENTES DO BANCO DE DADOS AGORA COM ID
             foreach (Cliente cliente in listaClientesDaPlanilha)
             {
                 ClienteDoBancoDeDados = new Cliente();
@@ -110,9 +93,6 @@ namespace MeuCondominio1
                 listaClientesDoBancoDeDados.Add(ClienteDoBancoDeDados);
             }
 
-            //INSERIR CLIENTES NAS RELACOES CLIENTESxUNIDADES
-
-            //A- buscar relacoes clientes x unidades da planilha
             List<RelacaoClienteUnidade> ListaRelacaoClientesUnidades;
             ImportarClientes importarClientes = new ImportarClientes();
             List<ImportarClientes.DadosDaRelacaoDaPlanilha> ListaDadosDaRelacaoDaPlanilha;
@@ -128,7 +108,6 @@ namespace MeuCondominio1
 
             Dictionary<string, RelacaoClienteUnidade> dict = ListaRelacaoClientesUnidades.ToDictionary(x => x.GetCPF1());
 
-            //B- percorrer relacoes x clientes na memória buscando id de cada unidade por descricao
             foreach (Cliente cliente1 in listaClientesDoBancoDeDados)
             {
                 if (dict.TryGetValue(cliente1.GetCPFCliente(), out RelacaoClienteUnidade encontrado)) encontrado.SetIdCliente(cliente1.GetIdUsuario());
@@ -143,71 +122,11 @@ namespace MeuCondominio1
                 if (dict.TryGetValue(dados.CPF, out RelacaoClienteUnidade encontrado)) encontrado.SetIdUnidade(idUnidade);
             }
 
-            //C - percorrer lista de clientes vinda do banco na memória, gravando para cada unidade buscando cada CPF em cada para amarrar cada relacao cliente x unidade
 
-            foreach(Cliente cliente2 in listaClientesDaPlanilha)
-            {
-
-            }
-
-            //d- gravar no banco 1 relacao cliente x unidade para cada 
-
-            foreach(RelacaoClienteUnidade relacao in ListaRelacaoClientesUnidades)
+            foreach (RelacaoClienteUnidade relacao in ListaRelacaoClientesUnidades)
             {
                 GravaRelacaoClienteUnidade.GravarRelacaoClienteUnidade(relacao);
             }
-
-
-
-
-
         }
-       /* private void CriarRelacaoClienteUnidade(List<RelacaoClienteUnidade> listaRelacaoClienteUnidades)
-        {
-            List<ImportarClientes.DadosDaRelacaoDaPlanilha> dadosDaRelacaoDaPlanilha;
-            ImportarClientes importarCliente = new ImportarClientes();
-
-            dadosDaRelacaoDaPlanilha = importarCliente.ImportarRelacaoClienteUnidadeDoCondominioDadosDaPlanilha(LerDadosDaPlanilhaDeUsuarios());
-
-            foreach (RelacaoClienteUnidade linharelacao in listaRelacaoClienteUnidades)
-            {
-                int idUnidade;
-
-                foreach (ImportarClientes.DadosDaRelacaoDaPlanilha dados in dadosDaRelacaoDaPlanilha)
-                {
-                    idUnidade = BuscaUnidade.BuscarUnidadePorDescricao(dados.unidade);
-
-
-                }
-            }
-        }
-
-        private List<Cliente> CriarListaDeClientes()
-        {
-            List<Cliente> listaCliente;
-            ImportarClientes importarClientes = new ImportarClientes();
-            List<RelacaoClienteUnidade> listaRelacaoClienteUnidades;
-
-            List<ImportarClientes.DadosDaRelacaoDaPlanilha> dadosDaRelacaoDaPlanilha;
-
-            listaCliente = CriarListaDeClientesNaMemoriaAPartirDaPlanilha();
-            listaRelacaoClienteUnidades = new List<RelacaoClienteUnidade>();
-            StreamReader reader = LerDadosDaPlanilhaDeUsuarios();
-            dadosDaRelacaoDaPlanilha = importarClientes.ImportarRelacaoClienteUnidadeDoCondominioDadosDaPlanilha(reader);
-            RelacaoClienteUnidade relacao;
-
-            foreach (Cliente cliente in listaCliente)
-            {
-                DataTable dt = new DataTable();
-                string CPF = cliente.GetCPFCliente();
-                dt = BuscaCliente.BuscarClientePorCPF(CPF);
-                relacao = new RelacaoClienteUnidade();
-                relacao.SetIdCliente(Convert.ToInt32(dt.Rows[0]["idCliente"]));
-                listaRelacaoClienteUnidades.Add(relacao);
-            }
-
-            return listaCliente;
-
-        }*/
     }
 }

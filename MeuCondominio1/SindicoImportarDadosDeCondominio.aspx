@@ -29,8 +29,10 @@
                             <asp:BoundField DataField="complemento" HeaderText="Complemento" />
                             <asp:BoundField DataField="bairro" HeaderText="Bairro" />
                             <asp:BoundField DataField="cidade" HeaderText="Cidade" />
+                            <asp:BoundField DataField="UF" HeaderText="UF" />
                             <asp:BoundField DataField="CEP" HeaderText="CEP" />
                             <asp:BoundField DataField="CPF" HeaderText="CPF" />
+                            <asp:BoundField DataField="Tipo de usuário" HeaderText="Tipo" />
                             <asp:BoundField DataField="Unidade" HeaderText="Unidade" />
                             <asp:BoundField DataField="É morador" HeaderText="É morador" />
                             <asp:BoundField DataField="É condômino" HeaderText="É condômino" />

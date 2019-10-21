@@ -37,8 +37,8 @@ namespace MeuCondominio2.Model
             Cliente cliente = new Cliente(
                 Convert.ToInt32(dt.Rows[0]["idUsuario"]),
                 dt.Rows[0]["nome"].ToString(),
-                dt.Rows[0]["telefone"].ToString(),
                 dt.Rows[0]["email"].ToString(),
+                dt.Rows[0]["telefone"].ToString(),
                 dt.Rows[0]["senha"].ToString(),
                 dt.Rows[0]["endereco"].ToString(),
                 dt.Rows[0]["numero_endereco"].ToString(),

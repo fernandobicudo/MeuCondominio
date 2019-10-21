@@ -9,22 +9,19 @@ namespace MeuCondominio2.DAO
     {
         public static DataTable SelecionarLogin(string email)
         {
-            DataTable dt = new DataTable();
+            DataTable dt;
             string sql = "select * from usuario where email = '" + email + "';";
             dt = MetodosBD.ExecutaSelect(sql);
             return dt;
         }
-
-
-        public static Login CriarObjetoLogin(DataTable dt)
+/*        public static Login CriarObjetoLogin(DataTable dt)
         {
-            //TODO: incluir este método na classe Login, se necessário
             Login login = new Login();
 
             login.SetEmail(dt.Rows[0]["email"].ToString());
             login.SetSenha(dt.Rows[0]["senha"].ToString());
 
             return login;
-        }
+        }*/
     }
 }

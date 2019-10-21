@@ -5,6 +5,7 @@ using MeuCondominio2.Model;
 using MeuCondominio2.Services.Ferramentas;
 using MeuCondominio2.Services;
 using System.Data;
+using MySql.Data.MySqlClient;
 
 
 namespace MeuCondominio2.DAO
@@ -14,9 +15,16 @@ namespace MeuCondominio2.DAO
         public static void InserirCliente(Cliente cliente)
         {
             string senha;
+            Formatadores formatadores = new Formatadores();
+            string CPFFormatado = formatadores.FormatarCPFSemPontosNemTracos(cliente.GetCPFCliente());
             GeradorDeSenhaProvisoria gerador = new GeradorDeSenhaProvisoria();
+
             if (cliente.GetSenha() == null)
-                senha = gerador.GerarSenhaProvisoria();
+            {
+                senha = "1234";
+                senha = Criptografia.Encriptar(senha); //TODO: utilizar gerador.GerarSenhaProvisoria();
+            }
+
             else
                 senha = Criptografia.Encriptar(cliente.GetSenha());
 
@@ -28,14 +36,21 @@ namespace MeuCondominio2.DAO
                                cliente.GetNumeroEndereco(), cliente.GetComplementoEndereco(), cliente.GetBairro(), cliente.GetCidade(),
                                cliente.GetUF(), cliente.GetCEP(), cliente.GetTipoUsuario());
 
-            MetodosBD.ExecutaSQL(SQL);
+            try
+            {
+                MetodosBD.ExecutaSQL(SQL);
+                SQL = String.Format(@"INSERT INTO `Cliente` (`idCliente`, `CPF`) VALUES (LAST_INSERT_ID(), '{0}'); ", CPFFormatado);
+                MetodosBD.ExecutaSQL(SQL);
 
-            Formatadores formatadores = new Formatadores();
+            }
+            catch (MySqlException erro)
+            {
+                if (erro.Number == 1062)
+                {
+                    
+                }
 
-            string CPFFormatado = formatadores.FormatarCPFSemPontosNemTracos(cliente.GetCPFCliente());
-
-            SQL = String.Format(@"INSERT INTO `Cliente` (`idCliente`, `CPF`) VALUES (LAST_INSERT_ID(), '{0}'); ", CPFFormatado);
-            MetodosBD.ExecutaSQL(SQL);
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ namespace MeuCondominio2.DAO
     {
         public static void DAOInserirRelacaoClienteUnidade (RelacaoClienteUnidade relacaoClienteUnidade)
         {
+            
             string SQL;
             SQL = String.Format(@"INSERT INTO `RelacaoClienteUnidade` " +
                                 "(`idCliente`, `idUnidade`, `MoradorDaUnidade`,`ProprietarioDaUnidade`) " +

@@ -10,8 +10,6 @@ namespace MeuCondominio2.DAO
 {
     public class DAOCliente
     {
-
-
         public static void InserirClientesEmLote(List<Cliente> listaDeClientes)
         {
             foreach (Cliente cliente in listaDeClientes)

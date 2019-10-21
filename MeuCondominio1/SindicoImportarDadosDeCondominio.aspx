@@ -11,13 +11,16 @@
     <h1>Importação de Dados dos Condôminos</h1>
     <form id="idImportacaoDadosCondominosSindico" runat="server">
         <div>
-            <asp:Label ID="lbArquivoDeImportacao" runat="server" Text="Informe o arquivo"></asp:Label>
-            <asp:FileUpload ID="fuArquivoDeImportacao" runat="server" />
-            <asp:Button ID="btUpload" runat="server" Text="Upload" CssClass="botaoDefault botaoHover" OnClick="BtUpload_Click" /><br />
+            
             <br />
+            
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
+                                <asp:Label ID="lbArquivoDeImportacao" runat="server" Text="Informe o arquivo"></asp:Label>
+            <asp:FileUpload ID="fuArquivoDeImportacao" runat="server" />
+
+                    <asp:Button ID="btUpload" runat="server" Text="Upload" CssClass="botaoDefault botaoHover" OnClick="BtUpload_Click" /><br />
                     <asp:Label ID="lbAlertaStatusDosDadosImportados" runat="server" Text=""></asp:Label><br />
                     <asp:GridView ID="gvDadosDosClientes" runat="server" AutoGenerateColumns="false">
                         <Columns>
@@ -38,10 +41,15 @@
                             <asp:BoundField DataField="É condômino" HeaderText="É condômino" />
                         </Columns>
                     </asp:GridView><br/>
+            <asp:Button ID="btImportar" runat="server" Text="Importar dados" CssClass="botaoDefault botaoHover" OnClick="BtImportarDados_Click" /> 
                     
                 </ContentTemplate>
+                <Triggers>
+                    <asp:PostBackTrigger ControlID="btUpload" />
+                    <asp:PostBackTrigger ControlID="btImportar" />
+                </Triggers>
             </asp:UpdatePanel>
-            <asp:Button ID="idImportar" runat="server" Text="Importar dados" CssClass="botaoDefault botaoHover" OnClick="BtImportarDados_Click" />
+            
         </div>
     </form>
 </body>

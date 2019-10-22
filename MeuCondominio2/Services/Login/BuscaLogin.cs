@@ -4,7 +4,7 @@ using System.Text;
 using MeuCondominio2.DAO;
 using System.Data;
 
-namespace MeuCondominio2.Services
+namespace MeuCondominio2.Services.Login
 {
     public class BuscaLogin
     {

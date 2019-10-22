@@ -14,7 +14,7 @@ namespace MeuCondominio1
 {
     public partial class SindicoImportarDadosDeCondominio : System.Web.UI.Page
     {
-        string nomeDoArquivo;
+        static string nomeDoArquivo;
         static List<Cliente> listaClientesDaPlanilha;
         static StreamReader reader;
         //TODO: instanciadas variáveis estáticas para resolver o problema do carregamento da página com apagamento de dados. Buscar outra solução menos onerosa para a memória.
@@ -44,29 +44,27 @@ namespace MeuCondominio1
             ImportarClientes importarCliente = new ImportarClientes();
             LerDadosDaPlanilhaDeUsuarios();
             DataTable dt;
-            
-
             dt = importarCliente.LerArquivoDeClientesDoCondominio(reader);
-
             gvDadosDosClientes.DataSource = dt;
             gvDadosDosClientes.DataBind();
-
+            reader.Close();
+            reader.Dispose();
+            LerDadosDaPlanilhaDeUsuarios();
             CriarListaDeClientesNaMemoriaAPartirDaPlanilha(reader);
-
+            
         }
 
         private void LerDadosDaPlanilhaDeUsuarios()
         {
             reader = new StreamReader(@"c:\temp\" + nomeDoArquivo, System.Text.Encoding.Default);
-            
         }
-
 
         private static void CriarListaDeClientesNaMemoriaAPartirDaPlanilha(StreamReader reader)
         {
             ImportarClientes importarClientes = new ImportarClientes();
             listaClientesDaPlanilha = importarClientes.ImportarClientesDoArquivoDeClientesDoCondominio(reader);
-            
+            reader.Close();
+            reader.Dispose();
         }
 
         private void ImportarDadosDosClientesParaBancoDeDados(List<Cliente> listaCliente)
@@ -105,19 +103,24 @@ namespace MeuCondominio1
             ImportarClientes importarClientes = new ImportarClientes();
             List<ImportarClientes.DadosDaRelacaoDaPlanilha> ListaDadosDaRelacaoDaPlanilha;
 
+            LerDadosDaPlanilhaDeUsuarios();
             ListaRelacaoClientesUnidades =
                 importarClientes.CriarListaDeObjetosRelacaoClienteUnidadeDoCondominio
                 (importarClientes.ImportarRelacaoClienteUnidadeDoCondominioDadosDaPlanilha(reader));
+            reader.Close();
+            reader.Dispose();
             //TODO: a lista de relacao de clientes x unidades esta incluindo todoa da planilha, mas não deveria incluir aqueles que não foram inseridos na base por já estarem nela antes.
 
+            LerDadosDaPlanilhaDeUsuarios();
             ListaDadosDaRelacaoDaPlanilha = importarClientes.ImportarRelacaoClienteUnidadeDoCondominioDadosDaPlanilha(reader);
+            reader.Close();
+            reader.Dispose();
 
             Dictionary<string, RelacaoClienteUnidade> dict = ListaRelacaoClientesUnidades.ToDictionary(x => x.GetCPF1());
 
             foreach (Cliente cliente1 in listaClientesDoBancoDeDados)
             {
                 if (dict.TryGetValue(cliente1.GetCPFCliente(), out RelacaoClienteUnidade encontrado)) encontrado.SetIdCliente(cliente1.GetIdUsuario());
-
             }
 
             foreach (ImportarClientes.DadosDaRelacaoDaPlanilha dados in ListaDadosDaRelacaoDaPlanilha)

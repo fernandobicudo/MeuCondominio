@@ -339,8 +339,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MeuCondominio2\MeuCondominio2.csproj">
-      <Project>{2fd2aeb5-4a97-4b33-8106-4565aeca3109}</Project>
+    <ProjectReference Include="..\MeuCondominio3\MeuCondominio2.csproj">
+      <Project>{857e16ea-79e6-44cf-9a3d-78f9a342a1db}</Project>
       <Name>MeuCondominio2</Name>
     </ProjectReference>
   </ItemGroup>

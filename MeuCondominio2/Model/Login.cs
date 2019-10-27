@@ -1,7 +1,7 @@
 ﻿using System;
 using MeuCondominio2.Services;
 
-namespace MeuCondominio2
+namespace MeuCondominio2.Model
 {
     public class Login
     {

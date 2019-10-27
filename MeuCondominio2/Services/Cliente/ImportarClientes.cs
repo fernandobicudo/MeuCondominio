@@ -35,6 +35,7 @@ namespace MeuCondominio2.Services.Cliente
         //TODO: o método de busca e construção de objeto Condominio deveria estar em qual classe?
 
 
+            //DESCRICAO: MÉTODO PARA PEGAR UM OBJETO READER (CONTEÚDO LIDO DO CSV NA MEMÓRIA) E TRANSFORMÁ-LO NUMA LISTA DE OBJETOS DA CLASSE DE NEGÓCIO CLIENTE. 
         public List<Model.Cliente> ImportarClientesDoArquivoDeClientesDoCondominio(StreamReader reader)
         {
             listaClientes = new List<Model.Cliente>();
@@ -63,9 +64,10 @@ namespace MeuCondominio2.Services.Cliente
             }
             return listaClientes;
         }
+        //TODO: ENVIAR PARA WILSON
 
 
-
+        //DESCRICAO: MÉTODO PARA PEGAR UM OBJETO READER (CONTEÚDO LIDO DO CSV NA MEMÓRIA) E TRANSFORMÁ-LO NUMA LISTA DE STRUCTS DO TIPO RELACAO CLIENTExUNIDADE. 
         public List<DadosDaRelacaoDaPlanilha> ImportarRelacaoClienteUnidadeDoCondominioDadosDaPlanilha(StreamReader reader)
         {
             List<DadosDaRelacaoDaPlanilha> listaDeDadosDaRelacaoDaPlanilha = new List<DadosDaRelacaoDaPlanilha>();
@@ -87,6 +89,8 @@ namespace MeuCondominio2.Services.Cliente
             return listaDeDadosDaRelacaoDaPlanilha;
         }
 
+
+        //METODO PARA PEGAR A LISTA CRIADA NO MÉTODO ANTERIOR E TRANSFORMA-LO NO OBJETO DA CLASSE DE NEGÓCIO RelacaoClienteUnidade
         public List<RelacaoClienteUnidade> CriarListaDeObjetosRelacaoClienteUnidadeDoCondominio(List<DadosDaRelacaoDaPlanilha> listaDeDadosDaRelacaoDaPlanilha)
         {
             RelacaoClienteUnidade relacaoClienteUnidade;

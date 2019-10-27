@@ -14,7 +14,7 @@ using System.Data;
 
 namespace MeuCondominio1
 {
-    public partial class cadastro_sorteio_vagas : System.Web.UI.Page
+    public partial class CadastroSorteioVagas : System.Web.UI.Page
     {
         SorteioVagas sorteioVagas = new SorteioVagas();
 
@@ -74,18 +74,6 @@ namespace MeuCondominio1
         }
 
 
-        private string ConverterDateTimeSQLite(string data) //TODO: verificar em qual framework deve ficar o método de conversão de data para o SQLite
-        {
-            DateTime dataConvertida;
-            string dataString;
-
-            dataConvertida = DateTime.ParseExact(data, "dd/mm/yyyy", null);
-
-            dataString = dataConvertida.ToString("yyyy-mm-dd");
-
-            return dataString;
-        }
-
         protected void SortearVagas(object sender, EventArgs e)
         {
             int idCondominio = Convert.ToInt32(Session["codigoCondominio"]);
@@ -93,7 +81,7 @@ namespace MeuCondominio1
             
         }
        
-        private SorteioVagas CriaObjetoSorteioVagas(DataTable dt)
+/*        private SorteioVagas CriaObjetoSorteioVagas(DataTable dt)
         {
             SorteioVagas sorteioVagas = new SorteioVagas(
                 Convert.ToInt32(dt.Rows[0]["id"]),
@@ -106,12 +94,12 @@ namespace MeuCondominio1
                 Convert.ToInt32(dt.Rows[0]["idCondominio"]));
 
             return sorteioVagas;
-        }
+        }*/
 
-        private DataTable BuscarSorteioMaisRecente(int idCondominio)
+/*        private DataTable BuscarSorteioMaisRecente(int idCondominio)
         {
             return BuscaSorteioVagas.BuscarIdDoResultadoDoUltimoSorteioParaOCondominio(idCondominio);
         }
-
+*/
     }
 }

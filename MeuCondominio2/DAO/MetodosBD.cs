@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Data.SQLite;
 using System.Data;
 using MySql.Data.MySqlClient;
 
@@ -17,6 +16,7 @@ namespace MeuCondominio2.DAO
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexao);
                 DataTable dataTemp = new DataTable();
                 adapter.Fill(dataTemp);
+                adapter.Dispose();
                 return dataTemp;
             }
             finally

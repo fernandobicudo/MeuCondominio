@@ -71,7 +71,7 @@ namespace MeuCondominio1
             return eleicao;
         }
 
-        public List<string> opcoesVotacaoPlebiscito()
+        public List<string> OpcoesVotacaoPlebiscito()
         {
             List<string> listaOpcoes = new List<string>();
 
@@ -88,7 +88,7 @@ namespace MeuCondominio1
             Eleicao eleicao = ConstruirObjetoEleicao();
             GravaEleicao.GravaEleicaoDoCondominio(eleicao);
 
-            GravaOpcoesVotacao.GravaOpcoesDeVotacaoDaEleicaoDePlebiscito(opcoesVotacaoPlebiscito());
+            GravaOpcoesVotacao.GravaOpcoesDeVotacaoDaEleicaoDePlebiscito(OpcoesVotacaoPlebiscito());
         }
 
 

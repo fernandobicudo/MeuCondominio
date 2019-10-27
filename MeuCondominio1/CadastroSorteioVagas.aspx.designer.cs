@@ -10,7 +10,7 @@
 namespace MeuCondominio1 {
     
     
-    public partial class cadastro_sorteio_vagas {
+    public partial class CadastroSorteioVagas {
         
         /// <summary>
         /// login control.

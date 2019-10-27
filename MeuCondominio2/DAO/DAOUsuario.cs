@@ -21,7 +21,7 @@ namespace MeuCondominio2.DAO
 
             if (cliente.GetSenha() == null)
             {
-                senha = "1234";
+                senha = MeuCondominio2.Properties.Settings.Default.senhaUsuarios;
                 senha = Criptografia.Encriptar(senha); //TODO: utilizar gerador.GerarSenhaProvisoria();
             }
 

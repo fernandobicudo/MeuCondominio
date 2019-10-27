@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeuCondominio1", "MeuCondom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeuCondominio_Testes", "MeuCondominio_Testes\MeuCondominio_Testes.csproj", "{8EDF4429-251A-416D-BB68-93F227191BCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeuCondominio2", "MeuCondominio3\MeuCondominio2.csproj", "{857E16EA-79E6-44CF-9A3D-78F9A342A1DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeuCondominio2", "MeuCondominio2\MeuCondominio2.csproj", "{857E16EA-79E6-44CF-9A3D-78F9A342A1DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

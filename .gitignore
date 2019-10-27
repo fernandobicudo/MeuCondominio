@@ -342,3 +342,16 @@ healthchecksdb
 /MeuCondominio1/bfg-1.13.0.jar
 /passwords.txt
 /MeuCondominio1/RecuperacaoSenha.aspx.cs
+/MeuCondominio2/passwords.txt
+/MeuCondominio2/DAO/ConexaoBD.cs
+/MeuCondominio2/bfg-1.13.0.jar
+/MeuCondominio1/Properties/Settings.settings
+/MeuCondominio1/Properties/Settings.Designer.cs
+/MeuCondominio2/Properties/Settings.settings
+/MeuCondominio2/Properties/Settings.Designer.cs
+/MeuCondominio2/Web.config
+/MeuCondominio2/Web.Debug.config
+/MeuCondominio2/Web.Release.config
+/MeuCondominio1/Web.config
+/MeuCondominio2/Web.Debug.config
+/MeuCondominio3/Web.Release.config

@@ -130,8 +130,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlteracaoDeSenha.aspx" />
     <Content Include="CadastroEleicao.aspx" />
     <Content Include="CadastroSorteioVagas.aspx" />
+    <Content Include="ClienteCadastro.aspx" />
     <Content Include="ClienteConsultaListaEleicoesB.aspx" />
     <Content Include="ConsultaListaEleicoes.aspx" />
     <Content Include="ClienteEleicaoInfo.aspx" />
@@ -209,6 +211,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlteracaoDeSenha.aspx.cs">
+      <DependentUpon>AlteracaoDeSenha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlteracaoDeSenha.aspx.designer.cs">
+      <DependentUpon>AlteracaoDeSenha.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="CadastroEleicao.aspx.cs">
@@ -224,6 +233,13 @@
     </Compile>
     <Compile Include="CadastroSorteioVagas.aspx.designer.cs">
       <DependentUpon>CadastroSorteioVagas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteCadastro.aspx.cs">
+      <DependentUpon>ClienteCadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClienteCadastro.aspx.designer.cs">
+      <DependentUpon>ClienteCadastro.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClienteConsultaListaEleicoesB.aspx.cs">
       <DependentUpon>ClienteConsultaListaEleicoesB.aspx</DependentUpon>

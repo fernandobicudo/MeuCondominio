@@ -18,6 +18,20 @@ namespace MeuCondominio2.DAO
             }
         }
 
+        internal static DataTable PesquisarClientePorIDRetornandoSuasUnidadesECondominios(int idCliente)
+        {
+            string SQL;
+            DataTable dt;
+            SQL = String.Format(@"SELECT * FROM `Usuario` us 
+                                JOIN `Cliente` cl ON cl.idCliente = us.idUsuario 
+                                JOIN `RelacaoClienteUnidade` rcu ON rcu.idCliente = cl.idCliente 
+                                JOIN `Unidade` un ON un.idUnidade = rcu.idUnidade 
+                                JOIN `Condominio` co ON co.idCondominio = un.idCondominio 
+                                WHERE cl.idCliente = {0};", idCliente);
+            dt = MetodosBD.ExecutaSelect(SQL);
+            return dt;
+        }
+
         internal static DataTable PesquisarClientePorCPF(string CPF)
         {
 

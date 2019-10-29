@@ -13,5 +13,10 @@ namespace MeuCondominio2.Services.Cliente
         {
             return DAOCliente.PesquisarClientePorCPF(CPF);
         }
+
+        public static DataTable BuscarClientePorIDRetornandoSuasUnidadesECondominios(int idCliente)
+        {
+            return DAOCliente.PesquisarClientePorIDRetornandoSuasUnidadesECondominios(idCliente);
+        }
     }
 }

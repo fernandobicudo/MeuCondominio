@@ -27,6 +27,8 @@ namespace MeuCondominio2.Services
                 stringBuilder.Append(resultado[i].ToString("x2"));
             //ToString("x2") formata cada byte transformando-o
             //em dois caracteres hexadecimais em uppercase
+            sha.Dispose();
+            sha.Clear();
 
             return stringBuilder.ToString();
         }

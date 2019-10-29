@@ -15,6 +15,10 @@
             </div>
             <div class="main">
                 <div class="item">
+                    <asp:ImageButton ID="ibMeuPerfil" runat="server" Height="100px" ImageUrl="~/Images/Usuarios_G.png" Width="100px" OnClick="IrParaPaginaMeuPerfil" /><br/>
+                    <asp:Label ID="lbMeuPerfil" runat="server" Text="Meu Perfil"></asp:Label>
+                </div>
+                <div class="item">
                     <asp:ImageButton ID="ibConfiguracoes" runat="server" Height="100px" ImageUrl="~/Images/Configuracoes_G.png" Width="100px" /><br/>
                     <asp:Label ID="lbConfiguracoes" runat="server" Text="Configurações"></asp:Label><br /><br />
                 </div>

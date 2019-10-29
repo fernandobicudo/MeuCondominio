@@ -353,5 +353,5 @@ healthchecksdb
 /MeuCondominio2/Web.Debug.config
 /MeuCondominio2/Web.Release.config
 /MeuCondominio1/Web.config
-/MeuCondominio2/Web.Debug.config
-/MeuCondominio3/Web.Release.config
+/MeuCondominio1/Web.Debug.config
+/MeuCondominio1/Web.Release.config

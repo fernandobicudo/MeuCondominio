@@ -26,6 +26,9 @@ namespace MeuCondominio1
             Response.Redirect("ConsultaListaEleicoes.aspx");
         }
 
-
+        protected void IrParaPaginaMeuPerfil(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("ClienteCadastro.aspx");
+        }
     }
 }

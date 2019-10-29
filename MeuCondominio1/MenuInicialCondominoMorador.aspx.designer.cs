@@ -13,6 +13,24 @@ namespace MeuCondominio1 {
     public partial class MenuInicialCondomino {
         
         /// <summary>
+        /// ibMeuPerfil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ibMeuPerfil;
+        
+        /// <summary>
+        /// lbMeuPerfil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbMeuPerfil;
+        
+        /// <summary>
         /// ibConfiguracoes control.
         /// </summary>
         /// <remarks>

@@ -41,6 +41,8 @@ namespace MeuCondominio2.Services.Cliente
             listaClientes = new List<Model.Cliente>();
             Formatadores formatadores = new Formatadores();
 
+            reader.ReadLine(); //descarta a primeira linha, que é o cabeçalho.
+
             while (!reader.EndOfStream)
             {
                 string linha = reader.ReadLine();
@@ -72,6 +74,8 @@ namespace MeuCondominio2.Services.Cliente
         {
             List<DadosDaRelacaoDaPlanilha> listaDeDadosDaRelacaoDaPlanilha = new List<DadosDaRelacaoDaPlanilha>();
             Formatadores formatadores = new Formatadores();
+
+            reader.ReadLine(); //descarta a primeira linha, que é o cabeçalho.
 
             while (!reader.EndOfStream)
             {
@@ -137,6 +141,7 @@ namespace MeuCondominio2.Services.Cliente
             dt.Columns.Add("É morador");
             dt.Columns.Add("É condômino");
 
+            reader.ReadLine(); //descarta a primeira linha, que é o cabeçalho.
 
             while (!reader.EndOfStream)
             {
@@ -146,6 +151,8 @@ namespace MeuCondominio2.Services.Cliente
                 dt.NewRow();
                 dt.Rows.Add(value);
             }
+            reader.Close();
+            reader.Dispose();
             return dt;
         }
         /*        public Model.Condominio BuscarDoCondominioDaSessao(int idCondominio)

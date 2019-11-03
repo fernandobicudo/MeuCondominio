@@ -20,7 +20,7 @@
             <asp:TextBox ID="txSenha" type="password" runat="server" CssClass="campoTexto"></asp:TextBox>
         </div>
         <div class="centro">
-            <asp:Button ID="btEntrar" runat="server" Text="Entrar" CssClass="botaoDefault" OnClick="fazerLogin" /><br />
+            <asp:Button ID="btEntrar" runat="server" Text="Entrar" CssClass="botaoDefault" OnClick="Bt_Entrar" /><br />
             <a href="RecuperacaoSenha.aspx" id="lkRecuperarSenha" class="link_p">Relembrar senha</a>
             <asp:Label ID="loginStatus" runat="server" Text=""></asp:Label>
             <asp:Label ID="lbCodUser" runat="server" CssClass="link_p" Text=""></asp:Label><br />

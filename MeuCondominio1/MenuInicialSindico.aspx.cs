@@ -29,5 +29,10 @@ namespace MeuCondominio1
         {
             Response.Redirect("SindicoImportarDadosDeCondominio.aspx");
         }
+
+        protected void IrParaPaginaSubMenuConfiguracoes(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("SindicoSubMenuConfiguracoes.aspx");
+        }
     }
 }

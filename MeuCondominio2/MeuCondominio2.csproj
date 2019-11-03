@@ -113,6 +113,7 @@
     <Compile Include="DAO\DAOCliente.cs" />
     <Compile Include="DAO\DAOCondominio.cs" />
     <Compile Include="DAO\DAOEleicao.cs" />
+    <Compile Include="DAO\DAOEspacoLazer.cs" />
     <Compile Include="DAO\DAOLogin.cs" />
     <Compile Include="DAO\DAOOpcaoVotacao.cs" />
     <Compile Include="DAO\DAORelacaoClienteUnidade.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Condominio.cs" />
     <Compile Include="Model\Eleicao.cs" />
+    <Compile Include="Model\EspacoLazer.cs" />
     <Compile Include="Model\Login.cs" />
     <Compile Include="Model\OpcaoDeVotacaoPlebiscito.cs" />
     <Compile Include="Model\OpcaoVotacao.cs" />
@@ -163,6 +165,7 @@
     <Compile Include="Services\Ferramentas\GeradorDeSenhaProvisoria.cs" />
     <Compile Include="Services\Login\BuscaLogin.cs" />
     <Compile Include="Services\ResultadoDoSorteio\BuscaResultadoDoSorteio.cs" />
+    <Compile Include="Services\EspacoLazer\GravaEspacoLazer.cs" />
     <Compile Include="Services\ResultadoDoSorteio\GravaResultadoDoSorteio.cs" />
     <Compile Include="Services\Sindico\BuscaSindico.cs" />
     <Compile Include="Services\SorteioVagas\BuscaSorteioVagas.cs" />

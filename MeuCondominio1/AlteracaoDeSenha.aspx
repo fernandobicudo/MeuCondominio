@@ -28,7 +28,7 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txSenhaNova2" CssClass="alerta" ValidationGroup="Senha" ErrorMessage="Repita a nova senha."></asp:RequiredFieldValidator><br/>
                     <asp:CompareValidator ID="CompareValidator1" runat="server" ValidationGroup="Senha" CssClass="alerta" ControlToValidate="txSenhaNova1" ControlToCompare="txSenhaNova2" Operator="Equal" ErrorMessage="A nova senha deve ser exatamente igual nos dois últimos campos."></asp:CompareValidator><br/>
                     
-                    <asp:Button ID="btAlterarSenha" runat="server" ValidationGroup="Senha" Text="Alterar senha" />
+                    <asp:Button ID="btAlterarSenha" runat="server" ValidationGroup="Senha" Text="Alterar senha" OnClick="Bt_AlterarSenha" />
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>

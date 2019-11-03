@@ -1,6 +1,10 @@
 ﻿
 /*estilos para o site cliente*/
 
+.submenu ImageButton {
+    position: center;
+}
+
 html {
     background-color: grey;
     font-family: Segoe UI, Verdana, Arial;

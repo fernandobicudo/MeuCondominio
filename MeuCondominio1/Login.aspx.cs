@@ -32,10 +32,9 @@ namespace MeuCondominio1
             }
         }
 
-        protected void fazerLogin(object sender, EventArgs e)
+        private void FazerLogin()
         {
             DataTable dt;
-
 
             email = txEmail.Text;
             senha = Criptografia.Encriptar(txSenha.Text);
@@ -61,26 +60,33 @@ namespace MeuCondominio1
                 int tipoUsuario = Convert.ToInt32(dt.Rows[0]["idTipoUsuario"]);
                 int codigoUsuario = Convert.ToInt32(Session["codigoUser"]);
 
-/*                TIPO_USURIO
-                  1 = Condômino; 2 = Síndico; 3 = Zelador; 4 = Administradora; 5 = Morador; 6 = Condômino-morador
-*/
-                switch (tipoUsuario) {
-                    case 6:
-                        PreencherVariaveisDeSessaoClienteCondominoMorador(codigoUsuario);
-                        Response.Redirect("MenuInicialCondominoMorador.aspx");
-                        break;
-                    case 2:
-                        PreencheVariaveisDeSessaoSindico(codigoUsuario);
-                        Response.Redirect("MenuInicialSindico.aspx"); //TODO: linkar para menu do administrador.
-                        break;
-                    //TODO: criar case para morador 
-                    default:
-                        Response.Redirect("MenuInicialCondominoMorador.aspx"); //TODO: como tratar o default do switch case?
-                        break;
-                }
+                RedirecionarUsuarioConformePerfil(tipoUsuario, codigoUsuario);
             }
             else
                 Response.Redirect("Login.aspx?&status=invalido&p_email=invalido");
+        }
+
+        private void RedirecionarUsuarioConformePerfil(int tipoUsuario, int codigoUsuario)
+        {
+            /*TIPO_USURIO
+            1 = Condômino; 2 = Síndico; 3 = Zelador; 4 = Administradora; 5 = Morador; 6 = Condômino-morador
+            */
+
+            switch (tipoUsuario)
+            {
+                case 6:
+                    PreencherVariaveisDeSessaoClienteCondominoMorador(codigoUsuario);
+                    Response.Redirect("MenuInicialCondominoMorador.aspx");
+                    break;
+                case 2:
+                    PreencheVariaveisDeSessaoSindico(codigoUsuario);
+                    Response.Redirect("MenuInicialSindico.aspx"); //TODO: linkar para menu do administrador.
+                    break;
+                //TODO: criar case para morador 
+                default:
+                    Response.Redirect("MenuInicialCondominoMorador.aspx"); //TODO: como tratar o default do switch case?
+                    break;
+            }
         }
 
         private void PreencheVariaveisDeSessaoSindico(int idSindico)
@@ -96,6 +102,11 @@ namespace MeuCondominio1
             dt = BuscaCondominio.BuscarCondominioPorIdDoCliente(idCliente);
 
             Session["codigoCondominio"] = dt.Rows[0]["idCondominio"];
+        }
+
+        protected void Bt_Entrar(object sender, EventArgs e)
+        {
+            FazerLogin();
         }
     }
 }

@@ -72,7 +72,7 @@ namespace MeuCondominio1
 
         protected void Bt_AlterarSenha(object sender, EventArgs e)
         {
-            Response.Redirect("AlteracaoDeSenha.aspx");
+            Response.Redirect("AlteracaoDeSenha.aspx?&origem=logado");
         }
     }
 }

@@ -14,8 +14,8 @@
             <div class="header">
                 <div class="main">
                     <div class="item">
-                        <asp:ImageButton ID="ibConfiguracoes" runat="server" Height="100px" ImageUrl="~/Images/Configuracoes_G.png" Width="100px" /><br/>
-                        <asp:Label ID="lbCondifuracoes" runat="server" Text="Configurações"></asp:Label><br/><br/>
+                        <asp:ImageButton ID="ibConfiguracoes" runat="server" Height="100px" ImageUrl="~/Images/Configuracoes_G.png" Width="100px" OnClick="IrParaPaginaSubMenuConfiguracoes" /><br/>
+                        <asp:Label ID="lbConfiguracoes" runat="server" Text="Configurações"></asp:Label><br/><br/>
                     </div>
                     <div class="item">
                         <asp:ImageButton ID="ibSorteioVagas" runat="server" Height="100px" ImageUrl="~/Images/Carro_G.png" Width="100px" OnClick="IrParaPaginaSorteio" /><br/>

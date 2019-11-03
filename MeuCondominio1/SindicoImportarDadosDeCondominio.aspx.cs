@@ -69,7 +69,8 @@ namespace MeuCondominio1
 
         private void ImportarDadosDosClientesParaBancoDeDados(List<Cliente> listaCliente)
         {
-            GravaCliente.ImportarClientesDeLista(listaCliente);
+            GravaCliente gravaCliente = new GravaCliente();
+            gravaCliente.ImportarClientesDeLista(listaCliente);
         }
 
         protected void BtUpload_Click(object sender, EventArgs e)
@@ -94,7 +95,9 @@ namespace MeuCondominio1
             foreach (Cliente cliente in listaClientesDaPlanilha)
             {
                 ClienteDoBancoDeDados = new Cliente();
-                dt = BuscaCliente.BuscarClientePorCPF(cliente.GetCPFCliente());
+                BuscaCliente buscaCliente = new BuscaCliente();
+
+                dt = buscaCliente.BuscarClientePorCPF(cliente.GetCPFCliente());
                 ClienteDoBancoDeDados = ClienteDoBancoDeDados.ConstruirObjetoCliente(dt);
                 listaClientesDoBancoDeDados.Add(ClienteDoBancoDeDados);
             }
@@ -134,7 +137,8 @@ namespace MeuCondominio1
 
             foreach (RelacaoClienteUnidade relacao in ListaRelacaoClientesUnidades)
             {
-                GravaRelacaoClienteUnidade.GravarRelacaoClienteUnidade(relacao);
+                GravaRelacaoClienteUnidade gravaRelacaoClienteUnidade = new GravaRelacaoClienteUnidade();
+                gravaRelacaoClienteUnidade.GravarRelacaoClienteUnidade(relacao);
             }
         }
     }

@@ -8,12 +8,12 @@ namespace MeuCondominio2.Services.SorteioVagas
 {
     public class BuscaSorteioVagas
     {
-        public static DataTable BuscarIdDoResultadoDoUltimoSorteioParaOCondominio(int idCondominio)
+        public DataTable BuscarIdDoResultadoDoUltimoSorteioParaOCondominio(int idCondominio)
         {
             return DAOSorteioVagas.PesquisarIdDoResultadoDoUltimoSorteioParaOCondominio(idCondominio);
         }
 
-        public static int BuscarNumeroDeVagasPorUnidadeDoSorteio(int idSorteio)
+        public int BuscarNumeroDeVagasPorUnidadeDoSorteio(int idSorteio)
         {
             return DAOSorteioVagas.PesquisarNumeroDeVagasPorUnidadeDoSorteio(idSorteio);
         }

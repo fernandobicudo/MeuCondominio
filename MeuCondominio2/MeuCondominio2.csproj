@@ -109,6 +109,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\DAOReservaEspacoLazer.cs" />
     <Compile Include="DAO\ConexaoBD.cs" />
     <Compile Include="DAO\DAOCliente.cs" />
     <Compile Include="DAO\DAOCondominio.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Model\OpcaoDeVotacaoPlebiscito.cs" />
     <Compile Include="Model\OpcaoVotacao.cs" />
     <Compile Include="Model\RelacaoClienteUnidade.cs" />
+    <Compile Include="Model\ReservaEspacoLazer.cs" />
     <Compile Include="Model\ResultadoDoSorteio.cs" />
     <Compile Include="Model\ResultadoSorteioPorUnidade.cs" />
     <Compile Include="Model\Sindico.cs" />

@@ -95,8 +95,8 @@ namespace MeuCondominio1
             DataTable dt;
 
             int idCondominio = Convert.ToInt32(Session["codigoCondominio"]);
-
-            dt = BuscaEleicao.BuscaEleicoesDoCondominio(idCondominio);
+            BuscaEleicao buscaEleicao = new BuscaEleicao();
+            dt = buscaEleicao.BuscaEleicoesDoCondominio(idCondominio);
 
             gvEleicoes.DataSource = dt;
 

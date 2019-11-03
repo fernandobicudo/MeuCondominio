@@ -23,14 +23,17 @@ namespace MeuCondominio1
             DataTable dt;
             int idCliente = Convert.ToInt32(Session["codigoUser"]);
             int idCondominio = Convert.ToInt32(Session["codigoCondominio"]);
+            BuscaResultadoDoSorteio buscaResultadoDoSorteio = new BuscaResultadoDoSorteio();
 
-            dt = BuscaResultadoDoSorteio.
+
+            dt = buscaResultadoDoSorteio.
                 BuscarVagasDoResultadoPorIdDoClienteEIddoCondominio(idCliente, idCondominio);
             Label tituloSorteio = new Label();
 
             if (dt.Rows.Count > 0)
             {
-                tituloSorteio.Text = "Sorteio realizado em " + Formatadores.FormatarDataParaExibicao(dt.Rows[0]["dataSorteio"].ToString());
+                Formatadores formatadores = new Formatadores();
+                tituloSorteio.Text = "Sorteio realizado em " + formatadores.FormatarDataParaExibicao(dt.Rows[0]["dataSorteio"].ToString());
                 
 
                 foreach (DataRow linha in dt.Rows)
@@ -52,7 +55,7 @@ namespace MeuCondominio1
                 }
 
                 Label dataValidade = new Label();
-                dataValidade.Text = "Validade: " + Formatadores.FormatarDataParaExibicao(dt.Rows[0]["dataValidadeSorteioFim"].ToString());
+                dataValidade.Text = "Validade: " + formatadores.FormatarDataParaExibicao(dt.Rows[0]["dataValidadeSorteioFim"].ToString());
                 pnValidadeVaga.Controls.Add(dataValidade);
             }
             else

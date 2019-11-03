@@ -9,7 +9,7 @@ namespace MeuCondominio2.Services.Eleicao
 {
     public class GravaEleicao
     {
-        public static void GravaEleicaoDoCondominio(Model.Eleicao eleicao)
+        public void GravaEleicaoDoCondominio(Model.Eleicao eleicao)
         {
             DAOEleicao.InserirEleicao(eleicao);
         }

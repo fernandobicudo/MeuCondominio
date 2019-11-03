@@ -35,11 +35,12 @@ namespace MeuCondominio1
         private void FazerLogin()
         {
             DataTable dt;
+            BuscaLogin buscaLogin = new BuscaLogin();
 
             email = txEmail.Text;
             senha = Criptografia.Encriptar(txSenha.Text);
 
-            dt = BuscaLogin.PesquisarLogin(email);
+            dt = buscaLogin.PesquisarLogin(email);
 
             validaLogin(dt);
         }
@@ -92,14 +93,17 @@ namespace MeuCondominio1
         private void PreencheVariaveisDeSessaoSindico(int idSindico)
         {
             DataTable dt;
-            dt = BuscaSindico.PesquisarSindico(idSindico);
+            BuscaSindico buscaSindico = new BuscaSindico();
+            dt = buscaSindico.PesquisarSindico(idSindico);
             Session["codigoCondominio"] = dt.Rows[0]["idCondominio"];
         }
 
         private void PreencherVariaveisDeSessaoClienteCondominoMorador(int idCliente)
         {
             DataTable dt;
-            dt = BuscaCondominio.BuscarCondominioPorIdDoCliente(idCliente);
+            BuscaCondominio buscaCondominio = new BuscaCondominio();
+
+            dt = buscaCondominio.BuscarCondominioPorIdDoCliente(idCliente);
 
             Session["codigoCondominio"] = dt.Rows[0]["idCondominio"];
         }

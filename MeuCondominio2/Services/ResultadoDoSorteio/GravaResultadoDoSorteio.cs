@@ -8,7 +8,7 @@ namespace MeuCondominio2.Services.ResultadoDoSorteio
 {
     public class GravaResultadoDoSorteio
     {
-        internal static void GravarResultadoDoSorteio(List<ResultadoSorteioPorUnidade> resultado)
+        internal void GravarResultadoDoSorteio(List<ResultadoSorteioPorUnidade> resultado)
         {
             DAOResultadoDoSorteio.InserirResultadoDoSorteio(resultado);
         }

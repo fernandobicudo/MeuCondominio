@@ -8,14 +8,14 @@ namespace MeuCondominio2.Services.Eleicao
 {
     public class BuscaEleicao
     {
-        public static DataTable BuscaEleicoesDoCondominio(int idCondominio)
+        public DataTable BuscaEleicoesDoCondominio(int idCondominio)
         {
             DataTable dt;
             dt = DAOEleicao.PesquisarEleicoesDoCondominio(idCondominio);
             return dt;
         }
 
-        public static DataTable BuscaEleicaoSelecionadaDoCondominio(int idEleicao)
+        public DataTable BuscaEleicaoSelecionadaDoCondominio(int idEleicao)
         {
             DataTable dt;
             dt = DAOEleicao.PesquisarEleicaoSelecionadaDoCondominio(idEleicao);
@@ -30,21 +30,21 @@ namespace MeuCondominio2.Services.Eleicao
                     return dt;
                 }*/
 
-        public static DataTable BuscaOpcoesVotacao(int idEleicao)
+        public DataTable BuscaOpcoesVotacao(int idEleicao)
         {
             DataTable dt;
             dt = DAOEleicao.PesquisarOpcoesdeVotacaoDaEleicao(idEleicao);
             return dt;
         }
 
-        public static DataTable BuscaOpcaoVotada(string nomeOpcaoVotada, int idEleicao)
+        public DataTable BuscaOpcaoVotada(string nomeOpcaoVotada, int idEleicao)
         {
             DataTable dt;
             dt = DAOEleicao.PesquisarOpcaoVotadaDaEleicao(nomeOpcaoVotada, idEleicao);
             return dt;
         }
 
-        public static int BuscaIdDaUltimaEleicaoDoCondominio(int idCondominio)
+        public int BuscaIdDaUltimaEleicaoDoCondominio(int idCondominio)
         {
             int idEleicao;
             idEleicao = DAOEleicao.PesquisarIdDaUltimaEleicaoRegistradaDoCondomminio(idCondominio);

@@ -27,9 +27,8 @@ namespace MeuCondominio1
         private void CarregarGridViewComDadosDoCliente()
         {
             int idCliente = Convert.ToInt32(Session["codigoUser"]);
-            
-
-            dt = BuscaCliente.BuscarClientePorIDRetornandoSuasUnidadesECondominios(idCliente);
+            BuscaCliente buscaCliente = new BuscaCliente();
+            dt = buscaCliente.BuscarClientePorIDRetornandoSuasUnidadesECondominios(idCliente);
 
             gvUnidadesDoCliente.DataSource = dt;
             gvUnidadesDoCliente.DataBind();

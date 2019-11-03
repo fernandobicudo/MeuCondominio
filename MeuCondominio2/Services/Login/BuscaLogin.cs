@@ -8,7 +8,7 @@ namespace MeuCondominio2.Services.Login
 {
     public class BuscaLogin
     {
-        public static DataTable PesquisarLogin(string email)
+        public DataTable PesquisarLogin(string email)
         {
             return DAOLogin.SelecionarLogin(email);
         }

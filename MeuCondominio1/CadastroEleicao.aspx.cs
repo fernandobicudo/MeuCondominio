@@ -43,9 +43,9 @@ namespace MeuCondominio1
         public Eleicao ConstruirObjetoEleicao()
         {
             DateTime dataInicio, dataFim;
-
-            dataInicio = Formatadores.FormatarDataParaBancoDeDados(txDataInicio.Text);
-            dataFim = Formatadores.FormatarDataParaBancoDeDados(txDataFim.Text);
+            Formatadores formatadores = new Formatadores();
+            dataInicio = formatadores.FormatarDataParaBancoDeDados(txDataInicio.Text);
+            dataFim = formatadores.FormatarDataParaBancoDeDados(txDataFim.Text);
 
             Eleicao eleicao = new Eleicao(txNomeEleicao.Text,
                 txDescricao.Text, ddTipoEleicao.SelectedValue.ToString(),
@@ -86,9 +86,11 @@ namespace MeuCondominio1
         public void CadastrarEleicao()
         {
             Eleicao eleicao = ConstruirObjetoEleicao();
-            GravaEleicao.GravaEleicaoDoCondominio(eleicao);
+            GravaEleicao gravaEleicao = new GravaEleicao();
+            gravaEleicao.GravaEleicaoDoCondominio(eleicao);
 
-            GravaOpcoesVotacao.GravaOpcoesDeVotacaoDaEleicaoDePlebiscito(OpcoesVotacaoPlebiscito());
+            GravaOpcoesVotacao gravaOpcoesVotacao = new GravaOpcoesVotacao();
+            gravaOpcoesVotacao.GravaOpcoesDeVotacaoDaEleicaoDePlebiscito(OpcoesVotacaoPlebiscito());
         }
 
 
@@ -104,7 +106,8 @@ namespace MeuCondominio1
 
         protected void Encerrar_Eleicao_Click(object sender, EventArgs e)
         {
-            AlteraEleicao.EncerrarEleicao(eleicao.GetIdEleicao());
+            AlteraEleicao alteraEleicao = new AlteraEleicao();
+            alteraEleicao.EncerrarEleicao(eleicao.GetIdEleicao());
         }
 
         private void ConfigurarModosDeTela()
@@ -136,16 +139,19 @@ namespace MeuCondominio1
 
         private void CarregarCamposComDadosDaEleicao(Eleicao eleicao)
         {
+            Formatadores formatadores = new Formatadores();
+
             txNomeEleicao.Text = eleicao.GetNomeEleicao();
             txDescricao.Text = eleicao.GetDescricaoEleicao();
-            txDataInicio.Text = Formatadores.FormatarDataParaExibicao(eleicao.GetDataInicioEleicao().ToString());
-            txDataFim.Text = Formatadores.FormatarDataParaExibicao(eleicao.GetDataFimEleicao().ToString());
+            txDataInicio.Text = formatadores.FormatarDataParaExibicao(eleicao.GetDataInicioEleicao().ToString());
+            txDataFim.Text = formatadores.FormatarDataParaExibicao(eleicao.GetDataFimEleicao().ToString());
         }
 
         private DataTable BuscaEleicaoSelecionada(int idEleicao)
         {
             DataTable dt;
-            dt = BuscaEleicao.BuscaEleicaoSelecionadaDoCondominio(idEleicao);
+            BuscaEleicao buscaEleicao = new BuscaEleicao();
+            dt = buscaEleicao.BuscaEleicaoSelecionadaDoCondominio(idEleicao);
 
             return dt;
         }

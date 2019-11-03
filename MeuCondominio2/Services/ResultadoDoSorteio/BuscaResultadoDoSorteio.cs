@@ -8,7 +8,7 @@ namespace MeuCondominio2.Services.ResultadoDoSorteio
 {
     public class BuscaResultadoDoSorteio
     {
-        public static DataTable BuscarVagasDoResultadoPorIdDoClienteEIddoCondominio(int idCliente, int idCondominio)
+        public DataTable BuscarVagasDoResultadoPorIdDoClienteEIddoCondominio(int idCliente, int idCondominio)
         {
             return DAOResultadoDoSorteio.PesquisarVagasDoResultadoPorIdDoClienteEIddoCondominio(idCliente, idCondominio);
         }

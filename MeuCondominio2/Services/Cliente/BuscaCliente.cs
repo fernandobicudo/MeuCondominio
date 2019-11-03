@@ -9,12 +9,12 @@ namespace MeuCondominio2.Services.Cliente
 {
     public class BuscaCliente
     {
-        public static DataTable BuscarClientePorCPF(string CPF)
+        public DataTable BuscarClientePorCPF(string CPF)
         {
             return DAOCliente.PesquisarClientePorCPF(CPF);
         }
 
-        public static DataTable BuscarClientePorIDRetornandoSuasUnidadesECondominios(int idCliente)
+        public DataTable BuscarClientePorIDRetornandoSuasUnidadesECondominios(int idCliente)
         {
             return DAOCliente.PesquisarClientePorIDRetornandoSuasUnidadesECondominios(idCliente);
         }

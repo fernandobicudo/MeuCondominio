@@ -9,17 +9,17 @@ namespace MeuCondominio2.Services.Unidade
 {
     public class BuscaUnidade
     {
-        public static DataTable BuscarUnidade()
+        public DataTable BuscarUnidade()
         {
             return DAOUnidade.SelecionarUnidade();
         }
 
-        public static DataTable BuscarUnidadePorCondominoDoCondominio(int idCondomino, int idCondominio)
+        public DataTable BuscarUnidadePorCondominoDoCondominio(int idCondomino, int idCondominio)
         {
             return DAOUnidade.SelecionarUnidadePorCondominoDoCondominio(idCondomino, idCondominio);
         }
 
-        public static DataTable BuscarUnidadePorCondominio(int idCondominio)
+        public DataTable BuscarUnidadePorCondominio(int idCondominio)
         {
             return DAOUnidade.SelecionarUnidadePorCondominio(idCondominio);
         }

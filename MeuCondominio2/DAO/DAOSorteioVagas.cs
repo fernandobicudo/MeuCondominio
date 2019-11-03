@@ -13,9 +13,11 @@ namespace MeuCondominio2.DAO
         {
             string SQL;
 
-            string dataSorteio = Formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.GetDataSorteio());
-            string dataValidadeInicio = Formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.GetDataValidadeSorteioInicio());
-            string dataValidadeFim = Formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.GetDataValidadeSorteioFim());
+            Formatadores formatadores = new Formatadores();
+
+            string dataSorteio = formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.GetDataSorteio());
+            string dataValidadeInicio = formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.GetDataValidadeSorteioInicio());
+            string dataValidadeFim = formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.GetDataValidadeSorteioFim());
 
             SQL = String.Format(@"INSERT INTO SorteioVagas " +
                 "(`tipoSorteio`, `dataSorteio`, `dataValidadeSorteioInicio`, `dataValidadeSorteioFim`, " +

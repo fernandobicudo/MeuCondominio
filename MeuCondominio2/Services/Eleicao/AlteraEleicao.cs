@@ -7,7 +7,7 @@ namespace MeuCondominio2.Services.Eleicao
 {
     public class AlteraEleicao
     {
-        public static void EncerrarEleicao(int idEleicao)
+        public void EncerrarEleicao(int idEleicao)
         {
             DAOEleicao.EncerrarEleicao(idEleicao);
         }

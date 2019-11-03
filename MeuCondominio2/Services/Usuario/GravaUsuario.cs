@@ -10,7 +10,7 @@ namespace MeuCondominio2.Services.Usuario
 {
     public class GravaUsuario
     {
-        public static void GravarUsuario(Model.Cliente cliente)
+        public void GravarUsuario(Model.Cliente cliente)
         {
             DAOUsuario.InserirCliente(cliente);
         }

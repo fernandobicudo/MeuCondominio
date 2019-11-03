@@ -8,7 +8,7 @@ namespace MeuCondominio2.Services.Eleicao
 {
     public class GravaOpcoesVotacao
     {
-        public static void GravaOpcoesDeVotacaoDaEleicaoDePlebiscito(List<string> listaOpcoesVotacao)
+        public void GravaOpcoesDeVotacaoDaEleicaoDePlebiscito(List<string> listaOpcoesVotacao)
         {
             DAOOpcaoVotacao.InserirOpcoesVotacaoPlebiscito(listaOpcoesVotacao);
         }

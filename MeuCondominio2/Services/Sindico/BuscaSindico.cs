@@ -8,7 +8,7 @@ namespace MeuCondominio2.Services.Sindico
 {
     public class BuscaSindico
     {
-        public static DataTable PesquisarSindico(int idSindico)
+        public DataTable PesquisarSindico(int idSindico)
         {
             return DAOSindico.SelecionarSindico(idSindico);
         }

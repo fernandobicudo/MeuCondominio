@@ -31,7 +31,8 @@ namespace MeuCondominio1
             /*            TODO: passar o idCondominio corretamente para o método  CriaObjetoSorteioVagas(1).
                         pensar se por session ou outro método.
             */
-            GravaSorteioVagas.GravarSorteioVagas(sorteioVagas);
+            GravaSorteioVagas gravaSorteioVagas = new GravaSorteioVagas();
+            gravaSorteioVagas.GravarSorteioVagas(sorteioVagas);
         }
 
 
@@ -42,9 +43,10 @@ namespace MeuCondominio1
 
             DateTime dataSorteio, dataValidadeInicio, dataValidadeFim;
 
-            dataSorteio = Formatadores.FormatarDataParaBancoDeDados(txDataSorteio.Text);
-            dataValidadeInicio = Formatadores.FormatarDataParaBancoDeDados(txDataValidadeInicio.Text); 
-            dataValidadeFim = Formatadores.FormatarDataParaBancoDeDados(txDataValidadeFim.Text); 
+            Formatadores formatadores = new Formatadores();
+            dataSorteio = formatadores.FormatarDataParaBancoDeDados(txDataSorteio.Text);
+            dataValidadeInicio = formatadores.FormatarDataParaBancoDeDados(txDataValidadeInicio.Text); 
+            dataValidadeFim = formatadores.FormatarDataParaBancoDeDados(txDataValidadeFim.Text); 
 
             if (rbSeHaVagasSequenciaisSim.Checked == true)
                 sorteio.SetAssociacaoVagasSequenciais(true);

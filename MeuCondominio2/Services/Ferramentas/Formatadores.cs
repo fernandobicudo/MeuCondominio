@@ -6,7 +6,7 @@ namespace MeuCondominio2.Services.Ferramentas
 {
     public class Formatadores
     {
-        public static String ConversaoDeDataParaStringMySQL(DateTime data)
+        public String ConversaoDeDataParaStringMySQL(DateTime data)
         {
             string formatForMySql = data.ToString("yyyy-MM-dd HH:mm:ss");
             return formatForMySql;
@@ -27,7 +27,7 @@ namespace MeuCondominio2.Services.Ferramentas
             return dataResultado;
         }
 
-        public static DateTime FormatarDataParaBancoDeDados(string data)
+        public DateTime FormatarDataParaBancoDeDados(string data)
         {
             DateTime dataRetorno;
 
@@ -36,12 +36,12 @@ namespace MeuCondominio2.Services.Ferramentas
             return dataRetorno;
         }
 
-        public static string FormatarDataParaExibicao(string data)
+        public string FormatarDataParaExibicao(string data)
         {
             return data.Substring(0, 10);
         }
 
-        public static byte FormatarBooleanParaMySQL(bool status)
+        public byte FormatarBooleanParaMySQL(bool status)
         {
             return Convert.ToByte(status);
         }

@@ -139,7 +139,8 @@ namespace MeuCondominio1
 
         private void RecuperaDadosDaEleicao()
         {
-            dtEleicao = BuscaEleicao.BuscaEleicaoSelecionadaDoCondominio(Convert.ToInt32(Request["codigoEleicao"]));
+            BuscaEleicao buscaEleicao = new BuscaEleicao();
+            dtEleicao = buscaEleicao.BuscaEleicaoSelecionadaDoCondominio(Convert.ToInt32(Request["codigoEleicao"]));
         }
 
         private void CriarObjetoEleicao()
@@ -166,7 +167,8 @@ namespace MeuCondominio1
 
         private void CriarListaDeOpcoesParaVotar()
         {
-            dtOpcoesDaEleicao = BuscaEleicao.BuscaOpcoesVotacao(eleicao.GetIdEleicao());
+            BuscaEleicao buscaEleicao = new BuscaEleicao();
+            dtOpcoesDaEleicao = buscaEleicao.BuscaOpcoesVotacao(eleicao.GetIdEleicao());
 
             foreach(DataRow linha in dtOpcoesDaEleicao.Rows)
             {
@@ -215,14 +217,16 @@ namespace MeuCondominio1
         {
             DataTable dtEleicao;
             string nomeOpcaoVotada = radioButonsComOpcoesParaVotar.SelectedValue.ToString();
-            dtEleicao = BuscaEleicao.BuscaOpcaoVotada(nomeOpcaoVotada, eleicao.GetIdEleicao());
+            BuscaEleicao buscaEleicao = new BuscaEleicao();
+            dtEleicao = buscaEleicao.BuscaOpcaoVotada(nomeOpcaoVotada, eleicao.GetIdEleicao());
             opcaoDeVotacaoPlebiscito = CriarObjetoOpcaoDeVotacaoPlebiscito(dtEleicao.Rows[0]);
         }
 
         private void BuscaUnidadeDoCondominoNoCondominio()
         {
             DataTable dtUnidade;
-            dtUnidade = BuscaUnidade.BuscarUnidadePorCondominoDoCondominio(
+            BuscaUnidade buscaUnidade = new BuscaUnidade();
+            dtUnidade = buscaUnidade.BuscarUnidadePorCondominoDoCondominio(
             Convert.ToInt32((Session["codigoUser"])), Convert.ToInt32((Session["codigoCondominio"])));
             //TODO: RESOLVER O CASO EM QUE O CONDOMINO TEM N UNIDADES: terá direito a N votos, porém a tendência é que vote na mesma opção em todos os votos;
             idUnidade = Convert.ToInt32(dtUnidade.Rows[0]["idUnidade"]);

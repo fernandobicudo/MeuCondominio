@@ -8,17 +8,17 @@ namespace MeuCondominio2.Services.VagaGaragem
 {
     public class BuscaVagaGaragem
     {
-        public static DataTable PesquisarVagaGaragem()
+        public DataTable PesquisarVagaGaragem()
         {
             return DAOVagaGaragem.SelecionarVagaGaragem();
         }
 
-        public static DataTable PesquisarVagaGaragem(int id)
+        public DataTable PesquisarVagaGaragem(int id)
         {
             return DAOVagaGaragem.SelecionarVagaGaragem(id);
         }
 
-        public static DataTable PesquisarVagasGaragemPorCondominio(int idCondominio)
+        public DataTable PesquisarVagasGaragemPorCondominio(int idCondominio)
         {
             return DAOVagaGaragem.SelecionarVagasGaragemPorCondominio(idCondominio);
         }

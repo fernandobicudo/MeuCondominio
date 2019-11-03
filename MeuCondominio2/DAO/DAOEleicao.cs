@@ -5,8 +5,6 @@ using System.Text;
 using MeuCondominio2.Model;
 using MeuCondominio2.Services.Ferramentas;
 
-
-
 namespace MeuCondominio2.DAO
 {
     class DAOEleicao
@@ -68,9 +66,11 @@ namespace MeuCondominio2.DAO
         {
             string SQL;
 
-            string dataInicioEleicao = Formatadores.ConversaoDeDataParaStringMySQL(eleicao.GetDataInicioEleicao());
-            string dataFimEleicao = Formatadores.ConversaoDeDataParaStringMySQL(eleicao.GetDataFimEleicao());
-            byte status = Formatadores.FormatarBooleanParaMySQL(eleicao.GetStatusEleicao());
+            Formatadores formatadores = new Formatadores();
+
+            string dataInicioEleicao = formatadores.ConversaoDeDataParaStringMySQL(eleicao.GetDataInicioEleicao());
+            string dataFimEleicao = formatadores.ConversaoDeDataParaStringMySQL(eleicao.GetDataFimEleicao());
+            byte status = formatadores.FormatarBooleanParaMySQL(eleicao.GetStatusEleicao());
 
             SQL = String.Format(@"INSERT INTO `Eleicao` " +
                 "(`nomeEleicao`, `tipoEleicao`, `descricaoEleicao`, " +

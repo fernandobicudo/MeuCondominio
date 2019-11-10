@@ -17,6 +17,10 @@
             <asp:TextBox ID="txAreaEspaco" runat="server"></asp:TextBox><br/>
             <asp:Label ID="lbValorReserva" runat="server" Text="Valor da reserva (diária): "></asp:Label>
             <asp:TextBox ID="txValorReserva" runat="server"></asp:TextBox><br/>
+            <br />
+            <asp:Label ID="lbRegulamento" runat="server" Text="Regulamento de uso: "></asp:Label>
+            <br />
+            <asp:TextBox ID="txRegulamento" runat="server" Height="138px" TextMode="MultiLine" Width="515px"></asp:TextBox><br/><br/>
             <asp:Button ID="btCadastrarEspaco" runat="server" Text="Cadastrar" CssClass="botaoDefault" OnClick="BtCadastrarEspacoReserva"/><br/><br/>
         </div>
     </form>

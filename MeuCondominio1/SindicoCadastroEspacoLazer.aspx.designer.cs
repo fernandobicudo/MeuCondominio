@@ -76,6 +76,24 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.WebControls.TextBox txValorReserva;
         
         /// <summary>
+        /// lbRegulamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbRegulamento;
+        
+        /// <summary>
+        /// txRegulamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txRegulamento;
+        
+        /// <summary>
         /// btCadastrarEspaco control.
         /// </summary>
         /// <remarks>

@@ -135,6 +135,8 @@
     <Content Include="CadastroSorteioVagas.aspx" />
     <Content Include="ClienteCadastro.aspx" />
     <Content Include="ClienteConsultaListaEleicoesB.aspx" />
+    <Content Include="ClienteNovaReservaEspacoLazer.aspx" />
+    <Content Include="ClienteReservaEspacoLazer.aspx" />
     <Content Include="ConsultaListaEleicoes.aspx" />
     <Content Include="ClienteEleicaoInfo.aspx" />
     <Content Include="ClienteResultadoDaEleicao.aspx" />
@@ -165,6 +167,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Images\add-circle-green-512.png" />
     <Content Include="Images\barcode_G.png" />
+    <Content Include="Images\calendar_G.png" />
     <Content Include="Images\Carro_G.png" />
     <Content Include="Images\Configuracoes_G.png" />
     <Content Include="Images\hand_G.png" />
@@ -249,6 +252,20 @@
     </Compile>
     <Compile Include="ClienteConsultaListaEleicoesB.aspx.designer.cs">
       <DependentUpon>ClienteConsultaListaEleicoesB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteNovaReservaEspacoLazer.aspx.cs">
+      <DependentUpon>ClienteNovaReservaEspacoLazer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClienteNovaReservaEspacoLazer.aspx.designer.cs">
+      <DependentUpon>ClienteNovaReservaEspacoLazer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteReservaEspacoLazer.aspx.cs">
+      <DependentUpon>ClienteReservaEspacoLazer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClienteReservaEspacoLazer.aspx.designer.cs">
+      <DependentUpon>ClienteReservaEspacoLazer.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultaListaEleicoes.aspx.cs">
       <DependentUpon>ConsultaListaEleicoes.aspx</DependentUpon>

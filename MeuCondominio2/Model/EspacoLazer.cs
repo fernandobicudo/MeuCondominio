@@ -11,22 +11,29 @@ namespace MeuCondominio2.Model
         private string nomeEspacoLazer;
         private int areaEspacoLazer;
         private double valorReserva;
+        private string regulamentoReservaEspaco;
         private int idCondominio;
 
-        public EspacoLazer(string nomeEspacoLazer, int areaEspacoLazer, double valorReserva, int idCondominio)
+        public EspacoLazer()
         {
-            this.nomeEspacoLazer = nomeEspacoLazer;
-            this.areaEspacoLazer = areaEspacoLazer;
-            this.valorReserva = valorReserva;
-            this.idCondominio = idCondominio;
         }
 
-        public EspacoLazer(int idEspacoLazer, string nomeEspacoLazer, int areaEspacoLazer, double valorReserva, int idCondominio)
+        public EspacoLazer(int idEspacoLazer, string nomeEspacoLazer, int areaEspacoLazer, double valorReserva, string regulamentoReservaEspaco, int idCondominio)
         {
             this.idEspacoLazer = idEspacoLazer;
             this.nomeEspacoLazer = nomeEspacoLazer;
             this.areaEspacoLazer = areaEspacoLazer;
             this.valorReserva = valorReserva;
+            this.regulamentoReservaEspaco = regulamentoReservaEspaco;
+            this.idCondominio = idCondominio;
+        }
+
+        public EspacoLazer(string nomeEspacoLazer, int areaEspacoLazer, double valorReserva, string regulamentoReservaEspaco, int idCondominio)
+        {
+            this.nomeEspacoLazer = nomeEspacoLazer;
+            this.areaEspacoLazer = areaEspacoLazer;
+            this.valorReserva = valorReserva;
+            this.regulamentoReservaEspaco = regulamentoReservaEspaco;
             this.idCondominio = idCondominio;
         }
 
@@ -78,6 +85,16 @@ namespace MeuCondominio2.Model
         public void SetIdCondominio(int value)
         {
             idCondominio = value;
+        }
+
+        public string GetRegulamentoReservaEspaco()
+        {
+            return regulamentoReservaEspaco;
+        }
+
+        public void SetRegulamentoReservaEspaco(string value)
+        {
+            regulamentoReservaEspaco = value;
         }
     }
 }

@@ -30,5 +30,10 @@ namespace MeuCondominio1
         {
             Response.Redirect("ClienteCadastro.aspx");
         }
+
+        protected void IrParaPaginaReservas(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("ClienteReservaEspacoLazer.aspx");
+        }
     }
 }

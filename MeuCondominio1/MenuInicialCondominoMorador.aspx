@@ -34,6 +34,10 @@
                     <asp:ImageButton ID="ibUsuarios" runat="server" Height="100px" ImageUrl="~/Images/hand_G.png" Width="100px" OnClick="IrParaPaginaEleicoes" /><br />
                     <asp:Label ID="lbUsuario" runat="server" Text="Votações"></asp:Label><br /><br /> 
                 </div>
+                <div class="item">
+                    <asp:ImageButton ID="ibReservaEspacoLazer" runat="server" Height="100px" ImageUrl="~/Images/calendar_G.png" Width="100px" OnClick="IrParaPaginaReservas"/><br />
+                    <asp:Label ID="lbReservaEspaco" runat="server" Text="Reservas"></asp:Label>
+                </div>
             </div>
             <div class="footer">
             </div>

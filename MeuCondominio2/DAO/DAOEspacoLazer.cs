@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using MeuCondominio2.Model;
@@ -12,14 +13,26 @@ namespace MeuCondominio2.DAO
         {
             string SQL;
             SQL = String.Format(@"INSERT INTO `EspacoLazer` (`nomeEspacoLazer`, `areaEspacoMetrosQuadrados`,
-                                `valorReservaEspacoDiaria`, `idCondominio`)
-                                VALUES ('{0}', {1}, {2}, {3})",
+                                `valorReservaEspacoDiaria`, `regulamentoReservaEspaco`, `idCondominio`)
+                                VALUES ('{0}', {1}, {2}, '{3}', {4})",
                 espacoLazer.GetNomeEspacoLazer(),
                 espacoLazer.GetAreaEspacoLazer(),
                 espacoLazer.GetValorReserva(),
-                espacoLazer.GetIdCondominio());
+                espacoLazer.GetRegulamentoReservaEspaco(),
+                espacoLazer.GetIdCondominio()); 
 
             MetodosBD.ExecutaSQL(SQL);
+        }
+
+        internal static DataTable PesquisarEspacoLazerPorNome(string nomeEspaco)
+        {
+            string SQL;
+            DataTable dt;
+            SQL = String.Format(@"SELECT * FROM `EspacoLazer`
+                                  WHERE `nomeEspacoLazer` = '{0}';", nomeEspaco);
+            dt = MetodosBD.ExecutaSelect(SQL);
+            return dt;
+
         }
     }
 }

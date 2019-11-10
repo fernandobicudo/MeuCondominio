@@ -34,6 +34,7 @@ namespace MeuCondominio1
                 txNomeEspaco.Text,
                 Convert.ToInt32(txAreaEspaco.Text),
                 Convert.ToDouble(txValorReserva.Text),
+                txRegulamento.Text,
                 idCondominio);
 
             return espacoLazer;

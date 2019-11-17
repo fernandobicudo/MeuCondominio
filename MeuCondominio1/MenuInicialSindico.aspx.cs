@@ -34,5 +34,10 @@ namespace MeuCondominio1
         {
             Response.Redirect("SindicoSubMenuConfiguracoes.aspx");
         }
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 }

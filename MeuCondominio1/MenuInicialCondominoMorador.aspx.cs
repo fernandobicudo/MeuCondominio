@@ -35,5 +35,10 @@ namespace MeuCondominio1
         {
             Response.Redirect("ClienteReservaEspacoLazer.aspx");
         }
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 }

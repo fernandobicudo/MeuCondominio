@@ -20,6 +20,12 @@ body {
     margin-top: 0;
 }
 
+.footer #btVoltar {
+    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
 
 h1 {
     background: #01579B;

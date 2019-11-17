@@ -18,5 +18,10 @@ namespace MeuCondominio1
         {
             Response.Redirect("SindicoCadastroEspacoLazer.aspx");
         }
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuInicialSindico.aspx");
+        }
     }
 }

@@ -14,11 +14,14 @@
             <div class="header">
                 <div class="main">
                     <div class="item">
-                        <asp:ImageButton ID="ibEspacoLazer" runat="server" Height="100px" ImageUrl="~/Images/Configuracoes_G.png" Width="100px" OnClick="IrParaPaginaCadastrarEspacoReserva" /><br/>
+                        <asp:ImageButton ID="ibEspacoLazer" runat="server" Height="100px" ImageUrl="~/Images/Configuracoes_G.png" Width="100px" OnClick="IrParaPaginaCadastrarEspacoReserva" /><br />
                         <asp:Label ID="lbEspacoLazer" runat="server" Text="Cadastrar Espaço de Lazer"></asp:Label>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="footer">
+            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick" /><br />
         </div>
     </form>
 </body>

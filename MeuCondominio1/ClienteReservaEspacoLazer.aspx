@@ -12,7 +12,14 @@
     <form id="frmReservaEspacoLazer" runat="server">
         <div>
             <asp:Label ID="lbMensagemReserva" runat="server" Text=""></asp:Label>
-            <asp:Button ID="btNovaReserva" runat="server" Text="Nova reserva" CssClass="botaoDefault" OnClick="Bt_NovaReserva"/>
+            <asp:GridView ID="gvReservas" runat="server" AutoGenerateColumns="false">
+                <Columns>
+                    <asp:BoundField DataField="nomeEspacoLazer" HeaderText="Local"/>
+                    <asp:BoundField DataField="dtReserva" HeaderText="Data reservada"/>
+                </Columns>
+            </asp:GridView><br/>
+            <asp:Button ID="btNovaReserva" runat="server" Text="Nova reserva" CssClass="botaoDefault" OnClick="Bt_NovaReserva"/><br />
+            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick"/><br />
         </div>
     </form>
 </body>

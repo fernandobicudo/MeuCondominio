@@ -37,6 +37,11 @@ namespace MeuCondominio1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
+                ViewState["RefUrl"] = Request.UrlReferrer.ToString();
+            }
+
             RecuperaDadosDaEleicao();
             CriarObjetoEleicao();
             CriarListaDeOpcoesParaVotar();
@@ -235,6 +240,13 @@ namespace MeuCondominio1
         private void ConstruirObjetoVoto()
         {
             voto = new Voto(opcaoDeVotacaoPlebiscito.GetIdOpcaoDeVotacaoPlebiscito(), eleicao.GetIdEleicao(), idUnidade);
+        }
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            object refUrl = ViewState["RefUrl"];
+            if (refUrl != null)
+                Response.Redirect((string)refUrl);
         }
     }
 }

@@ -13,13 +13,13 @@ namespace MeuCondominio1 {
     public partial class EleicaoAdicionarOpcaoParaVotacao {
         
         /// <summary>
-        /// form1 control.
+        /// frm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm frm;
         
         /// <summary>
         /// lbDescricaoOpcao control.
@@ -47,5 +47,14 @@ namespace MeuCondominio1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btAdicionarDescricaoOpcao;
+        
+        /// <summary>
+        /// brVoltar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button brVoltar;
     }
 }

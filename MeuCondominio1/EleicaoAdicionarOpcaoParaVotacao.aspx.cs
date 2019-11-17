@@ -14,13 +14,23 @@ namespace MeuCondominio1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                ViewState["RefUrl"] = Request.UrlReferrer.ToString();
+            }
         }
 
         protected void CriarObjeto(object sender, EventArgs e)
         {
             string descricao = txDescricaoOpcao.Text;
             Response.Redirect("CadastroEleicao.aspx?descricao=" + descricao);
+        }
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            object refUrl = ViewState["RefUrl"];
+            if (refUrl != null)
+                Response.Redirect((string)refUrl);
         }
     }
 }

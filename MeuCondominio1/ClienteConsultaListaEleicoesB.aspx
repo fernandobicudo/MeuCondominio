@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Eleições do Condomínio</h1>
-    <form id="form1" runat="server">
+    <form id="frmConsultaEleicoes" runat="server">
         <div>
             <asp:Panel ID="pnEleicoes" runat="server"></asp:Panel>
             <asp:GridView ID="gvEleicoes" runat="server" OnRowCreated="GridView_RowCreated" OnSelectedIndexChanged="GridView_SelectedIndex_Changed" AutoGenerateColumns="False">
@@ -22,7 +22,8 @@
                     <asp:BoundField DataField="dataInicioEleicao" HeaderText="Início" />
                     <asp:BoundField DataField="dataFimEleicao" HeaderText="Término" />
                 </Columns>
-            </asp:GridView>
+            </asp:GridView><br />
+            <asp:Button ID="btVoltar" CssClass="botaoDefault botaoHover" runat="server" Text="Voltar" OnClick="BtVoltarClick" /><br />
         </div>
         <br />
     </form>

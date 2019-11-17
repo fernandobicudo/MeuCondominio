@@ -23,7 +23,9 @@
                     <asp:BoundField DataField="dataFimEleicao" HeaderText="Término" />
                 </Columns>
             </asp:GridView><br/>
-            <asp:Button ID="btNovaEleicao" runat="server" Text="Nova votação" CssClass="botaoDefault botaoHover" OnClick="btNovaVotacao_Click"/>
+            <asp:Button ID="btNovaEleicao" runat="server" Text="Nova votação" CssClass="botaoDefault botaoHover" OnClick="btNovaVotacao_Click"/><br />
+            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick"/><br />
+
         </div>
         <br />
     </form>

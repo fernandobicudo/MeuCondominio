@@ -18,6 +18,11 @@ namespace MeuCondominio1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                ViewState["RefUrl"] = Request.UrlReferrer.ToString();
+            }
+
             CarregarGridViewComDadosDoCliente();
             cliente = ConstruirObjetoCliente(dt);
             CarregarCamposDoCliente(cliente);
@@ -72,6 +77,13 @@ namespace MeuCondominio1
         protected void Bt_AlterarSenha(object sender, EventArgs e)
         {
             Response.Redirect("AlteracaoDeSenha.aspx?&origem=logado");
+        }
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            object refUrl = ViewState["RefUrl"];
+            if (refUrl != null)
+                Response.Redirect((string)refUrl);
         }
     }
 }

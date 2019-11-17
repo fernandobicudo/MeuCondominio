@@ -10,9 +10,8 @@
 
 </head>
 <body>
-
     <h1>Informações sobre a votação</h1>
-    <form id="form1" runat="server">
+    <form id="frmInfoSobreVotacao" runat="server">
         <asp:ScriptManager runat="server"></asp:ScriptManager>
         <div>
             <asp:UpdatePanel ID="ipVotacao" runat="server">
@@ -21,7 +20,8 @@
                     <br />
                     <asp:Button ID="btVotar" runat="server" Text="Votar" CssClass="botaoDefault botaoHover" OnClick="bt_Votar_Click" />
                 </ContentTemplate>
-            </asp:UpdatePanel>
+            </asp:UpdatePanel><br />
+            <asp:Button ID="btVoltar" runat="server" CssClass="botaoDefault botaoHover" Text="Voltar" OnClick="BtVoltarClick" /><br />
         </div>
     </form>
 </body>

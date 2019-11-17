@@ -13,7 +13,10 @@ namespace MeuCondominio1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                ViewState["RefUrl"] = Request.UrlReferrer.ToString();
+            }
         }
 
         protected void BtCadastrarEspacoReserva(object sender, EventArgs e)
@@ -38,6 +41,13 @@ namespace MeuCondominio1
                 idCondominio);
 
             return espacoLazer;
+        }
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            object refUrl = ViewState["RefUrl"];
+            if (refUrl != null)
+                Response.Redirect((string)refUrl);
         }
     }
 }

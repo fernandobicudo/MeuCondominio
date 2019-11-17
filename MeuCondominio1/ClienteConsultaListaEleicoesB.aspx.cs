@@ -18,7 +18,7 @@ namespace MeuCondominio1
         {
             if (!IsPostBack)
             {
-
+                ViewState["RefUrl"] = Request.UrlReferrer.ToString();
                 /*CarregarGriView();*/
             }
             ConstruirListaDeEleicoes();
@@ -144,5 +144,11 @@ namespace MeuCondominio1
                     0, idEleicao, tituloEleicao));
         }
 
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            object refUrl = ViewState["RefUrl"];
+            if (refUrl != null)
+                Response.Redirect((string)refUrl);
+        }
     }
 }

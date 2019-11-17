@@ -21,7 +21,8 @@
             <asp:Label ID="lbRegulamento" runat="server" Text="Regulamento de uso: "></asp:Label>
             <br />
             <asp:TextBox ID="txRegulamento" runat="server" Height="138px" TextMode="MultiLine" Width="515px"></asp:TextBox><br/><br/>
-            <asp:Button ID="btCadastrarEspaco" runat="server" Text="Cadastrar" CssClass="botaoDefault" OnClick="BtCadastrarEspacoReserva"/><br/><br/>
+            <asp:Button ID="btCadastrarEspaco" runat="server" Text="Cadastrar" CssClass="botaoDefault botaoHover" OnClick="BtCadastrarEspacoReserva"/><br/><br/>
+            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick"/><br />
         </div>
     </form>
 </body>

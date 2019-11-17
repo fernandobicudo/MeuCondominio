@@ -164,6 +164,7 @@
     <Compile Include="Services\Eleicao\Voto\BuscaVotos.cs" />
     <Compile Include="Services\Eleicao\Voto\GravaVoto.cs" />
     <Compile Include="Services\EspacoLazer\BuscaEspacoLazer.cs" />
+    <Compile Include="Services\EspacoLazer\BuscaReservaEspacoLazer.cs" />
     <Compile Include="Services\EspacoLazer\GravaReservaEspacoLazer.cs" />
     <Compile Include="Services\Ferramentas\Formatadores.cs" />
     <Compile Include="Services\Ferramentas\GeradorDeSenhaProvisoria.cs" />

@@ -25,7 +25,7 @@ namespace MeuCondominio1
 
             if (!IsPostBack)
             {
-
+                ViewState["RefUrl"] = Request.UrlReferrer.ToString();
             }
             idEleicao = Convert.ToInt32(Request["codigoEleicao"]);
             ModoDeTela = Convert.ToInt32(Request["modo"]);
@@ -155,6 +155,14 @@ namespace MeuCondominio1
 
             return dt;
         }
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            object refUrl = ViewState["RefUrl"];
+            if (refUrl != null)
+                Response.Redirect((string)refUrl);
+        }
+
 
 
         #region Codigos Velhos

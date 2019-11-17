@@ -32,6 +32,7 @@
                     </div>
                 </ContentTemplate>
             </asp:UpdatePanel>
+            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover"/><br />
         </div>
     </form>
 </body>

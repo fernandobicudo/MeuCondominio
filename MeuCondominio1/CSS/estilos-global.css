@@ -208,27 +208,27 @@ tr {
 
 
 .botaoDefault {
-    font-size: 20px;
+    font-size: 1em;
     font-weight: bolder;
-    width: 30%;
-    height: 40px;
+    height: 2em;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     background-color: #01579B;
     color: white;
     border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin: 0.5em
 }
 
 .botaoPequeno {
-    font-size: 12px;
+    font-size: 0.7em;
     font-weight: bolder;
-    width: 10%;
-    height: 20px;
+    height: 1.6em;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     background-color: #01579B;
     color: white;
     border-radius: 5px;
+    margin: 0.5em;
 }
 
 #btBusca {
@@ -252,7 +252,6 @@ tr {
 
 .tituloVaga .numVaga {
     position: center;
-
 }
 
 .tituloVaga {
@@ -294,7 +293,7 @@ h2 {
 
 
 .main {
-width: 100%;
+    width: 100%;
 }
 
 /*MENU*/
@@ -539,8 +538,8 @@ width: 100%;
     }
 
     .radioButton {
-        margin-left: 6%;
-    }
+        margin-left: 1%;
+        }
 
 
     .botaoDefault {

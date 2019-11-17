@@ -20,7 +20,10 @@ namespace MeuCondominio1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                ViewState["RefUrl"] = Request.UrlReferrer.ToString();
+            }
         }
 
         protected void CadastrarSorteioDeVagas(object sender, EventArgs e)
@@ -82,26 +85,34 @@ namespace MeuCondominio1
             sorteioVagas.SortearVagas(idCondominio);
             
         }
-       
-/*        private SorteioVagas CriaObjetoSorteioVagas(DataTable dt)
-        {
-            SorteioVagas sorteioVagas = new SorteioVagas(
-                Convert.ToInt32(dt.Rows[0]["id"]),
-                dt.Rows[0]["tipoSorteio"].ToString(),
-                Convert.ToDateTime(dt.Rows[0]["dataSorteio"]),
-                Convert.ToDateTime(dt.Rows[0]["dataValidadeSorteioInicio"]),
-                Convert.ToDateTime(dt.Rows[0]["dataValidadeSorteioFim"]),
-                Convert.ToBoolean(dt.Rows[0]["associarVagasSequenciais"]),
-                Convert.ToInt32(dt.Rows[0]["qtdeVagasPorUnidade"]),
-                Convert.ToInt32(dt.Rows[0]["idCondominio"]));
 
-            return sorteioVagas;
-        }*/
-
-/*        private DataTable BuscarSorteioMaisRecente(int idCondominio)
+        protected void BtVoltarClick(object sender, EventArgs e)
         {
-            return BuscaSorteioVagas.BuscarIdDoResultadoDoUltimoSorteioParaOCondominio(idCondominio);
+            object refUrl = ViewState["RefUrl"];
+            if (refUrl != null)
+                Response.Redirect((string)refUrl);
+
         }
-*/
+
+        /*        private SorteioVagas CriaObjetoSorteioVagas(DataTable dt)
+                {
+                    SorteioVagas sorteioVagas = new SorteioVagas(
+                        Convert.ToInt32(dt.Rows[0]["id"]),
+                        dt.Rows[0]["tipoSorteio"].ToString(),
+                        Convert.ToDateTime(dt.Rows[0]["dataSorteio"]),
+                        Convert.ToDateTime(dt.Rows[0]["dataValidadeSorteioInicio"]),
+                        Convert.ToDateTime(dt.Rows[0]["dataValidadeSorteioFim"]),
+                        Convert.ToBoolean(dt.Rows[0]["associarVagasSequenciais"]),
+                        Convert.ToInt32(dt.Rows[0]["qtdeVagasPorUnidade"]),
+                        Convert.ToInt32(dt.Rows[0]["idCondominio"]));
+
+                    return sorteioVagas;
+                }*/
+
+        /*        private DataTable BuscarSorteioMaisRecente(int idCondominio)
+                {
+                    return BuscaSorteioVagas.BuscarIdDoResultadoDoUltimoSorteioParaOCondominio(idCondominio);
+                }
+        */
     }
 }

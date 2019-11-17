@@ -16,7 +16,10 @@ namespace MeuCondominio1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                ViewState["RefUrl"] = Request.UrlReferrer.ToString();
+            }
         }
 
         private ReservaEspacoLazer ConstruirObjetoReserva()
@@ -55,6 +58,13 @@ namespace MeuCondominio1
         protected void Bt_Reservar(object sender, EventArgs e)
         {
             GravarReserva();
+        }
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            object refUrl = ViewState["RefUrl"];
+            if (refUrl != null)
+                Response.Redirect((string)refUrl);
         }
     }
 }

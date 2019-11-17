@@ -21,7 +21,7 @@ namespace MeuCondominio1
         {
             if (!IsPostBack)
             {
-
+                ViewState["RefUrl"] = Request.UrlReferrer.ToString();
                 /*CarregarGriView();*/
             }
             tipoUsuario = Convert.ToInt32(Session["tipoUser"]);
@@ -203,5 +203,12 @@ namespace MeuCondominio1
             }
         }*/
         #endregion
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            object refUrl = ViewState["RefUrl"];
+            if (refUrl != null)
+                Response.Redirect((string)refUrl);
+        }
     }
 }

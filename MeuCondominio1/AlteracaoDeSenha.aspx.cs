@@ -15,6 +15,11 @@ namespace MeuCondominio1
         protected void Page_Load(object sender, EventArgs e)
         {
             origem = Request["origem"];
+
+            if (!IsPostBack)
+            {
+                ViewState["RefUrl"] = Request.UrlReferrer.ToString();
+            }
         }
 
         protected void Bt_AlterarSenha(object sender, EventArgs e)
@@ -58,6 +63,14 @@ namespace MeuCondominio1
                     btVerificar.Visible = true;
                     break;
             }
+        }
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            object refUrl = ViewState["RefUrl"];
+            if (refUrl != null)
+                Response.Redirect((string)refUrl);
+
         }
     }
 }

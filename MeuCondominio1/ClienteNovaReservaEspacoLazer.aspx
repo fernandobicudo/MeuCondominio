@@ -34,6 +34,7 @@
             <asp:CheckBox ID="chkRegulamento" runat="server" />
             <asp:LinkButton ID="lkbRegulamento" runat="server">Li e concordo com o regulamento.</asp:LinkButton><br />
             <asp:Button ID="btReservar" runat="server" Text="Reservar" CssClass="botaoDefault" OnClick="Bt_Reservar"/><br /><br />
+            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick"/><br />
         </div>
         <!--<div class="container">
             <div class="row">

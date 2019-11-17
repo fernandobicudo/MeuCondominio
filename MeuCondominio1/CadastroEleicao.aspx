@@ -49,6 +49,7 @@
                 </ContentTemplate>
             </asp:UpdatePanel>
             <br />
+            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick"/>
             <asp:Button ID="btCadastrar" runat="server" Text="Cadastrar" CssClass="botaoDefault botaoHover" OnClick="CadastrarEleicao_Click"/><br/>
             <asp:Button ID="btEncerraEleicao" runat="server" Text="Encerrar eleição" CssClass="botaoPequeno" OnClick="Encerrar_Eleicao_Click"/>
         </div>

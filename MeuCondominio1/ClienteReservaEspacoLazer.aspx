@@ -15,7 +15,8 @@
             <asp:GridView ID="gvReservas" runat="server" AutoGenerateColumns="false">
                 <Columns>
                     <asp:BoundField DataField="nomeEspacoLazer" HeaderText="Local"/>
-                    <asp:BoundField DataField="dtReserva" HeaderText="Data reservada"/>
+                    <asp:BoundField DataField="dtInicioReserva" HeaderText="Início da Reserva"/>
+                    <asp:BoundField DataField="dtFimReserva" HeaderText="Término da Reserva" />
                 </Columns>
             </asp:GridView><br/>
             <asp:Button ID="btNovaReserva" runat="server" Text="Nova reserva" CssClass="botaoDefault" OnClick="Bt_NovaReserva"/><br />

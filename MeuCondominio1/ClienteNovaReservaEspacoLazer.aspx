@@ -29,8 +29,51 @@
                 <asp:ListItem>Salão de festas</asp:ListItem>
                 <asp:ListItem>Churrasqueira</asp:ListItem>
             </asp:DropDownList><br />
-            <asp:Label ID="lbDataReserva" runat="server" Text="Data: "></asp:Label>
-            <asp:TextBox ID="txDataReserva" runat="server" CssClass="campoTextoDatePicker_p" AutoCompleteType="Disabled"></asp:TextBox><br />
+            <asp:Label ID="lbDataReserva" runat="server" Text="Data de início: "></asp:Label>
+            <asp:TextBox ID="txDataInicioReserva" runat="server" CssClass="campoTextoDatePicker_p" AutoCompleteType="Disabled"></asp:TextBox>
+            <asp:Label ID="lbHoraInicioReserva" runat="server" Text="Hora: "></asp:Label>
+            <asp:DropDownList ID="ddHoraIninioReserva" runat="server">
+                <asp:ListItem>6:00</asp:ListItem>
+                <asp:ListItem>7:00</asp:ListItem>
+                <asp:ListItem>8:00</asp:ListItem>
+                <asp:ListItem>9:00</asp:ListItem>
+                <asp:ListItem>10:00</asp:ListItem>
+                <asp:ListItem>11:00</asp:ListItem>
+                <asp:ListItem>12:00</asp:ListItem>
+                <asp:ListItem>13:00</asp:ListItem>
+                <asp:ListItem>14:00</asp:ListItem>
+                <asp:ListItem>15:00</asp:ListItem>
+                <asp:ListItem>16:00</asp:ListItem>
+                <asp:ListItem>17:00</asp:ListItem>
+                <asp:ListItem>18:00</asp:ListItem>
+                <asp:ListItem>19:00</asp:ListItem>
+                <asp:ListItem>20:00</asp:ListItem>
+                <asp:ListItem>21:00</asp:ListItem>
+
+            </asp:DropDownList><br />
+            <asp:Label ID="lbDataFimReserva" runat="server" Text="Data de término:"></asp:Label>
+            <asp:TextBox ID="txDataFimReserva" runat="server" CssClass="campoTextoDatePicker_p" AutoCompleteType="Disabled"></asp:TextBox>
+            <asp:Label ID="lbHoraFimReserva" runat="server" Text="Hora: "></asp:Label>
+            <asp:DropDownList ID="ddHoraFimReserva" runat="server" CssClass="comboBox">
+                <asp:ListItem>8:00</asp:ListItem>
+                <asp:ListItem>9:00</asp:ListItem>
+                <asp:ListItem>10:00</asp:ListItem>
+                <asp:ListItem>11:00</asp:ListItem>
+                <asp:ListItem>12:00</asp:ListItem>
+                <asp:ListItem>13:00</asp:ListItem>
+                <asp:ListItem>14:00</asp:ListItem>
+                <asp:ListItem>15:00</asp:ListItem>
+                <asp:ListItem>16:00</asp:ListItem>
+                <asp:ListItem>17:00</asp:ListItem>
+                <asp:ListItem>18:00</asp:ListItem>
+                <asp:ListItem>19:00</asp:ListItem>
+                <asp:ListItem>20:00</asp:ListItem>
+                <asp:ListItem>21:00</asp:ListItem>
+                <asp:ListItem>22:00</asp:ListItem>
+                <asp:ListItem>23:00</asp:ListItem>
+                <asp:ListItem>23:59</asp:ListItem>
+
+            </asp:DropDownList><br />
             <asp:CheckBox ID="chkRegulamento" runat="server" />
             <asp:LinkButton ID="lkbRegulamento" runat="server">Li e concordo com o regulamento.</asp:LinkButton><br />
             <asp:Button ID="btReservar" runat="server" Text="Reservar" CssClass="botaoDefault" OnClick="Bt_Reservar"/><br /><br />

@@ -24,12 +24,15 @@ namespace MeuCondominio2.DAO
             MetodosBD.ExecutaSQL(SQL);
         }
 
-        internal static DataTable PesquisarEspacoLazerPorNome(string nomeEspaco)
+        internal static DataTable PesquisarEspacoLazerPorNome(string nomeEspaco, int idCondominio)
         {
             string SQL;
             DataTable dt;
             SQL = String.Format(@"SELECT * FROM `EspacoLazer`
-                                  WHERE `nomeEspacoLazer` = '{0}';", nomeEspaco);
+                                  WHERE `nomeEspacoLazer` = '{0}'
+                                  AND `idCondominio` = {1};",
+                                  nomeEspaco,
+                                  idCondominio);
             dt = MetodosBD.ExecutaSelect(SQL);
             return dt;
 

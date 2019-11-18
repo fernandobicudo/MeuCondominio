@@ -9,10 +9,10 @@ namespace MeuCondominio2.Services.EspacoLazer
 {
     public class BuscaEspacoLazer
     {
-        public DataTable BuscarEspacoLazer(string nomeEspaco)
+        public DataTable BuscarEspacoLazer(string nomeEspaco, int idCondominio)
         {
             DataTable dt;
-            dt = DAOEspacoLazer.PesquisarEspacoLazerPorNome(nomeEspaco);
+            dt = DAOEspacoLazer.PesquisarEspacoLazerPorNome(nomeEspaco, idCondominio);
             return dt;
         }
     }

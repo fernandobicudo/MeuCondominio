@@ -49,13 +49,67 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.WebControls.Label lbDataReserva;
         
         /// <summary>
-        /// txDataReserva control.
+        /// txDataInicioReserva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txDataReserva;
+        protected global::System.Web.UI.WebControls.TextBox txDataInicioReserva;
+        
+        /// <summary>
+        /// lbHoraInicioReserva control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbHoraInicioReserva;
+        
+        /// <summary>
+        /// ddHoraIninioReserva control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddHoraIninioReserva;
+        
+        /// <summary>
+        /// lbDataFimReserva control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbDataFimReserva;
+        
+        /// <summary>
+        /// txDataFimReserva control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txDataFimReserva;
+        
+        /// <summary>
+        /// lbHoraFimReserva control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbHoraFimReserva;
+        
+        /// <summary>
+        /// ddHoraFimReserva control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddHoraFimReserva;
         
         /// <summary>
         /// chkRegulamento control.

@@ -15,12 +15,16 @@ namespace MeuCondominio2.DAO
             string SQL;
             Formatadores formatadores = new Formatadores();
 
-            string dataReserva = formatadores.ConversaoDeDataParaStringMySQL(reservaEspacoLazer.GetDataReserva());
+            string dataInicioReserva = formatadores.ConversaoDeDataParaStringMySQL(reservaEspacoLazer.GetDataInicioReserva());
+            string dataFimReserva = formatadores.ConversaoDeDataParaStringMySQL(reservaEspacoLazer.GetDataFimReserva());
 
-
-            SQL = String.Format(@"INSERT INTO `ReservaEspacoLazer` (`dtReserva`, `idUnidade`, `idEspacoLazer`)
-                                VALUES ('{0}', {1}, {2}); ",
-                                dataReserva, reservaEspacoLazer.GetIdUnidade(), reservaEspacoLazer.GetIdEspacoLazer());
+            SQL = String.Format(@"INSERT INTO `ReservaEspacoLazer`
+                                (`dtInicioReserva`, `dtFimReserva`, `idUnidade`, `idEspacoLazer`) 
+                                VALUES ('{0}', '{1}', {2}, {3}); ",
+                                dataInicioReserva,
+                                dataFimReserva,
+                                reservaEspacoLazer.GetIdUnidade(),
+                                reservaEspacoLazer.GetIdEspacoLazer());
 
             MetodosBD.ExecutaSQL(SQL);
         }
@@ -33,7 +37,10 @@ namespace MeuCondominio2.DAO
                                 JOIN `EspacoLazer` el ON el.idEspacoLazer = re.idEspacoLazer 
                                 JOIN `Condominio` co ON co.idCondominio = el.idCondominio 
                                 WHERE co.idCondominio = {0} 
-                                AND re.idUnidade = {1};", idCondominio, idUsuario);
+                                AND re.idUnidade = {1}
+                                ORDER BY `dtInicioReserva`;",
+                                idCondominio, idUsuario);
+
             dt = MetodosBD.ExecutaSelect(SQL);
             return dt;
         }

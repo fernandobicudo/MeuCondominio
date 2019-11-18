@@ -8,21 +8,28 @@ namespace MeuCondominio2.Model
     public class ReservaEspacoLazer
     {
         private int idReservaEspacoLazer;
-        private DateTime dataReserva;
+        private DateTime dataInicioReserva;
+        private DateTime dataFimReserva;
         private int idUnidade;
         private int idEspacoLazer;
 
-        public ReservaEspacoLazer(int idReservaEspacoLazer, DateTime dataReserva, int idUnidade, int idEspacoLazer)
+        public ReservaEspacoLazer()
         {
-            this.idReservaEspacoLazer = idReservaEspacoLazer;
-            this.dataReserva = dataReserva;
+        }
+
+        public ReservaEspacoLazer(DateTime dataInicioReserva, DateTime dataFimReserva, int idUnidade, int idEspacoLazer)
+        {
+            this.dataInicioReserva = dataInicioReserva;
+            this.dataFimReserva = dataFimReserva;
             this.idUnidade = idUnidade;
             this.idEspacoLazer = idEspacoLazer;
         }
 
-        public ReservaEspacoLazer(DateTime dataReserva, int idUnidade, int idEspacoLazer)
+        public ReservaEspacoLazer(int idReservaEspacoLazer, DateTime dataInicioReserva, DateTime dataFimReserva, int idUnidade, int idEspacoLazer)
         {
-            this.dataReserva = dataReserva;
+            this.idReservaEspacoLazer = idReservaEspacoLazer;
+            this.dataInicioReserva = dataInicioReserva;
+            this.dataFimReserva = dataFimReserva;
             this.idUnidade = idUnidade;
             this.idEspacoLazer = idEspacoLazer;
         }
@@ -37,15 +44,26 @@ namespace MeuCondominio2.Model
             idReservaEspacoLazer = value;
         }
 
-        public DateTime GetDataReserva()
+        public DateTime GetDataInicioReserva()
         {
-            return dataReserva;
+            return dataInicioReserva;
         }
 
-        public void SetDataReserva(DateTime value)
+        public void SetDataInicioReserva(DateTime value)
         {
-            dataReserva = value;
+            dataInicioReserva = value;
         }
+
+        public DateTime GetDataFimReserva()
+        {
+            return dataFimReserva;
+        }
+
+        public void SetDataFimReserva(DateTime value)
+        {
+            dataFimReserva = value;
+        }
+
 
         public int GetIdUnidade()
         {

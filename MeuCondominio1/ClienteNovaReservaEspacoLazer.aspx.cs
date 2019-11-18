@@ -24,7 +24,8 @@ namespace MeuCondominio1
 
         private ReservaEspacoLazer ConstruirObjetoReserva()
         {
-            DateTime dataReserva;
+            DateTime dataInicioReserva, dataFimReserva;
+            string horaInicio, horaFim;
             DataTable dt;
             int idUnidade, idCondominio, idUsuario, idEspacoLazer;
             Formatadores formatadores = new Formatadores();
@@ -38,13 +39,20 @@ namespace MeuCondominio1
             dt = buscaUnidade.BuscarUnidadePorCondominoDoCondominio(idUsuario, idCondominio);
             idUnidade = Convert.ToInt32(dt.Rows[0]["idUnidade"]);
 
-            dt = buscaEspacoLazer.BuscarEspacoLazer(ddTipoDeEspaco.SelectedValue.ToString());
+            dt = buscaEspacoLazer.BuscarEspacoLazer(ddTipoDeEspaco.SelectedValue.ToString(), idCondominio);
 
             idEspacoLazer = Convert.ToInt32(dt.Rows[0]["idEspacoLazer"]);
 
-            dataReserva = formatadores.FormatarDataParaBancoDeDados(txDataReserva.Text);
+            horaInicio = ddHoraIninioReserva.SelectedValue;
+            horaFim = ddHoraFimReserva.SelectedValue;
 
-            ReservaEspacoLazer reservaEspacoLazer = new ReservaEspacoLazer(dataReserva, idUnidade, idEspacoLazer);
+            horaInicio += ":00";
+            horaFim += ":00";
+
+            dataInicioReserva = Convert.ToDateTime(txDataInicioReserva.Text + " " + horaInicio);
+            dataFimReserva = Convert.ToDateTime(txDataFimReserva.Text + " " + horaFim);
+
+            ReservaEspacoLazer reservaEspacoLazer = new ReservaEspacoLazer(dataInicioReserva, dataFimReserva, idUnidade, idEspacoLazer);
 
             return reservaEspacoLazer;
         }

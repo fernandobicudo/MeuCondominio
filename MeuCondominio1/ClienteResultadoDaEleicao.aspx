@@ -23,6 +23,7 @@
                     <asp:BoundField DataField="QtdVotos" HeaderText="Votos recebidos" />
                 </Columns>
             </asp:GridView><br/>
+            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick"/>
         </div>
     </form>
 </body>

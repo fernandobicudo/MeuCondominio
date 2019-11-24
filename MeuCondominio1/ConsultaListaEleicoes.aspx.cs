@@ -206,9 +206,21 @@ namespace MeuCondominio1
 
         protected void BtVoltarClick(object sender, EventArgs e)
         {
-            object refUrl = ViewState["RefUrl"];
-            if (refUrl != null)
-                Response.Redirect((string)refUrl);
+            //object refUrl = ViewState["RefUrl"];
+            //if (refUrl != null)
+            int tipoUsuario = Convert.ToInt32(Session["tipoUser"]);
+
+            switch (tipoUsuario)
+            {
+                case 2:
+                    Response.Redirect("MenuInicialSindico.aspx");
+                    break;
+                case 6:
+                    Response.Redirect("MenuInicialCondominoMorador.aspx");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

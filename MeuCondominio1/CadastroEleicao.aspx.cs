@@ -160,7 +160,7 @@ namespace MeuCondominio1
         {
             object refUrl = ViewState["RefUrl"];
             if (refUrl != null)
-                Response.Redirect((string)refUrl);
+                Response.Redirect("ConsultaListaEleicoes.aspx");
         }
 
 

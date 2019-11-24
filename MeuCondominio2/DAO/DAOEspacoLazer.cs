@@ -35,7 +35,6 @@ namespace MeuCondominio2.DAO
                                   idCondominio);
             dt = MetodosBD.ExecutaSelect(SQL);
             return dt;
-
         }
     }
 }

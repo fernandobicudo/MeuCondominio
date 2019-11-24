@@ -72,5 +72,10 @@ namespace MeuCondominio1
                         Label4.Text = Session["tipoUser"].ToString();
                         Label5.Text = Session["codigoCondominio"].ToString();*/
         }
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuInicialCondominoMorador.aspx");
+        }
     }
 }

@@ -141,5 +141,10 @@ namespace MeuCondominio1
                 gravaRelacaoClienteUnidade.GravarRelacaoClienteUnidade(relacao);
             }
         }
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            Response.Redirect("MenuInicialSindico.aspx");
+        }
     }
 }

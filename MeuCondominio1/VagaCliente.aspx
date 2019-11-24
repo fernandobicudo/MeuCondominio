@@ -32,6 +32,7 @@
         <div id="validadeVaga">
             <asp:Panel ID="pnValidadeVaga" runat="server"></asp:Panel>
         </div>
+        <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick"/>
     </form>
 </body>
 </html>

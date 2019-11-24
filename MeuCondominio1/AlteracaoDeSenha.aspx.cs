@@ -67,9 +67,9 @@ namespace MeuCondominio1
 
         protected void BtVoltarClick(object sender, EventArgs e)
         {
-            object refUrl = ViewState["RefUrl"];
-            if (refUrl != null)
-                Response.Redirect((string)refUrl);
+            //object refUrl = ViewState["RefUrl"];
+            //if (refUrl != null)
+                Response.Redirect("MenuInicialCondominoMorador.aspx");
 
         }
     }

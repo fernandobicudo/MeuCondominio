@@ -49,7 +49,7 @@
                     <asp:PostBackTrigger ControlID="btImportar" />
                 </Triggers>
             </asp:UpdatePanel>
-            
+            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick"/>
         </div>
     </form>
 </body>

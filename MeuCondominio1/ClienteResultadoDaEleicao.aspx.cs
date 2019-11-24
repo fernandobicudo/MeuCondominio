@@ -46,5 +46,10 @@ namespace MeuCondominio1
         }*/
 
         #endregion
+
+        protected void BtVoltarClick(object sender, EventArgs e)
+        {
+            Response.Redirect("ConsultaListaEleicoes.aspx");
+        }
     }
 }

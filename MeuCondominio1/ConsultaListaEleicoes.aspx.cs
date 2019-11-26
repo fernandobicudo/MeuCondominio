@@ -208,7 +208,7 @@ namespace MeuCondominio1
         {
             //object refUrl = ViewState["RefUrl"];
             //if (refUrl != null)
-            int tipoUsuario = Convert.ToInt32(Session["tipoUser"]);
+            
 
             switch (tipoUsuario)
             {

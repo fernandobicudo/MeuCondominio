@@ -24,15 +24,15 @@
     <h1>Nova reserva</h1>
     <form id="frmNovaReserva" runat="server">
         <div>
-            <asp:Label ID="lbEspacoReserva" runat="server" Text="Espaço a reservar: "></asp:Label>
-            <asp:DropDownList ID="ddTipoDeEspaco" runat="server">
+            <asp:Label ID="lbEspacoReserva" runat="server" Text="Espaço a reservar" CssClass="label"></asp:Label>
+            <asp:DropDownList ID="ddTipoDeEspaco" runat="server" CssClass="comboBox">
                 <asp:ListItem>Salão de festas</asp:ListItem>
                 <asp:ListItem>Churrasqueira</asp:ListItem>
             </asp:DropDownList><br />
-            <asp:Label ID="lbDataReserva" runat="server" Text="Data de início: "></asp:Label>
+            <asp:Label ID="lbDataReserva" runat="server" Text="Data de início" CssClass="label"></asp:Label>
             <asp:TextBox ID="txDataInicioReserva" runat="server" CssClass="campoTextoDatePicker_p" AutoCompleteType="Disabled"></asp:TextBox>
-            <asp:Label ID="lbHoraInicioReserva" runat="server" Text="Hora: "></asp:Label>
-            <asp:DropDownList ID="ddHoraIninioReserva" runat="server">
+            <asp:Label ID="lbHoraInicioReserva" runat="server" Text="Hora" CssClass="label"></asp:Label>
+            <asp:DropDownList ID="ddHoraIninioReserva" runat="server" CssClass="comboBox">
                 <asp:ListItem>6:00</asp:ListItem>
                 <asp:ListItem>7:00</asp:ListItem>
                 <asp:ListItem>8:00</asp:ListItem>
@@ -51,9 +51,9 @@
                 <asp:ListItem>21:00</asp:ListItem>
 
             </asp:DropDownList><br />
-            <asp:Label ID="lbDataFimReserva" runat="server" Text="Data de término:"></asp:Label>
+            <asp:Label ID="lbDataFimReserva" runat="server" Text="Data de término" CssClass="label"></asp:Label>
             <asp:TextBox ID="txDataFimReserva" runat="server" CssClass="campoTextoDatePicker_p" AutoCompleteType="Disabled"></asp:TextBox>
-            <asp:Label ID="lbHoraFimReserva" runat="server" Text="Hora: "></asp:Label>
+            <asp:Label ID="lbHoraFimReserva" runat="server" Text="Hora" CssClass="label"></asp:Label>
             <asp:DropDownList ID="ddHoraFimReserva" runat="server" CssClass="comboBox">
                 <asp:ListItem>8:00</asp:ListItem>
                 <asp:ListItem>9:00</asp:ListItem>
@@ -76,7 +76,7 @@
             </asp:DropDownList><br />
             <asp:CheckBox ID="chkRegulamento" runat="server" />
             <asp:LinkButton ID="lkbRegulamento" runat="server">Li e concordo com o regulamento.</asp:LinkButton><br />
-            <asp:Button ID="btReservar" runat="server" Text="Reservar" CssClass="botaoDefault" OnClick="Bt_Reservar"/><br /><br />
+            <asp:Button ID="btReservar" runat="server" Text="Reservar" CssClass="botaoDefault botaoHover" OnClick="Bt_Reservar"/><br /><br />
             <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick"/><br />
         </div>
         <!--<div class="container">

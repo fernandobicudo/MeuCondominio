@@ -7,30 +7,30 @@
     <link rel="stylesheet" href="./css/estilos-global.css" />
     <title>Meu Perfil</title>
 </head>
-<body class="MeuPerfil">
+<body class="cadastro">
     <h1>Meu Perfil</h1>
     <form id="frmMeuPerfil" runat="server">
         <div>
-            <asp:Label ID="lbNomeCliente" runat="server" Text="Nome"></asp:Label>
-            <asp:TextBox ID="txNomeCliente" runat="server"></asp:TextBox><br/>
-            <asp:Label ID="lbCPF" runat="server" Text="CPF"></asp:Label>
-            <asp:TextBox ID="txCPF" runat="server"></asp:TextBox><br/>
-            <asp:Label ID="lbEmail" runat="server" Text="Email"></asp:Label>
-            <asp:TextBox ID="txEmail" runat="server"></asp:TextBox>
-            <asp:Label ID="txEndereco" runat="server" Text="Logradouro"></asp:Label>
-            <asp:TextBox ID="txLogradouro" runat="server"></asp:TextBox><br/>
-            <asp:Label ID="lbNumeroLogradouro" runat="server" Text="Número"></asp:Label>
-            <asp:TextBox ID="txNumeroLogradouro" runat="server"></asp:TextBox><br/>
-            <asp:Label ID="lbComplemento" runat="server" Text="Complemento"></asp:Label>
-            <asp:TextBox ID="txComplemento" runat="server"></asp:TextBox><br/>
-            <asp:Label ID="lbBairro" runat="server" Text="LabelBairro"></asp:Label>
-            <asp:TextBox ID="txBairro" runat="server"></asp:TextBox><br/>
-            <asp:Label ID="lbCidade" runat="server" Text="Cidade"></asp:Label>
-            <asp:TextBox ID="txCidade" runat="server"></asp:TextBox><br/>
-            <asp:Label ID="lbEstado" runat="server" Text="Estado"></asp:Label>
-            <asp:TextBox ID="txEstado" runat="server"></asp:TextBox><br/>
-            <asp:Label ID="lbCEP" runat="server" Text="CEP"></asp:Label>
-            <asp:TextBox ID="txCEP" runat="server"></asp:TextBox><br/>
+            <asp:Label ID="lbNomeCliente" runat="server" Text="Nome" CssClass="label"></asp:Label>
+            <asp:TextBox ID="txNomeCliente" runat="server" CssClass="campoTexto"></asp:TextBox><br/>
+            <asp:Label ID="lbCPF" runat="server" Text="CPF" CssClass="label"></asp:Label>
+            <asp:TextBox ID="txCPF" runat="server" CssClass="campoTexto"></asp:TextBox><br/>
+            <asp:Label ID="lbEmail" runat="server" Text="Email" CssClass="label"></asp:Label>
+            <asp:TextBox ID="txEmail" runat="server" CssClass="campoTexto"></asp:TextBox>
+            <asp:Label ID="txEndereco" runat="server" Text="Logradouro" CssClass="label"></asp:Label>
+            <asp:TextBox ID="txLogradouro" runat="server" CssClass="campoTexto"></asp:TextBox><br/>
+            <asp:Label ID="lbNumeroLogradouro" runat="server" Text="Número" CssClass="label"></asp:Label>
+            <asp:TextBox ID="txNumeroLogradouro" runat="server" CssClass="campoTexto"></asp:TextBox><br/>
+            <asp:Label ID="lbComplemento" runat="server" Text="Complemento" CssClass="label"></asp:Label>
+            <asp:TextBox ID="txComplemento" runat="server" CssClass="campoTexto"></asp:TextBox><br/>
+            <asp:Label ID="lbBairro" runat="server" Text="LabelBairro" CssClass="label"></asp:Label>
+            <asp:TextBox ID="txBairro" runat="server" CssClass="campoTexto"></asp:TextBox><br/>
+            <asp:Label ID="lbCidade" runat="server" Text="Cidade" CssClass="label"></asp:Label>
+            <asp:TextBox ID="txCidade" runat="server" CssClass="campoTexto"></asp:TextBox><br/>
+            <asp:Label ID="lbEstado" runat="server" Text="Estado" CssClass="label"></asp:Label>
+            <asp:TextBox ID="txEstado" runat="server" CssClass="campoTexto"></asp:TextBox><br/>
+            <asp:Label ID="lbCEP" runat="server" Text="CEP" CssClass="label"></asp:Label>
+            <asp:TextBox ID="txCEP" runat="server" CssClass="campoTexto"></asp:TextBox><br/>
             <asp:Button ID="btAlterarSenha" runat="server" Text="Alterar senha" CssClass="botaoPequeno botaoHover" OnClick="Bt_AlterarSenha" />
             <h2>Minhas unidades</h2>
             <asp:GridView ID="gvUnidadesDoCliente" runat="server" AutoGenerateColumns="False">

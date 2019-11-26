@@ -12,7 +12,7 @@
     <form id="frmAlterarSenha" runat="server" autocomplete="off">
         <div>
             <asp:Label ID="lbEmail" runat="server" Text="Email"></asp:Label>
-            <asp:TextBox ID="txEmail" runat="server" AutoCompleteType="Disabled" autocomplete="off"></asp:TextBox>
+            <asp:TextBox ID="txEmail" runat="server" AutoCompleteType="Disabled" autocomplete="off" ></asp:TextBox>
             <asp:Button ID="btVerificar" runat="server" Text="Verificar" />
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">

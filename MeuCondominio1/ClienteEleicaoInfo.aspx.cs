@@ -82,14 +82,17 @@ namespace MeuCondominio1
 
 
             lbtipoEleicao.Attributes.Add("runat", "server");
+            lbtipoEleicao.Attributes.Add("CssClass", "label");
             lbtipoEleicao.Text = "Tipo de votação: ";
             tipoEleicao.Attributes.Add("runat", "server");
             tipoEleicao.Text = eleicao.GetTipoEleicao();
             lbDescricaoEleicao.Attributes.Add("runat", "server");
+            lbDescricaoEleicao.Attributes.Add("CssClass", "label");
             lbDescricaoEleicao.Text = "Descrição: ";
             descricaoEleicao.Attributes.Add("runat", "server");
             descricaoEleicao.Text = eleicao.GetDescricaoEleicao();
             lbStatusEleicao.Attributes.Add("runat", "server");
+            lbStatusEleicao.Attributes.Add("CssClass", "label");
             lbStatusEleicao.Text = "Situação: ";
 
             if (eleicao.GetStatusEleicao())
@@ -101,10 +104,13 @@ namespace MeuCondominio1
             statusEleicao.Text = nomeStatusEleicao;
 
             lbDataInicioEleicao.Attributes.Add("runat", "server");
+            lbDataInicioEleicao.Attributes.Add("CssClass", "label");
             lbDataInicioEleicao.Text = "Início: ";
             dataInicioEleicao.Attributes.Add("runat", "server");
+            dataInicioEleicao.Attributes.Add("CssClass", "label");
             dataInicioEleicao.Text = eleicao.GetDataInicioEleicao().ToString();
             lbDataFimEleicao.Attributes.Add("runat", "server");
+            lbDataFimEleicao.Attributes.Add("CssClass", "label");
             lbDataFimEleicao.Text = "Realização: ";
             dataFimEleicao.Attributes.Add("runat", "server");
             dataFimEleicao.Text = eleicao.GetDataFimEleicao().ToString();

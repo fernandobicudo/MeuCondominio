@@ -15,32 +15,32 @@
     </script>
     <title>Cadastro de Eleição</title>
 </head>
-<body>
+<body class="cadastro">
     <h1>Cadastro de Eleição</h1>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="lbNomeEleicao" runat="server" Text="Título da Eleição"></asp:Label>
+            <asp:Label ID="lbNomeEleicao" runat="server" Text="Título da Eleição" CssClass="label"></asp:Label>
             <asp:TextBox ID="txNomeEleicao" runat="server" CssClass="campoTexto"></asp:TextBox><br />
-            <asp:Label ID="lbTipoEleicao" runat="server" Text="Tipo de Eleição"></asp:Label>
-            <asp:DropDownList ID="ddTipoEleicao" runat="server">
+            <asp:Label ID="lbTipoEleicao" runat="server" Text="Tipo de Eleição" CssClass="label" ></asp:Label>
+            <asp:DropDownList ID="ddTipoEleicao" runat="server" CssClass="comboBox">
                 <asp:ListItem>Plebiscito</asp:ListItem>
                 <asp:ListItem>Eleição para Síndico</asp:ListItem>
                 <asp:ListItem>Projetos e Serviços Prediais</asp:ListItem>
-            </asp:DropDownList><br />
-            <asp:Label ID="lbDescricao" runat="server" Text="Descrição" ></asp:Label>
+            </asp:DropDownList><br /><br />
+            <asp:Label ID="lbDescricao" runat="server" Text="Descrição" CssClass="label"></asp:Label>
             <asp:TextBox ID="txDescricao" runat="server" CssClass="campoTexto" Length="300px"></asp:TextBox><br />
-            <asp:Label ID="lbDataInicio" runat="server" Text="Data de Abertura da votação"></asp:Label>
-            <asp:TextBox ID="txDataInicio" runat="server" CssClass="campoTextoDatePicker_p" MaxLength="6" AutoCompleteType="Disabled"></asp:TextBox><br />
+            <asp:Label ID="lbDataInicio" runat="server" Text="Data de Abertura" CssClass="label"></asp:Label>
+            <asp:TextBox ID="txDataInicio" runat="server" CssClass="campoTextoDatePicker_p" MaxLength="6" AutoCompleteType="Disabled"></asp:TextBox><br /><br />
             <!--TODO: pensar em campo Hora-->
-            <asp:Label ID="lbDataFim" runat="server" Text="Data de Encerramento da Votação"></asp:Label>
+            <asp:Label ID="lbDataFim" runat="server" Text="Data de Encerramento" CssClass="label"></asp:Label>
             <asp:TextBox ID="txDataFim" runat="server" CssClass="campoTextoDatePicker_p" MaxLength="6" AutoCompleteType="Disabled"></asp:TextBox><br />
             <asp:Panel ID="pnInclusaoOpcaoaSerVotada" runat="server"></asp:Panel><br />
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
             <asp:UpdatePanel ID="upAdicionarOpcao" runat="server">
                 <ContentTemplate>
-                    <asp:Label ID="lbOpcoesDeVotacao" runat="server" Text="Opções de votação"></asp:Label>
-                    <asp:TextBox ID="txOpcao" runat="server"></asp:TextBox>
+                    <asp:Label ID="lbOpcoesDeVotacao" runat="server" Text="Opções de votação" CssClass="label"></asp:Label>
+                    <asp:TextBox ID="txOpcao" runat="server" CssClass="campoTexto"></asp:TextBox>
                     <asp:Button ID="btAdicionarOpcao" runat="server" OnClick="AdicionarOpcaodeVotacao" Text="Adicionar" CssClass=" botaoPequeno" />
                     <br />
                     <asp:BulletedList ID="blListaOpcoesAdicionadas" runat="server">

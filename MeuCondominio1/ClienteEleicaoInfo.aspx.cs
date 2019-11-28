@@ -215,12 +215,18 @@ namespace MeuCondominio1
             throw new NotImplementedException();
         }
 
-        protected void bt_Votar_Click(object sender, EventArgs e)
+        private void GravarVoto()
         {
             BuscaDadosDaOpcaoVotada();
             BuscaUnidadeDoCondominoNoCondominio();
             ConstruirObjetoVoto();
             GravaVoto.GravaVotoDaEleicao(voto);
+            Response.Write("<script>alert('Concluído com sucesso!')</script>");
+        }
+
+        protected void bt_Votar_Click(object sender, EventArgs e)
+        {
+            GravarVoto();
         }
 
 

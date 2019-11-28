@@ -140,6 +140,7 @@ namespace MeuCondominio1
                 GravaRelacaoClienteUnidade gravaRelacaoClienteUnidade = new GravaRelacaoClienteUnidade();
                 gravaRelacaoClienteUnidade.GravarRelacaoClienteUnidade(relacao);
             }
+            Response.Write("<script>alert('Concluído com sucesso!')</script>");
         }
 
         protected void BtVoltarClick(object sender, EventArgs e)

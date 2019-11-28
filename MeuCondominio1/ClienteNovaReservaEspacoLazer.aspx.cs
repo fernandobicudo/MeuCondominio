@@ -61,6 +61,7 @@ namespace MeuCondominio1
         {
             GravaReservaEspacoLazer gravaReservaEspacoLazer = new GravaReservaEspacoLazer();
             gravaReservaEspacoLazer.GravarReservaEspacoLazer(ConstruirObjetoReserva());
+            Response.Write("<script>alert('Concluído com sucesso!')</script>");
         }
 
         protected void Bt_Reservar(object sender, EventArgs e)

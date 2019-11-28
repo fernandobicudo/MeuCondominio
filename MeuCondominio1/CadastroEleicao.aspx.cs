@@ -91,6 +91,9 @@ namespace MeuCondominio1
 
             GravaOpcoesVotacao gravaOpcoesVotacao = new GravaOpcoesVotacao();
             gravaOpcoesVotacao.GravaOpcoesDeVotacaoDaEleicaoDePlebiscito(OpcoesVotacaoPlebiscito());
+
+            Response.Write("<script>alert('Concluído com sucesso!')</script>");
+            
         }
 
 
@@ -108,6 +111,7 @@ namespace MeuCondominio1
         {
             AlteraEleicao alteraEleicao = new AlteraEleicao();
             alteraEleicao.EncerrarEleicao(eleicao.GetIdEleicao());
+            Response.Write("<script>alert('Concluído com sucesso!')</script>");
         }
 
         private void ConfigurarModosDeTela()

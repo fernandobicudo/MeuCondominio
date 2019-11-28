@@ -28,7 +28,11 @@ namespace MeuCondominio1
 
             dt = buscaResultadoDoSorteio.
                 BuscarVagasDoResultadoPorIdDoClienteEIddoCondominio(idCliente, idCondominio);
-            Label tituloSorteio = new Label();
+            Label tituloSorteio = new Label {
+                CssClass = "label"
+            };
+
+            
 
             if (dt.Rows.Count > 0)
             {
@@ -59,7 +63,7 @@ namespace MeuCondominio1
                 pnValidadeVaga.Controls.Add(dataValidade);
             }
             else
-                tituloSorteio.Text = "Não há sorteios realizados até o momento";
+                tituloSorteio.Text = "Não há resultados de sorteios disponíveis no momento";
 
             pnHeaderVaga.Controls.Add(tituloSorteio);
 

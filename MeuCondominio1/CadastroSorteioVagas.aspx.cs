@@ -36,6 +36,8 @@ namespace MeuCondominio1
             */
             GravaSorteioVagas gravaSorteioVagas = new GravaSorteioVagas();
             gravaSorteioVagas.GravarSorteioVagas(sorteioVagas);
+
+            Response.Write("<script>alert('Concluído com sucesso!')</script>");
         }
 
 

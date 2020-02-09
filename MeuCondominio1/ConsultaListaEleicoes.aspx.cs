@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MeuCondominio2.Model;
 using MeuCondominio2.Services.Eleicao;
+using MeuCondominio2.Services.Ferramentas;
 
 namespace MeuCondominio1
 {
@@ -32,6 +33,7 @@ namespace MeuCondominio1
         private void ConstruirListaDeEleicoes()
         {
             DataTable dt;
+            Formatadores formatadores = new Formatadores();
 
             int idCondominio = Convert.ToInt32(Session["codigoCondominio"]);
             BuscaEleicao buscaEleicao = new BuscaEleicao();
@@ -81,7 +83,7 @@ namespace MeuCondominio1
             string tituloEleicao = gvEleicoes.SelectedRow.Cells[1].Text;
 
 
-            bool status = Convert.ToBoolean(gvEleicoes.SelectedRow.Cells[3].Text); ;
+            bool status = Convert.ToBoolean(gvEleicoes.SelectedRow.Cells[2].Text); 
 
             if (status)
             {

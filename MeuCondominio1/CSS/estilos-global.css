@@ -14,8 +14,8 @@ html {
 body {
     background-color: white; /**/
     border-radius: 10px;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
+    padding-left: 1em;
+    padding-right: 1em;
     margin: 2%;
     padding-top: 0.5em;
     padding-bottom: 1.5em;
@@ -28,22 +28,21 @@ body {
     bottom: 0.5em;
 }
 
-h1 {
+h1, h3 {
     background: #01579B;
     color: white;
     padding: 0.3em;
     border-radius: 10px;
     font-weight: bold;
-    margin-left: 2%;
-    margin-right: 2%;
 }
+
 
 .label {
     color: #333;
     font-weight: bolder;
     display: block;
     float: left;
-    padding-left: 1%;
+    padding-left: 0.5em;
     margin: 4px;
     vertical-align: middle;
 }
@@ -54,7 +53,7 @@ label {
     display: block;
     float: left;
     padding-left: 1%;
-    margin: 4px;
+    margin: 0.5em;
     vertical-align: middle;
 }
 
@@ -62,7 +61,7 @@ TextBox {
     padding: 1em;
 }
 
-.campoTexto, .campoTextoDatePicker_p {
+.campoTexto {
     height: 1.5em;
     display: block;
     position: static;
@@ -75,9 +74,6 @@ TextBox {
     width: 30em;
 }
 
-.campoTextoDatePicker_p {
-    width: 6em;
-}
 
 
 .alerta {
@@ -168,15 +164,6 @@ tr {
     margin-left: 20%;
 }
 
-.campoTextoDatePicker {
-    width: 60%;
-    margin-left: 20%;
-}
-
-.campoTextoDatePicker { /*.recuperacao .campoTexto */
-    width: 60%;
-    margin-left: 20%;
-}
 
 .cadastro {
     width: 80%;
@@ -185,7 +172,7 @@ tr {
     padding-bottom: 1%;
 }
 
-    .cadastro .campoTexto, .campoTextoDatePicker_p, .comboBox {
+    .cadastro .campoTexto, .comboBox {
         margin-left: 12%;
         border-radius: 0.3em;
     }
@@ -211,7 +198,7 @@ tr {
         display: inline-block;
     }
 
-    .cadastro .campoTexto_p .campoTextoDatePicker_p {
+    .cadastro .campoTexto_p  {
         float: right;
         display: inline-block;
         width: 1.8em;
@@ -237,7 +224,13 @@ tr {
     vertical-align: middle;
     align-content:start;
 }
+.btn {
+    margin: 0.2em;
+}
 
+.row {
+    margin-left: 0.1em;
+}
 
 .botaoDefault {
     font-size: 1em;
@@ -276,8 +269,8 @@ tr {
 .centro {
     width: 100%;
     text-align: center;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 /*teste com elementos dinâmicos*/

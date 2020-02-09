@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="MeuCondominio1.Login" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="MeuCondominio1.Login" %>
 
 <!DOCTYPE html>
 
@@ -25,7 +26,7 @@
             <div class="conteiner">
                 <div class="row">
                     <div class="col-xs-8">
-                        <asp:TextBox ID="txEmail" runat="server" CssClass="form-control"></asp:TextBox><!--CssClass="campoTexto"-->
+                        <asp:TextBox ID="txEmail" runat="server" CssClass="form-control"></asp:TextBox><!--CssClass="form-control"-->
                     </div>
                 </div>
                 <asp:RequiredFieldValidator ID="validaSeEmailPreenchido" runat="server" ErrorMessage="Informe seu e-mail." ControlToValidate="txEmail" CssClass="alerta campoTexto"></asp:RequiredFieldValidator>
@@ -34,14 +35,14 @@
                 <div class="row">
                     <div class="col-xs-8">
                         <asp:TextBox ID="txSenha" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
-                        <!--CssClass="campoTexto"-->
+                        <!--CssClass="form-control"-->
                     </div>
                 </div>
             </div>
         </div>
         <div class="centro">
             <asp:Button ID="btEntrar" runat="server" CssClass="btn btn-primary" Text="Entrar" OnClick="Bt_Entrar" /><br />
-            <!--CssClass="botaoDefault" -->
+            <!--CssClass="btn btn-primary" -->
             <a href="RecuperacaoSenha.aspx" id="lkRecuperarSenha" class="link_p">Relembrar senha</a>
             <asp:Label ID="loginStatus" runat="server" Text=""></asp:Label>
             <asp:Label ID="lbCodUser" runat="server" CssClass="link_p" Text=""></asp:Label><br />

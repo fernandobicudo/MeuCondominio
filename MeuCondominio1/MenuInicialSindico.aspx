@@ -51,7 +51,7 @@
             </div>
             <div class="footer">
                 <asp:Button ID="btVoltar" runat="server" Text="Sair" CssClass="btn btn-primary" OnClick="BtVoltarClick" />
-                <!--CssClass="botaoDefault botaoHover"-->
+                <!--CssClass="btn btn-primary"-->
             </div>
         </div>
     </form>

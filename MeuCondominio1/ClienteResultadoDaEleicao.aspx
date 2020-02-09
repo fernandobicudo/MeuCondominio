@@ -5,6 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Resultado da Eleição</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+
+    <!-- jQuery library -->
+    <script src="./scripts/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="./scripts/bootstrap.min.js"></script>
+    
     <link rel="stylesheet" href="./css/estilos-global.css" />
 </head>
 <body>
@@ -23,7 +32,7 @@
                     <asp:BoundField DataField="QtdVotos" HeaderText="Votos recebidos" />
                 </Columns>
             </asp:GridView><br/>
-            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick"/>
+            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="btn btn-primary" OnClick="BtVoltarClick"/>
         </div>
     </form>
 </body>

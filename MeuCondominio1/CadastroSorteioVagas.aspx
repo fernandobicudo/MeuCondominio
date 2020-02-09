@@ -5,6 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Novo sorteio de vagas de garagem</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+
+    <!-- jQuery library -->
+    <script src="./scripts/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="./scripts/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="./css/jquery-ui.css" />
     <link rel="stylesheet" href="./css/estilos-global.css" />
     <script src="./scripts/jquery-3.3.1.js"> </script>
@@ -43,9 +52,9 @@
             <br />
             <!--<asp:Label ID="lbQtdeMaxPorSequencia" runat="server" Text="Qtd. máx. por sequência" ></asp:Label><br/>
             <asp:DropDownList ID="ddQtdeMaxPorSequencia" runat="server"></asp:DropDownList><br/>-->
-            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick" />
-            <asp:Button ID="btCadastrar" runat="server" Text="Cadastrar" CssClass="botaoDefault" OnClick="CadastrarSorteioDeVagas" /><br />
-            <asp:Button ID="btSortearTeste" runat="server" Text="Testar Sorteio" CssClass="botaoPequeno botaoHover" OnClick="SortearVagas" /><br />
+            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="btn btn-primary" OnClick="BtVoltarClick" />
+            <asp:Button ID="btCadastrar" runat="server" Text="Cadastrar" CssClass="btn btn-primary" OnClick="CadastrarSorteioDeVagas" /><br />
+            <asp:Button ID="btSortearTeste" runat="server" Text="Testar Sorteio" CssClass="btn btn-link" OnClick="SortearVagas" /><br />
             <br />
         </div>
     </form>

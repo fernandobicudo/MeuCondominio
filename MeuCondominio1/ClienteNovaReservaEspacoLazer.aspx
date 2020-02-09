@@ -4,14 +4,19 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+
+    <!-- jQuery library -->
+    <script src="./scripts/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="./scripts/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="./css/estilos-global.css" />
     <link rel="stylesheet" href="./css/jquery-ui.css" />
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" /> -->
     <script src="./scripts/jquery-3.3.1.js"> </script>
     <script src="./scripts/jquery-ui.js"></script>
-    <!--<script src="./scripts/jquery-3.3.1.min.js"></script>
-    <script src="./scripts/bootstrap.min.js"></script>
-    <script src="./scripts/bootstrap.js"></script> -->
     <script>
         $(function () {
             $(".campoTextoDatePicker_p").datepicker({ dateFormat: 'dd/mm/yy' });
@@ -76,8 +81,8 @@
             </asp:DropDownList><br />
             <asp:CheckBox ID="chkRegulamento" runat="server" />
             <asp:LinkButton ID="lkbRegulamento" runat="server">Li e concordo com o regulamento.</asp:LinkButton><br />
-            <asp:Button ID="btReservar" runat="server" Text="Reservar" CssClass="botaoDefault botaoHover" OnClick="Bt_Reservar"/><br /><br />
-            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="botaoDefault botaoHover" OnClick="BtVoltarClick"/><br />
+            <asp:Button ID="btReservar" runat="server" Text="Reservar" CssClass="btn btn-primary" OnClick="Bt_Reservar"/><br /><br />
+            <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="btn btn-primary" OnClick="BtVoltarClick"/><br />
         </div>
         <!--<div class="container">
             <div class="row">

@@ -22,13 +22,13 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.HtmlControls.HtmlForm login;
         
         /// <summary>
-        /// lbAviso control.
+        /// lbEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbAviso;
+        protected global::System.Web.UI.WebControls.Label lbEmail;
         
         /// <summary>
         /// txEmail control.
@@ -38,6 +38,24 @@ namespace MeuCondominio1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txEmail;
+        
+        /// <summary>
+        /// lbSenha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbSenha;
+        
+        /// <summary>
+        /// txSenha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txSenha;
         
         /// <summary>
         /// validaSeEmailPreenchido control.
@@ -58,13 +76,13 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator validaFormatoEmail;
         
         /// <summary>
-        /// txSenha control.
+        /// lbAviso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txSenha;
+        protected global::System.Web.UI.WebControls.Label lbAviso;
         
         /// <summary>
         /// btEntrar control.

@@ -21,14 +21,15 @@ namespace MeuCondominio1
         {
             if (Request["status"] == "invalido")
             {
+                lbAviso.Attributes.Add("class", "alert alert-danger");
                 lbAviso.Text = "Dados inválidos";
             }
 
             if (Session["codigoUser"] != null)
             {
-                lbCodUser.Text = lbCodUser.Text + (String)Session["codigoUser"].ToString();
-                lbNomeUser.Text = lbNomeUser.Text + (String)Session["nomeUser"];
-                lbEmailUser.Text = lbEmailUser.Text + (String)Session["emailUser"];
+                lbCodUser.Text += (String)Session["codigoUser"].ToString();
+                lbNomeUser.Text += (String)Session["nomeUser"];
+                lbEmailUser.Text += (String)Session["emailUser"];
             }
         }
 
@@ -42,10 +43,10 @@ namespace MeuCondominio1
 
             dt = buscaLogin.PesquisarLogin(email);
 
-            validaLogin(dt);
+            ValidaLogin(dt);
         }
 
-        protected void validaLogin(DataTable dt)
+        protected void ValidaLogin(DataTable dt)
         {
             if (dt.Rows.Count == 0)
             {

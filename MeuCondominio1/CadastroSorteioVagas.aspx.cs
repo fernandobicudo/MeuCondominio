@@ -11,7 +11,7 @@ using MeuCondominio2.Services.ResultadoDoSorteio;
 using MeuCondominio2.Services.Ferramentas;
 using System.Runtime.InteropServices;
 using System.Data;
-
+/*TODO: aplicar bootstrap */
 namespace MeuCondominio1
 {
     public partial class CadastroSorteioVagas : System.Web.UI.Page

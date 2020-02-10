@@ -22,9 +22,11 @@
         <div>
             <div class="header">
                 <div class="main">
-                    <div class="item">
-                        <asp:ImageButton ID="ibEspacoLazer" runat="server" Height="100px" ImageUrl="~/Images/Configuracoes_G.png" Width="100px" OnClick="IrParaPaginaCadastrarEspacoReserva" /><br />
-                        <asp:Label ID="lbEspacoLazer" runat="server" Text="Cadastrar Espaço de Lazer"></asp:Label>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <asp:ImageButton ID="ibEspacoLazer" runat="server" Height="100px" ImageUrl="~/Images/Configuracoes_G.png" Width="100px" OnClick="IrParaPaginaCadastrarEspacoReserva" /><br />
+                            <asp:Label ID="lbEspacoLazer" runat="server" Text="Cadastrar Espaço de Lazer"></asp:Label>
+                        </div>
                     </div>
                 </div>
             </div>

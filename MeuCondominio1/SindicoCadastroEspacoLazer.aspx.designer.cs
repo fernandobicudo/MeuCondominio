@@ -94,15 +94,6 @@ namespace MeuCondominio1 {
         protected global::System.Web.UI.WebControls.TextBox txRegulamento;
         
         /// <summary>
-        /// btCadastrarEspaco control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btCadastrarEspaco;
-        
-        /// <summary>
         /// btVoltar control.
         /// </summary>
         /// <remarks>
@@ -110,5 +101,14 @@ namespace MeuCondominio1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btVoltar;
+        
+        /// <summary>
+        /// btCadastrarEspaco control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btCadastrarEspaco;
     }
 }

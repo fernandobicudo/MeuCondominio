@@ -1,6 +1,5 @@
 ﻿
-/*estilos para o site cliente*/
-
+/*estilos para o site cliente*/btn
 .submenu ImageButton {
     position: center;
 }
@@ -10,6 +9,17 @@ html {
     background-color: grey;
 }
 
+.btn-left {
+    float: left;
+}
+
+.btn-right {
+    float: right;
+}
+
+.flutuante {
+    float:right;
+}
 
 body {
     background-color: white; /**/
@@ -225,7 +235,7 @@ tr {
     align-content:start;
 }
 .btn {
-    margin: 0.2em;
+    //margin: 0.2em;
 }
 
 .row {

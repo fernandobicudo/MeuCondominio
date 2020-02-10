@@ -33,7 +33,7 @@
                     <div class="col-xs-8">
                         <div class="form-group">
                             <asp:Label ID="lbNomeEleicao" runat="server" Text="Título da Eleição"></asp:Label>
-                            <asp:TextBox ID="txNomeEleicao" runat="server" CssClass="form-control"></asp:TextBox><br />
+                            <asp:TextBox ID="txNomeEleicao" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -49,8 +49,6 @@
                         </div>
                     </div>
                 </div>
-                <br />
-                <br />
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="form-group">
@@ -98,9 +96,9 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
                 <br />
-                <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="btn btn-primary" OnClick="BtVoltarClick" />
-                <asp:Button ID="btCadastrar" runat="server" Text="Cadastrar" CssClass="btn btn-primary" OnClick="CadastrarEleicao_Click" /><br />
-                <asp:Button ID="btEncerraEleicao" runat="server" Text="Encerrar eleição" CssClass="botaoPequeno" OnClick="Encerrar_Eleicao_Click" />
+                <asp:Button ID="btVoltar" runat="server" Text="Voltar" CssClass="btn btn-primary btn-left" OnClick="BtVoltarClick" />
+                <asp:Button ID="btCadastrar" runat="server" Text="Cadastrar" CssClass="btn btn-primary btn-right" OnClick="CadastrarEleicao_Click" /><br />
+                <asp:Button ID="btEncerraEleicao" runat="server" Text="Encerrar eleição" CssClass="btn btn-primary" OnClick="Encerrar_Eleicao_Click" />
             </div>
         </div>
     </form>

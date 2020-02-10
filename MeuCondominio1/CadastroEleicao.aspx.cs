@@ -38,8 +38,6 @@ namespace MeuCondominio1
             txOpcao.Text = "";
         }
 
-
-
         public Eleicao ConstruirObjetoEleicao()
         {
             DateTime dataInicio, dataFim;
@@ -51,9 +49,7 @@ namespace MeuCondominio1
                 txDescricao.Text, ddTipoEleicao.SelectedValue.ToString(),
                 true, dataInicio, dataFim,
                 Convert.ToInt32(Session["codigoCondominio"]));
-
             return eleicao;
-
         }
 
         public Eleicao ConstruirObjetoEleicao(DataTable dt)
@@ -74,12 +70,10 @@ namespace MeuCondominio1
         public List<string> OpcoesVotacaoPlebiscito()
         {
             List<string> listaOpcoes = new List<string>();
-
             foreach (ListItem linha in blListaOpcoesAdicionadas.Items)
             {
                 listaOpcoes.Add(linha.Value);
             }
-
             return listaOpcoes;
         }
 

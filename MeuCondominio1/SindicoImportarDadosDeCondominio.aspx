@@ -28,7 +28,6 @@
                 <ContentTemplate>
                     <asp:Label ID="lbArquivoDeImportacao" runat="server" Text="Informe o arquivo"></asp:Label>
                     <asp:FileUpload ID="fuArquivoDeImportacao" runat="server" />
-
                     <asp:Button ID="btUpload" runat="server" Text="Upload" CssClass="btn btn-primary" OnClick="BtUpload_Click" /><br />
                     <asp:Label ID="lbAlertaStatusDosDadosImportados" runat="server" Text=""></asp:Label><br />
                     <asp:GridView ID="gvDadosDosClientes" runat="server" AutoGenerateColumns="false" CssClass="table-responsive table-responsive centro">

@@ -47,27 +47,25 @@ namespace MeuCondominio2.Services.Cliente
             {
                 string linha = reader.ReadLine();
                 string[] value = linha.Split(';');
-                Model.Cliente cliente = new Model.Cliente();
-                cliente.SetNome(value[0]);
-                cliente.SetEmail(value[1]);
-                cliente.SetTelefone(value[2]);
-                cliente.SetEndereco(value[3]);
-                cliente.SetNumeroEndereco(value[4]);
-                cliente.SetComplementoEndereco(value[5]);
-                cliente.SetBairro(value[6]);
-                cliente.SetCidade(value[7]);
-
-                cliente.SetUF(value[8]);
-
-                cliente.SetCEP(value[9]);
-                cliente.SetCPFCliente(formatadores.FormatarCPFSemPontosNemTracos(value[10]));
-                cliente.SetTipoUsuario(Convert.ToInt32(value[11]));
+                Model.Cliente cliente = new Model.Cliente
+                {
+                    Nome = value[0],
+                    Email = value[1],
+                    Telefone = value[2],
+                    Endereco = value[3],
+                    NumeroEndereco = value[4],
+                    ComplementoEndereco = value[5],
+                    Bairro = value[6],
+                    Cidade = value[7],
+                    UF1 = value[8],
+                    CEP1 = value[9],
+                    CPFCliente1 = formatadores.FormatarCPFSemPontosNemTracos(value[10]),
+                    TipoUsuario = Convert.ToInt32(value[11])
+                };
                 listaClientes.Add(cliente);
             }
             return listaClientes;
         }
-        //TODO: ENVIAR PARA WILSON
-
 
         //DESCRICAO: MÉTODO PARA PEGAR UM OBJETO READER (CONTEÚDO LIDO DO CSV NA MEMÓRIA) E TRANSFORMÁ-LO NUMA LISTA DE STRUCTS DO TIPO RELACAO CLIENTExUNIDADE. 
         public List<DadosDaRelacaoDaPlanilha> ImportarRelacaoClienteUnidadeDoCondominioDadosDaPlanilha(StreamReader reader)

@@ -104,7 +104,7 @@ namespace MeuCondominio1
         protected void Encerrar_Eleicao_Click(object sender, EventArgs e)
         {
             AlteraEleicao alteraEleicao = new AlteraEleicao();
-            alteraEleicao.EncerrarEleicao(eleicao.GetIdEleicao());
+            alteraEleicao.EncerrarEleicao(eleicao.IdEleicao);
             Response.Write("<script>alert('Concluído com sucesso!')</script>");
         }
 
@@ -139,10 +139,10 @@ namespace MeuCondominio1
         {
             Formatadores formatadores = new Formatadores();
 
-            txNomeEleicao.Text = eleicao.GetNomeEleicao();
-            txDescricao.Text = eleicao.GetDescricaoEleicao();
-            txDataInicio.Text = formatadores.FormatarDataParaExibicao(eleicao.GetDataInicioEleicao().ToString());
-            txDataFim.Text = formatadores.FormatarDataParaExibicao(eleicao.GetDataFimEleicao().ToString());
+            txNomeEleicao.Text = eleicao.NomeEleicao;
+            txDescricao.Text = eleicao.DescricaoEleicao;
+            txDataInicio.Text = formatadores.FormatarDataParaExibicao(eleicao.DataInicioEleicao.ToString());
+            txDataFim.Text = formatadores.FormatarDataParaExibicao(eleicao.DataFimEleicao.ToString());
         }
 
         private DataTable BuscaEleicaoSelecionada(int idEleicao)
@@ -174,7 +174,7 @@ namespace MeuCondominio1
 
         /*            opcaoDeVotacaoPlebiscito = new OpcaoDeVotacaoPlebiscito(Request["descricao"]);
 
-                    if (opcaoDeVotacaoPlebiscito.GetDescricaoOpcaoIndividualDeVotacaoPlebiscito() != null)
+                    if (opcaoDeVotacaoPlebiscito.DescricaoOpcaoIndividualDeVotacaoPlebiscito() != null)
                     {
                         listaOpcoesVotacaoPlebiscito.Add(opcaoDeVotacaoPlebiscito);
                         gvOpcoesDeVotacaoAdicionadas.DataSource = listaOpcoesVotacaoPlebiscito; //TODO: esta chamada está redundante em relação ao método

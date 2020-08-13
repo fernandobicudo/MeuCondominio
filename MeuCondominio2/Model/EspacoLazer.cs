@@ -14,6 +14,13 @@ namespace MeuCondominio2.Model
         private string regulamentoReservaEspaco;
         private int idCondominio;
 
+        public int IdEspacoLazer { get => idEspacoLazer; set => idEspacoLazer = value; }
+        public string NomeEspacoLazer { get => nomeEspacoLazer; set => nomeEspacoLazer = value; }
+        public int AreaEspacoLazer { get => areaEspacoLazer; set => areaEspacoLazer = value; }
+        public double ValorReserva { get => valorReserva; set => valorReserva = value; }
+        public string RegulamentoReservaEspaco { get => regulamentoReservaEspaco; set => regulamentoReservaEspaco = value; }
+        public int IdCondominio { get => idCondominio; set => idCondominio = value; }
+
         public EspacoLazer()
         {
         }
@@ -36,65 +43,68 @@ namespace MeuCondominio2.Model
             this.regulamentoReservaEspaco = regulamentoReservaEspaco;
             this.idCondominio = idCondominio;
         }
-
-        public int GetIdEspacoLazer()
-        {
-            return idEspacoLazer;
-        }
-
-        public void SetIdEspacoLazer(int value)
-        {
-            idEspacoLazer = value;
-        }
-
-        public string GetNomeEspacoLazer()
-        {
-            return nomeEspacoLazer;
-        }
-
-        public void SetNomeEspacoLazer(string value)
-        {
-            nomeEspacoLazer = value;
-        }
-
-        public int GetAreaEspacoLazer()
-        {
-            return areaEspacoLazer;
-        }
-
-        public void SetAreaEspacoLazer(int value)
-        {
-            areaEspacoLazer = value;
-        }
-
-        public double GetValorReserva()
-        {
-            return valorReserva;
-        }
-
-        public void SetValorReserva(double value)
-        {
-            valorReserva = value;
-        }
-
-        public int GetIdCondominio()
-        {
-            return idCondominio;
-        }
-
-        public void SetIdCondominio(int value)
-        {
-            idCondominio = value;
-        }
-
-        public string GetRegulamentoReservaEspaco()
-        {
-            return regulamentoReservaEspaco;
-        }
-
-        public void SetRegulamentoReservaEspaco(string value)
-        {
-            regulamentoReservaEspaco = value;
-        }
     }
 }
+#region antigos getters/setters
+/*
+public int GetIdEspacoLazer()
+{
+    return idEspacoLazer;
+}
+
+public void SetIdEspacoLazer(int value)
+{
+    idEspacoLazer = value;
+}
+
+public string GetNomeEspacoLazer()
+{
+    return nomeEspacoLazer;
+}
+
+public void SetNomeEspacoLazer(string value)
+{
+    nomeEspacoLazer = value;
+}
+
+public int GetAreaEspacoLazer()
+{
+    return areaEspacoLazer;
+}
+
+public void SetAreaEspacoLazer(int value)
+{
+    areaEspacoLazer = value;
+}
+
+public double GetValorReserva()
+{
+    return valorReserva;
+}
+
+public void SetValorReserva(double value)
+{
+    valorReserva = value;
+}
+
+public int GetIdCondominio()
+{
+    return idCondominio;
+}
+
+public void SetIdCondominio(int value)
+{
+    idCondominio = value;
+}
+
+public string GetRegulamentoReservaEspaco()
+{
+    return regulamentoReservaEspaco;
+}
+
+public void SetRegulamentoReservaEspaco(string value)
+{
+    regulamentoReservaEspaco = value;
+}
+*/
+#endregion

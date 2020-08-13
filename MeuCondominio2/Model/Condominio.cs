@@ -11,6 +11,10 @@ namespace MeuCondominio2.Model
         private string nomeCondominio;
         private int QuantidadeVagasPorUnidade; //TODO: revisar se o atributo de Quantidade de Vagas por  Unidade permanece ou não no Condominio.
 
+        public int IdCondominio { get => idCondominio; set => idCondominio = value; }
+        public string CNPJ1 { get => CNPJ; set => CNPJ = value; }
+        public string NomeCondominio { get => nomeCondominio; set => nomeCondominio = value; }
+        public int QuantidadeVagasPorUnidade1 { get => QuantidadeVagasPorUnidade; set => QuantidadeVagasPorUnidade = value; }
 
         public Condominio()
         {
@@ -31,6 +35,8 @@ namespace MeuCondominio2.Model
             QuantidadeVagasPorUnidade = quantidadeVagasPorUnidade;
         }
 
+        #region antigos getters/setters
+        /*
         public int GetIdCondominio()
         {
             return idCondominio;
@@ -70,6 +76,8 @@ namespace MeuCondominio2.Model
         {
             QuantidadeVagasPorUnidade = value;
         }
+        */
+        #endregion
     }
     //TODO: criar métodos da classe Condominio
 }

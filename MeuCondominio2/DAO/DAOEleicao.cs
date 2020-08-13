@@ -68,16 +68,16 @@ namespace MeuCondominio2.DAO
 
             Formatadores formatadores = new Formatadores();
 
-            string dataInicioEleicao = formatadores.ConversaoDeDataParaStringMySQL(eleicao.GetDataInicioEleicao());
-            string dataFimEleicao = formatadores.ConversaoDeDataParaStringMySQL(eleicao.GetDataFimEleicao());
-            byte status = formatadores.FormatarBooleanParaMySQL(eleicao.GetStatusEleicao());
+            string dataInicioEleicao = formatadores.ConversaoDeDataParaStringMySQL(eleicao.DataInicioEleicao);
+            string dataFimEleicao = formatadores.ConversaoDeDataParaStringMySQL(eleicao.DataFimEleicao);
+            byte status = formatadores.FormatarBooleanParaMySQL(eleicao.StatusEleicao);
 
             SQL = String.Format(@"INSERT INTO `Eleicao` " +
                 "(`nomeEleicao`, `tipoEleicao`, `descricaoEleicao`, " +
                 "`statusEleicao`, `dataInicioEleicao`, `dataFimEleicao`, `idCondominio`) " +
                 "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', {6});",
-                eleicao.GetNomeEleicao(), eleicao.GetTipoEleicao(), eleicao.GetDescricaoEleicao(),
-                status, dataInicioEleicao, dataFimEleicao, eleicao.GetIdCondominio());
+                eleicao.NomeEleicao, eleicao.TipoEleicao, eleicao.DescricaoEleicao,
+                status, dataInicioEleicao, dataFimEleicao, eleicao.IdCondominio);
 
             MetodosBD.ExecutaSQL(SQL);
         }

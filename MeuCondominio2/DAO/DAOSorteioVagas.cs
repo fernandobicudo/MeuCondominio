@@ -15,16 +15,16 @@ namespace MeuCondominio2.DAO
 
             Formatadores formatadores = new Formatadores();
 
-            string dataSorteio = formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.GetDataSorteio());
-            string dataValidadeInicio = formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.GetDataValidadeSorteioInicio());
-            string dataValidadeFim = formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.GetDataValidadeSorteioFim());
+            string dataSorteio = formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.DataSorteio);
+            string dataValidadeInicio = formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.DataValidadeSorteioInicio);
+            string dataValidadeFim = formatadores.ConversaoDeDataParaStringMySQL(sorteioVagas.DataValidadeSorteioFim);
 
             SQL = String.Format(@"INSERT INTO SorteioVagas " +
                 "(`tipoSorteio`, `dataSorteio`, `dataValidadeSorteioInicio`, `dataValidadeSorteioFim`, " +
                 "`associarVagasSequenciais`, `idCondominio`, `qtdeVagasPorUnidade`) " +
                 "VALUES ('{0}', '{1}', '{2}', '{3}', {4}, {5}, {6});", 
-                sorteioVagas.GetTipoSorteio(), dataSorteio, dataValidadeInicio, dataValidadeFim, sorteioVagas.GetAssociacaoVagasSequenciais(), sorteioVagas.GetIdCondominio(),
-                sorteioVagas.GetQtdeVagasPorUnidade());
+                sorteioVagas.TipoSorteio, dataSorteio, dataValidadeInicio, dataValidadeFim, sorteioVagas.AssociacaoVagasSequenciais, sorteioVagas.IdCondominio,
+                sorteioVagas.QtdeVagasPorUnidade);
 
             MetodosBD.ExecutaSQL(SQL);
 

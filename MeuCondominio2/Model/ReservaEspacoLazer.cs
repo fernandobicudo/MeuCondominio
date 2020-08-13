@@ -13,6 +13,12 @@ namespace MeuCondominio2.Model
         private int idUnidade;
         private int idEspacoLazer;
 
+        public int IdReservaEspacoLazer { get => idReservaEspacoLazer; set => idReservaEspacoLazer = value; }
+        public DateTime DataInicioReserva { get => dataInicioReserva; set => dataInicioReserva = value; }
+        public int IdUnidade { get => idUnidade; set => idUnidade = value; }
+        public int IdEspacoLazer { get => idEspacoLazer; set => idEspacoLazer = value; }
+        public DateTime DataFimReserva { get => dataFimReserva; set => dataFimReserva = value; }
+
         public ReservaEspacoLazer()
         {
         }
@@ -34,54 +40,59 @@ namespace MeuCondominio2.Model
             this.idEspacoLazer = idEspacoLazer;
         }
 
-        public int GetIdReservaEspacoLazer()
-        {
-            return idReservaEspacoLazer;
-        }
 
-        public void SetIdReservaEspacoLazer(int value)
-        {
-            idReservaEspacoLazer = value;
-        }
-
-        public DateTime GetDataInicioReserva()
-        {
-            return dataInicioReserva;
-        }
-
-        public void SetDataInicioReserva(DateTime value)
-        {
-            dataInicioReserva = value;
-        }
-
-        public DateTime GetDataFimReserva()
-        {
-            return dataFimReserva;
-        }
-
-        public void SetDataFimReserva(DateTime value)
-        {
-            dataFimReserva = value;
-        }
-
-
-        public int GetIdUnidade()
-        {
-            return idUnidade;
-        }
-
-        public void SetIdUnidade(int value)
-        {
-            idUnidade = value;
-        }
-        public int GetIdEspacoLazer()
-        {
-            return idEspacoLazer;
-        }
-
-        public void SetIdEspacoLazer(int value)
-        {
-            idEspacoLazer = value;
-        }
     }
 }
+#region antigos getters/setters
+/*
+public int GetIdReservaEspacoLazer()
+{
+    return idReservaEspacoLazer;
+}
+
+public void SetIdReservaEspacoLazer(int value)
+{
+    idReservaEspacoLazer = value;
+}
+
+public DateTime GetDataInicioReserva()
+{
+    return dataInicioReserva;
+}
+
+public void SetDataInicioReserva(DateTime value)
+{
+    dataInicioReserva = value;
+}
+
+public DateTime GetDataFimReserva()
+{
+    return dataFimReserva;
+}
+
+public void SetDataFimReserva(DateTime value)
+{
+    dataFimReserva = value;
+}
+
+
+public int GetIdUnidade()
+{
+    return idUnidade;
+}
+
+public void SetIdUnidade(int value)
+{
+    idUnidade = value;
+}
+public int GetIdEspacoLazer()
+{
+    return idEspacoLazer;
+}
+
+public void SetIdEspacoLazer(int value)
+{
+    idEspacoLazer = value;
+}
+*/
+#endregion

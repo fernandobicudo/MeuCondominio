@@ -49,15 +49,15 @@ namespace MeuCondominio1
                 Label dataFimEleicao = new Label();
 
 
-                tituloEleicao.Text = eleicao.GetNomeEleicao();
+                tituloEleicao.Text = eleicao.NomeEleicao;
                 lbtipoEleicao.Text = "Tipo de votação: ";
-                tipoEleicao.Text = eleicao.GetTipoEleicao();
+                tipoEleicao.Text = eleicao.TipoEleicao;
                 lbDescricaoEleicao.Text = "Descrição: ";
-                descricaoEleicao.Text = eleicao.GetDescricaoEleicao();
+                descricaoEleicao.Text = eleicao.DescricaoEleicao;
                 lbStatusEleicao.Text = "Situação: ";
 
 
-                if (eleicao.GetStatusEleicao())
+                if (eleicao.StatusEleicao)
                     nomeStatusEleicao = "Em andamento";
                 else
                     nomeStatusEleicao = "Concluída";
@@ -65,9 +65,9 @@ namespace MeuCondominio1
                 statusEleicao.Text = nomeStatusEleicao;
 
                 lbDataInicioEleicao.Text = "Início: ";
-                dataInicioEleicao.Text = eleicao.GetDataInicioEleicao().ToString();
+                dataInicioEleicao.Text = eleicao.DataInicioEleicao.ToString();
                 lbDataFimEleicao.Text = "Realização: ";
-                dataFimEleicao.Text = eleicao.GetDataFimEleicao().ToString();
+                dataFimEleicao.Text = eleicao.DataFimEleicao.ToString();
 
                 pnEleicoes.Controls.Add(tituloEleicao);
                 pnEleicoes.Controls.Add(new LiteralControl("<br />"));

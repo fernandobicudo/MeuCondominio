@@ -53,7 +53,7 @@ namespace MeuCondominio1
         {
             string tipoVotacao;
 
-            tipoVotacao = eleicao.GetTipoEleicao();
+            tipoVotacao = eleicao.TipoEleicao;
 
             switch (tipoVotacao)
             {
@@ -78,24 +78,24 @@ namespace MeuCondominio1
             string nomeStatusEleicao;
 
             tituloEleicao.Attributes.Add("runat", "server");
-            tituloEleicao.Text = eleicao.GetNomeEleicao();
+            tituloEleicao.Text = eleicao.NomeEleicao;
 
 
             lbtipoEleicao.Attributes.Add("runat", "server");
             lbtipoEleicao.Attributes.Add("CssClass", "label");
             lbtipoEleicao.Text = "Tipo de votação: ";
             tipoEleicao.Attributes.Add("runat", "server");
-            tipoEleicao.Text = eleicao.GetTipoEleicao();
+            tipoEleicao.Text = eleicao.TipoEleicao;
             lbDescricaoEleicao.Attributes.Add("runat", "server");
             lbDescricaoEleicao.Attributes.Add("CssClass", "label");
             lbDescricaoEleicao.Text = "Descrição: ";
             descricaoEleicao.Attributes.Add("runat", "server");
-            descricaoEleicao.Text = eleicao.GetDescricaoEleicao();
+            descricaoEleicao.Text = eleicao.DescricaoEleicao;
             lbStatusEleicao.Attributes.Add("runat", "server");
             lbStatusEleicao.Attributes.Add("CssClass", "label");
             lbStatusEleicao.Text = "Situação: ";
 
-            if (eleicao.GetStatusEleicao())
+            if (eleicao.StatusEleicao)
                 nomeStatusEleicao = "Em andamento";
             else
                 nomeStatusEleicao = "Concluída";
@@ -108,12 +108,12 @@ namespace MeuCondominio1
             lbDataInicioEleicao.Text = "Início: ";
             dataInicioEleicao.Attributes.Add("runat", "server");
             dataInicioEleicao.Attributes.Add("CssClass", "label");
-            dataInicioEleicao.Text = eleicao.GetDataInicioEleicao().ToString();
+            dataInicioEleicao.Text = eleicao.DataInicioEleicao.ToString();
             lbDataFimEleicao.Attributes.Add("runat", "server");
             lbDataFimEleicao.Attributes.Add("CssClass", "label");
             lbDataFimEleicao.Text = "Realização: ";
             dataFimEleicao.Attributes.Add("runat", "server");
-            dataFimEleicao.Text = eleicao.GetDataFimEleicao().ToString();
+            dataFimEleicao.Text = eleicao.DataFimEleicao.ToString();
 
             pnVotacaoInfo.Controls.Add(tituloEleicao);
             pnVotacaoInfo.Controls.Add(new LiteralControl("<br />"));
@@ -140,7 +140,7 @@ namespace MeuCondominio1
         {
             foreach(OpcaoDeVotacaoPlebiscito item in listaDeOpcoesParaVotar)
             {
-                ListItem listItem = new ListItem(item.GetNomeOpcaoDeVotacaoPlebiscito());
+                ListItem listItem = new ListItem(item.NomeOpcaoDeVotacaoPlebiscito);
                 radioButonsComOpcoesParaVotar.Items.Add(listItem);
             }
 
@@ -179,7 +179,7 @@ namespace MeuCondominio1
         private void CriarListaDeOpcoesParaVotar()
         {
             BuscaEleicao buscaEleicao = new BuscaEleicao();
-            dtOpcoesDaEleicao = buscaEleicao.BuscaOpcoesVotacao(eleicao.GetIdEleicao());
+            dtOpcoesDaEleicao = buscaEleicao.BuscaOpcoesVotacao(eleicao.IdEleicao);
 
             foreach(DataRow linha in dtOpcoesDaEleicao.Rows)
             {
@@ -235,7 +235,7 @@ namespace MeuCondominio1
             DataTable dtEleicao;
             string nomeOpcaoVotada = radioButonsComOpcoesParaVotar.SelectedValue.ToString();
             BuscaEleicao buscaEleicao = new BuscaEleicao();
-            dtEleicao = buscaEleicao.BuscaOpcaoVotada(nomeOpcaoVotada, eleicao.GetIdEleicao());
+            dtEleicao = buscaEleicao.BuscaOpcaoVotada(nomeOpcaoVotada, eleicao.IdEleicao);
             opcaoDeVotacaoPlebiscito = CriarObjetoOpcaoDeVotacaoPlebiscito(dtEleicao.Rows[0]);
         }
 
@@ -251,7 +251,7 @@ namespace MeuCondominio1
 
         private void ConstruirObjetoVoto()
         {
-            voto = new Voto(opcaoDeVotacaoPlebiscito.GetIdOpcaoDeVotacaoPlebiscito(), eleicao.GetIdEleicao(), idUnidade);
+            voto = new Voto(opcaoDeVotacaoPlebiscito.IdOpcaoDeVotacaoPlebiscito, eleicao.IdEleicao, idUnidade);
         }
 
         protected void BtVoltarClick(object sender, EventArgs e)

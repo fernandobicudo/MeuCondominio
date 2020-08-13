@@ -50,32 +50,32 @@ namespace MeuCondominio1
 
             Formatadores formatadores = new Formatadores();
             dataSorteio = formatadores.FormatarDataParaBancoDeDados(txDataSorteio.Text);
-            dataValidadeInicio = formatadores.FormatarDataParaBancoDeDados(txDataValidadeInicio.Text); 
-            dataValidadeFim = formatadores.FormatarDataParaBancoDeDados(txDataValidadeFim.Text); 
+            dataValidadeInicio = formatadores.FormatarDataParaBancoDeDados(txDataValidadeInicio.Text);
+            dataValidadeFim = formatadores.FormatarDataParaBancoDeDados(txDataValidadeFim.Text);
 
             if (rbSeHaVagasSequenciaisSim.Checked == true)
-                sorteio.SetAssociacaoVagasSequenciais(true);
+                sorteio.AssociacaoVagasSequenciais = true;
             else if (rbSeHaVagasSequenciaisSim.Checked == false)
-                sorteio.SetAssociacaoVagasSequenciais(false);
+                sorteio.AssociacaoVagasSequenciais = false;
 
-            sorteio.SetDataSorteio(dataSorteio);
+            sorteio.DataSorteio = dataSorteio;
 
-            sorteio.SetDataValidadeSorteioInicio(dataValidadeInicio);
+            sorteio.DataValidadeSorteioInicio = dataValidadeInicio;
 
-            sorteio.SetDataValidadeSorteioFim(dataValidadeFim);
+            sorteio.DataValidadeSorteioFim = dataValidadeFim;
 
             if (rbFiladeSorteio.Checked == true)
-                sorteio.SetTipoSorteio("Fila");
+                sorteio.TipoSorteio = "Fila";
             else if (rbSorteioPorUnidade.Checked == true)
-                sorteio.SetTipoSorteio("Sorteio por unidade");
+                sorteio.TipoSorteio = "Sorteio por unidade";
 
-            sorteio.SetIdCondominio(idCondominio);
+            sorteio.IdCondominio = idCondominio;
 
             int qtdVagasPorUnidade;
 
             qtdVagasPorUnidade = Convert.ToInt32(ddVagasPorUnidade.SelectedItem.Value);
 
-            sorteio.SetQtdeVagasPorUnidade(qtdVagasPorUnidade);
+            sorteio.QtdeVagasPorUnidade = qtdVagasPorUnidade;
 
             return sorteio;
         }
@@ -85,7 +85,7 @@ namespace MeuCondominio1
         {
             int idCondominio = Convert.ToInt32(Session["codigoCondominio"]);
             sorteioVagas.SortearVagas(idCondominio);
-            
+
         }
 
         protected void BtVoltarClick(object sender, EventArgs e)

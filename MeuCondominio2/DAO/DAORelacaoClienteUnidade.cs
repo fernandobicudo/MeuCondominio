@@ -8,14 +8,14 @@ namespace MeuCondominio2.DAO
 {
     public class DAORelacaoClienteUnidade
     {
-        public static void DAOInserirRelacaoClienteUnidade (RelacaoClienteUnidade relacaoClienteUnidade)
+        public static void DAOInserirRelacaoClienteUnidade(RelacaoClienteUnidade relacaoClienteUnidade)
         {
-            
+
             string SQL;
             SQL = String.Format(@"INSERT INTO `RelacaoClienteUnidade` " +
                                 "(`idCliente`, `idUnidade`, `MoradorDaUnidade`,`ProprietarioDaUnidade`) " +
-                                "VALUES ({0}, {1}, {2}, {3});", relacaoClienteUnidade.GetIdCliente(), relacaoClienteUnidade.GetIdUnidade(),
-                                relacaoClienteUnidade.GetEhMoradorDaUnidade(), relacaoClienteUnidade.GetEhProprietarioDaUnidade());
+                                "VALUES ({0}, {1}, {2}, {3});", relacaoClienteUnidade.IdCliente, relacaoClienteUnidade.IdUnidade,
+                                relacaoClienteUnidade.EhMoradorDaUnidade, relacaoClienteUnidade.EhProprietarioDaUnidade);
             MetodosBD.ExecutaSQL(SQL);
         }
 

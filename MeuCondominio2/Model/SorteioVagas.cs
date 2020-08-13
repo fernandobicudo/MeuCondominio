@@ -16,14 +16,25 @@ namespace MeuCondominio2.Model
         private string tipoSorteio;
         private DateTime dataSorteio;
         private DateTime dataValidadeSorteioInicio;
-        private DateTime dataValidadeSorteioFim; 
-        private bool associacaoVagasSequenciais; 
+        private DateTime dataValidadeSorteioFim;
+        private bool associacaoVagasSequenciais;
         private int idCondominio;
-        private int qtdeVagasPorUnidade; 
+        private int qtdeVagasPorUnidade;
 
         private DataTable UnidadesDoCondominio;
         private DataTable VagasDeGaragemDoCondominio;
-        
+
+        public int IdSorteioVagas { get => idSorteioVagas; set => idSorteioVagas = value; }
+        public string TipoSorteio { get => tipoSorteio; set => tipoSorteio = value; }
+        public DateTime DataSorteio { get => dataSorteio; set => dataSorteio = value; }
+        public DateTime DataValidadeSorteioInicio { get => dataValidadeSorteioInicio; set => dataValidadeSorteioInicio = value; }
+        public DateTime DataValidadeSorteioFim { get => dataValidadeSorteioFim; set => dataValidadeSorteioFim = value; }
+        public bool AssociacaoVagasSequenciais { get => associacaoVagasSequenciais; set => associacaoVagasSequenciais = value; }
+        public int IdCondominio { get => idCondominio; set => idCondominio = value; }
+        public int QtdeVagasPorUnidade { get => qtdeVagasPorUnidade; set => qtdeVagasPorUnidade = value; }
+        public DataTable UnidadesDoCondominio1 { get => UnidadesDoCondominio; set => UnidadesDoCondominio = value; }
+        public DataTable VagasDeGaragemDoCondominio1 { get => VagasDeGaragemDoCondominio; set => VagasDeGaragemDoCondominio = value; }
+
 
         #region Construtores
         public SorteioVagas()
@@ -40,7 +51,7 @@ namespace MeuCondominio2.Model
             int qtdeVagasPorUnidade)
         {
             this.tipoSorteio = tipoSorteio;
-            this.SetDataSorteio(dataSorteio);
+            this.dataSorteio = dataSorteio;
             this.dataValidadeSorteioInicio = dataValidadeSorteioInicio;
             this.dataValidadeSorteioFim = dataValidadeSorteioFim;
             this.associacaoVagasSequenciais = associacaoVagasSequenciais;
@@ -59,7 +70,7 @@ namespace MeuCondominio2.Model
         {
             this.idSorteioVagas = idSorteioVagas;
             this.tipoSorteio = tipoSorteio;
-            this.SetDataSorteio(dataSorteio);
+            this.dataSorteio = dataSorteio;
             this.dataValidadeSorteioInicio = dataValidadeSorteioInicio;
             this.dataValidadeSorteioFim = dataValidadeSorteioFim;
             this.associacaoVagasSequenciais = associacaoVagasSequenciais;
@@ -70,102 +81,7 @@ namespace MeuCondominio2.Model
 
         #endregion
 
-        #region Getters e Setters
 
-        public int GetIdSorteioVagas1()
-        {
-            return idSorteioVagas;
-        }
-
-        public void SetIdSorteioVagas1(int value)
-        {
-            idSorteioVagas = value;
-        }
-
-        public int GetIdSorteioVagas()
-        {
-            return idSorteioVagas;
-        }
-
-/*        public void SetIdSorteioVagas(int value)
-        {
-            idSorteioVagas = value;
-        }*/
-
-
-        public string GetTipoSorteio()
-        {
-            return tipoSorteio;
-        }
-
-        public void SetTipoSorteio(string value)
-        {
-            tipoSorteio = value;
-        }
-
-
-        public DateTime GetDataValidadeSorteioInicio()
-        {
-            return dataValidadeSorteioInicio;
-        }
-
-        public void SetDataValidadeSorteioInicio(DateTime value)
-        {
-            dataValidadeSorteioInicio = value;
-        }
-
-        public DateTime GetDataValidadeSorteioFim()
-        {
-            return dataValidadeSorteioFim;
-        }
-
-        public void SetDataValidadeSorteioFim(DateTime value)
-        {
-            dataValidadeSorteioFim = value;
-        }
-
-        public bool GetAssociacaoVagasSequenciais()
-        {
-            return associacaoVagasSequenciais;
-        }
-
-        public void SetAssociacaoVagasSequenciais(bool value)
-        {
-            associacaoVagasSequenciais = value;
-        }
-
-        public DateTime GetDataSorteio()
-        {
-            return dataSorteio;
-        }
-
-
-        public void SetDataSorteio(DateTime value)
-        {
-            dataSorteio = value;
-        }
-
-        public int GetIdCondominio()
-        {
-            return idCondominio;
-        }
-
-        public void SetIdCondominio(int value)
-        {
-            idCondominio = value;
-        }
-
-        public int GetQtdeVagasPorUnidade()
-        {
-            return qtdeVagasPorUnidade;
-        }
-
-        public void SetQtdeVagasPorUnidade(int value)
-        {
-            qtdeVagasPorUnidade = value;
-        }
-
-        #endregion
 
         public void CadastrarSorteio()
         {
@@ -181,10 +97,10 @@ namespace MeuCondominio2.Model
             List<int> listaUnidades = CriaListaDeIDsDeUnidadesDoSorteio(sorteioVagas);
             List<int> listaVagas = CriarListaDeIDsDeVagasDeGaragem(sorteioVagas);
             List<int> listaUnidadesAleatorias = CriarListaAleatoriaDeInteiros(listaUnidades);
-            int qtdVagasPorUnidade = sorteioVagas.GetQtdeVagasPorUnidade();
+            int qtdVagasPorUnidade = sorteioVagas.QtdeVagasPorUnidade;
             int qtdVagas = listaVagas.Count;
             int vagaSorteada = 0;
-            int idSorteioVagas = sorteioVagas.GetIdSorteioVagas();
+            int idSorteioVagas = sorteioVagas.IdSorteioVagas;
 
             foreach (int linha in listaUnidadesAleatorias)
             {
@@ -212,7 +128,7 @@ namespace MeuCondominio2.Model
             List<int> listaUnidades = CriaListaDeIDsDeUnidadesDoSorteio(idCondominio);
             List<int> listaVagas = CriarListaDeIDsDeVagasDeGaragem(idCondominio);
             List<int> listaUnidadesAleatorias = CriarListaAleatoriaDeInteiros(listaUnidades);
-            
+
             int qtdVagas = listaVagas.Count;
             int vagaSorteada = 0;
             int idSorteioVagas = Convert.ToInt32(BuscarIddoSorteioDeVagasMaisRecenteDoCondominio(idCondominio).Rows[0]["idSorteioVagas"]);
@@ -289,7 +205,7 @@ namespace MeuCondominio2.Model
         private void SelecionaUnidadesdoCondominio(SorteioVagas sorteioVagas)
         {
             BuscaUnidade buscaUnidade = new BuscaUnidade();
-            UnidadesDoCondominio = buscaUnidade.BuscarUnidadePorCondominio(sorteioVagas.GetIdCondominio());
+            UnidadesDoCondominio = buscaUnidade.BuscarUnidadePorCondominio(sorteioVagas.IdCondominio);
         }
 
         private void SelecionaUnidadesdoCondominio(int idCondominio)
@@ -308,7 +224,7 @@ namespace MeuCondominio2.Model
             {
                 do
                 {
-                    item = itemAleatorio.Next(1, lista.Count+1);
+                    item = itemAleatorio.Next(1, lista.Count + 1);
 
                 } while (listaAleatoriaDeInteiros.Contains(item));
                 listaAleatoriaDeInteiros.Add(item);
@@ -344,7 +260,7 @@ namespace MeuCondominio2.Model
         private void SelecionaVagasDoCondominio(SorteioVagas sorteioVagas)
         {
             BuscaVagaGaragem buscaVagaGaragem = new BuscaVagaGaragem();
-            VagasDeGaragemDoCondominio = buscaVagaGaragem.PesquisarVagasGaragemPorCondominio(sorteioVagas.GetIdCondominio());
+            VagasDeGaragemDoCondominio = buscaVagaGaragem.PesquisarVagasGaragemPorCondominio(sorteioVagas.IdCondominio);
         }
 
         private void SelecionaVagasDoCondominio(int idCondominio)
@@ -376,3 +292,99 @@ namespace MeuCondominio2.Model
 }
 
 
+#region Antigos Getters e Setters
+/*
+public int GetIdSorteioVagas1()
+{
+    return idSorteioVagas;
+}
+
+public void SetIdSorteioVagas1(int value)
+{
+    idSorteioVagas = value;
+}
+
+public int GetIdSorteioVagas()
+{
+    return idSorteioVagas;
+}
+
+        public void SetIdSorteioVagas(int value)
+        {
+            idSorteioVagas = value;
+        }
+
+
+public string GetTipoSorteio()
+{
+    return tipoSorteio;
+}
+
+public void SetTipoSorteio(string value)
+{
+    tipoSorteio = value;
+}
+
+
+public DateTime GetDataValidadeSorteioInicio()
+{
+    return dataValidadeSorteioInicio;
+}
+
+public void SetDataValidadeSorteioInicio(DateTime value)
+{
+    dataValidadeSorteioInicio = value;
+}
+
+public DateTime GetDataValidadeSorteioFim()
+{
+    return DataValidadeSorteioFim;
+}
+
+public void SetDataValidadeSorteioFim(DateTime value)
+{
+    DataValidadeSorteioFim = value;
+}
+
+public bool GetAssociacaoVagasSequenciais()
+{
+    return associacaoVagasSequenciais;
+}
+
+public void SetAssociacaoVagasSequenciais(bool value)
+{
+    associacaoVagasSequenciais = value;
+}
+
+public DateTime GetDataSorteio()
+{
+    return dataSorteio;
+}
+
+
+public void SetDataSorteio(DateTime value)
+{
+    dataSorteio = value;
+}
+
+public int GetIdCondominio()
+{
+    return idCondominio;
+}
+
+public void SetIdCondominio(int value)
+{
+    idCondominio = value;
+}
+
+public int GetQtdeVagasPorUnidade()
+{
+    return qtdeVagasPorUnidade;
+}
+
+public void SetQtdeVagasPorUnidade(int value)
+{
+    qtdeVagasPorUnidade = value;
+}
+*/
+#endregion

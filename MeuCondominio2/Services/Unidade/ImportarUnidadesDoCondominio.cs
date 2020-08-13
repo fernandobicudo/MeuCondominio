@@ -17,13 +17,14 @@ namespace MeuCondominio2.Services.Unidade
                 string linha = reader.ReadLine();
                 string[] value = linha.Split(';');
 
-                Model.Unidade unidade = new Model.Unidade();
-
-                unidade.SetIdentificacao(value[0]);
-                unidade.SetQtdVagas(Convert.ToInt32(value[1]));
-                unidade.SetStatusOcupacao(false);
-                unidade.SetStatusInadimplencia(false);
-                unidade.SetIdCondominio(idCondominio);
+                Model.Unidade unidade = new Model.Unidade
+                {
+                    Identificacao = value[0],
+                    QtdVagas = Convert.ToInt32(value[1]),
+                    StatusOcupacao = false,
+                    StatusInadimplencia = false,
+                    IdCondominio = idCondominio
+                };
 
                 unidadesDoCondominio.Add(unidade);
             }

@@ -15,11 +15,11 @@ namespace MeuCondominio2.DAO
             SQL = String.Format(@"INSERT INTO `EspacoLazer` (`nomeEspacoLazer`, `areaEspacoMetrosQuadrados`,
                                 `valorReservaEspacoDiaria`, `regulamentoReservaEspaco`, `idCondominio`)
                                 VALUES ('{0}', {1}, {2}, '{3}', {4})",
-                espacoLazer.GetNomeEspacoLazer(),
-                espacoLazer.GetAreaEspacoLazer(),
-                espacoLazer.GetValorReserva(),
-                espacoLazer.GetRegulamentoReservaEspaco(),
-                espacoLazer.GetIdCondominio()); 
+                espacoLazer.NomeEspacoLazer,
+                espacoLazer.AreaEspacoLazer,
+                espacoLazer.ValorReserva,
+                espacoLazer.RegulamentoReservaEspaco,
+                espacoLazer.IdCondominio); 
 
             MetodosBD.ExecutaSQL(SQL);
         }

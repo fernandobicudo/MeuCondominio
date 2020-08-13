@@ -12,7 +12,7 @@ namespace MeuCondominio2.DAO
         public static void InserirVotoDaEleicao(Voto voto)
         {
             string SQL = String.Format(@"INSERT INTO `Voto` (`idOpcaoVotada`, `idEleicao`, `idUnidade`) " +
-                "VALUES ({0}, {1}, {2});", voto.GetIdOpcaoVotada(), voto.GetIdEleicao(), voto.GetIdUnidade());
+                "VALUES ({0}, {1}, {2});", voto.IdOpcaoVotada, voto.IdEleicao, voto.IdUnidade);
             MetodosBD.ExecutaSQL(SQL);
         }
 

@@ -7,10 +7,12 @@ namespace MeuCondominio2.Model
     public class VagaGaragem
     {
         private int idVaga;
-        private int numeracao; 
+        private int numeracao;
         private bool vagaSequencial;
-        
-        
+
+        public int IdVaga { get => idVaga; set => idVaga = value; }
+        public int Numeracao { get => numeracao; set => numeracao = value; }
+        public bool VagaSequencial { get => vagaSequencial; set => vagaSequencial = value; }
 
         public VagaGaragem()
         {
@@ -21,10 +23,16 @@ namespace MeuCondominio2.Model
         {
             this.idVaga = idVaga;
             this.numeracao = numeracao;
-            this.SetVagaSequencial(vagaSequencial);
+            this.vagaSequencial = vagaSequencial;
         }
 
-        public int GetIdVaga()
+    }
+
+
+    //TODO: criar métodos da classe VagasGaragem
+}
+#region antigos getters/setters
+/*        public int GetIdVaga()
         {
             return idVaga;
         }
@@ -36,12 +44,12 @@ namespace MeuCondominio2.Model
 
         public int GetNumeracao()
         {
-            return numeracao;
+            return Numeracao;
         }
 
         public void SetNumeracao(int value)
         {
-            numeracao = value;
+            Numeracao = value;
         }
 
         public bool GetVagaSequencial()
@@ -53,8 +61,5 @@ namespace MeuCondominio2.Model
         {
             vagaSequencial = value;
         }
-    }
-
-
-    //TODO: criar métodos da classe VagasGaragem
-}
+*/
+#endregion

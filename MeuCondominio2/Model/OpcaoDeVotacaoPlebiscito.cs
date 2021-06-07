@@ -9,7 +9,11 @@ namespace MeuCondominio2.Model
         private int idOpcaoDeVotacaoPlebiscito;
         private string nomeOpcaoDeVotacaoPlebiscito;
         private int idEleicao;
-        
+
+        public int IdOpcaoDeVotacaoPlebiscito { get => idOpcaoDeVotacaoPlebiscito; set => idOpcaoDeVotacaoPlebiscito = value; }
+        public string NomeOpcaoDeVotacaoPlebiscito { get => nomeOpcaoDeVotacaoPlebiscito; set => nomeOpcaoDeVotacaoPlebiscito = value; }
+        public int IdEleicao { get => idEleicao; set => idEleicao = value; }
+
         public OpcaoDeVotacaoPlebiscito()
         {
 
@@ -21,35 +25,39 @@ namespace MeuCondominio2.Model
             this.nomeOpcaoDeVotacaoPlebiscito = nomeOpcaoDeVotacaoPlebiscito;
             this.idEleicao = idEleicao;
         }
-
-        public int GetIdOpcaoDeVotacaoPlebiscito()
-        {
-            return idOpcaoDeVotacaoPlebiscito;
-        }
-
-        public void SetIdOpcaoDeVotacaoPlebiscito(int value)
-        {
-            idOpcaoDeVotacaoPlebiscito = value;
-        }
-
-        public string GetNomeOpcaoDeVotacaoPlebiscito()
-        {
-            return nomeOpcaoDeVotacaoPlebiscito;
-        }
-
-        public void SetNomeOpcaoDeVotacaoPlebiscito(string value)
-        {
-            nomeOpcaoDeVotacaoPlebiscito = value;
-        }
-
-        public int GetIdEleicao()
-        {
-            return idEleicao;
-        }
-
-        public void SetIdEleicao(int value)
-        {
-            idEleicao = value;
-        }
     }
 }
+
+#region antigos getters/setters
+/*
+public int GetIdOpcaoDeVotacaoPlebiscito()
+{
+    return idOpcaoDeVotacaoPlebiscito;
+}
+
+public void SetIdOpcaoDeVotacaoPlebiscito(int value)
+{
+    idOpcaoDeVotacaoPlebiscito = value;
+}
+
+public string GetNomeOpcaoDeVotacaoPlebiscito()
+{
+    return nomeOpcaoDeVotacaoPlebiscito;
+}
+
+public void SetNomeOpcaoDeVotacaoPlebiscito(string value)
+{
+    nomeOpcaoDeVotacaoPlebiscito = value;
+}
+
+public int GetIdEleicao()
+{
+    return idEleicao;
+}
+
+public void SetIdEleicao(int value)
+{
+    idEleicao = value;
+}
+*/
+#endregion

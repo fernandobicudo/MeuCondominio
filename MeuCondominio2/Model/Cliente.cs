@@ -9,6 +9,7 @@ namespace MeuCondominio2.Model
     {
         private string CPFCliente;
 
+        public string CPFCliente1 { get => CPFCliente; set => CPFCliente = value; }
 
         public Cliente() : base()
         {
@@ -16,21 +17,8 @@ namespace MeuCondominio2.Model
         }
 
         public Cliente(int idUsuario, string nome, string email, string telefone, string senha, string endereco, string numeroEndereco, string complementoEndereco, string bairro, string cidade, string UF, string cEP, int tipoUsuario, string CPFCliente)
-            : base(idUsuario, nome, email, telefone, senha, endereco, numeroEndereco, complementoEndereco, bairro, cidade, UF, cEP, tipoUsuario)
-        {
-            this.CPFCliente = CPFCliente;
-        }
-
-        public string GetCPFCliente()
-        {
-            return CPFCliente;
-        }
-
-        public void SetCPFCliente(string value)
-        {
-            CPFCliente = value;
-        }
-
+            : base(idUsuario, nome, email, telefone, senha, endereco, numeroEndereco, complementoEndereco, bairro, cidade, UF, cEP, tipoUsuario) 
+            => this.CPFCliente = CPFCliente;
 
         public Cliente ConstruirObjetoCliente(DataTable dt)
         {
@@ -52,5 +40,19 @@ namespace MeuCondominio2.Model
 
             return cliente;
         }
+        
+        #region antigos getters/setters
+        /*
+              public string GetCPFCliente()
+              {
+                  return CPFCliente;
+              }
+
+              public void SetCPFCliente(string value)
+              {
+                  CPFCliente = value;
+              }
+              */
+        #endregion
     }
 }

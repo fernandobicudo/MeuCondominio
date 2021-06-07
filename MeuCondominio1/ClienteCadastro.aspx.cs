@@ -42,16 +42,16 @@ namespace MeuCondominio1
 
         private void CarregarCamposDoCliente(Cliente cliente)
         {
-            txNomeCliente.Text = cliente.GetNome();
-            txCPF.Text = cliente.GetCPFCliente();
-            txEmail.Text = cliente.GetEmail();
-            txLogradouro.Text = cliente.GetEndereco();
-            txNumeroLogradouro.Text = cliente.GetNumeroEndereco();
-            txComplemento.Text = cliente.GetComplementoEndereco();
-            txBairro.Text = cliente.GetBairro();
-            txCidade.Text = cliente.GetCidade();
-            txEstado.Text = cliente.GetUF();
-            txCEP.Text = cliente.GetCEP();
+            txNomeCliente.Text = cliente.Nome;
+            txCPF.Text = cliente.CPFCliente1;
+            txEmail.Text = cliente.Email;
+            txLogradouro.Text = cliente.Endereco;
+            txNumeroLogradouro.Text = cliente.NumeroEndereco;
+            txComplemento.Text = cliente.ComplementoEndereco;
+            txBairro.Text = cliente.Bairro;
+            txCidade.Text = cliente.Cidade;
+            txEstado.Text = cliente.UF1;
+            txCEP.Text = cliente.CEP1;
         }
 
         private Cliente ConstruirObjetoCliente (DataTable dt)

@@ -21,10 +21,10 @@ namespace MeuCondominio1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-/*            if (IsPostBack)
-            {
-                nomeDoArquivo = Session["nomeDoArquivo"].ToString();
-            }*/
+            /*            if (IsPostBack)
+                        {
+                            nomeDoArquivo = Session["nomeDoArquivo"].ToString();
+                        }*/
         }
 
         private void FazerUploadDoArquivoDaPlanilha()
@@ -32,7 +32,7 @@ namespace MeuCondominio1
             if (fuArquivoDeImportacao.HasFile)
             {
                 nomeDoArquivo = fuArquivoDeImportacao.FileName;
-                Session["nomeDoArquivo"] = nomeDoArquivo; 
+                Session["nomeDoArquivo"] = nomeDoArquivo;
                 fuArquivoDeImportacao.SaveAs(@"c:\temp\" + nomeDoArquivo);
             }
 
@@ -51,7 +51,6 @@ namespace MeuCondominio1
             reader.Dispose();
             LerDadosDaPlanilhaDeUsuarios();
             CriarListaDeClientesNaMemoriaAPartirDaPlanilha(reader);
-            
         }
 
         private void LerDadosDaPlanilhaDeUsuarios()
@@ -97,7 +96,7 @@ namespace MeuCondominio1
                 ClienteDoBancoDeDados = new Cliente();
                 BuscaCliente buscaCliente = new BuscaCliente();
 
-                dt = buscaCliente.BuscarClientePorCPF(cliente.GetCPFCliente());
+                dt = buscaCliente.BuscarClientePorCPF(cliente.CPFCliente1);
                 ClienteDoBancoDeDados = ClienteDoBancoDeDados.ConstruirObjetoCliente(dt);
                 listaClientesDoBancoDeDados.Add(ClienteDoBancoDeDados);
             }
@@ -119,11 +118,11 @@ namespace MeuCondominio1
             reader.Close();
             reader.Dispose();
 
-            Dictionary<string, RelacaoClienteUnidade> dict = ListaRelacaoClientesUnidades.ToDictionary(x => x.GetCPF1());
+            Dictionary<string, RelacaoClienteUnidade> dict = ListaRelacaoClientesUnidades.ToDictionary(x => x.CPF1);
 
             foreach (Cliente cliente1 in listaClientesDoBancoDeDados)
             {
-                if (dict.TryGetValue(cliente1.GetCPFCliente(), out RelacaoClienteUnidade encontrado)) encontrado.SetIdCliente(cliente1.GetIdUsuario());
+                if (dict.TryGetValue(cliente1.CPFCliente1, out RelacaoClienteUnidade encontrado)) encontrado.IdCliente = cliente1.IdUsuario;
             }
 
             foreach (ImportarClientes.DadosDaRelacaoDaPlanilha dados in ListaDadosDaRelacaoDaPlanilha)
@@ -131,7 +130,7 @@ namespace MeuCondominio1
                 int idUnidade;
                 idUnidade = BuscaUnidade.BuscarUnidadePorDescricao(dados.unidade);
 
-                if (dict.TryGetValue(dados.CPF, out RelacaoClienteUnidade encontrado)) encontrado.SetIdUnidade(idUnidade);
+                if (dict.TryGetValue(dados.CPF, out RelacaoClienteUnidade encontrado)) encontrado.IdUnidade = idUnidade;
             }
 
 

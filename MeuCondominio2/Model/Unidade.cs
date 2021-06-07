@@ -14,7 +14,13 @@ namespace MeuCondominio2.Model
         private int idCondominio;
         private int idCliente;
 
-        
+        public int IdUnidade { get => idUnidade; set => idUnidade = value; }
+        public int QtdVagas { get => qtdVagas; set => qtdVagas = value; }
+        public bool StatusInadimplencia { get => statusInadimplencia; set => statusInadimplencia = value; }
+        public bool StatusOcupacao { get => statusOcupacao; set => statusOcupacao = value; }
+        public int IdCondominio { get => idCondominio; set => idCondominio = value; }
+        public int IdCliente { get => idCliente; set => idCliente = value; }
+        public string Identificacao { get => identificacao; set => identificacao = value; }
 
         public Unidade()
         {
@@ -52,7 +58,8 @@ namespace MeuCondominio2.Model
             this.idCondominio = idCondominio;
             this.idCliente = idCliente;
         }
-
+        #region antigos getters/setters
+        /*
         public int GetIdUnidade()
         {
             return idUnidade;
@@ -122,6 +129,8 @@ namespace MeuCondominio2.Model
         {
             idCliente = value;
         }
+        */
+        #endregion
     }
     //TODO: criar métodos da classe Unidade
 }

@@ -15,7 +15,15 @@ namespace MeuCondominio2.Model
         private DateTime dataFimEleicao;
         private int idCondominio;
 
-        
+        public int IdEleicao { get => idEleicao; set => idEleicao = value; }
+        public string NomeEleicao { get => nomeEleicao; set => nomeEleicao = value; }
+        public string DescricaoEleicao { get => descricaoEleicao; set => descricaoEleicao = value; }
+        public bool StatusEleicao { get => statusEleicao; set => statusEleicao = value; }
+        public string TipoEleicao { get => tipoEleicao; set => tipoEleicao = value; }
+        public DateTime DataInicioEleicao { get => dataInicioEleicao; set => dataInicioEleicao = value; }
+        public DateTime DataFimEleicao { get => dataFimEleicao; set => dataFimEleicao = value; }
+        public int IdCondominio { get => idCondominio; set => idCondominio = value; }
+
         public Eleicao()
         {
         }
@@ -57,6 +65,10 @@ namespace MeuCondominio2.Model
         }
 
 
+    }
+}
+#region antigos getters/setters
+/*
         public int GetIdEleicao()
         {
             return idEleicao;
@@ -136,7 +148,5 @@ namespace MeuCondominio2.Model
         {
             idCondominio = value;
         }
-
-        
-    }
-}
+*/
+#endregion

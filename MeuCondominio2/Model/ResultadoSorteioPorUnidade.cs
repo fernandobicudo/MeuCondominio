@@ -11,7 +11,11 @@ namespace MeuCondominio2.Model
         private int idVagaDeGaragem;
         private int idSorteioVaga;
 
-        
+        public int IdResultadoSorteio { get => idResultadoSorteio; set => idResultadoSorteio = value; }
+        public int IdUnidade { get => idUnidade; set => idUnidade = value; }
+        public int IdVagaDeGaragem { get => idVagaDeGaragem; set => idVagaDeGaragem = value; }
+        public int IdSorteioVaga { get => idSorteioVaga; set => idSorteioVaga = value; }
+
         public ResultadoSorteioPorUnidade()
         {
         }
@@ -42,7 +46,7 @@ namespace MeuCondominio2.Model
         public void SetIdUnidade(int value)
         {
             idUnidade = value;
-        }   
+        }
 
         public int GetIdVagaDeGaragem()
         {

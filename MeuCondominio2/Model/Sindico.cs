@@ -10,6 +10,10 @@ namespace MeuCondominio2.Model
         string CPF;
         int idCondominio;
 
+        public int IdSindico { get => idSindico; set => idSindico = value; }
+        public string CPF1 { get => CPF; set => CPF = value; }
+        public int IdCondominio { get => idCondominio; set => idCondominio = value; }
+
         public Sindico()
         {
         }
@@ -27,7 +31,8 @@ namespace MeuCondominio2.Model
             this.idCondominio = idCondominio;
         }
 
-        public int GetIdSindico()
+        #region antigos getters/setters
+        /*public int GetIdSindico()
         {
             return idSindico;
         }
@@ -56,5 +61,7 @@ namespace MeuCondominio2.Model
         {
             idCondominio = value;
         }
+        */
+        #endregion
     }
 }

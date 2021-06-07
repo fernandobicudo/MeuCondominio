@@ -8,14 +8,18 @@ namespace MeuCondominio2.Model
     {
         List<ResultadoSorteioPorUnidade> resultadoSorteio = new List<ResultadoSorteioPorUnidade>();
 
-        public List<ResultadoSorteioPorUnidade> GetResultadoSorteio()
-        {
-            return resultadoSorteio;
-        }
-
-        public void SetResultadoSorteio(List<ResultadoSorteioPorUnidade> value)
-        {
-            resultadoSorteio = value;
-        }
+        public List<ResultadoSorteioPorUnidade> ResultadoSorteio { get => resultadoSorteio; set => resultadoSorteio = value; }
    }
 }
+#region antigos getters/setters
+/*public List<ResultadoSorteioPorUnidade> GetResultadoSorteio()
+{
+    return resultadoSorteio;
+}
+
+public void SetResultadoSorteio(List<ResultadoSorteioPorUnidade> value)
+{
+    resultadoSorteio = value;
+}
+*/
+#endregion

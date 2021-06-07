@@ -15,16 +15,16 @@ namespace MeuCondominio2.DAO
             string SQL;
             Formatadores formatadores = new Formatadores();
 
-            string dataInicioReserva = formatadores.ConversaoDeDataParaStringMySQL(reservaEspacoLazer.GetDataInicioReserva());
-            string dataFimReserva = formatadores.ConversaoDeDataParaStringMySQL(reservaEspacoLazer.GetDataFimReserva());
+            string dataInicioReserva = formatadores.ConversaoDeDataParaStringMySQL(reservaEspacoLazer.DataInicioReserva);
+            string dataFimReserva = formatadores.ConversaoDeDataParaStringMySQL(reservaEspacoLazer.DataFimReserva);
 
             SQL = String.Format(@"INSERT INTO `ReservaEspacoLazer`
                                 (`dtInicioReserva`, `dtFimReserva`, `idUnidade`, `idEspacoLazer`) 
                                 VALUES ('{0}', '{1}', {2}, {3}); ",
                                 dataInicioReserva,
                                 dataFimReserva,
-                                reservaEspacoLazer.GetIdUnidade(),
-                                reservaEspacoLazer.GetIdEspacoLazer());
+                                reservaEspacoLazer.IdUnidade,
+                                reservaEspacoLazer.IdEspacoLazer);
 
             MetodosBD.ExecutaSQL(SQL);
         }

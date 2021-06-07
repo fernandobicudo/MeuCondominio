@@ -11,6 +11,11 @@ namespace MeuCondominio2.Model
         private int idEleicao;
         private int idUnidade;
 
+        public int IdVoto { get => idVoto; set => idVoto = value; }
+        public int IdOpcaoVotada { get => idOpcaoVotada; set => idOpcaoVotada = value; }
+        public int IdEleicao { get => idEleicao; set => idEleicao = value; }
+        public int IdUnidade { get => idUnidade; set => idUnidade = value; }
+
         public Voto()
         {
         }
@@ -30,7 +35,11 @@ namespace MeuCondominio2.Model
             this.idUnidade = idUnidade;
         }
 
-        public int GetIdVoto()
+    }
+}
+
+#region antigos getters/setters
+/*        public int GetIdVoto()
         {
             return idVoto;
         }
@@ -69,5 +78,5 @@ namespace MeuCondominio2.Model
         {
             idUnidade = value;
         }
-    }
-}
+*/
+#endregion
